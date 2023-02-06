@@ -9,7 +9,7 @@ const app = express();
 const { PORT, MONGO_URI } = process.env;
 //body-parser 가져오기
 const bodyParser = require("body-parser");
-
+//body-parser 관련 코드
 app.use(bodyParser.urlencoded({ extended: true }));
 app.use(bodyParser.json());
 
