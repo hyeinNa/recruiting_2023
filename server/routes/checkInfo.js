@@ -21,6 +21,7 @@ checkInfoRoute.post("/find", (req, res) => {
         //에러가 발생하지 않았다면
         console.log(datas);
         //찾은 결과 값이 존재하지 않다면
+        //datas 배열이 0 이하면(비어있다면)
         if (datas.length <= 0) {
           return res.json({
             checkInfoSuccess: false,
