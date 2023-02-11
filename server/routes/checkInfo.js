@@ -20,6 +20,18 @@ checkInfoRoute.post("/find", (req, res) => {
       } else {
         //에러가 발생하지 않았다면
         console.log(datas);
+        //찾은 결과 값이 존재하지 않다면
+        if (datas.length <= 0) {
+          return res.json({
+            checkInfoSuccess: false,
+            messeage: "DB 내에 해당하는 지원자가 없습니다.",
+          });
+        } else {
+          return res.json({
+            checkInfoSuccess: true,
+            messeage: "DB 내에 해당하는 지원자가 있습니다.",
+          });
+        }
       }
     }
   );
