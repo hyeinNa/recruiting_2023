@@ -1,0 +1,62 @@
+.footer_container {
+  width: 100vw;
+  height: 300px;
+  background-color: #29272f;
+  position: absolute;
+  bottom: 0;
+}
+.footer_inner_container {
+  display: inline-flex;
+  flex-direction: column;
+  width: 50%;
+  margin-left: 15%;
+  margin-top: 2%;
+}
+.footer_email_container {
+  display: flex;
+  flex-direction: row;
+  margin-top: 24px;
+  margin-left: 10px;
+  /*background-color: aquamarine;*/
+}
+.footer_channel_container {
+  display: flex;
+  flex-direction: row;
+  margin-top: 20px;
+  margin-left: 10px;
+  /*background-color: bisque;*/
+}
+.footer_sns_container {
+  display: flex;
+  flex-direction: row;
+  margin-top: 30px;
+  margin-left: 10px;
+  /*background-color: azure;*/
+}
+.footer_sns_logo {
+  width: auto;
+  height: 40px;
+  margin-right: 20px;
+}
+.color_white {
+  color: white;
+}
+.footer_name {
+  font-size: 23px;
+  font-weight: 600;
+  margin-top: 25px;
+}
+.footer_email_name {
+  font-size: 17px;
+}
+.footer_email {
+  font-size: 17px;
+  margin-left: 3%;
+}
+.footer_channel_name {
+  font-size: 17px;
+}
+.footer_channel {
+  font-size: 17px;
+  margin-left: 3%;
+}
