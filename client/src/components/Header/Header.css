@@ -19,7 +19,7 @@ header {
 }
 .header_logo {
   width: auto;
-  height: 32px;
+  height: 28px;
   margin-left: 10%;
 }
 .header_between {
@@ -41,11 +41,12 @@ header {
   list-style-type: none;
   display: flex;
   align-items: center;
-  padding: 0 8px;
+  padding: 0 20px;
 }
 .header_item > a {
   text-decoration: none;
   color: white;
-  font-size: 16px;
-  padding: 0 8px;
+  width: max-content;
+  font-size: 15px;
+  text-align: center;
 }
