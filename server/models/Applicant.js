@@ -4,15 +4,18 @@ const mongoose = require("mongoose");
 const applicantSchema = mongoose.Schema({
   name: {
     type: String,
-    maxlength: 20,
+    maxlength: 10,
+    unique: true
   },
   studentId: {
     type: String,
     maxlength: 7,
+    unique: true
   },
   ewhaianId: {
     type: String,
-    maxlength: 50,
+    maxlength: 20,
+    unique: true
   },
   team: {
     type: Number,

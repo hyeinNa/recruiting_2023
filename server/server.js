@@ -11,6 +11,7 @@ const { PORT, MONGO_URI } = process.env;
 const bodyParser = require("body-parser");
 //Route 가져오기
 const checkInfoRoutes = require("./routes/checkInfo");
+const registerRouter = require("./routes/register");
 //body-parser 관련 코드
 app.use(bodyParser.urlencoded({ extended: true }));
 app.use(bodyParser.json());
@@ -31,6 +32,7 @@ app.get("/", (req, res) => {
   res.send("Successfully send");
 });
 app.use("/api/checkInfo", checkInfoRoutes);
+app.use("/api/register", registerRouter);
 //app 객체를 통해서 express 서버 열어주는 곳
 app.listen(PORT, () => {
   console.log(`recruiting-site server listening on port ${PORT}`);
