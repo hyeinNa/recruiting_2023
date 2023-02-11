@@ -1,6 +1,6 @@
 const express = require("express")
 const registerRoute = express.Router()
-const applicant = require("../models/Applicant");
+const { Applicant } = require("../models/Applicant");
 //path 가져오기
 const path = require('path')
 const app = express()
@@ -34,7 +34,7 @@ app.post('/register', async (req, res) => {
     }
     //입력받은 정보를 바탕으로 새로운 applicant 생성하기
     try {
-        const response = await applicant.create({
+        const response = await Applicant.create({
             name,
             studentID,
             ewhaianID
