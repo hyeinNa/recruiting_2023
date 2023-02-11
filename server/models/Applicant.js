@@ -7,12 +7,21 @@ const applicantSchema = mongoose.Schema({
     maxlength: 20,
   },
   studentId: {
-    type: Number,
+    type: String,
     maxlength: 7,
   },
   ewhaianId: {
     type: String,
     maxlength: 50,
+  },
+  team: {
+    type: Number,
+  },
+  pass: {
+    type: String,
+  },
+  key: {
+    type: String,
   },
 });
 

@@ -9,6 +9,8 @@ const app = express();
 const { PORT, MONGO_URI } = process.env;
 //body-parser 가져오기
 const bodyParser = require("body-parser");
+//Route 가져오기
+const checkInfoRoutes = require("./routes/checkInfo");
 //body-parser 관련 코드
 app.use(bodyParser.urlencoded({ extended: true }));
 app.use(bodyParser.json());
@@ -28,6 +30,7 @@ mongoose
 app.get("/", (req, res) => {
   res.send("Successfully send");
 });
+app.use("/api/checkInfo", checkInfoRoutes);
 //app 객체를 통해서 express 서버 열어주는 곳
 app.listen(PORT, () => {
   console.log(`recruiting-site server listening on port ${PORT}`);
