@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <h1>Registeration</h1>
+    <form id="reg-form">
+        <!--<div>
+            <p><input type="radio" id="team" value="1" />마케팅팀</p>
+            <p><input type="radio" id="team" value="2" />디자인팀</p>
+            <p><input type="radio" id="team" value="3" />웹개발팀</p>
+        </div>-->
+        <p><input type="text" id="name" autocomplete="off" placeholder="Username" />성명</p>
+        <p><input type="password" id="studentID" autocomplete="off" placeholder="StudentID" />학번</p>
+        <p><input id="ewhaianID" autocomplete="off" placeholder="EwhaianID" />이화이언 아이디</p>
+        <p><input type="file" accept=".jpg, .pdf, .doc" id="file" />지원서 제출</p>
+        <input type="submit" value="Submit Form" />
+    </form>
+    <script>
+        const form = document.getElementById('reg-form')
+        form.addEventListener('submit', registerUser)
+
+        //프론트에서 js 서버로 데이터를 보내는 방법
+        //1.JSON으로 보내기(node에서 가장 흔한 방법)
+        //2.urlencoded로 보내기(default, php에서 흔한 방법)
+        async function registerUser(event) {
+            event.preventDefault() //페이지를 refresh하는 form의 default특성을 막음.
+            //var teamChoice = document.getElementById('team')
+            //const team = Array.from(teamChoice).find(radio => radio.checked)
+            const name = document.getElementById('name').value //html의 name필드를 가져와 변수 username에 대입.
+            const studentID = document.getElementById('studentID').value //html의 student필드를 가져와 변수에 대입.
+            const ewhaianID = document.getElementById('ewhaianID').value //html의 ewhaianID필드를 가져와 변수에 대입.
+            const file = document.getElementById('file')
+            //file.addEventListener('change', updateFileDisplay)
+
+            const result = await fetch('/register', {
+                method: 'POST',
+                headers: {
+                    'Content-Type': 'application/json'
+                },
+                body: JSON.stringify({
+                    name,
+                    studentID,
+                    ewhaianID
+                })
+            }).then((res) => res.json())
+
+            if (result.status === 'ok') {
+                console.log("토큰 받음: ", result.data)
+                alert('Success')
+            } else {
+                alert(result.error)
+            }
+        }
+    </script>
+</body>
+
+</html>
