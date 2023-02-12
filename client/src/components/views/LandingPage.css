@@ -1,0 +1,10 @@
+#wrapper {
+  padding-top: 60px;
+  display: block;
+  min-height: 100%;
+}
+@media screen and (max-width: 768px) {
+  #wrapper {
+    padding-top: 54.53px;
+  }
+}

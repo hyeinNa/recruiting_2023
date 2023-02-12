@@ -10,9 +10,8 @@
   --footer-indent-size-small: 15px;
 }
 .footer_container {
-  position: fixed;
-  bottom: 0;
   width: 100%;
+  bottom: 0;
   background-color: var(--footer-color);
 }
 .footer_inner_container {
