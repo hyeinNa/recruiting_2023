@@ -13,6 +13,8 @@ const bodyParser = require("body-parser");
 const checkInfoRoutes = require("./routes/checkInfo");
 const registerRouter = require("./routes/register");
 const adminRouter = require("./routes/admin");
+const updateRouter = require("./routes/update");
+
 //body-parser 관련 코드
 app.use(bodyParser.urlencoded({ extended: true }));
 app.use(bodyParser.json());
@@ -35,6 +37,7 @@ app.get("/", (req, res) => {
 app.use("/api/checkInfo", checkInfoRoutes);
 app.use("/api/register", registerRouter);
 app.use("/api/admin", adminRouter);
+app.use("/api/update", updateRouter);
 //app 객체를 통해서 express 서버 열어주는 곳
 app.listen(PORT, () => {
   console.log(`recruiting-site server listening on port ${PORT}`);
