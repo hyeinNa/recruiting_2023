@@ -1,5 +1,7 @@
 import { BrowserRouter, Route, Routes } from "react-router-dom";
 import LandingPage from "./components/views/LandingPage";
+//어떤 파일이든 색상 변수 사용할 수 있도록, color css파일 불러오기
+import "./components/utilis/color.css";
 
 function App() {
   return (
