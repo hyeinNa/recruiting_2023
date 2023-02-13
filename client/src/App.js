@@ -1,6 +1,11 @@
 import { BrowserRouter, Route, Routes } from "react-router-dom";
 import LandingPage from "./components/views/LandingPage";
+<<<<<<< HEAD
 import EwhaianInfo from "./components/views/EwhaianInfo";
+=======
+import RegisterLanding from "./components/views/RegisterPages/RegisterLanding";
+import ExistingApplicantCheckInfo from "./components/views/RegisterPages/ExistingApplicantCheckInfo";
+>>>>>>> 60de521a16bc97a21e283739563954f904260001
 //어떤 파일이든 색상 변수 사용할 수 있도록, color css파일 불러오기
 import "./components/utilis/color.css";
 
@@ -10,7 +15,16 @@ function App() {
       <BrowserRouter>
         <Routes>
           <Route exact path="/" element={<LandingPage />} />
+<<<<<<< HEAD
           <Route exact path="/ewhaianInfo" element={<EwhaianInfo />} />
+=======
+          <Route exact path="/register" element={<RegisterLanding />} />
+          <Route
+            exact
+            path="/register/checkinfo"
+            element={<ExistingApplicantCheckInfo />}
+          />
+>>>>>>> 60de521a16bc97a21e283739563954f904260001
         </Routes>
       </BrowserRouter>
     </div>
