@@ -52,9 +52,30 @@ function EwhaianInfo() {
             </div>
             <div className="info_recruitment_section">
                   <div className="info_recruitment_title">모집부문</div>
+                  <ul className="info_recruitment_section_list">
+                      <div className="info_recruitment_section_list_list">
+                              <span>마케팅팀</span>
+                      </div>
+                      
+                      <div className="info_recruitment_section_list_list">
+                              <span>디자인팀</span>
+                      </div>
+                      <div className="info_recruitment_section_list_list">
+                              <span>웹개발팀</span>
+                      </div>
+                  </ul> 
+
             </div>
             <div className="info_recruitment_requirements">
                   <div className="info_recruitment_title">모집요건</div>
+                  <ul className="info_recruitment_requirements_list">
+                      <li>
+                              <div>-이화이언을 사랑하는 벗</div>
+                      </li>
+                      <li>
+                              <div>-학번 제한은 없으나, 2년이상 활동 가능한 벗</div>
+                      </li>
+                  </ul>
             </div>
               
 

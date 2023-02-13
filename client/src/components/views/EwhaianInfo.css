@@ -68,25 +68,23 @@
     flex-direction: column;
 
     color: #FFFFFF;
-    background-color: pink;
 }
 
 .info_recruitment_schedule{
     display: flex;
-    background-color: lightseagreen;
     justify-content: center;
 
 }
 
 .info_recruitment_title{
     display: flex;
+    margin-right: 5%;
     font-weight: 600;
     font-size: 35px;
     line-height: 42px;
     text-align: center;
     justify-content: center;
     align-items: center;
-    background-color: indianred;
 }
 
 .info_recruitment_schedule_list {
@@ -117,6 +115,54 @@
     font-weight: 500;
     font-size: 35px;
     margin-top: 5%;
+}
+
+.info_recruitment_section {
+    display: flex;
+    padding-right: 1.5%;
+    justify-content: center;    
+}
+
+.info_recruitment_section_list {
+    display: flex;
+    list-style-type: none;
+    font-weight: 500;
+    font-size: 33px;
+    line-height: 40px;
+}
+
+.info_recruitment_section_list_list{
+    display: flex;
+    margin-right: 10%;
+    width: 214px;
+    height: 56px;
+    
+    text-align: center;
+    
+}
+
+.info_recruitment_section_list_list span {
+    width: 214px;
+    height: 56px;
+    background-color: gray;
+    border-radius: 19px;
+}
+
+
+
+
+.info_recruitment_requirements {
+    display: flex;
+    padding-right: 1%;
+    justify-content: center;
+
+}
+
+.info_recruitment_requirements_list {
+    list-style-type: none;
+    font-weight: 500;
+    font-size: 33px;
+    line-height: 40px;
 }
 
 @media screen and(max-width: 768px) {
