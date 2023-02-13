@@ -26,6 +26,9 @@ const applicantSchema = mongoose.Schema({
   key: {
     type: String,
   },
+  applicant: {
+    type: String
+  }
 });
 
 //Applicant 모델 생성

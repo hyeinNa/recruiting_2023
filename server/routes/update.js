@@ -9,10 +9,10 @@ updateRoute.patch("/update", (req, res) => {
     let info = {
         name: req.body.name,
         studentId: req.body.studentId,
-        ewhaianId: req.body.ewhaianId
+
     }
     let updatedData = {
-        //application
+        ewhaianId: req.body.ewhaianId
     }
     try {
         Applicant.findByIdAndUpdate(info, { $set: updatedData }) //findByIDAndUpdate (조건:info, 갱신: updatedData)
