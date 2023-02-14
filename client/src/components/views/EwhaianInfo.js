@@ -88,7 +88,7 @@ function EwhaianInfo() {
                       <Link to="/register">지원하기</Link>
                   </div>
                   <div className="info_recruitment_menu_list">
-                      <Link to="/register">결과확인</Link>
+                      <Link to="/register/checkinfo">결과확인</Link>
                 </div>
               
               
