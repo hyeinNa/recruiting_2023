@@ -38,7 +38,7 @@ function Header() {
           </div>
           <ul className="nav_bar_menu" id="nav_bar_menu">
             <li>
-              <Link to="/">이화이언 소개</Link>
+              <Link to="/register">이화이언 소개</Link>
             </li>
             <li>
               <Link to="/">팀 소개</Link>
