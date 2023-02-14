@@ -51,6 +51,10 @@
   justify-content: center;
   margin-top: 13%;
 }
+.register_landing_applicant_type_container a {
+  width: 100%;
+  height: 100%;
+}
 .register_landing_applicant_type_existing_container {
   background-color: var(--toneDown-black);
   max-width: var(--register-landing-content-width);

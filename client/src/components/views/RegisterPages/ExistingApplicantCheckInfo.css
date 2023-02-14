@@ -86,6 +86,10 @@
   background-color: var(--register-checkInfo-forms-color);
   border-color: transparent;
   border-radius: var(--register-checkInfo-forms-border-radius);
+  color: var(--toneDown-white);
+  font-size: 17px;
+  padding-left: 15px;
+  font-weight: 600;
 }
 .register_checkInfo_button {
   width: 100%;
