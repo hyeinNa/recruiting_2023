@@ -51,15 +51,13 @@ function Header() {
             </li>
           </ul>
           <div className="nav_bar_toggleBtn">
-            <Link to="/">
-              <img
-                src="/img/header/hamburgerBar.png"
-                alt="toggleBtn"
-                className="nav_bar_toggleBtn_img"
-                id="nav_bar_toggleBtn_img_id"
-                onClick={toggleMenu}
-              />
-            </Link>
+            <img
+              src="/img/header/hamburgerBar.png"
+              alt="toggleBtn"
+              className="nav_bar_toggleBtn_img"
+              id="nav_bar_toggleBtn_img_id"
+              onClick={toggleMenu}
+            />
           </div>
         </div>
       </div>
