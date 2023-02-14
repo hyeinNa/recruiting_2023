@@ -1,0 +1,243 @@
+:root {
+  --register-landing-border-color: #eb1568;
+  --register-landing-border-width: 4px;
+  --register-landing-border-radius: 40px;
+  --register-landing-title-font-size: 45px;
+  --register-landing-title-font-weight: 800;
+  --register-landing-content-title-font-size: 28px;
+  --register-landing-content-description-font-size: 18px;
+  --register-landing-content-width: 300px;
+  --register-landing-content-height: 380px;
+  --register-landing-title-font-size-mobile: 30px;
+  --register-landing-content-height-mobile: 280px;
+}
+.register_landing {
+  width: 100vw;
+  height: 100vh;
+  padding-top: 60px;
+  background-color: var(--toneDown-black);
+}
+.register_landing_container {
+  width: 100%;
+  height: 100%;
+}
+.register_landing_inner_container {
+  max-width: var(--nav-bar-max-width);
+  width: 100%;
+  height: 100%;
+  /*background-color: aqua;*/
+  margin: 0 auto;
+}
+.register_landing_content_container {
+  /*background-color: aquamarine;*/
+  width: 92%;
+  margin: 0 auto;
+  display: flex;
+  flex-direction: column;
+}
+.register_landing_title {
+  /*background-color: rgb(107, 70, 21);*/
+  text-align: center;
+  font-size: var(--register-landing-title-font-size);
+  font-weight: var(--register-landing-title-font-weight);
+  letter-spacing: 2px;
+  color: var(--toneDown-white);
+  margin-top: 5%;
+}
+.register_landing_applicant_type_container {
+  /*background-color: azure;*/
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  margin-top: 13%;
+}
+.register_landing_applicant_type_container a {
+  width: 100%;
+  height: 100%;
+}
+.register_landing_applicant_type_existing_container {
+  background-color: var(--toneDown-black);
+  max-width: var(--register-landing-content-width);
+  max-height: var(--register-landing-content-height);
+  width: 40%;
+  display: flex;
+  margin-right: 20%;
+}
+.register_landing_applicant_type_new_container {
+  background-color: var(--toneDown-black);
+  max-width: var(--register-landing-content-width);
+  max-height: var(--register-landing-content-height);
+  width: 40%;
+  display: flex;
+}
+.register_landing_border_style {
+  border: solid;
+  border-color: var(--register-landing-border-color);
+  border-width: var(--register-landing-border-width);
+  border-radius: var(--register-landing-border-radius);
+}
+.register_landing_applicant_type_inner_container {
+  /*background-color: aqua;*/
+  margin: 20px 20px 20px 20px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+.applicant_img_wrapper {
+  /*background-color: rgb(61, 83, 101);*/
+  width: 80%;
+  height: 55%;
+  margin: 0 auto;
+}
+.new_applicant_img_wrapper {
+  width: 90%;
+}
+.applicant_img_wrapper img {
+  width: 100%;
+  height: auto;
+  margin-left: auto;
+  margin-right: auto;
+}
+.existing_applicant_img {
+  margin-top: 30px;
+}
+.applicant_content_wrapper {
+  /*background-color: bisque; */
+  display: flex;
+  height: 45%;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-between;
+}
+.applicant_title {
+  /*background-color: #eb1568; */
+  font-size: var(--register-landing-content-title-font-size);
+  font-weight: 800;
+  margin-top: 8%;
+  margin-bottom: 3%;
+  color: var(--toneDown-white);
+}
+.existing_applicant_description {
+  /*background-color: aquamarine; */
+  text-align: center;
+  font-size: var(--register-landing-content-description-font-size);
+  font-weight: 600;
+  margin-bottom: 10%;
+  margin-top: 5%;
+  color: var(--register-landing-border-color);
+}
+.new_applicant_description {
+  /*background-color: aquamarine; */
+  text-align: center;
+  font-size: var(--register-landing-content-description-font-size);
+  font-weight: 600;
+  margin-bottom: 15%;
+  margin-top: 5%;
+  color: var(--register-landing-border-color);
+}
+/* 모바일 */
+@media screen and (max-width: 768px) {
+  .register_landing_applicant_type_existing_container {
+    margin-right: 7%;
+  }
+  .register_landing_title {
+    margin-top: 13%;
+  }
+  .register_landing_applicant_type_container {
+    margin-top: 15%;
+  }
+}
+@media screen and (max-width: 650px) {
+  .register_landing_title {
+    font-size: 35px;
+  }
+  .applicant_img_wrapper {
+    width: 100%;
+  }
+  .applicant_title {
+    font-size: 24px;
+  }
+  .existing_applicant_description {
+    font-size: 17px;
+  }
+  .new_applicant_description {
+    font-size: 17px;
+  }
+}
+@media screen and (max-width: 500px) {
+  .register_landing_title {
+    font-size: 30px;
+  }
+  .applicant_img_wrapper {
+    width: 100%;
+  }
+  .applicant_title {
+    font-size: 20px;
+  }
+  .existing_applicant_description {
+    word-break: keep-all;
+    font-size: 15px;
+  }
+  .new_applicant_description {
+    word-break: keep-all;
+    font-size: 15px;
+  }
+}
+@media screen and (max-width: 480px) {
+  .register_landing_applicant_type_container {
+    /*background-color: aqua;*/
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-top: 10%;
+  }
+  .register_landing_applicant_type_existing_container {
+    max-width: 500px;
+    width: 96%;
+    height: 180px;
+    margin-right: 0%;
+    margin-bottom: 8%;
+  }
+  .register_landing_applicant_type_inner_container {
+    /*background-color: aquamarine;*/
+    margin: 0 auto;
+    flex-direction: row;
+    justify-content: space-around;
+    margin: 10px 10px;
+  }
+  .applicant_img_wrapper {
+    /*background-color: blue;*/
+    width: 45%;
+    height: 100%;
+    margin: 0;
+    display: flex;
+    align-items: center;
+  }
+  .existing_applicant_img {
+    margin: 0;
+    display: inline-block;
+  }
+  .applicant_content_wrapper {
+    /*background-color: blueviolet;*/
+    height: 100%;
+    flex-direction: column;
+    justify-content: center;
+  }
+  .applicant_title {
+    /* background-color: rgb(161, 101, 22);*/
+    margin-bottom: 15%;
+  }
+  .existing_applicant_description {
+    /*background-color: blue;*/
+    line-height: 22px;
+  }
+  .register_landing_applicant_type_new_container {
+    max-width: 500px;
+    width: 96%;
+    height: 180px;
+    margin-right: 0%;
+  }
+  .new_applicant_description {
+    /*background-color: blue;*/
+  }
+}

@@ -6,7 +6,7 @@ function LandingPage() {
   return (
     <div>
       <Header />
-      <div id="wrapper">
+      <div className="between_wrapper">
         <h1>dd1</h1>
         <h1>ddd</h1>
         <h1>ddd</h1>
