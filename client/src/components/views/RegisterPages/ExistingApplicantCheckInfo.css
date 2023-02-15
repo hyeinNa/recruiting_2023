@@ -4,7 +4,7 @@
   --register-checkInfo-forms-border-radius: 15px;
   --register-checkInfo-button-border-radius: 20px;
   --register-checkInfo-form-labels-font-weight: 700;
-  --register-checkInfo-forms-height: 50px;
+  --register-checkInfo-forms-height: 40px;
   --register-checkInfo-forms-button-height: 50px;
   --register-checkInfo-forms-margin-bottom: 7%;
 }
@@ -82,7 +82,7 @@
   padding: 8px 5px;
 }
 .register_checkInfo_forms {
-  width: 100%;
+  width: 96%;
   height: var(--register-checkInfo-forms-height);
   background-color: var(--register-checkInfo-forms-color);
   border-color: transparent;
@@ -91,7 +91,7 @@
   font-size: 17px;
   padding-left: 15px;
   font-weight: 600;
-  padding: 0;
+  padding: 10px;
   border-width: 0;
 }
 .register_checkInfo_button {
