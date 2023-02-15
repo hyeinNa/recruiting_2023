@@ -6,54 +6,63 @@ const { AdminPW } = process.env;
 
 const adminRouter = express.Router();
 
-//관리자 비밀번호 입력받기
+//input admin password
 const askAdmin = (req, res) => {
-    console.log("hi");
-    res.send("r u admin?");
+    //loggedin
+    if (req.session.loggedIn === true)
+        return res.redirect("/api/admin/");
+    // logged out
+    res.send("비밀번호를 입력하는 페이지~~");
 }
 
-//admin이 맞는지 확인한다
+//관리자 비밀번호 확인
 const checkAdmin = (req, res) => {
-    pw = req.body.data;
-    if (pw === AdminPW)
-        res.redirect(`/admin:${pw}`);
-    else {
-        res.json(
+    pw = req.body.pw;
+    if (pw !== AdminPW) {
+        return res.status(400).json(
             {
                 message: "비밀번호가 틀렸습니다",
             }
         );
     }
+    req.session.loggedIn = true; //session DB에 true로 저장
+    return res.redirect("/api/admin");
 }
 
-//비밀번호 입력후 관리자페이지
+//관리자페이지
 const applyList = (req, res) => {
+    //logged out
+    if (req.session.loggedIn === undefined)
+        return res.redirect("/api/admin/login");
+    //logged in
     res.send("지원한 사람들 목록~");
 }
 
-//지원자의 합불 여부를 결정한다
+//지원자의 합불 여부를 결정
 const selectPass = (req, res) => {
-    const pass = req.body;
+    const { name, studentId, ewhaianId, pass, key } = req.body;
+
     try {
         Applicant.findOneAndUpdate(
-            {   //지원자 선택
-                name: req.body.name,
-                studentId: req.body.studentId,
-                ewhaianId: req.body.ewhaianId,
+            {
+                name: name,
+                studentId: studentId,
+                ewhaianId: ewhaianId,
             },
-            {   //합불여부 update
+            {   //합불여부, key update
                 pass: pass,
+                key: key,
             }
-        );
-        res.redirect(`/admin:${AdminPW}`);
+        )
+        res.redirect("/api/admin/");
     }
-    catch (e) {
-        console.error(e);
+    catch (err) {
+        console.error(err);
+        return res.status(500).send({ err: err.message });
     }
-
 }
 
-adminRouter.route("/admin").get(askAdmin).post(checkAdmin);
-adminRouter.route(`/admin:${AdminPW}`).get(applyList).post(selectPass);
+adminRouter.route("/login").get(askAdmin).post(checkAdmin);
+adminRouter.route("/").get(applyList).post(selectPass);
 
 module.exports = adminRouter;
