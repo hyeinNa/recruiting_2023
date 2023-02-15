@@ -4,24 +4,43 @@ const updateRoute = express.Router();
 const { Applicant } = require("../models/Applicant");
 
 //수정하기
-updateRoute.patch("/update", (req, res) => {
+updateRoute.put("/update", async (req, res) => { //async - await
 
-    let info = {
-        name: req.body.name,
-        studentId: req.body.studentId,
+    const { name, studentId, ewhaianId } = req.body
 
-    }
+    let applicantID = req.body.applicantID //ObjectID
+
     let updatedData = {
-        ewhaianId: req.body.ewhaianId
+        name,
+        studentId,
+        ewhaianId
     }
     try {
-        Applicant.findByIdAndUpdate(info, { $set: updatedData }) //findByIDAndUpdate (조건:info, 갱신: updatedData)
+        await Applicant.findByIdAndUpdate(applicantID, { $set: updatedData }) //findByIDAndUpdate (조건:applicantID, 갱신: updatedData)
         res.json({
-            messsage: "지원서가 수정되었습니다"
+            messsage: "지원자 정보가 수정되었습니다"
         })
     } catch (error) {
+        if (!name || typeof name !== 'string') {
+            return res.json({ status: 'error', error: '성명을 입력하세요.' })
+        }
+        if (name.length > 10) {
+            return res.json({ status: 'error', error: '성명은 최대 10글자입니다.' })
+        }
+        if (!studentId || typeof studentId !== 'string') {
+            return res.json({ status: 'error', error: '학번을 입력하세요.' })
+        }
+        if (studentId.length !== 7) {
+            return res.json({ status: 'error', error: '학번은 7자리입니다.' })
+        }
+        if (!ewhaianId || typeof ewhaianId !== 'string') {
+            return res.json({ status: 'error', error: '이화이언 아이디를 입력하세요.' })
+        }
+        if (ewhaianId.length > 20) {
+            return res.json({ status: 'error', error: '이화이언 아이디는 최대 20글자입니다.' })
+        }
         res.json({
-            message: "이름/학번/이화이언ID를 다시 확인해주십시오"
+            message: "error occured"
         })
     }
 });

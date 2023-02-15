@@ -27,7 +27,8 @@ const applicantSchema = mongoose.Schema({
     type: String,
   },
   applicant: {
-    type: String
+    type: String,
+    //unique: true
   }
 });
 
