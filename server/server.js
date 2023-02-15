@@ -6,7 +6,7 @@ const mongoose = require("mongoose");
 //express로 app 객체 만들기
 const app = express();
 //.env에서 PORT와 MONGO_URI 가져오기
-const { PORT, MONGO_URI } = process.env;
+const { PORT, MONGO_URI, SECRET_KEY } = process.env;
 //body-parser 가져오기
 const bodyParser = require("body-parser");
 //express-session 가져오기
@@ -28,7 +28,7 @@ app.use('/uploads', express.static('uploads'))
 //session middleware 추가
 app.use(
   session({
-    secret: "Hello!",
+    secret: SECRET_KEY,
     resave: false,
     saveUninitialized: false,
     cookie: {
