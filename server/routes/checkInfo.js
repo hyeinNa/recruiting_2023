@@ -19,18 +19,19 @@ checkInfoRoute.post("/find", (req, res) => {
         console.log(err);
       } else {
         //에러가 발생하지 않았다면
-        console.log(datas);
         //찾은 결과 값이 존재하지 않다면
         //datas 배열이 0 이하면(비어있다면)
         if (datas.length <= 0) {
           return res.json({
             checkInfoSuccess: false,
-            messeage: "DB 내에 해당하는 지원자가 없습니다.",
+            message: "DB 내에 해당하는 지원자가 없습니다.",
           });
         } else {
+          let id = datas[0]._id;
           return res.json({
+            applicantId: id,
             checkInfoSuccess: true,
-            messeage: "DB 내에 해당하는 지원자가 있습니다.",
+            message: "DB 내에 해당하는 지원자가 있습니다.",
           });
         }
       }

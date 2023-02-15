@@ -18,11 +18,12 @@ const checkInfoRoutes = require("./routes/checkInfo");
 const registerRouter = require("./routes/register");
 const adminRouter = require("./routes/admin");
 const updateRouter = require("./routes/update");
-const uploadRouter = require("./middleware/upload");
+
 
 //body-parser 관련 코드
 app.use(bodyParser.urlencoded({ extended: true }));
 app.use(bodyParser.json());
+app.use('/uploads', express.static('uploads'))
 
 //session middleware 추가
 app.use(
@@ -52,7 +53,7 @@ app.get("/", (req, res) => {
   res.send("Successfully send");
 });
 app.use("/api/checkInfo", checkInfoRoutes);
-app.use("/api/register", uploadRouter.single('applicant'), registerRouter);
+app.use("/api/register", registerRouter);
 app.use("/api/admin", adminRouter);
 app.use("/api/update", updateRouter);
 //app 객체를 통해서 express 서버 열어주는 곳

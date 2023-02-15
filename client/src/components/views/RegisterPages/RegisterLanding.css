@@ -198,6 +198,11 @@
     margin-right: 0%;
     margin-bottom: 8%;
   }
+  .register_landing_applicant_type_existing_container a {
+    width: 100%;
+    height: 100%;
+    display: flex;
+  }
   .register_landing_applicant_type_inner_container {
     /*background-color: aquamarine;*/
     margin: 0 auto;
