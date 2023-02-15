@@ -9,6 +9,10 @@ const app = express();
 const { PORT, MONGO_URI } = process.env;
 //body-parser 가져오기
 const bodyParser = require("body-parser");
+//express-session 가져오기
+const session = require("express-session");
+//connect-mongo 가져오기
+const MongoStore = require("connect-mongo");
 //Route 가져오기
 const checkInfoRoutes = require("./routes/checkInfo");
 const registerRouter = require("./routes/register");
@@ -20,6 +24,18 @@ const uploadRouter = require("./middleware/upload");
 app.use(bodyParser.urlencoded({ extended: true }));
 app.use(bodyParser.json());
 
+//session middleware 추가
+app.use(
+  session({
+    secret: "Hello!",
+    resave: false,
+    saveUninitialized: false,
+    cookie: {
+      maxAge: 1800000, //쿠키 만료 시간 30분
+      store: MongoStore.create({ mongoUrl: MONGO_URI }), //db에 세션 쿠키 저장
+    }
+  })
+);
 //mongoose를 이용하여 app과 몽고DB를 연결 함.
 mongoose.set("strictQuery", false);
 mongoose
