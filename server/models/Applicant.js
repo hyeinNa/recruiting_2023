@@ -5,20 +5,20 @@ const applicantSchema = mongoose.Schema({
   name: {
     type: String,
     maxlength: 10,
-    unique: true
+    unique: true,
   },
   studentId: {
     type: String,
     maxlength: 7,
-    unique: true
+    unique: true,
   },
   ewhaianId: {
     type: String,
     maxlength: 20,
-    unique: true
+    unique: true,
   },
   team: {
-    type: Number,
+    type: String,
   },
   pass: {
     type: String,
@@ -29,7 +29,7 @@ const applicantSchema = mongoose.Schema({
   applicant: {
     type: String,
     //unique: true
-  }
+  },
 });
 
 //Applicant 모델 생성

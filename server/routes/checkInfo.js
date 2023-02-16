@@ -7,13 +7,13 @@ const { Applicant } = require("../models/Applicant");
 
 //요청받은 이름, 학번, 이화이언 아이디가 DB에 있는지 찾는다.
 checkInfoRoute.post("/find", (req, res) => {
-  Applicant.find(
+  Applicant.findOne(
     {
       name: req.body.name,
       studentId: req.body.studentId,
       ewhaianId: req.body.ewhaianId,
     },
-    (err, datas) => {
+    (err, data) => {
       if (err) {
         //에러가 발생했다면, 에러 출력하기
         console.log(err);
@@ -21,17 +21,19 @@ checkInfoRoute.post("/find", (req, res) => {
         //에러가 발생하지 않았다면
         //찾은 결과 값이 존재하지 않다면
         //datas 배열이 0 이하면(비어있다면)
-        if (datas.length <= 0) {
+        if (!data) {
           return res.json({
             checkInfoSuccess: false,
             message: "DB 내에 해당하는 지원자가 없습니다.",
           });
         } else {
-          let id = datas[0]._id;
+          let id = data._id;
+          let pass = data.pass;
           return res.json({
             applicantId: id,
             checkInfoSuccess: true,
             message: "DB 내에 해당하는 지원자가 있습니다.",
+            pass: pass,
           });
         }
       }
