@@ -35,21 +35,23 @@ function RegisterLanding() {
               </div>
 
               <div className="register_landing_applicant_type_new_container register_landing_border_style">
-                <div className="register_landing_applicant_type_inner_container">
-                  <div className="applicant_img_wrapper">
-                    <img
-                      src="/img/registerLanding/new_applicant_img.png"
-                      alt="newApplicantImg"
-                      className="new_applicant_img"
-                    />
-                  </div>
-                  <div className="applicant_content_wrapper">
-                    <div className="applicant_title">신규 지원자</div>
-                    <div className="new_applicant_description">
-                      처음 지원하시나요?
+                <Link to="/register/newEnroll">
+                  <div className="register_landing_applicant_type_inner_container">
+                    <div className="applicant_img_wrapper">
+                      <img
+                        src="/img/registerLanding/new_applicant_img.png"
+                        alt="newApplicantImg"
+                        className="new_applicant_img"
+                      />
+                    </div>
+                    <div className="applicant_content_wrapper">
+                      <div className="applicant_title">신규 지원자</div>
+                      <div className="new_applicant_description">
+                        처음 지원하시나요?
+                      </div>
                     </div>
                   </div>
-                </div>
+                </Link>
               </div>
             </div>
           </div>
