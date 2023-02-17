@@ -33,14 +33,20 @@ registerRoute.post('/register', uploadRouter.single('applicant'), async (req, re
     if (ewhaianId.length > 20) {
         return res.json({ status: 'error', error: '이화이언 아이디는 최대 20글자입니다.' })
     }
+    if (!req.file) {
+        return res.json({
+            status: "error",
+            error: "지원서를 첨부하세요",
+        });
+    }
     //입력받은 정보를 바탕으로 새로운 applicant 생성하기
     try {
         const response = await Applicant.create({
             name,
             studentId,
-            ewhaianId
+            ewhaianId,
         })
-        if (req.file) {
+        if (req.file) {// 수정할점: 기존지원자여서 catch문으로 가도 파일이 업로드됨/ upload.js 수정필요할듯
             response.applicant = req.file.path
         }
         console.log('User created successfully', response)
