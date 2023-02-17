@@ -23,10 +23,9 @@ updateRoute.post("/get", (req, res) => {
 //수정하기
 updateRoute.put("/update", async (req, res) => {
   //async - await
-
   const { name, studentId, ewhaianId } = req.body;
 
-  let applicantID = req.body.applicantID; //ObjectID
+  let id = req.body.id; //ObjectID
 
   let updatedData = {
     name,
@@ -34,11 +33,6 @@ updateRoute.put("/update", async (req, res) => {
     ewhaianId,
   };
   try {
-    await Applicant.findByIdAndUpdate(applicantID, { $set: updatedData }); //findByIDAndUpdate (조건:applicantID, 갱신: updatedData)
-    res.json({
-      messsage: "지원자 정보가 수정되었습니다",
-    });
-  } catch (error) {
     if (!name || typeof name !== "string") {
       return res.json({ status: "error", error: "성명을 입력하세요." });
     }
@@ -63,6 +57,12 @@ updateRoute.put("/update", async (req, res) => {
         error: "이화이언 아이디는 최대 20글자입니다.",
       });
     }
+    await Applicant.findByIdAndUpdate(id, { $set: updatedData }); //findByIDAndUpdate (조건:id, 갱신: updatedData)
+    res.json({
+      status: "ok",
+      message: "지원자 정보가 수정되었습니다",
+    });
+  } catch (error) {
     res.json({
       message: "error occured",
     });

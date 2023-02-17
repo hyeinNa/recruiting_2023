@@ -2,6 +2,7 @@ import React from "react";
 import { useState, useEffect } from "react";
 import axios from "axios";
 
+
 function UpdatePage() {
   //url에서 지원자 고유 id 알아내기
   const pathName = window.location.pathname;
@@ -11,8 +12,9 @@ function UpdatePage() {
     name: "",
     studentId: "",
     ewhaianId: "",
+    applicant: "",
   });
-  const { name, studentId, ewhaianId } = inputs;
+  const { name, studentId, ewhaianId, applicant } = inputs;
   const onChange = (e) => {
     const { value, name } = e.target;
     setInputs({
@@ -37,6 +39,30 @@ function UpdatePage() {
         console.log("An error occurred: ", error.response);
       });
   }, []);
+
+  //async-await방식 사용
+  const updateInfo = async () => {
+    try { //고유 id 및 폼에 입력받은 정보를 수정하기 api로 전달
+      const response = await axios.put("/api/update/update", {
+        id: applicantId, name: inputs.name,
+        studentId: inputs.studentId,
+        ewhaianId: inputs.ewhaianId
+      });
+      let status = response.data.status;
+      let err = response.data.error;
+      let message = response.data.message;
+      if (status === "ok") {
+        console.log(message);
+        alert(message)
+      }
+      else {
+        console.log(err);
+        alert(err) //수정하기 api에서 각 if문에 맞는 error문 출력
+      }
+    } catch (error) {
+      console.log(error.response);
+    }
+  }
 
   return (
     <div>
@@ -67,6 +93,21 @@ function UpdatePage() {
             onChange={onChange}
             required
           />
+          <input
+            type="file"
+            name="applicant"
+            className="register_checkInfo_forms"
+            value={applicant}
+            onChange={onChange}
+            required
+          />
+          <button
+            type="button"
+            className="register_checkInfo_button"
+            onClick={updateInfo}
+          >
+            확인
+          </button>
         </form>
       </div>
     </div>
