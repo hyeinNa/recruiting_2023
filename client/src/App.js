@@ -9,6 +9,7 @@ import ShowResult from "./components/views/ResultPages/ShowResult";
 //어떤 파일이든 색상 변수 사용할 수 있도록, color css파일 불러오기
 import "./components/utilis/color.css";
 import NotPeriod from "./components/views/ResultPages/NotPeriod";
+import NewApplicantEnroll from "./components/views/RegisterPages/NewApplicantEnroll";
 
 function App() {
   return (
@@ -22,6 +23,11 @@ function App() {
             exact
             path="/register/checkinfo"
             element={<ExistingApplicantCheckInfo />}
+          />
+          <Route
+            exact
+            path="/register/newEnroll"
+            element={<NewApplicantEnroll />}
           />
           <Route exact path="/update/:id" element={<Update />} />
           <Route exact path="/result/checkinfo" element={<CheckResult />} />
