@@ -1,0 +1,121 @@
+.ActivitiesBackGround {
+    background-color: black;
+    color: white;
+}
+
+.ActivitiesHeader {
+    color: #EB1568;
+    font-family: 'Inter';
+    font-style: normal;
+    font-weight: 700;
+    font-size: 3vw;
+    text-align: center;
+    margin-bottom: 2vh;
+    margin-top: 20px;
+    line-height: 1;
+}
+
+.ActivitiesAll {
+    display: flex;
+    width: 90vw;
+    height: auto;
+    flex-wrap: nowrap;
+    justify-content: flex-start;
+    overflow-x: auto;
+    overflow-y: hidden;
+    margin-left: 5vw;
+}
+
+.EachActivity {
+
+    width: 16.7vw;
+    height: auto;
+    margin-left: 5vw;
+}
+
+.TurnToImg {
+    background-color: gray;
+    width: 16.7vw;
+    height: 21.9vw;
+    margin-bottom: 1.5vh;
+}
+
+.ActivityName {
+    font-family: 'Inter';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 1.9vw;
+    line-height: 1;
+    margin-bottom: 1vh;
+    white-space: nowrap;
+}
+
+.ActivityText {
+    font-family: 'Inter';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 1.9vw;
+    line-height: 1;
+    margin-bottom: 2.5vh;
+}
+
+.LinkToEventSketch {
+    font-family: 'Inter';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 16px;
+    line-height: 19px;
+    text-align: center;
+}
+
+
+.ActivitiesAll::-webkit-scrollbar {
+    background-color: #A1A1A1;
+    height: 20px !important;
+    /* width: 431px; */
+    border-radius: 194px;
+}
+
+.ActivitiesAll::-webkit-scrollbar-thumb {
+    /* height: 24px;
+    width: 173px; */
+    height: 5px;
+    background-color: #FBF1F1;
+    border-radius: 194px;
+}
+
+/* 스크롤바 사이즈 조정해야함-사이즈 조정 안됨*/
+@media screen and (max-width: 360px) {
+
+    .ActivitiesHeader {
+        font-size: 18px;
+        margin-bottom: 10px;
+        margin-top: 5px;
+    }
+
+    .ActivityName {
+        font-size: 12px;
+        margin-bottom: 3px;
+    }
+
+    .ActivityText {
+        font-size: 12px;
+        margin-bottom: 5px;
+    }
+
+    .LinkToEventSketch {
+        font-size: 7px;
+        /* white-space: nowrap; */
+    }
+
+    .EachActivity {
+        width: 90px;
+        height: auto;
+        justify-content: center;
+    }
+
+    .TurnToImg {
+        width: 70px;
+        height: 90px;
+    }
+}
