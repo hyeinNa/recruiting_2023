@@ -1,7 +1,9 @@
 const express = require("express");
+const fs = require('fs')
 const updateRoute = express.Router();
 const mongoose = require("mongoose");
 const { Applicant } = require("../models/Applicant");
+const uploadRouter = require("../middleware/upload");
 
 //id로 지원자 찾기
 updateRoute.post("/get", (req, res) => {
@@ -21,11 +23,12 @@ updateRoute.post("/get", (req, res) => {
   );
 });
 //수정하기
-updateRoute.put("/update", async (req, res) => {
+updateRoute.put("/update", uploadRouter.single('applicant'), async (req, res) => {
   //async - await
   const { name, studentId, ewhaianId } = req.body;
-
+  // const applicant = req.file.path;
   let id = req.body.id; //ObjectID
+  //let applicant = req.file.path;
 
   let updatedData = {
     name,
@@ -57,15 +60,27 @@ updateRoute.put("/update", async (req, res) => {
         error: "이화이언 아이디는 최대 20글자입니다.",
       });
     }
-    await Applicant.findByIdAndUpdate(id, { $set: updatedData }); //findByIDAndUpdate (조건:id, 갱신: updatedData)
+    if (!req.file) {
+      return res.json({
+        status: "error",
+        error: "지원서를 첨부하세요",
+      });
+    }
+    const updated = await Applicant.findByIdAndUpdate(id, { $set: updatedData }); //findByIDAndUpdate (조건:id, 갱신: updatedData)
+    if (req.file) {
+      updated.applicant = req.file.path;
+      //await fs.unlinkASync(applicant) //기존 지원서 삭제
+    }
     res.json({
       status: "ok",
       message: "지원자 정보가 수정되었습니다",
     });
+    console.log(updated)
   } catch (error) {
     res.json({
       message: "error occured",
     });
   }
+
 });
 module.exports = updateRoute;
