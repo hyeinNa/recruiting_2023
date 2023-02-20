@@ -8,6 +8,8 @@ import CheckResult from "./components/views/ResultPages/CheckResult";
 import ShowResult from "./components/views/ResultPages/ShowResult";
 //어떤 파일이든 색상 변수 사용할 수 있도록, color css파일 불러오기
 import "./components/utilis/color.css";
+//모든 파일에서 폰트 통일
+import "./components/utilis/font.css";
 import NotPeriod from "./components/views/ResultPages/NotPeriod";
 import NewApplicantEnroll from "./components/views/RegisterPages/NewApplicantEnroll";
 
