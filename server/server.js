@@ -18,12 +18,12 @@ const checkInfoRoutes = require("./routes/checkInfo");
 const registerRouter = require("./routes/register");
 const adminRouter = require("./routes/admin");
 const updateRouter = require("./routes/update");
-
+const modifyBasicInfoRoute = require("./routes/modifyBasicInfo");
 
 //body-parser 관련 코드
 app.use(bodyParser.urlencoded({ extended: true }));
 app.use(bodyParser.json());
-app.use('/uploads', express.static('uploads'))
+app.use("/uploads", express.static("uploads"));
 
 //session middleware 추가
 app.use(
@@ -34,7 +34,7 @@ app.use(
     cookie: {
       maxAge: 1800000, //쿠키 만료 시간 30분
       store: MongoStore.create({ mongoUrl: MONGO_URI }), //db에 세션 쿠키 저장
-    }
+    },
   })
 );
 //mongoose를 이용하여 app과 몽고DB를 연결 함.
@@ -56,6 +56,7 @@ app.use("/api/checkInfo", checkInfoRoutes);
 app.use("/api/register", registerRouter);
 app.use("/api/admin", adminRouter);
 app.use("/api/update", updateRouter);
+app.use("/api/manager", modifyBasicInfoRoute);
 //app 객체를 통해서 express 서버 열어주는 곳
 app.listen(PORT, () => {
   console.log(`recruiting-site server listening on port ${PORT}`);
