@@ -12,6 +12,7 @@ import "./components/utilis/color.css";
 import "./components/utilis/font.css";
 import NotPeriod from "./components/views/ResultPages/NotPeriod";
 import NewApplicantEnroll from "./components/views/RegisterPages/NewApplicantEnroll";
+import AdminLogin from "./components/views/AdminPages/AdminLogin";
 
 function App() {
   return (
@@ -35,6 +36,7 @@ function App() {
           <Route exact path="/result/checkinfo" element={<CheckResult />} />
           <Route exact path="/result/:id" element={<ShowResult />} />
           <Route exact path="/result/notperiod/:id" element={<NotPeriod />} />
+          <Route exact path="/admin" element={<AdminLogin />} />
         </Routes>
       </BrowserRouter>
     </div>
