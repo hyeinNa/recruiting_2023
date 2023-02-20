@@ -1,0 +1,81 @@
+:root {
+    --admin-login-form-margin-top: 32px;
+}
+
+.admin_login {
+    width: 100%;
+    height: 100%;
+    background: var(--toneDown-black);
+}
+
+.admin_login_container {
+    max-width: var(--nav-bar-max-width);
+    margin: 0 auto;
+    width: 100%;
+    height: auto;
+    padding-top: 60px;
+    padding-bottom: 275px;
+}
+
+.admin_login_inner_container {
+    width: 92%;
+    height: 100%;
+    margin: 0 auto;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: flex-start;
+}
+
+.admin_login_title {
+    width: 100%;
+    text-align: center;
+    font-size: var(--register-landing-title-font-size);
+    font-weight: var(--register-landing-title-font-weight);
+    letter-spacing: 10px;
+    color: var(--toneDown-white);
+    margin-top: 17%;
+}
+
+.admin_login_form_wrapper {
+    width: 50%;
+    margin-top: var(--admin-login-form-margin-top);
+    margin-bottom: var(--register-checkInfo-forms-margin-bottom);
+}
+
+.admin_login_form_wrapper input::placeholder {
+    color: var(--toneDown-white);
+    font-size: 15px;
+    opacity: 50%;
+}
+
+.admin_login_form {
+    width: 60%;
+    height: var(--register-checkInfo-forms-height);
+    background-color: var(--register-checkInfo-forms-color);
+    border-color: transparent;
+    border-radius: var(--register-checkInfo-forms-border-radius);
+    color: var(--toneDown-white);
+    font-size: 25px;
+    padding-left: 15px;
+    font-weight: 600;
+    padding: 10px;
+    border-width: 0;
+    margin-left: 70px;
+    margin-right: 15px;
+}
+
+.admin_login_button {
+    width: 10%;
+    height: var(--register-checkInfo-forms-height);
+    background-color: var(--register-checkInfo-forms-color);
+    border-color: transparent;
+    border-radius: var(--register-checkInfo-forms-border-radius);
+    color: var(--toneDown-white);
+    font-size: 17px;
+    font-weight: 600;
+    font-size: 15px;
+    padding: 10px;
+    border-width: 0;
+    margin-right: 15px;
+}
