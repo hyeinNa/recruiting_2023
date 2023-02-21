@@ -1,7 +1,23 @@
-import React from "react";
+import React, { useEffect, useState } from "react";
+import axios from "axios";
 import "./Footer.css";
-import { cardinal_number } from "../../Var";
+
 function Footer() {
+  const [cardinalNum, setCardinalNum] = useState("");
+  useEffect(() => {
+    axios
+      .post("/api/var/load", {
+        key: 1234,
+      })
+      .then((response) => {
+        console.log(response.data);
+        if (response.data.isInDB === "false") {
+          setCardinalNum("");
+        } else {
+          setCardinalNum(response.data.cardinalNumber);
+        }
+      });
+  }, []);
   return (
     <footer className="footer_container">
       <div className="footer_inner_container">
@@ -17,28 +33,57 @@ function Footer() {
             <div className="footer_kakaotalk_container">
               <div className="footer_kakaotalk_label">카카오톡 채널</div>
               <div className="footer_kakaotalk_content">
-                “이화이언 {cardinal_number}기 수습운영진 모집”
+                “이화이언 {cardinalNum}기 수습운영진 모집”
               </div>
             </div>
+            <ul className="footer_social_list">
+              <li>
+                <img
+                  src="/img/footer/sns_blog.png"
+                  alt="blogLink"
+                  onClick={() => {
+                    window.open("https://m.blog.naver.com/ewhaianblog");
+                  }}
+                />
+              </li>
+              <li>
+                <img
+                  src="/img/footer/sns_instagram.png"
+                  alt="instagramLink"
+                  onClick={() => {
+                    window.open("http://instagram.com/ewhaian_2001");
+                  }}
+                />
+              </li>
+              <li>
+                <img
+                  src="/img/footer/sns_gmail.png"
+                  alt="gmailLink"
+                  onClick={() => {
+                    window.open("mailto:ewhaianrecruit@daum.net");
+                  }}
+                />
+              </li>
+              <li>
+                <img
+                  src="/img/footer/sns_ewhaian.png"
+                  alt="ewhaianLink"
+                  onClick={() => {
+                    window.open("http://www.ewhaian.com");
+                  }}
+                />
+              </li>
+              <li>
+                <img
+                  src="/img/footer/sns_kakaotalk.png"
+                  alt="kakaotalkLink"
+                  onClick={() => {
+                    window.open("http://pf.kakao.com/_xecNWxj");
+                  }}
+                />
+              </li>
+            </ul>
           </div>
-
-          <ul className="footer_social_list">
-            <li>
-              <img src="/img/footer/sns_blog.png" alt="blogLink" />
-            </li>
-            <li>
-              <img src="/img/footer/sns_instagram.png" alt="instagramLink" />
-            </li>
-            <li>
-              <img src="/img/footer/sns_gmail.png" alt="gmailLink" />
-            </li>
-            <li>
-              <img src="/img/footer/sns_ewhaian.png" alt="ewhaianLink" />
-            </li>
-            <li>
-              <img src="/img/footer/sns_kakaotalk.png" alt="kakaotalkLink" />
-            </li>
-          </ul>
         </div>
       </div>
     </footer>
