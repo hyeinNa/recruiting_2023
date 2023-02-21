@@ -1,7 +1,23 @@
-import React from "react";
+import React, { useEffect, useState } from "react";
+import axios from "axios";
 import "./Footer.css";
-import { cardinal_number } from "../../Var";
+
 function Footer() {
+  const [cardinalNum, setCardinalNum] = useState("");
+  useEffect(() => {
+    axios
+      .post("/api/var/load", {
+        key: 1234,
+      })
+      .then((response) => {
+        console.log(response.data);
+        if (response.data.isInDB === "false") {
+          setCardinalNum("");
+        } else {
+          setCardinalNum(response.data.cardinalNumber);
+        }
+      });
+  }, []);
   return (
     <footer className="footer_container">
       <div className="footer_inner_container">
@@ -17,7 +33,7 @@ function Footer() {
             <div className="footer_kakaotalk_container">
               <div className="footer_kakaotalk_label">카카오톡 채널</div>
               <div className="footer_kakaotalk_content">
-                “이화이언 {cardinal_number}기 수습운영진 모집”
+                “이화이언 {cardinalNum}기 수습운영진 모집”
               </div>
             </div>
             <ul className="footer_social_list">
