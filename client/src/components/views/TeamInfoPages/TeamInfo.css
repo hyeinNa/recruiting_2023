@@ -1,0 +1,55 @@
+.teamInfo_container {
+  width: 100%;
+  height: auto;
+  background-color: var(--teamInfo-bg-color);
+}
+.teamInfo_inner_container {
+  max-width: var(--nav-bar-max-width);
+  width: 100%;
+  height: 100%;
+  margin: 0 auto;
+}
+.teamInfo_content_container {
+  width: 92%;
+  margin: 0 auto;
+}
+.teamInfo_title {
+  font-size: 45px;
+  font-weight: bold;
+  color: white;
+  padding-top: 143px;
+}
+.teamInfo_title_description {
+  font-size: 17px;
+  margin-top: 29px;
+  line-height: 27px;
+  color: #e3e3e3;
+  font-weight: 500;
+  word-break: keep-all;
+}
+.teamInfo_button_container {
+  margin-top: 47px;
+}
+.teamInfo_button_container button {
+  margin-right: 10px;
+}
+.teamInfo_btn {
+  background-color: var(--teamInfo-bg-color);
+  border: 0;
+  border-radius: 30px;
+  color: #c6c6c6;
+  font-size: 17px;
+  font-weight: 600;
+  padding: 12px 20px;
+}
+.unclicked {
+  background-color: var(--teamInfo-bg-color);
+  color: #c6c6c6;
+}
+.clicked {
+  background-color: white;
+  color: #3c3c3c;
+}
+.teamInfo_team_content_container {
+  margin-top: 18px;
+}
