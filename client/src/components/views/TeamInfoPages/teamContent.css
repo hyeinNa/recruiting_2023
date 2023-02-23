@@ -1,0 +1,55 @@
+.team_content_wrap {
+  background-color: #212122;
+  border-radius: 5px;
+  display: flex;
+  flex-direction: column;
+  margin-bottom: 26px;
+}
+.team_content_label {
+  font-size: 17px;
+  color: #e3e3e3;
+  line-height: 27px;
+  font-weight: 600;
+  margin: 29px 0px 0px 29px;
+}
+.team_content {
+  font-size: 17px;
+  font-weight: 500;
+  line-height: 33px;
+  margin-top: 10px;
+  margin-bottom: 28px;
+  color: #bbbbbb;
+  padding-left: 55px;
+  word-break: keep-all;
+}
+.goSubActivity {
+  width: 182px;
+  height: 27px;
+  margin: 0 auto;
+  padding-bottom: 153px;
+}
+.goSubActivity img {
+  width: 100%;
+}
+.web_tech_container {
+  margin-top: 23px;
+  margin-bottom: 28px;
+  margin-left: 29px;
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+}
+.web_tech_items {
+  width: 85px;
+  height: 27px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: aliceblue;
+  padding: 9px 10px;
+  border-radius: 5px;
+  font-size: 17px;
+  font-weight: 600;
+  margin-right: 12px;
+  margin-bottom: 5px;
+}

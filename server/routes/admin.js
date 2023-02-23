@@ -21,12 +21,16 @@ const checkAdmin = (req, res) => {
     if (pw !== AdminPW) {
         return res.status(400).json(
             {
+                loggedIn: req.session.loggedIn,
                 message: "비밀번호가 틀렸습니다",
             }
         );
     }
     req.session.loggedIn = true; //session DB에 true로 저장
-    return res.redirect("/api/admin");
+    res.json({
+        loggedIn: req.session.loggedIn,
+        message: " 비밀번호가 맞습니다",
+    });
 }
 
 //관리자페이지

@@ -41,7 +41,7 @@ function Header() {
               <Link to="/register">이화이언 소개</Link>
             </li>
             <li>
-              <Link to="/">팀 소개</Link>
+              <Link to="/teamInfo">팀 소개</Link>
             </li>
             <li>
               <Link to="/">지난 이화이언</Link>
