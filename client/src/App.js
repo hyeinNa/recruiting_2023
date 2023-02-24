@@ -45,7 +45,7 @@ function App() {
           <Route exact path="/admin/modifyInfo/:id" element={<Modify />} />
           <Route
             exact
-            path="/admin/applicantList/:id"
+            path="/admin/applicantList"
             element={<ApplicantList />}
           />
           <Route exact path="/admin/landing" element={<GenerateDB />} />

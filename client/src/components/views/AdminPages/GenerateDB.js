@@ -93,7 +93,7 @@ function GenerateDB() {
               <button
                 type="button"
                 onClick={() => {
-                  navigate("/admin/applicantList/" + objectId, {
+                  navigate("/admin/applicantList", {
                     replace: false,
                   });
                 }}
