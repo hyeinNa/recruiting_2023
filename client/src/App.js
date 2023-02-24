@@ -14,7 +14,8 @@ import "./components/utilis/font.css";
 import NotPeriod from "./components/views/ResultPages/NotPeriod";
 import NewApplicantEnroll from "./components/views/RegisterPages/NewApplicantEnroll";
 import AdminLogin from "./components/views/AdminPages/AdminLogin";
-import ModifyInfo from "./components/views/ManagerPages/ModifyInfo";
+//import ModifyInfo from "./components/views/ManagerPages/ModifyInfo";
+import Modify from "./components/views/AdminPages/ModifyInfo";
 import GenerateDB from "./components/views/AdminPages/GenerateDB";
 import ApplicantList from "./components/views/AdminPages/ApplicantList";
 function App() {
@@ -41,7 +42,7 @@ function App() {
           <Route exact path="/result/:id" element={<ShowResult />} />
           <Route exact path="/result/notperiod/:id" element={<NotPeriod />} />
           <Route exact path="/admin" element={<AdminLogin />} />
-          <Route exact path="/admin/modifyInfo/:id" element={<ModifyInfo />} />
+          <Route exact path="/admin/modifyInfo/:id" element={<Modify />} />
           <Route
             exact
             path="/admin/applicantList/:id"
