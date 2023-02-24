@@ -89,6 +89,7 @@ function ModifyRecruitInfo() {
         console.log("An error occurred: ", error.response);
       });
     window.location.reload();
+    alert("수정이 완료되었습니다.");
   };
   return (
     <div className="modify_recruitInfo_container">
@@ -127,7 +128,7 @@ function ModifyRecruitInfo() {
               <input
                 type="checkbox"
                 className="recruitInfo_radio"
-                name="marketing"
+                name="doesRecruitMarketing"
                 value={doesRecruitMarketing || false}
                 checked={doesRecruitMarketing}
                 onChange={checkingCheckBox}
@@ -138,7 +139,7 @@ function ModifyRecruitInfo() {
               <input
                 type="checkbox"
                 className="recruitInfo_radio"
-                name="design"
+                name="doesRecruitDesign"
                 value={doesRecruitDesign || false}
                 checked={doesRecruitDesign}
                 onChange={checkingCheckBox}
@@ -149,7 +150,7 @@ function ModifyRecruitInfo() {
               <input
                 type="checkbox"
                 className="recruitInfo_radio"
-                name="webDev"
+                name="doesRecruitWebDev"
                 value={doesRecruitWebDev || false}
                 checked={doesRecruitWebDev}
                 onChange={checkingCheckBox}

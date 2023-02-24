@@ -48,7 +48,7 @@ modifyBasicInfoRoute.post("/init", (req, res) => {
       interviewPeriod: req.body.interviewPeriod,
       finalPresentationPeriod: req.body.finalPresentationPeriod,
       masterName: req.body.masterName,
-      masterPhoneNubmer: req.body.masterPhoneNubmer,
+      masterPhoneNumber: req.body.masterPhoneNumber,
       masterTrainingPlace: req.body.masterTrainingPlace,
     },
     (err) => {
@@ -72,7 +72,7 @@ modifyBasicInfoRoute.post("/modify/recruitInfo", (req, res) => {
       finalPresentationPeriod: req.body.finalPresentationPeriod,
       isApplicationPeriod: req.body.isApplicationPeriod,
       masterName: req.body.masterName,
-      masterPhoneNubmer: req.body.masterPhoneNubmer,
+      masterPhoneNumber: req.body.masterPhoneNumber,
       masterTrainingPlace: req.body.masterTrainingPlace,
       doesRecruitMarketing: req.body.doesRecruitMarketing,
       doesRecruitDesign: req.body.doesRecruitDesign,
