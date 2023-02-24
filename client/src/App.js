@@ -15,8 +15,8 @@ import NotPeriod from "./components/views/ResultPages/NotPeriod";
 import NewApplicantEnroll from "./components/views/RegisterPages/NewApplicantEnroll";
 import AdminLogin from "./components/views/AdminPages/AdminLogin";
 import ModifyInfo from "./components/views/ManagerPages/ModifyInfo";
-import GenerateDB from "./components/views/ManagerPages/GenerateDB";
-
+import GenerateDB from "./components/views/AdminPages/GenerateDB";
+import ApplicantList from "./components/views/AdminPages/ApplicantList";
 function App() {
   return (
     <div className="App">
@@ -41,12 +41,13 @@ function App() {
           <Route exact path="/result/:id" element={<ShowResult />} />
           <Route exact path="/result/notperiod/:id" element={<NotPeriod />} />
           <Route exact path="/admin" element={<AdminLogin />} />
+          <Route exact path="/admin/modifyInfo/:id" element={<ModifyInfo />} />
           <Route
             exact
-            path="/manager/modifyInfo/:id"
-            element={<ModifyInfo />}
+            path="/admin/applicantList/:id"
+            element={<ApplicantList />}
           />
-          <Route exact path="/manager/generate" element={<GenerateDB />} />
+          <Route exact path="/admin/landing" element={<GenerateDB />} />
         </Routes>
       </BrowserRouter>
     </div>

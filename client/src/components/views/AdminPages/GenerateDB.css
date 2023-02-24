@@ -1,0 +1,104 @@
+.generateDB_container {
+  width: 100%;
+  height: 100vh;
+  background-color: #0a0a0a;
+}
+.generateDB_inner_container {
+  max-width: var(--nav-bar-max-width);
+  height: 100%;
+  margin: 0 auto;
+}
+.generateDB_content_container {
+  width: 92%;
+  height: 100%;
+  margin: 0 auto;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+.generateDB_title {
+  font-size: 45px;
+  font-weight: 700;
+  color: white;
+  letter-spacing: 10px;
+  text-align: center;
+  padding-top: 143px;
+}
+.generateDB_dbInfo_wrap {
+  min-width: 400px;
+  width: 60%;
+  height: 200px;
+  border: solid;
+  border-width: 2px;
+  border-radius: 44px;
+  border-color: var(--ewhaian-pink);
+  margin-top: 65px;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+}
+.dbInfo_labels {
+  width: 60%;
+  font-size: 20px;
+  font-weight: 400;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-evenly;
+  color: white;
+}
+.pink {
+  display: inline;
+  color: var(--ewhaian-pink);
+}
+.generateDB_button {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+.generateDB_button button {
+  border: 0;
+  border-radius: 10px;
+  width: 70px;
+  height: 70px;
+  background-color: #505050;
+  padding: 6px 10px;
+}
+.generateDB_button button:hover {
+  box-shadow: 0 5px 20px rgba(0, 0, 0, 0.8) inset;
+}
+
+.generateDB_button button div {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-around;
+  color: #eae8e8;
+}
+.generateDB_button button div img {
+  width: 25px;
+  height: auto;
+}
+.generateDB_move_buttons {
+  width: 100%;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  margin-top: 130px;
+}
+.generateDB_move_buttons button {
+  border: 0;
+  width: 200px;
+  height: 50px;
+  font-size: 18px;
+  font-weight: 600;
+  border-radius: 100px;
+  margin-left: 20px;
+  margin-right: 20px;
+  color: #3c3c3c;
+}
+.generateDB_move_buttons button:hover {
+  background-color: #eb166a;
+  color: #ffffff;
+}
