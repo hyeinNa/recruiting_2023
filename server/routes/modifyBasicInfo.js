@@ -39,12 +39,14 @@ modifyBasicInfoRoute.post("/init", (req, res) => {
     {
       key: req.body.key,
       cardinalNumber: req.body.cardinalNumber,
-      recruitingTeams: req.body.recruitingTeams,
+      isApplicationPeriod: req.body.isApplicationPeriod,
+      doesRecruitMarketing: req.body.doesRecruitMarketing,
+      doesRecruitDesign: req.body.doesRecruitDesign,
+      doesRecruitWebDev: req.body.doesRecruitWebDev,
       applicationSubmissionPeriod: req.body.applicationSubmissionPeriod,
       firstPresentationPeriod: req.body.firstPresentationPeriod,
       interviewPeriod: req.body.interviewPeriod,
       finalPresentationPeriod: req.body.finalPresentationPeriod,
-      isApplicationPeriod: req.body.isApplicationPeriod,
       masterName: req.body.masterName,
       masterPhoneNubmer: req.body.masterPhoneNubmer,
       masterTrainingPlace: req.body.masterTrainingPlace,
@@ -59,12 +61,11 @@ modifyBasicInfoRoute.post("/init", (req, res) => {
   );
 });
 //요청 받은 내용으로 DB 내용을 수정하기
-modifyBasicInfoRoute.post("/modify", (req, res) => {
+modifyBasicInfoRoute.post("/modify/recruitInfo", (req, res) => {
   BasicInfo.findOneAndUpdate(
     { key: 1234 },
     {
       cardinalNumber: req.body.cardinalNumber,
-      recruitingTeams: req.body.recruitingTeams,
       applicationSubmissionPeriod: req.body.applicationSubmissionPeriod,
       firstPresentationPeriod: req.body.firstPresentationPeriod,
       interviewPeriod: req.body.interviewPeriod,
@@ -73,6 +74,9 @@ modifyBasicInfoRoute.post("/modify", (req, res) => {
       masterName: req.body.masterName,
       masterPhoneNubmer: req.body.masterPhoneNubmer,
       masterTrainingPlace: req.body.masterTrainingPlace,
+      doesRecruitMarketing: req.body.doesRecruitMarketing,
+      doesRecruitDesign: req.body.doesRecruitDesign,
+      doesRecruitWebDev: req.body.doesRecruitWebDev,
     },
     { new: true },
     (err, data) => {
