@@ -4,14 +4,18 @@ import axios from "axios";
 import "./NewApplicantEnroll.css";
 import Footer from "../../Footer/Footer";
 import Header from "../../Header/Header";
+
 function NewApplicantEnroll() {
     const [inputs, setInputs] = useState({
         //team: "",
         name: "",
         studentId: "",
         ewhaianId: "",
+        applicant: ""
     });
-    const { /*team,*/ name, studentId, ewhaianId } = inputs;
+    const [file, setFile] = useState('');
+    const [filename, setFilename] = useState('Choose File');
+    const { /*team,*/ name, studentId, ewhaianId, applicant } = inputs;
 
     const onChange = (e) => {
         const { value, name } = e.target;
@@ -19,48 +23,57 @@ function NewApplicantEnroll() {
             ...inputs,
             [name]: value,
         });
+        setFile(e.target.files[0]);
+        setFilename(e.target.files[0].name);//주석 설명
     };
 
     const [selectedFile, setSelectedFile] = useState();
-    const onFileChange = (e) => {
-        setSelectedFile(e.target.files[0]);
-        var fileInput = document.getElementsByClassName("newEnroll_file");
-        var fileText = document.getElementById("upload_file_text");
-        for (var i = 0; i < fileInput.length; i++) {
-            if (fileInput[i].files.length > 0) {
-                for (var j = 0; j < fileInput[i].files.length; j++) {
-                    fileText.textContent = fileInput[i].files[j].name;
-                }
-            }
-        }
-    }
+    /*  const onFileChange = (e) => {
+         setSelectedFile(e.target.files[0]);
+         var fileInput = document.getElementsByClassName("newEnroll_file");
+         var fileText = document.getElementById("upload_file_text");
+         for (var i = 0; i < fileInput.length; i++) {
+             if (fileInput[i].files.length > 0) {
+                 for (var j = 0; j < fileInput[i].files.length; j++) {
+                     fileText.textContent = fileInput[i].files[j].name;
+                 }
+             }
+         }
+     } */
 
     //폼에 입력받은 정보를 정보 확인 api로 전달
-    const register = (e) => {
+    const register = async (e) => {
         e.preventDefault();
-        const formdata = new FormData();
-        formdata.append("file")
+        const formData = new FormData();
+        formData.append('applicant', file)
+        formData.append('name', name)
+        formData.append('studentId', studentId)
+        formData.append('ewhaianId', ewhaianId)
 
-        axios
-            .post("/api/register/register", {
-                team: inputs.team,
+        const config = { headers: { 'Content-Type': 'multipart/form-data' } };
+        try { //고유 id 및 폼에 입력받은 정보를 수정하기 api로 전달
+            const response = await axios.put("/api/register/register", formData, config, {
+                //team:
                 name: inputs.name,
                 studentId: inputs.studentId,
-                ewhaianId: inputs.ewhaianId,
-            })
-            .then((res) => {
-                console.log("information adding Success")
-            })
-            .catch((error) => {
-                console.log("An error occurred: ", error.res);
+                ewhaianId: inputs.ewhaianId
             });
-        // axios
-        //     .post("/api/", formdata)
+            let status = response.data.status;
+            let err = response.data.error;
+            let message = response.data.message;
+            if (status === "ok") {//register api의 message출력
+                console.log(message);
+                alert(message)
+            }
+            else {
+                console.log(err);
+                alert(err) //register api에서 각 if문에 맞는 error문 출력
+            }
 
-        //     .catch((err) => {
-        //         alert("파일 업로드에 실패했습니다. 다시 시도하세요.")
-        //     })
-    };
+        } catch (error) {
+            console.log(error.response);
+        }
+    }
 
     return (
         <div className="register_newEnroll">
@@ -135,10 +148,10 @@ function NewApplicantEnroll() {
                             </div>
                             <input
                                 type="file"
-                                name="ewhaianId"
+                                name="applicant"
                                 className="newEnroll_file"
-                                // value={ewhaianId}
-                                onChange={onFileChange}
+                                value={applicant}
+                                onChange={onChange}
                                 required
                             />
                             <div className="upload_file">
@@ -154,9 +167,9 @@ function NewApplicantEnroll() {
                         </div>
                         <div className="register_newEnroll_button_wrapper">
                             <button
-                                type="button"
+                                type="submit"
                                 className="register_newEnroll_button"
-                                onClick={register}
+                            //onClick={register}
                             >
                                 확인
                             </button>

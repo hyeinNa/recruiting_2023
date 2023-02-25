@@ -16,7 +16,6 @@ function UpdatePage() {
   });
   const [file, setFile] = useState('');
   const [filename, setFilename] = useState('Choose File');
-  const [uploadedFile, setUploadedFile] = useState({});
   const { name, studentId, ewhaianId, applicant } = inputs;
 
   const onChange = (e) => {
@@ -59,6 +58,7 @@ function UpdatePage() {
     const config = { headers: { 'Content-Type': 'multipart/form-data' } };
     try { //고유 id 및 폼에 입력받은 정보를 수정하기 api로 전달
       const response = await axios.put("/api/update/update", formData, config, {
+        //team:
         id: applicantId, name: inputs.name,
         studentId: inputs.studentId,
         ewhaianId: inputs.ewhaianId
