@@ -41,7 +41,7 @@ function App() {
           <Route exact path="/result/checkinfo" element={<CheckResult />} />
           <Route exact path="/result/:id" element={<ShowResult />} />
           <Route exact path="/result/notperiod/:id" element={<NotPeriod />} />
-          <Route exact path="/admin" element={<AdminLogin />} />
+          <Route exact path="/admin/login" element={<AdminLogin />} />
           <Route exact path="/admin/modifyInfo/:id" element={<Modify />} />
           <Route
             exact
