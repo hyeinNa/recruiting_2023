@@ -41,6 +41,30 @@ const basicInfoSchema = mongoose.Schema({
   masterTrainingPlace: {
     type: String,
   },
+  isResultPeriod: {
+    type: Boolean,
+  },
+  surveyFormLink: {
+    type: String,
+  },
+  isMarketingPreAssignment: {
+    type: Boolean,
+  },
+  isDesignPreAssignment: {
+    type: Boolean,
+  },
+  isWebDevPreAssignment: {
+    type: Boolean,
+  },
+  marketingPreAssignment: {
+    type: String,
+  },
+  designPreAssignment: {
+    type: String,
+  },
+  webDevPreAssignment: {
+    type: String,
+  },
 });
 
 //BasicInfo 모델 생성

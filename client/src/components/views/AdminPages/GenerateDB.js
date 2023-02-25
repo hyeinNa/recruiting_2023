@@ -45,6 +45,14 @@ function GenerateDB() {
           doesRecruitMarketing: false,
           doesRecruitDesign: false,
           doesRecruitWebDev: false,
+          isResultPeriod: false,
+          surveyFormLink: "",
+          isMarketingPreAssignment: false,
+          isDesignPreAssignment: false,
+          isWebDevPreAssignment: false,
+          marketingPreAssignment: "",
+          designPreAssignment: "",
+          webDevPreAssignment: "",
         })
         .then((response) => {
           console.log(response.data.basicInfoCreate);

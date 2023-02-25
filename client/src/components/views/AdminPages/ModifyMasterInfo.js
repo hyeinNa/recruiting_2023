@@ -39,7 +39,7 @@ function ModifyMasterInfo() {
 
   const updateInfo = () => {
     axios
-      .post("/api/manager/modify/recruitInfo", {
+      .post("/api/manager/modify/masterInfo", {
         masterName: inputs.masterName,
         masterPhoneNumber: inputs.masterPhoneNumber,
       })
