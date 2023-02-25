@@ -12,14 +12,15 @@ var storage = multer.diskStorage({
 
 var upload = multer({
     storage: storage,
-    fileFilter: function (req, file, cb) {
-        if (file.mimetype != 'application/vnd.openxmlformats-officedocument.wordprocessingml.document') {//msword파일만 허용
-            return cb(new Error('Wrong file type'));
+    /* fileFilter: function (req, file, cb) {
+        if (file.mimetype == 'application/pdf' || 'application/vnd.openxmlformats-officedocument.wordprocessingml.document' || 'application/msword') {//msword파일만 허용
+            cb(null, true)
         }
-        cb(null, true)
-    },
+        //잘못된 파일타입안내문, 파일명 설정 (ex)41기_00팀_000 변경가능하게 설정)
+        return cb(new Error('Wrong file type'));
+    }, */
     limits: {
-        fileSize: 1024 * 1024 * 2 //파일허용사이즈 2MB
+        fileSize: 1024 * 1024 * 5 //파일허용사이즈 5MB
     }
 })
 
