@@ -28,7 +28,7 @@ updateRoute.put("/update", uploadRouter.single('applicant'), async (req, res) =>
   const { name, studentId, ewhaianId } = req.body;
   // const applicant = req.file.path;
   let id = req.body.id; //ObjectID
-  //let applicant = req.file.path;
+  //let lastApplicant = req.file.path;
 
   let updatedData = {
     name,
@@ -69,7 +69,7 @@ updateRoute.put("/update", uploadRouter.single('applicant'), async (req, res) =>
     const updated = await Applicant.findByIdAndUpdate(id, { $set: updatedData }); //findByIDAndUpdate (조건:id, 갱신: updatedData)
     if (req.file) {
       updated.applicant = req.file.path;
-      //await fs.unlinkASync(applicant) //기존 지원서 삭제
+      //await fs.unlinkASync(lastApplicant) //기존 지원서 삭제
     }
     res.json({
       status: "ok",
