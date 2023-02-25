@@ -16,7 +16,7 @@ const MongoStore = require("connect-mongo");
 //Route 가져오기
 const checkInfoRoutes = require("./routes/checkInfo");
 const registerRouter = require("./routes/register");
-const adminRouter = require("./routes/admin");
+const adminRouter = require("./routes/adminLogin");
 const updateRouter = require("./routes/update");
 const modifyBasicInfoRoute = require("./routes/modifyBasicInfo");
 const loadBasicInfoRoute = require("./routes/loadBasicInfo");
