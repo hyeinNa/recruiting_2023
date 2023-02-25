@@ -8,8 +8,14 @@ const basicInfoSchema = mongoose.Schema({
   cardinalNumber: {
     type: String,
   },
-  recruitingTeams: {
-    type: Number,
+  doesRecruitMarketing: {
+    type: Boolean,
+  },
+  doesRecruitDesign: {
+    type: Boolean,
+  },
+  doesRecruitWebDev: {
+    type: Boolean,
   },
   applicationSubmissionPeriod: {
     type: String,
