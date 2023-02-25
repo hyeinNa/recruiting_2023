@@ -34,7 +34,6 @@ function GenerateDB() {
         .post("/api/manager/init", {
           key: 1234,
           cardinalNumber: "",
-          recruitingTeams: 0,
           applicationSubmissionPeriod: "",
           firstPresentationPeriod: "",
           interviewPeriod: "",
@@ -43,6 +42,17 @@ function GenerateDB() {
           masterName: "",
           masterPhoneNumber: "",
           masterTrainingPlace: "",
+          doesRecruitMarketing: false,
+          doesRecruitDesign: false,
+          doesRecruitWebDev: false,
+          isResultPeriod: false,
+          surveyFormLink: "",
+          isMarketingPreAssignment: false,
+          isDesignPreAssignment: false,
+          isWebDevPreAssignment: false,
+          marketingPreAssignment: "",
+          designPreAssignment: "",
+          webDevPreAssignment: "",
         })
         .then((response) => {
           console.log(response.data.basicInfoCreate);
