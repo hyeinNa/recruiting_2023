@@ -64,13 +64,14 @@ function AdminLogin() {
                             onChange={handleInputPw}
                             maxLength="10"
                             required />
-                        <button
-                            type="button"
-                            className="admin_login_button"
-                            onClick={onClick}
-                        >
-                            확인
-                        </button>
+                        <div className="admin_login_button">
+                            <button
+                                type="button"
+                                onClick={onClick}
+                            >
+                                <img src="/img/admin/lockImage.png" alt="login" />
+                            </button>
+                        </div>
                     </div>
                 </div>
             </div>
