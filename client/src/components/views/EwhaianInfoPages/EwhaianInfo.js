@@ -4,15 +4,14 @@ import "./EwhaianInfo.css";
 
 function EwhaianInfo() {
   return (
+    <div className="info_body_container">
     <div className="info_container">
         <div className="info_inner_container">
             <div className="info_inner_inner_container">
                 <div className="info_content_title">이화이언이 뭔가요?</div>
                 <div className="info_content_text">
-                    <div>이화이언은</div>
-                    <div>이화여대 최대의 온라인 커뮤니티이자</div>
-                    <div>이화의 재학생 및 졸업생들이</div>
-                    <div>교류하고 소통할 수 있는 공간입니다.</div>
+                    <div>이화이언은 이화여대 최대의 온라인 커뮤니티이자</div>
+                    <div>이화의 재학생 및 졸업생들이 교류하고 소통할 수 있는 공간입니다.</div>
                 </div>
             </div>
             <div className="info_frame">
@@ -73,10 +72,10 @@ function EwhaianInfo() {
                   <div className="info_recruitment_content">
                       <ul className="info_recruitment_requirements_list">
                       <li>
-                              <div>-이화이언을 사랑하는 벗</div>
+                              <div>이화이언을 사랑하는 벗</div>
                       </li>
                       <li>
-                              <div>-학번 제한은 없으나, 2년이상 활동 가능한 벗</div>
+                              <div>학번 제한은 없으나, 2년이상 활동 가능한 벗</div>
                       </li>
                     </ul>
 
@@ -84,10 +83,10 @@ function EwhaianInfo() {
             </div>
 
               <ul className="info_recruitment_menu">
-                <div className="info_recruitment_menu_list">
+                <div className="info_recruitment_menu_list_1">
                       <Link to="/register">지원하기</Link>
                   </div>
-                  <div className="info_recruitment_menu_list">
+                  <div className="info_recruitment_menu_list_2">
                       <Link to="/register/checkinfo">결과확인</Link>
                 </div>
               
@@ -99,6 +98,7 @@ function EwhaianInfo() {
         </div>
   
 
+      </div>
     </div>
   );
 }
