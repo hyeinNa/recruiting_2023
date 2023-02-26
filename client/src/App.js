@@ -16,6 +16,7 @@ import NewApplicantEnroll from "./components/views/RegisterPages/NewApplicantEnr
 import AdminLogin from "./components/views/AdminPages/AdminLogin";
 import ModifyInfo from "./components/views/ManagerPages/ModifyInfo";
 import GenerateDB from "./components/views/ManagerPages/GenerateDB";
+import Activities from "./components/views/Activities/Activities";
 
 function App() {
   return (
@@ -47,6 +48,7 @@ function App() {
             element={<ModifyInfo />}
           />
           <Route exact path="/manager/generate" element={<GenerateDB />} />
+          <Route exact path="/activities" element={<Activities />} />
         </Routes>
       </BrowserRouter>
     </div>
