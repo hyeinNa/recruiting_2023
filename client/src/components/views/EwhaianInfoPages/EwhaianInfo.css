@@ -4,13 +4,17 @@
     --info-max-height: 1246px;
 }
 
-.info_container{
-    width:100vw;
-    height:1500px;
-    left: 0px;
-    top: 99px;
+.info_body_container{
+  width: 100%;
+  height: auto;
+  background: var(--toneDown-black);
+}
 
-    background: var(--toneDown-black);
+.info_container{
+  max-width: var(--nav-bar-max-width);
+  width: 100%;
+  height: 100%;
+  margin: 0 auto;
 }
 
 .info_inner_container {
@@ -21,7 +25,7 @@
 
 .info_inner_inner_container {
     display: flex;
-    margin-right: 2%;
+    margin-right: auto;
     flex-direction: column;
 }
 
@@ -30,8 +34,8 @@
     margin-top: 10%;
 
     font-weight: 600;
-    font-size: 68px;
-    line-height: 82px;
+    font-size: 45px;
+    line-height: 54px;
 
     color: var(--toneDown-white);
 
@@ -39,12 +43,10 @@
 
 .info_content_text{
     margin-top: 10%;
-    margin-left:2%;
 
-    font-weight: 400;
-    font-size: 30px;
-    line-height: 38px;
-    /* or 127% */
+    font-weight: 500;
+    font-size: 17px;
+    line-height: 27px;
 
 
     color: var(--gray-white);
@@ -54,18 +56,18 @@
     margin-bottom: 5px;
 }
 
-.info_frame{
-}
 
 .info_frameImg{
-    width: 552px;
-    height: 420px;
+    margin-left: auto;
+    width: 325px;
+    height: 247px;
 }
 
 .info_recruitment{
     display: flex;
     flex-direction: column;
     margin-top: 5%;
+    margin-right: auto;
 
     color: var(--toneDown-white);
 }
@@ -80,8 +82,8 @@
     display: flex;
     margin-right: 3%;
     font-weight: 600;
-    font-size: 35px;
-    line-height: 42px;
+    font-size: 20px;
+    line-height: 24px;
     text-align: center;
     justify-content: center;
     align-items: center;
@@ -94,25 +96,28 @@
 .info_recruitment_schedule_list {
     display: flex;
     list-style-type: none;
-    font-weight: 400;
-    font-size: 24px;
-    line-height: 29px;
 }
 
 .info_recruitment_schedule_list li{
-    padding-left: 1%;
-    padding-right: 1%;
+    margin : 0 auto;
 }
 
 .info_recruitment_schedule_stage{
+    font-weight: 500;
+    font-size: 17px;
+    line-height: 25px;
     text-align: center;
+    
+    color: #E3E3E3;
 }
 
 .info_recruitment_schedule_date{
-    text-align: center;
     font-weight: 500;
-    font-size: 35px;
-    line-height: 42px;
+    font-size: 15px;
+    line-height: 22px;
+    text-align: center;
+    
+    color: #A8A8A8;
 }
 
 .arrow{
@@ -131,26 +136,28 @@
     display: flex;
     list-style-type: none;
     font-weight: 500;
-    font-size: 33px;
-    line-height: 40px;
+    font-size: 17px;
+    line-height: 27px;
+    color: #EB1568;
 }
 
 .info_recruitment_section_list_list{
     display: flex;
     margin-right: 10%;
-    width: 214px;
-    height: 56px;
+    width: 103px;
+    height: 36px;
+
     
     text-align: center;
     
 }
 
 .info_recruitment_section_list_list span {
-    width: 214px;
-    height: 56px;
-    line-height: 56px;
-    background-color: var(--recruit-section);
-    border-radius: 19px;
+    width: 103px;
+    height: 36px;
+    line-height: 36px;
+    border: 1.1px solid #EB1568;
+    border-radius: 100px;
 }
 
 
@@ -166,8 +173,8 @@
 .info_recruitment_requirements_list {
     list-style-type: none;
     font-weight: 500;
-    font-size: 33px;
-    line-height: 40px;
+    font-size: 17px;
+    line-height: 27px;
 }
 
 .info_recruitment_menu{
@@ -176,21 +183,37 @@
     justify-content: center;
 }
 
-.info_recruitment_menu_list{
+.info_recruitment_menu_list_1{
     display: flex;
     margin-left: 3%;
     margin-right: 3%;
     margin-top:2%;
 }
+.info_recruitment_menu_list_2 {
+    display: flex;
+    margin-left: 3%;
+    margin-right: 3%;
+    margin-top: 2%;
+}
 
-.info_recruitment_menu_list a{
-    width: 320px;
-    height: 88px;
+.info_recruitment_menu_list_1 a{
+    width: 300px;
+    height: 50px;
     background: #EB1568;
-    border-radius: 39px;
+    border-radius: 10px;
     font-weight: 600;
-    font-size: 35px;
-    line-height: 88px;
+    font-size: 20px;
+    line-height: 50px;
+    text-align: center;
+}
+.info_recruitment_menu_list_2 a {
+    width: 300px;
+    height: 50px;
+    background: #505050;
+    border-radius: 10px;
+    font-weight: 600;
+    font-size: 20px;
+    line-height: 50px;
     text-align: center;
 }
 

@@ -1,12 +1,13 @@
 import { BrowserRouter, Route, Routes } from "react-router-dom";
 import LandingPage from "./components/views/LandingPage";
-import EwhaianInfo from "./components/views/EwhaianInfo";
+import EwhaianInfo from "./components/views/EwhaianInfoPages/EwhaianInfo";
 import TeamInfo from "./components/views/TeamInfoPages/TeamInfo";
 import Update from "./components/views/UpdatePages/UpdatePage";
 import RegisterLanding from "./components/views/RegisterPages/RegisterLanding";
 import ExistingApplicantCheckInfo from "./components/views/RegisterPages/ExistingApplicantCheckInfo";
 import CheckResult from "./components/views/ResultPages/CheckResult";
 import ShowResult from "./components/views/ResultPages/ShowResult";
+import QnA from "./components/views/QnAPages/QnA";
 //어떤 파일이든 색상 변수 사용할 수 있도록, color css파일 불러오기
 import "./components/utilis/color.css";
 //모든 파일에서 폰트 통일
@@ -49,6 +50,7 @@ function App() {
             element={<ApplicantList />}
           />
           <Route exact path="/admin/landing" element={<GenerateDB />} />
+          <Route exact path="/QnA" element={<QnA />} />
         </Routes>
       </BrowserRouter>
     </div>
