@@ -6,20 +6,37 @@ const mongoose = require("mongoose");
 //express로 app 객체 만들기
 const app = express();
 //.env에서 PORT와 MONGO_URI 가져오기
-const { PORT, MONGO_URI } = process.env;
+const { PORT, MONGO_URI, SECRET_KEY } = process.env;
 //body-parser 가져오기
 const bodyParser = require("body-parser");
+//express-session 가져오기
+const session = require("express-session");
+//connect-mongo 가져오기
+const MongoStore = require("connect-mongo");
 //Route 가져오기
 const checkInfoRoutes = require("./routes/checkInfo");
 const registerRouter = require("./routes/register");
-const adminRouter = require("./routes/admin");
+const adminRouter = require("./routes/adminLogin");
 const updateRouter = require("./routes/update");
-const uploadRouter = require("./middleware/upload");
-
+const modifyBasicInfoRoute = require("./routes/modifyBasicInfo");
+const loadBasicInfoRoute = require("./routes/loadBasicInfo");
 //body-parser 관련 코드
 app.use(bodyParser.urlencoded({ extended: true }));
 app.use(bodyParser.json());
+app.use("/uploads", express.static("uploads"));
 
+//session middleware 추가
+app.use(
+  session({
+    secret: SECRET_KEY,
+    resave: false,
+    saveUninitialized: false,
+    cookie: {
+      maxAge: 1800000, //쿠키 만료 시간 30분
+      store: MongoStore.create({ mongoUrl: MONGO_URI }), //db에 세션 쿠키 저장
+    },
+  })
+);
 //mongoose를 이용하여 app과 몽고DB를 연결 함.
 mongoose.set("strictQuery", false);
 mongoose
@@ -36,9 +53,11 @@ app.get("/", (req, res) => {
   res.send("Successfully send");
 });
 app.use("/api/checkInfo", checkInfoRoutes);
-app.use("/api/register", uploadRouter.single('applicant'), registerRouter);
+app.use("/api/register", registerRouter);
 app.use("/api/admin", adminRouter);
 app.use("/api/update", updateRouter);
+app.use("/api/manager", modifyBasicInfoRoute);
+app.use("/api/var", loadBasicInfoRoute);
 //app 객체를 통해서 express 서버 열어주는 곳
 app.listen(PORT, () => {
   console.log(`recruiting-site server listening on port ${PORT}`);

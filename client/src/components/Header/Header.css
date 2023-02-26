@@ -10,7 +10,7 @@
   width: 100%;
   top: 0;
   left: 0;
-  background-color: var(--header-color);
+  background-color: var(--toneDown-black);
 }
 .nav_bar_container {
   max-width: var(--nav-bar-max-width);

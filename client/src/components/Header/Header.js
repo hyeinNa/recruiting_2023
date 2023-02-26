@@ -38,10 +38,10 @@ function Header() {
           </div>
           <ul className="nav_bar_menu" id="nav_bar_menu">
             <li>
-              <Link to="/">이화이언 소개</Link>
+              <Link to="/register">이화이언 소개</Link>
             </li>
             <li>
-              <Link to="/">팀 소개</Link>
+              <Link to="/teamInfo">팀 소개</Link>
             </li>
             <li>
               <Link to="/">지난 이화이언</Link>
@@ -51,15 +51,13 @@ function Header() {
             </li>
           </ul>
           <div className="nav_bar_toggleBtn">
-            <Link to="/">
-              <img
-                src="/img/header/hamburgerBar.png"
-                alt="toggleBtn"
-                className="nav_bar_toggleBtn_img"
-                id="nav_bar_toggleBtn_img_id"
-                onClick={toggleMenu}
-              />
-            </Link>
+            <img
+              src="/img/header/hamburgerBar.png"
+              alt="toggleBtn"
+              className="nav_bar_toggleBtn_img"
+              id="nav_bar_toggleBtn_img_id"
+              onClick={toggleMenu}
+            />
           </div>
         </div>
       </div>
