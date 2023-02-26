@@ -15,10 +15,13 @@ import "./components/utilis/font.css";
 import NotPeriod from "./components/views/ResultPages/NotPeriod";
 import NewApplicantEnroll from "./components/views/RegisterPages/NewApplicantEnroll";
 import AdminLogin from "./components/views/AdminPages/AdminLogin";
+
+import Activities from "./components/views/Activities/Activities";
 //import ModifyInfo from "./components/views/ManagerPages/ModifyInfo";
 import Modify from "./components/views/AdminPages/ModifyInfo";
 import GenerateDB from "./components/views/AdminPages/GenerateDB";
 import ApplicantList from "./components/views/AdminPages/ApplicantList";
+
 function App() {
   return (
     <div className="App">
@@ -49,6 +52,7 @@ function App() {
             path="/admin/applicantList"
             element={<ApplicantList />}
           />
+
           <Route exact path="/admin/landing" element={<GenerateDB />} />
           <Route exact path="/QnA" element={<QnA />} />
         </Routes>
