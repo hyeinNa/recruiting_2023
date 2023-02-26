@@ -1,0 +1,58 @@
+.modifyInfo_container {
+  width: 100%;
+  height: auto;
+  background-color: var(--teamInfo-bg-color);
+}
+.modifyInfo_inner_container {
+  max-width: var(--nav-bar-max-width);
+  height: 100%;
+  margin: 0 auto;
+}
+.modifyInfo_content_container {
+  width: 92%;
+  height: 100%;
+  margin: 0 auto;
+}
+.modifyInfo_title {
+  font-size: 45px;
+  font-weight: 600;
+  color: white;
+  line-height: 54px;
+  padding-top: 143px;
+}
+.modifyInfo_description {
+  font-size: 17px;
+  font-weight: 500;
+  line-height: 27px;
+  color: #e3e3e3;
+  margin-top: 29px;
+}
+.modifyInfo_buttons {
+  display: flex;
+  flex-direction: row;
+  margin-top: 60px;
+}
+.modifyInfo_buttons button {
+  border: 0;
+  border-radius: 30px;
+  font-size: 17px;
+  font-weight: 600;
+  padding: 12px 20px;
+  margin-right: 10px;
+}
+.unclicked {
+  background-color: var(--teamInfo-bg-color);
+  color: #c6c6c6;
+}
+.clicked {
+  background-color: white;
+  color: #3c3c3c;
+}
+.modifyInfo_info_container {
+  margin-top: 18px;
+
+  display: flex;
+  width: 100%;
+  height: auto;
+  padding-bottom: 150px;
+}

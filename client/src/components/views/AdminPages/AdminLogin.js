@@ -1,35 +1,42 @@
 import React from "react";
-import { useState } from "react";
-import { useNavigate } from "react-router-dom";
+import { useState, useEffect } from "react";
 import axios from "axios";
+import { useNavigate } from 'react-router-dom';
 import "./AdminLogin.css";
 import Footer from "../../Footer/Footer";
 import Header from "../../Header/Header";
+
 function AdminLogin() {
     const navigate = useNavigate();
+    //입력값에 대한 변수와 함수
     const [input, setInput] = useState("");
-    const pw = input;
 
-    const onChange = (e) => {
-        const { value, pw } = e.target;
-        setInput({
-            ...input,
-            [pw]: value,
-        });
+    useEffect(() => {
+        axios.get("/api/admin/login")
+            .then((response) => {
+                //이미 로그인 했으면 login 창으로 갈 수 없음
+                if (response.data.loggedIn === true)
+                    navigate(`/admin/landing`, { replace: true });
+            })
+            .catch((error) => {
+                console.log("An error occurred: ", error.response);
+            });
+    }, []);
+
+
+    const handleInputPw = (e) => {
+        setInput(e.target.value);
     };
 
-    //폼에 입력받은 패스워드를 패스워드 확인 api로 전달
-    const checkPW = () => {
-        axios
-            .post("/api/admin/login", {
-                pw: input.pw,
-            })
+
+    const onClick = () => {
+        axios.post("/api/admin/login", { pw: input })
             .then((response) => {
                 let isAdmin = response.data.loggedIn;
                 if (isAdmin) {
                     //관리자 비밀번호가 맞으면
+                    navigate(`/admin/landing`, { replace: true });
                     console.log(response.data.message);
-                    navigate("/admin/", { replace: true });
                 } else {
                     //관리자 비밀번호가 틀리면
                     console.log(response.data.message);
@@ -39,7 +46,8 @@ function AdminLogin() {
             .catch((error) => {
                 console.log("An error occurred: ", error.response);
             });
-    };
+    }
+
 
     return (
         <div className="admin_login">
@@ -53,16 +61,17 @@ function AdminLogin() {
                             name="password"
                             className="admin_login_form"
                             placeholder="관리자 키를 입력하세요."
-                            onChange={onChange}
+                            onChange={handleInputPw}
                             maxLength="10"
                             required />
-                        <button
-                            type="button"
-                            className="admin_login_button"
-                            onClick={checkPW}
-                        >
-                            확인
-                        </button>
+                        <div className="admin_login_button">
+                            <button
+                                type="button"
+                                onClick={onClick}
+                            >
+                                <img src="/img/admin/lockImage.png" alt="login" />
+                            </button>
+                        </div>
                     </div>
                 </div>
             </div>

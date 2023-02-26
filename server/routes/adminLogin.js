@@ -8,18 +8,19 @@ const adminRouter = express.Router();
 
 //input admin password
 const askAdmin = (req, res) => {
-    //loggedin
+    //loggedin인지 확인
     if (req.session.loggedIn === true)
-        return res.redirect("/api/admin/");
-    // logged out
-    res.send("비밀번호를 입력하는 페이지~~");
+        return res.json({
+            loggedIn: req.session.loggedIn,
+            message: "이미 관리자 페이지에 로그인 되었습니다.",
+        });
 }
 
 //관리자 비밀번호 확인
 const checkAdmin = (req, res) => {
-    pw = req.body.pw;
+    const pw = req.body.pw;
     if (pw !== AdminPW) {
-        return res.status(400).json(
+        return res.json(
             {
                 loggedIn: req.session.loggedIn,
                 message: "비밀번호가 틀렸습니다",
@@ -67,6 +68,6 @@ const selectPass = (req, res) => {
 }
 
 adminRouter.route("/login").get(askAdmin).post(checkAdmin);
-adminRouter.route("/").get(applyList).post(selectPass);
+adminRouter.route("/landing").get(applyList).post(selectPass);
 
 module.exports = adminRouter;

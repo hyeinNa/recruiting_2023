@@ -39,15 +39,25 @@ modifyBasicInfoRoute.post("/init", (req, res) => {
     {
       key: req.body.key,
       cardinalNumber: req.body.cardinalNumber,
-      recruitingTeams: req.body.recruitingTeams,
+      isApplicationPeriod: req.body.isApplicationPeriod,
+      doesRecruitMarketing: req.body.doesRecruitMarketing,
+      doesRecruitDesign: req.body.doesRecruitDesign,
+      doesRecruitWebDev: req.body.doesRecruitWebDev,
       applicationSubmissionPeriod: req.body.applicationSubmissionPeriod,
       firstPresentationPeriod: req.body.firstPresentationPeriod,
       interviewPeriod: req.body.interviewPeriod,
       finalPresentationPeriod: req.body.finalPresentationPeriod,
-      isApplicationPeriod: req.body.isApplicationPeriod,
       masterName: req.body.masterName,
-      masterPhoneNubmer: req.body.masterPhoneNubmer,
+      masterPhoneNumber: req.body.masterPhoneNumber,
       masterTrainingPlace: req.body.masterTrainingPlace,
+      isResultPeriod: req.body.isResultPeriod,
+      surveyFormLink: req.body.surveyFormLink,
+      isMarketingPreAssignment: req.body.isMarketingPreAssignment,
+      isDesignPreAssignment: req.body.isDesignPreAssignment,
+      isWebDevPreAssignment: req.body.isWebDevPreAssignment,
+      marketingPreAssignment: req.body.marketingPreAssignment,
+      designPreAssignment: req.body.designPreAssignment,
+      webDevPreAssignment: req.body.webDevPreAssignment,
     },
     (err) => {
       if (err) console.log(err);
@@ -58,20 +68,78 @@ modifyBasicInfoRoute.post("/init", (req, res) => {
     }
   );
 });
-//요청 받은 내용으로 DB 내용을 수정하기
-modifyBasicInfoRoute.post("/modify", (req, res) => {
+//요청 받은 내용으로 DB 내 모집 정보와 관련된 내용을 수정하기
+modifyBasicInfoRoute.post("/modify/recruitInfo", (req, res) => {
   BasicInfo.findOneAndUpdate(
     { key: 1234 },
     {
       cardinalNumber: req.body.cardinalNumber,
-      recruitingTeams: req.body.recruitingTeams,
       applicationSubmissionPeriod: req.body.applicationSubmissionPeriod,
       firstPresentationPeriod: req.body.firstPresentationPeriod,
       interviewPeriod: req.body.interviewPeriod,
       finalPresentationPeriod: req.body.finalPresentationPeriod,
       isApplicationPeriod: req.body.isApplicationPeriod,
+      masterTrainingPlace: req.body.masterTrainingPlace,
+      doesRecruitMarketing: req.body.doesRecruitMarketing,
+      doesRecruitDesign: req.body.doesRecruitDesign,
+      doesRecruitWebDev: req.body.doesRecruitWebDev,
+    },
+    { new: true },
+    (err, data) => {
+      if (err) console.log(err);
+      else {
+        if (data) {
+          return res.json({
+            basicInfoUpdateSuccess: "success",
+          });
+        } else {
+          return res.json({
+            basicInfoUpdateSuccess: "fail",
+          });
+        }
+      }
+    }
+  );
+});
+//요청 받은 내용으로 DB 내 결과 정보와 관련된 내용을 수정하기
+modifyBasicInfoRoute.post("/modify/resultInfo", (req, res) => {
+  BasicInfo.findOneAndUpdate(
+    { key: 1234 },
+    {
+      isResultPeriod: req.body.isResultPeriod,
+      surveyFormLink: req.body.surveyFormLink,
+      masterTrainingPlace: req.body.masterTrainingPlace,
+      isMarketingPreAssignment: req.body.isMarketingPreAssignment,
+      isDesignPreAssignment: req.body.isDesignPreAssignment,
+      isWebDevPreAssignment: req.body.isWebDevPreAssignment,
+      marketingPreAssignment: req.body.marketingPreAssignment,
+      designPreAssignment: req.body.designPreAssignment,
+      webDevPreAssignment: req.body.webDevPreAssignment,
+    },
+    { new: true },
+    (err, data) => {
+      if (err) console.log(err);
+      else {
+        if (data) {
+          return res.json({
+            basicInfoUpdateSuccess: "success",
+          });
+        } else {
+          return res.json({
+            basicInfoUpdateSuccess: "fail",
+          });
+        }
+      }
+    }
+  );
+});
+//요청 받은 내용으로 DB 내 마스터 정보와 관련된 내용을 수정하기
+modifyBasicInfoRoute.post("/modify/masterInfo", (req, res) => {
+  BasicInfo.findOneAndUpdate(
+    { key: 1234 },
+    {
       masterName: req.body.masterName,
-      masterPhoneNubmer: req.body.masterPhoneNubmer,
+      masterPhoneNumber: req.body.masterPhoneNumber,
       masterTrainingPlace: req.body.masterTrainingPlace,
     },
     { new: true },

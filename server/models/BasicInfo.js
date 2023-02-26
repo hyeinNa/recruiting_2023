@@ -8,8 +8,14 @@ const basicInfoSchema = mongoose.Schema({
   cardinalNumber: {
     type: String,
   },
-  recruitingTeams: {
-    type: Number,
+  doesRecruitMarketing: {
+    type: Boolean,
+  },
+  doesRecruitDesign: {
+    type: Boolean,
+  },
+  doesRecruitWebDev: {
+    type: Boolean,
   },
   applicationSubmissionPeriod: {
     type: String,
@@ -33,6 +39,30 @@ const basicInfoSchema = mongoose.Schema({
     type: String,
   },
   masterTrainingPlace: {
+    type: String,
+  },
+  isResultPeriod: {
+    type: Boolean,
+  },
+  surveyFormLink: {
+    type: String,
+  },
+  isMarketingPreAssignment: {
+    type: Boolean,
+  },
+  isDesignPreAssignment: {
+    type: Boolean,
+  },
+  isWebDevPreAssignment: {
+    type: Boolean,
+  },
+  marketingPreAssignment: {
+    type: String,
+  },
+  designPreAssignment: {
+    type: String,
+  },
+  webDevPreAssignment: {
     type: String,
   },
 });
