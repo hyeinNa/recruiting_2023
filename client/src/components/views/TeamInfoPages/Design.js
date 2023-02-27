@@ -1,8 +1,9 @@
 import React from "react";
 import "./teamContent.css";
+import "../../utilis/ani.css";
 function Design() {
   return (
-    <div className="team_content_container">
+    <div className="team_content_container fadeIn">
       <div className="team_content1_wrap team_content_wrap">
         <div className="team_content_label">
           디자인팀에서는 어떤 활동을 하나요?

@@ -1,8 +1,9 @@
 import React from "react";
 import "./teamContent.css";
+import "../../utilis/ani.css";
 function Marketing() {
   return (
-    <div className="team_content_container">
+    <div className="team_content_container fadeIn">
       <div className="team_content1_wrap team_content_wrap">
         <div className="team_content_label">
           마케팅팀에서는 이런 활동을 하고 있어요!
