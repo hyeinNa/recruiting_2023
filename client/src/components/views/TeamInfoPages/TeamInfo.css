@@ -42,6 +42,10 @@
   font-weight: 600;
   padding: 12px 20px;
 }
+.teamInfo_btn:hover {
+  background-color: white;
+  color: #3c3c3c;
+}
 .unclicked {
   background-color: var(--teamInfo-bg-color);
   color: #c6c6c6;
