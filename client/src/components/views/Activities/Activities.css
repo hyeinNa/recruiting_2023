@@ -1,0 +1,155 @@
+.ActivitiesBackGround {
+    background-color: var(--toneDown-black);
+    color: var(--toneDown-white);
+}
+
+.ActivitiesHeader {
+    color: var(--ewhaian-pink);
+    font-family: 'Inter';
+    font-style: normal;
+    font-weight: 700;
+    font-size: 3vw;
+    margin-left: 15.6vw;
+    margin-bottom: 5vh;
+    margin-top: 20px;
+    line-height: 1;
+    width: auto;
+}
+
+.ActivitiesAll {
+    display: flex;
+    width: 100vw;
+    height: auto;
+    /* flex-wrap: nowrap; */
+    justify-content: flex-start;
+    overflow-x: auto;
+    overflow-y: hidden;
+    /* white-space: nowrap; */
+    /* margin-left: 5vw; */
+}
+
+.EachActivity {
+
+    width: 16.7vw;
+    height: auto;
+    margin-left: 2.5vw;
+    margin-right: 2.5vw;
+}
+
+.TurnToImg {
+    /* background-color: gray; */
+    width: 16.7vw;
+    /* height: 21.9vw; */
+    height: auto;
+    margin-bottom: 1.5vh;
+    object-fit: scale-down;
+    justify-content: center;
+    display: flex;
+}
+
+.TurnToImg img {}
+
+.ActivityText {
+    /* outline-color: var(--ewhaian-pink); */
+    border-left: 3px solid var(--ewhaian-pink);
+}
+
+.ActivityName {
+    color: var(--ewhaian-pink);
+    font-family: 'Inter';
+    font-style: normal;
+    font-weight: 400;
+    /* font-size: 1.9vw; */
+    font-size: 20px;
+    line-height: 1;
+    margin-bottom: 1vh;
+
+}
+
+.ActivityDate {
+    font-family: 'Inter';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 12px;
+    line-height: 1;
+    margin-bottom: 15px;
+}
+
+.LinkToEventSketch {
+    font-family: 'Pretendard';
+    font-style: normal;
+    font-weight: 300;
+    font-size: 9px;
+    line-height: 19px;
+    text-decoration-line: underline;
+    text-align: right;
+    color: #9A9A9A
+}
+
+
+.ActivitiesAll::-webkit-scrollbar {
+    padding-top: 10vh;
+    height: 30px !important;
+    width: 100px;
+    /* width: 431px; */
+    border-radius: 194px;
+    background-color: transparent;
+}
+
+.ActivitiesAll::-webkit-resizer {
+    background-color: aqua;
+}
+
+.ActivitiesAll::-webkit-scrollbar-track {
+    visibility: visible;
+    height: 1px;
+    width: 100px;
+    color: white;
+    /* background-color: palevioletred; */
+}
+
+.ActivitiesAll::-webkit-scrollbar-thumb {
+    /* height: 24px;
+    width: 173px; */
+    padding-top: 10vh;
+    height: 5px;
+    background-color: var(--ewhaian-pink);
+    border-radius: 194px;
+}
+
+/* 스크롤바 사이즈 조정해야함-사이즈 조정 안됨*/
+
+@media screen and (max-width: 360px) {
+
+    .ActivitiesHeader {
+        font-size: 18px;
+        margin-bottom: 10px;
+        margin-top: 5px;
+    }
+
+    .ActivityName {
+        font-size: 12px;
+        margin-bottom: 3px;
+    }
+
+    .ActivityDate {
+        font-size: 12px;
+        margin-bottom: 5px;
+    }
+
+    .LinkToEventSketch {
+        font-size: 7px;
+        /* white-space: nowrap; */
+    }
+
+    .EachActivity {
+        width: 90px;
+        height: auto;
+        justify-content: center;
+    }
+
+    .TurnToImg {
+        width: 70px;
+        height: 90px;
+    }
+}
