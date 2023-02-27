@@ -57,3 +57,23 @@
 .teamInfo_team_content_container {
   margin-top: 18px;
 }
+@media screen and (max-width: 480px) {
+  .teamInfo_title {
+    padding-top: 50px;
+    font-size: 30px;
+  }
+  .teamInfo_title_description {
+    font-size: 15px;
+    margin-top: 20px;
+  }
+  .teamInfo_button_container {
+    margin-top: 25px;
+  }
+  .teamInfo_btn {
+    font-size: 15px;
+    padding: 8px 12px;
+  }
+  .teamInfo_button_container button {
+    margin-right: 5px;
+  }
+}
