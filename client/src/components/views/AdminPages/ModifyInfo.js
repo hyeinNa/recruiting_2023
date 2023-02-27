@@ -1,5 +1,7 @@
 import React from "react";
-import { useState } from "react";
+import { useState, useEffect } from "react";
+import axios from "axios";
+import { useNavigate } from "react-router-dom";
 import "./ModifyInfo.css";
 import ModifyRecruitInfo from "./ModifyRecruitInfo";
 import ModifyResultInfo from "./ModifyResultInfo";
@@ -7,6 +9,21 @@ import ModifyMasterInfo from "./ModifyMasterInfo";
 import Header from "../../Header/Header";
 import Footer from "../../Footer/Footer";
 function Modify() {
+
+  const navigate = useNavigate();
+
+  useEffect(() => {
+    axios.get("/api/admin/")
+      .then((response) => {
+        //로그인 안 했으면 login 창으로
+        if (response.data.loggedIn !== true)
+          navigate(`/admin/login`, { replace: true });
+      })
+      .catch((error) => {
+        console.log("An error occurred: ", error.response);
+      });
+  }, []);
+
   const [modifyContent, setModifyContent] = useState("recruitInfo");
   const [isClicked, setIsClicked] = useState([true, false, false]);
   const selectComponent = {
