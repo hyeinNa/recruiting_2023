@@ -1,9 +1,9 @@
 import React from "react";
 import { useState } from "react";
 import "./TeamInfo.css";
-import Marketing from "./Marketing";
-import Design from "./Design";
-import WebDev from "./WebDev";
+import Marketing from "./InfoContent/Marketing";
+import Design from "./InfoContent/Design";
+import WebDev from "./InfoContent/WebDev";
 function TeamInfo() {
   const [teamContent, setTeamContent] = useState("marketing");
   const [isClicked, setIsClicked] = useState([true, false, false]);

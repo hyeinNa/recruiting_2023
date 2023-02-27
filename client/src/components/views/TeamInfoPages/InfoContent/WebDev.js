@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from "react";
-import "./teamContent.css";
-import "./webTechColor.css";
-import "../../utilis/ani.css";
+import "../teamContent.css";
+import "../webTechColor.css";
+import "../../../utilis/ani.css";
 function WebDev() {
   const [isAni, setIsAni] = useState(false);
   return (

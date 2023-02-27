@@ -1,6 +1,6 @@
 import React from "react";
-import "./teamContent.css";
-import "../../utilis/ani.css";
+import "../teamContent.css";
+import "../../../utilis/ani.css";
 function Marketing() {
   return (
     <div className="team_content_container fadeIn">
