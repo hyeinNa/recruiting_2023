@@ -50,7 +50,8 @@ modifyBasicInfoRoute.post("/init", (req, res) => {
       masterName: req.body.masterName,
       masterPhoneNumber: req.body.masterPhoneNumber,
       masterTrainingPlace: req.body.masterTrainingPlace,
-      isResultPeriod: req.body.isResultPeriod,
+      is1stResultPeriod: req.body.is1stResultPeriod,
+      isFinalResultPeriod: req.body.isFinalResultPeriod,
       surveyFormLink: req.body.surveyFormLink,
       isMarketingPreAssignment: req.body.isMarketingPreAssignment,
       isDesignPreAssignment: req.body.isDesignPreAssignment,
@@ -58,6 +59,10 @@ modifyBasicInfoRoute.post("/init", (req, res) => {
       marketingPreAssignment: req.body.marketingPreAssignment,
       designPreAssignment: req.body.designPreAssignment,
       webDevPreAssignment: req.body.webDevPreAssignment,
+      designPreAssignmentBannerName: req.body.designPreAssignmentBannerName,
+      designPreAssignmentPixelSize: req.body.designPreAssignmentPixelSize,
+      designPreAssignmentSubmitPeriod: req.body.designPreAssignmentSubmitPeriod,
+      masterTrainingSchedule: req.body.masterTrainingSchedule,
     },
     (err) => {
       if (err) console.log(err);
@@ -106,7 +111,8 @@ modifyBasicInfoRoute.post("/modify/resultInfo", (req, res) => {
   BasicInfo.findOneAndUpdate(
     { key: 1234 },
     {
-      isResultPeriod: req.body.isResultPeriod,
+      is1stResultPeriod: req.body.is1stResultPeriod,
+      isFinalResultPeriod: req.body.isFinalResultPeriod,
       surveyFormLink: req.body.surveyFormLink,
       masterTrainingPlace: req.body.masterTrainingPlace,
       isMarketingPreAssignment: req.body.isMarketingPreAssignment,
@@ -115,6 +121,10 @@ modifyBasicInfoRoute.post("/modify/resultInfo", (req, res) => {
       marketingPreAssignment: req.body.marketingPreAssignment,
       designPreAssignment: req.body.designPreAssignment,
       webDevPreAssignment: req.body.webDevPreAssignment,
+      designPreAssignmentBannerName: req.body.designPreAssignmentBannerName,
+      designPreAssignmentPixelSize: req.body.designPreAssignmentPixelSize,
+      designPreAssignmentSubmitPeriod: req.body.designPreAssignmentSubmitPeriod,
+      masterTrainingSchedule: req.body.masterTrainingSchedule,
     },
     { new: true },
     (err, data) => {

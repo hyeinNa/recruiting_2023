@@ -10,7 +10,8 @@ function ModifyResultInfo() {
   const objectId = pathName.substring(18, pathName.length);
   //입력 폼에 대한 변수와 함수
   const [inputs, setInputs] = useState({
-    isResultPeriod: false,
+    is1stResultPeriod: false,
+    isFinalResultPeriod: false,
     surveyFormLink: "",
     masterTrainingPlace: "",
     isMarketingPreAssignment: false,
@@ -19,9 +20,14 @@ function ModifyResultInfo() {
     marketingPreAssignment: "",
     designPreAssignment: "",
     webDevPreAssignment: "",
+    designPreAssignmentBannerName: "",
+    designPreAssignmentPixelSize: "",
+    designPreAssignmentSubmitPeriod: "",
+    masterTrainingSchedule: "",
   });
   const {
-    isResultPeriod,
+    is1stResultPeriod,
+    isFinalResultPeriod,
     surveyFormLink,
     masterTrainingPlace,
     isMarketingPreAssignment,
@@ -30,6 +36,10 @@ function ModifyResultInfo() {
     marketingPreAssignment,
     designPreAssignment,
     webDevPreAssignment,
+    designPreAssignmentBannerName,
+    designPreAssignmentPixelSize,
+    designPreAssignmentSubmitPeriod,
+    masterTrainingSchedule,
   } = inputs;
   const onChange = (e) => {
     const { value, name } = e.target;
@@ -56,7 +66,8 @@ function ModifyResultInfo() {
       })
       .then((response) => {
         setInputs({
-          isResultPeriod: response.data.isResultPeriod,
+          is1stResultPeriod: response.data.is1stResultPeriod,
+          isFinalResultPeriod: response.data.isFinalResultPeriod,
           surveyFormLink: response.data.surveyFormLink,
           masterTrainingPlace: response.data.masterTrainingPlace,
           isMarketingPreAssignment: response.data.isMarketingPreAssignment,
@@ -65,6 +76,13 @@ function ModifyResultInfo() {
           marketingPreAssignment: response.data.marketingPreAssignment,
           designPreAssignment: response.data.designPreAssignment,
           webDevPreAssignment: response.data.webDevPreAssignment,
+          designPreAssignmentBannerName:
+            response.data.designPreAssignmentBannerName,
+          designPreAssignmentPixelSize:
+            response.data.designPreAssignmentPixelSize,
+          designPreAssignmentSubmitPeriod:
+            response.data.designPreAssignmentSubmitPeriod,
+          masterTrainingSchedule: response.data.masterTrainingSchedule,
         });
       })
       .catch((error) => {
@@ -75,7 +93,8 @@ function ModifyResultInfo() {
   const updateInfo = () => {
     axios
       .post("/api/manager/modify/resultInfo", {
-        isResultPeriod: inputs.isResultPeriod,
+        is1stResultPeriod: inputs.is1stResultPeriod,
+        isFinalResultPeriod: inputs.isFinalResultPeriod,
         surveyFormLink: inputs.surveyFormLink,
         masterTrainingPlace: inputs.masterTrainingPlace,
         isMarketingPreAssignment: inputs.isMarketingPreAssignment,
@@ -84,6 +103,10 @@ function ModifyResultInfo() {
         marketingPreAssignment: inputs.marketingPreAssignment,
         designPreAssignment: inputs.designPreAssignment,
         webDevPreAssignment: inputs.webDevPreAssignment,
+        designPreAssignmentBannerName: inputs.designPreAssignmentBannerName,
+        designPreAssignmentPixelSize: inputs.designPreAssignmentPixelSize,
+        designPreAssignmentSubmitPeriod: inputs.designPreAssignmentSubmitPeriod,
+        masterTrainingSchedule: inputs.masterTrainingSchedule,
       })
       .then((response) => {
         console.log(response.data.basicInfoUpdateSuccess);
@@ -99,17 +122,33 @@ function ModifyResultInfo() {
       <div className="modify_recruitInfo_inner_container">
         <div className="modify_recruitInfo_content_container">
           <div className="recruitInfo_isApplyPeriod recruitInfo_forms">
-            <div className="resultInfo_label">결과 확인 기간</div>
+            <div className="resultInfo_label">1차 결과 확인 기간</div>
             <div className="switch_wrapper">
               <input
                 type="checkbox"
-                name="isResultPeriod"
-                value={isResultPeriod || false}
+                name="is1stResultPeriod"
+                value={is1stResultPeriod || false}
                 id="switch"
-                checked={isResultPeriod}
+                checked={is1stResultPeriod}
                 onChange={checkingCheckBox}
               />
               <label htmlFor="switch" className="switch_label">
+                <span className="onf_btn"></span>
+              </label>
+            </div>
+          </div>
+          <div className="recruitInfo_isApplyPeriod recruitInfo_forms">
+            <div className="resultInfo_label">최종 결과 확인 기간</div>
+            <div className="switch_wrapper">
+              <input
+                type="checkbox"
+                name="isFinalResultPeriod"
+                value={isFinalResultPeriod || false}
+                id="switch2"
+                checked={isFinalResultPeriod}
+                onChange={checkingCheckBox}
+              />
+              <label htmlFor="switch2" className="switch_label">
                 <span className="onf_btn"></span>
               </label>
             </div>
@@ -126,6 +165,18 @@ function ModifyResultInfo() {
             />
           </div>
           <div className="recruitInfo_isApplyPeriod recruitInfo_forms">
+            <div className="resultInfo_label">마스터 교육 일정</div>
+            <input
+              className="resultInfo_inputs_style"
+              type="text"
+              name="masterTrainingSchedule"
+              value={masterTrainingSchedule || ""}
+              onChange={onChange}
+              placeholder="0월 00일(요일) 오전/오후 00시 00분"
+              required
+            />
+          </div>
+          <div className="recruitInfo_isApplyPeriod recruitInfo_forms">
             <div className="resultInfo_label">마스터 교육 장소</div>
             <input
               className="resultInfo_inputs_style"
@@ -138,7 +189,7 @@ function ModifyResultInfo() {
           </div>
           <div className="resultInfo_preAssignment_container">
             <div className="recruitInfo_recruitTeams recruitInfo_forms resultInfo_last_form">
-              <div className="resultInfo_label">면접 접 사전과제</div>
+              <div className="resultInfo_label">면접 전 사전과제</div>
               <div className="recruitInfo_radioBtns">
                 <div className="recruitInfo_radio_wrap">
                   <input
@@ -196,15 +247,33 @@ function ModifyResultInfo() {
                   inputs.isDesignPreAssignment ? "visible" : "hidden"
                 } `}
               >
-                <textarea
-                  className="preAssignment_inputs_style"
+                <input
+                  className="preAssignment_design_inputs_style design_input1"
                   type="text"
-                  name="designPreAssignment"
-                  value={designPreAssignment || ""}
+                  name="designPreAssignmentBannerName"
+                  value={designPreAssignmentBannerName || ""}
                   onChange={onChange}
                   required
-                  placeholder="디자인팀 사전과제"
-                ></textarea>
+                  placeholder="배너 계절 이름"
+                />
+                <input
+                  className="preAssignment_design_inputs_style design_input2"
+                  type="text"
+                  name="designPreAssignmentPixelSize"
+                  value={designPreAssignmentPixelSize || ""}
+                  onChange={onChange}
+                  required
+                  placeholder="배너 픽셀 사이즈(000x000)"
+                />
+                <input
+                  className="preAssignment_design_inputs_style design_input3"
+                  type="text"
+                  name="designPreAssignmentSubmitPeriod"
+                  value={designPreAssignmentSubmitPeriod || ""}
+                  onChange={onChange}
+                  required
+                  placeholder="사전과제 제출 일정(0월 00일(요일) 시간)"
+                />
               </div>
               <div
                 className={`preAssignment_webdev presAssignment_form ${

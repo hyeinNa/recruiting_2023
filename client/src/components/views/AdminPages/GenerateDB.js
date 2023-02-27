@@ -45,7 +45,8 @@ function GenerateDB() {
           doesRecruitMarketing: false,
           doesRecruitDesign: false,
           doesRecruitWebDev: false,
-          isResultPeriod: false,
+          is1stResultPeriod: false,
+          isFinalResultPeriod: false,
           surveyFormLink: "",
           isMarketingPreAssignment: false,
           isDesignPreAssignment: false,
@@ -53,6 +54,10 @@ function GenerateDB() {
           marketingPreAssignment: "",
           designPreAssignment: "",
           webDevPreAssignment: "",
+          designPreAssignmentBannerName: "",
+          designPreAssignmentPixelSize: "",
+          designPreAssignmentSubmitPeriod: "",
+          masterTrainingSchedule: "",
         })
         .then((response) => {
           console.log(response.data.basicInfoCreate);

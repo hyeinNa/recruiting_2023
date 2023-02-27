@@ -102,6 +102,7 @@ function ModifyRecruitInfo() {
             name="cardinalNumber"
             value={cardinalNumber || ""}
             onChange={onChange}
+            placeholder="ex) 43"
             required
           />
         </div>
@@ -170,6 +171,7 @@ function ModifyRecruitInfo() {
                 name="applicationSubmissionPeriod"
                 value={applicationSubmissionPeriod || ""}
                 onChange={onChange}
+                placeholder="월.일(요일)"
                 required
               />
             </div>
@@ -181,6 +183,7 @@ function ModifyRecruitInfo() {
                 name="firstPresentationPeriod"
                 value={firstPresentationPeriod || ""}
                 onChange={onChange}
+                placeholder="월.일(요일)"
                 required
               />
             </div>
@@ -192,6 +195,7 @@ function ModifyRecruitInfo() {
                 name="interviewPeriod"
                 value={interviewPeriod || ""}
                 onChange={onChange}
+                placeholder="월.일(요일)"
                 required
               />
             </div>
@@ -203,6 +207,7 @@ function ModifyRecruitInfo() {
                 name="finalPresentationPeriod"
                 value={finalPresentationPeriod || ""}
                 onChange={onChange}
+                placeholder="월.일(요일)"
                 required
               />
             </div>
