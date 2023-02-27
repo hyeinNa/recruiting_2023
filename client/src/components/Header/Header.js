@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import { Link } from "react-router-dom";
 import "./Header.css";
 
@@ -22,7 +22,9 @@ function Header() {
       );
     }
   };
-
+  useEffect(() => {
+    document.documentElement.style.setProperty("--mobile-menu-display", "none");
+  }, []);
   return (
     <nav className="nav_bar">
       <div className="nav_bar_container">
