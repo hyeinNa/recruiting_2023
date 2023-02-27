@@ -12,15 +12,6 @@ function AdminLogin() {
     const [input, setInput] = useState("");
 
     useEffect(() => {
-        axios.get("/api/admin/login")
-            .then((response) => {
-                //이미 로그인 했으면 login 창으로 갈 수 없음
-                if (response.data.loggedIn === true)
-                    navigate(`/admin/landing`, { replace: true });
-            })
-            .catch((error) => {
-                console.log("An error occurred: ", error.response);
-            });
     }, []);
 
 

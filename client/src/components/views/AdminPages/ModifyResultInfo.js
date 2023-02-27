@@ -1,10 +1,12 @@
 import React from "react";
 import { useState, useEffect } from "react";
 import axios from "axios";
+import { useNavigate } from "react-router-dom";
 import "./ModifyRecruitInfo.css";
 import "./ModifyResultInfo.css";
 
 function ModifyResultInfo() {
+  const navigate = useNavigate();
   //url에서 지원자 고유 id 알아내기
   const pathName = window.location.pathname;
   const objectId = pathName.substring(18, pathName.length);
@@ -50,6 +52,17 @@ function ModifyResultInfo() {
   };
 
   useEffect(() => {
+
+    axios.get("/api/admin/applicantlist")
+      .then((response) => {
+        //로그인 안 했으면 login 창으로
+        if (response.data.loggedIn !== true)
+          navigate(`/admin/login`, { replace: true });
+      })
+      .catch((error) => {
+        console.log("An error occurred: ", error.response);
+      });
+
     axios
       .post("/api/manager/get", {
         id: objectId,
@@ -177,9 +190,8 @@ function ModifyResultInfo() {
             </div>
             <div className="resultInfo_preAssignment">
               <div
-                className={`preAssignment_marketing presAssignment_form ${
-                  inputs.isMarketingPreAssignment ? "visible" : "hidden"
-                } `}
+                className={`preAssignment_marketing presAssignment_form ${inputs.isMarketingPreAssignment ? "visible" : "hidden"
+                  } `}
               >
                 <textarea
                   className="preAssignment_inputs_style"
@@ -192,9 +204,8 @@ function ModifyResultInfo() {
                 ></textarea>
               </div>
               <div
-                className={`preAssignment_design presAssignment_form ${
-                  inputs.isDesignPreAssignment ? "visible" : "hidden"
-                } `}
+                className={`preAssignment_design presAssignment_form ${inputs.isDesignPreAssignment ? "visible" : "hidden"
+                  } `}
               >
                 <textarea
                   className="preAssignment_inputs_style"
@@ -207,9 +218,8 @@ function ModifyResultInfo() {
                 ></textarea>
               </div>
               <div
-                className={`preAssignment_webdev presAssignment_form ${
-                  inputs.isWebDevPreAssignment ? "visible" : "hidden"
-                } `}
+                className={`preAssignment_webdev presAssignment_form ${inputs.isWebDevPreAssignment ? "visible" : "hidden"
+                  } `}
               >
                 <textarea
                   className="preAssignment_inputs_style"
