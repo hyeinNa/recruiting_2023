@@ -1,9 +1,11 @@
-import React from "react";
-import "./teamContent.css";
-import "./webTechColor.css";
+import React, { useState, useEffect } from "react";
+import "../teamContent.css";
+import "../webTechColor.css";
+import "../../../utilis/ani.css";
 function WebDev() {
+  const [isAni, setIsAni] = useState(false);
   return (
-    <div className="team_content_container">
+    <div className="team_content_container fadeIn">
       <div className="team_content1_wrap team_content_wrap">
         <div className="team_content_label">
           웹개발팀에서는 이런 경험들을 할 수 있어요!

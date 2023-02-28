@@ -70,6 +70,21 @@
   width: 40%;
   display: flex;
 }
+/* hover 시 효과 */
+.register_landing_applicant_type_existing_container:hover {
+  background-color: var(--ewhaian-pink);
+}
+.register_landing_applicant_type_existing_container:hover
+  .existing_applicant_description {
+  color: var(--toneDown-white);
+}
+.register_landing_applicant_type_new_container:hover {
+  background-color: var(--ewhaian-pink);
+}
+.register_landing_applicant_type_new_container:hover
+  .new_applicant_description {
+  color: var(--toneDown-white);
+}
 .register_landing_border_style {
   border: solid;
   border-color: var(--register-landing-border-color);
@@ -146,6 +161,21 @@
   .register_landing_applicant_type_container {
     margin-top: 15%;
   }
+  /* hover 시 효과 */
+  .register_landing_applicant_type_existing_container:hover {
+    background-color: var(--ewhaian-pink);
+  }
+  .register_landing_applicant_type_existing_container:hover
+    .existing_applicant_description {
+    color: var(--toneDown-white);
+  }
+  .register_landing_applicant_type_new_container:hover {
+    background-color: var(--ewhaian-pink);
+  }
+  .register_landing_applicant_type_new_container:hover
+    .new_applicant_description {
+    color: var(--toneDown-white);
+  }
 }
 @media screen and (max-width: 650px) {
   .register_landing_title {
@@ -162,6 +192,21 @@
   }
   .new_applicant_description {
     font-size: 17px;
+  }
+  /* hover 시 효과 */
+  .register_landing_applicant_type_existing_container:hover {
+    background-color: var(--ewhaian-pink);
+  }
+  .register_landing_applicant_type_existing_container:hover
+    .existing_applicant_description {
+    color: var(--toneDown-white);
+  }
+  .register_landing_applicant_type_new_container:hover {
+    background-color: var(--ewhaian-pink);
+  }
+  .register_landing_applicant_type_new_container:hover
+    .new_applicant_description {
+    color: var(--toneDown-white);
   }
 }
 @media screen and (max-width: 500px) {
@@ -182,6 +227,21 @@
     word-break: keep-all;
     font-size: 15px;
   }
+  /* hover 시 효과 */
+  .register_landing_applicant_type_existing_container:hover {
+    background-color: var(--ewhaian-pink);
+  }
+  .register_landing_applicant_type_existing_container:hover
+    .existing_applicant_description {
+    color: var(--toneDown-white);
+  }
+  .register_landing_applicant_type_new_container:hover {
+    background-color: var(--ewhaian-pink);
+  }
+  .register_landing_applicant_type_new_container:hover
+    .new_applicant_description {
+    color: var(--toneDown-white);
+  }
 }
 @media screen and (max-width: 480px) {
   .register_landing_applicant_type_container {
@@ -199,6 +259,11 @@
     margin-bottom: 8%;
   }
   .register_landing_applicant_type_existing_container a {
+    width: 100%;
+    height: 100%;
+    display: flex;
+  }
+  .register_landing_applicant_type_new_container a {
     width: 100%;
     height: 100%;
     display: flex;
@@ -242,7 +307,19 @@
     height: 180px;
     margin-right: 0%;
   }
-  .new_applicant_description {
-    /*background-color: blue;*/
+  /* hover 시 효과 */
+  .register_landing_applicant_type_existing_container:hover {
+    background-color: var(--ewhaian-pink);
+  }
+  .register_landing_applicant_type_existing_container:hover
+    .existing_applicant_description {
+    color: var(--toneDown-white);
+  }
+  .register_landing_applicant_type_new_container:hover {
+    background-color: var(--ewhaian-pink);
+  }
+  .register_landing_applicant_type_new_container:hover
+    .new_applicant_description {
+    color: var(--toneDown-white);
   }
 }

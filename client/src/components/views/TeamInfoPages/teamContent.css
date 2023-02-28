@@ -11,6 +11,7 @@
   line-height: 27px;
   font-weight: 600;
   margin: 29px 0px 0px 29px;
+  word-break: keep-all;
 }
 .team_content {
   font-size: 17px;
@@ -52,4 +53,23 @@
   font-weight: 600;
   margin-right: 12px;
   margin-bottom: 5px;
+  word-break: keep-all;
+}
+@media screen and (max-width: 480px) {
+  .team_content_label {
+    margin: 15px 0px 0px 15px;
+    font-size: 16px;
+    padding-right: 20px;
+  }
+  .team_content {
+    padding-left: 45px;
+    padding-right: 20px;
+    font-size: 15px;
+    line-height: 30px;
+  }
+  .web_tech_items {
+    width: 60px;
+    font-size: 12px;
+    text-align: center;
+  }
 }
