@@ -4,6 +4,8 @@ import axios from "axios";
 import "./NewApplicantEnroll.css";
 import Footer from "../../Footer/Footer";
 import Header from "../../Header/Header";
+import { cardinal_number } from "../../../Var";
+
 
 function NewApplicantEnroll() {
     const [inputs, setInputs] = useState({
@@ -28,7 +30,7 @@ function NewApplicantEnroll() {
     };
 
     const [selectedFile, setSelectedFile] = useState();
-    /*  const onFileChange = (e) => {
+    /*  \\const onFileChange = (e) => {
          setSelectedFile(e.target.files[0]);
          var fileInput = document.getElementsByClassName("newEnroll_file");
          var fileText = document.getElementById("upload_file_text");
@@ -83,22 +85,21 @@ function NewApplicantEnroll() {
                     <div className="register_newEnroll_title">지원하기</div>
 
                     <form className="register_newEnroll_form_container" onSubmit={register}>
+                        <div className="register_newEnroll_teamForm_wrapper">
+                            <div className="register_newEnroll_teamForm_radioBtn">
+                                <input type="radio" name="team" value="1" onChange={onChange} required />마케팅팀
+                                <input type="radio" name="team" value="2" onChange={onChange} required />디자인팀
+                                <input type="radio" name="team" value="3" onChange={onChange} required />웹개발팀
+                            </div>
+                        </div>
                         <div className="register_newEnroll_fileDownload_wrapper">
                             <div className="register_newEnroll_fileDownload">
-                                <a href="/fileUpload/지원서양식.docx" download>
-                                    지원서 다운 링크
+                                <a href="/fileUpload/지원서양식.docx" download="이화이언 수습운영진 지원서 양식">
+                                    <b> 지원서 다운로드 </b>
                                 </a>
                             </div>
+                        </div>
 
-                        </div>
-                        <div className="register_newEnroll_teamForm_wrapper">
-                            <div className="register_newEnroll_teamForm_label register_newEnroll_labels">
-                                지원하는 팀
-                            </div>
-                            <input type="radio" name="team" value="1" onChange={onChange} required />마케팅팀
-                            <input type="radio" name="team" value="2" onChange={onChange} required />디자인팀
-                            <input type="radio" name="team" value="3" onChange={onChange} required />웹개발팀
-                        </div>
                         <div className="register_newEnroll_nameForm_wrapper">
                             <div className="register_newEnroll_nameForm_label register_newEnroll_labels">
                                 성명
@@ -117,12 +118,15 @@ function NewApplicantEnroll() {
                                 <div className="register_newEnroll_studentIdForm_label register_newEnroll_labels">
                                     학번
                                 </div>
+                                <div className="label_text">
+                                    <br></br>
+                                    *7자리를 입력해주세요.
+                                </div>
                             </div>
                             <input
                                 type="text"
                                 name="studentId"
                                 className="register_newEnroll_forms"
-                                placeholder=" * 7자리를 입력해주세요."
                                 maxLength={7}
                                 value={studentId}
                                 onChange={onChange}
@@ -143,26 +147,37 @@ function NewApplicantEnroll() {
                             />
                         </div>
                         <div className="register_newEnroll_fileUpload_wrapper">
-                            <div className="register_newEnroll_fileUpload_label register_newEnroll_labels">
-                                지원서 제출
+                            <div className="resigter_newEnroll_fileUpload_container">
+                                <div className="register_newEnroll_fileUpload_label register_newEnroll_labels">
+                                    지원서 제출
+                                </div>
+                                <div className="label_text">
+                                    <br></br>
+                                    *파일 이름: {cardinal_number}기 지원서_디자인(팀명)_이화연(성명)
+                                </div>
                             </div>
                             <input
                                 type="file"
                                 name="applicant"
                                 className="newEnroll_file"
+                                id="input_file"
                                 value={applicant}
                                 onChange={onChange}
                                 required
+                                style={{ display: "none" }}
                             />
-                            <div className="upload_file">
-                                <div>
-                                    <p
-                                        id="upload_file_text"
-                                        style={{ float: "left", color: "#767676" }}
-                                    >
-                                        파일을 선택해 주세요
-                                    </p>
+                            <div className="upload_file register_newEnroll_forms">
+                                <div >
+                                    <label for="input_file" className="upload_file_text_container">
+                                        <div className="upload_file_text">
+                                            파일을 선택해주세요.
+                                        </div>
+                                        <div className="upload_file_img_container">
+                                            <img src="/img/newApplicantEnroll/fileUpload.png" className="upload_file_img" />
+                                        </div>
+                                    </label>
                                 </div>
+
                             </div>
                         </div>
                         <div className="register_newEnroll_button_wrapper">
