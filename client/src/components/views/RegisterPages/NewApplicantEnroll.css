@@ -1,5 +1,6 @@
 :root {
     --register-checkInfo-form-labels-font-size: 22px;
+    --register-checkInfo-form-labels-small-font-size: 14px;
     --register-checkInfo-forms-color: #3c3b3b;
     --register-checkInfo-forms-border-radius: 15px;
     --register-checkInfo-button-border-radius: 20px;
@@ -8,6 +9,7 @@
     --register-checkInfo-forms-button-height: 50px;
     --register-checkInfo-forms-margin-top: 3%;
     --register-checkInfo-forms-margin-bottom: 7%;
+    --register-checkInfo-forms-fileUpload-color: #bfbfbf;
 }
 
 .register_newEnroll {
@@ -72,7 +74,7 @@
     flex-direction: column;
     /*background-color: blue;*/
     align-items: center;
-    margin-top: 5%;
+    margin-top: 2%;
 }
 
 .register_newEnroll_teamForm_wrapper {
@@ -81,6 +83,34 @@
     margin-left: 0;
     color: var(--toneDown-white);
     margin-bottom: var(--register-checkInfo-forms-margin-bottom);
+
+}
+
+[type="radio"]:checked {
+    vertical-align: middle;
+    appearance: none;
+    border: max(2px, 0.1em) solid gray;
+    border-radius: 50%;
+    width: 1.1em;
+    height: 1.1em;
+}
+
+[type="radio"]:checked {
+    border: 0.3em solid var(--ewhaian-pink);
+}
+
+[type="radio"]:hover {
+    cursor: pointer;
+}
+
+.register_newEnroll_teamForm .register_newEnroll_labels {
+    margin-left: 0;
+}
+
+.register_newEnroll_teamForm_radioBtn {
+    text-align: center;
+    margin: 0 auto;
+
 }
 
 .register_newEnroll_nameForm_wrapper {
@@ -99,6 +129,7 @@
     width: 100%;
     display: flex;
     flex-direction: row;
+    justify-content: flex-start;
 }
 
 .register_newEnroll_ewhaianIdForm_wrapper {
@@ -111,8 +142,48 @@
 .register_newEnroll_fileUpload_wrapper {
     width: 100%;
     /*background-color: blueviolet;*/
-
     margin-bottom: 15%;
+}
+
+.resigter_newEnroll_fileUpload_container {
+    display: flex;
+    justify-content: flex-start;
+}
+
+.label_text {
+    font-size: var(--register-checkInfo-form-labels-small-font-size);
+    color: var(--toneDown-white);
+    margin-left: 2%;
+}
+
+.upload_file_text {
+    color: var(--register-checkInfo-forms-fileUpload-color);
+    font-size: 17px;
+    padding-left: 30%;
+}
+
+.upload_file_text_container {
+    margin: 0 auto;
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+}
+
+.upload_file_img_container {
+    margin-left: auto;
+    width: auto;
+    height: auto;
+    text-align: right;
+    padding-right: 3%;
+    padding-top: 1%;
+}
+
+.upload_file_img {
+    width: 25%;
+}
+
+.upload_file_text_container:hover {
+    cursor: pointer;
 }
 
 .register_newEnroll_button_wrapper {
@@ -151,6 +222,13 @@
     font-size: 18px;
     color: var(--toneDown-black);
     font-weight: var(--register-checkInfo-form-labels-font-weight);
+}
+
+.register_newEnroll_button:hover {
+    cursor: pointer;
+    background-color: var(--ewhaian-pink);
+    color: var(--toneDown-white);
+    transition: 0.3s;
 }
 
 .register_newEnroll_studentIdForm_wrapper input::placeholder {
