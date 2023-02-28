@@ -9,11 +9,12 @@ const adminRouter = express.Router();
 //input admin password
 const askAdmin = (req, res) => {
     //loggedin인지 확인
-    if (req.session.loggedIn === true)
+    if (req.session.loggedIn !== true) {
         return res.json({
             loggedIn: req.session.loggedIn,
-            message: "이미 관리자 페이지에 로그인 되었습니다.",
+            message: "관리자 권한이 필요합니다.",
         });
+    }
 }
 
 //관리자 비밀번호 확인
@@ -67,7 +68,8 @@ const selectPass = (req, res) => {
     }
 }
 
-adminRouter.route("/login").get(askAdmin).post(checkAdmin);
+adminRouter.route("/*").get(askAdmin);
+adminRouter.route("/login").post(checkAdmin);
 adminRouter.route("/landing").get(applyList).post(selectPass);
 
 module.exports = adminRouter;

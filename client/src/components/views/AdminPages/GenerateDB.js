@@ -12,6 +12,16 @@ function GenerateDB() {
   const [isInDB, setIsInDB] = useState(0);
   const [objectId, setObjectId] = useState("");
   useEffect(() => {
+    axios.get("/api/admin/landing")
+      .then((response) => {
+        //로그인 안 했으면 login 창으로
+        if (response.data.loggedIn !== true)
+          navigate(`/admin/login`, { replace: true });
+      })
+      .catch((error) => {
+        console.log("An error occurred: ", error.response);
+      });
+
     axios
       .post("/api/manager/find", {
         key: 1234,
