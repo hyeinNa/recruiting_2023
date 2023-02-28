@@ -58,6 +58,9 @@ function GenerateDB() {
           designPreAssignmentPixelSize: "",
           designPreAssignmentSubmitPeriod: "",
           masterTrainingSchedule: "",
+          isOnlineInterview: false,
+          faceTofaceInterviewPlace: "",
+          interviewWaitingPlace: "",
         })
         .then((response) => {
           console.log(response.data.basicInfoCreate);

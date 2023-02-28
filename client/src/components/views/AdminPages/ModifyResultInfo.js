@@ -24,6 +24,9 @@ function ModifyResultInfo() {
     designPreAssignmentPixelSize: "",
     designPreAssignmentSubmitPeriod: "",
     masterTrainingSchedule: "",
+    isOnlineInterview: "",
+    faceTofaceInterviewPlace: "",
+    interviewWaitingPlace: "",
   });
   const {
     is1stResultPeriod,
@@ -40,6 +43,9 @@ function ModifyResultInfo() {
     designPreAssignmentPixelSize,
     designPreAssignmentSubmitPeriod,
     masterTrainingSchedule,
+    isOnlineInterview,
+    faceTofaceInterviewPlace,
+    interviewWaitingPlace,
   } = inputs;
   const onChange = (e) => {
     const { value, name } = e.target;
@@ -83,6 +89,9 @@ function ModifyResultInfo() {
           designPreAssignmentSubmitPeriod:
             response.data.designPreAssignmentSubmitPeriod,
           masterTrainingSchedule: response.data.masterTrainingSchedule,
+          isOnlineInterview: response.data.isOnlineInterview,
+          faceTofaceInterviewPlace: response.data.faceTofaceInterviewPlace,
+          interviewWaitingPlace: response.data.interviewWaitingPlace,
         });
       })
       .catch((error) => {
@@ -107,6 +116,9 @@ function ModifyResultInfo() {
         designPreAssignmentPixelSize: inputs.designPreAssignmentPixelSize,
         designPreAssignmentSubmitPeriod: inputs.designPreAssignmentSubmitPeriod,
         masterTrainingSchedule: inputs.masterTrainingSchedule,
+        isOnlineInterview: inputs.isOnlineInterview,
+        faceTofaceInterviewPlace: inputs.faceTofaceInterviewPlace,
+        interviewWaitingPlace: inputs.interviewWaitingPlace,
       })
       .then((response) => {
         console.log(response.data.basicInfoUpdateSuccess);
@@ -152,6 +164,46 @@ function ModifyResultInfo() {
                 <span className="onf_btn"></span>
               </label>
             </div>
+          </div>
+          <div className="recruitInfo_isApplyPeriod recruitInfo_forms">
+            <div className="resultInfo_label">온라인 면접</div>
+            <div className="switch_wrapper">
+              <input
+                type="checkbox"
+                name="isOnlineInterview"
+                value={isOnlineInterview || false}
+                id="switch3"
+                checked={isOnlineInterview}
+                onChange={checkingCheckBox}
+              />
+              <label htmlFor="switch3" className="switch_label">
+                <span className="onf_btn"></span>
+              </label>
+            </div>
+          </div>
+          <div
+            className={`recruitInfo_forms ${
+              inputs.isOnlineInterview ? "hidden" : "true"
+            } `}
+          >
+            <div className="resultInfo_label">대면 면접 장소</div>
+            <input
+              className="resultInfo_inputs_style"
+              type="text"
+              name="faceTofaceInterviewPlace"
+              value={faceTofaceInterviewPlace || ""}
+              onChange={onChange}
+              required
+            />
+            <div className="resultInfo_label">면접 대기실 장소</div>
+            <input
+              className="resultInfo_inputs_style"
+              type="text"
+              name="interviewWaitingPlace"
+              value={interviewWaitingPlace || ""}
+              onChange={onChange}
+              required
+            />
           </div>
           <div className=" recruitInfo_forms">
             <div className="resultInfo_label">면접 전 설문조사 폼 링크</div>

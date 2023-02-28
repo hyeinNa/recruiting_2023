@@ -80,6 +80,15 @@ const basicInfoSchema = mongoose.Schema({
   masterTrainingSchedule: {
     type: String,
   },
+  isOnlineInterview: {
+    type: Boolean,
+  },
+  faceTofaceInterviewPlace: {
+    type: String,
+  },
+  interviewWaitingPlace: {
+    type: String,
+  },
 });
 
 //BasicInfo 모델 생성

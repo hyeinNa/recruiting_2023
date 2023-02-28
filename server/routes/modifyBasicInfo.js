@@ -63,6 +63,9 @@ modifyBasicInfoRoute.post("/init", (req, res) => {
       designPreAssignmentPixelSize: req.body.designPreAssignmentPixelSize,
       designPreAssignmentSubmitPeriod: req.body.designPreAssignmentSubmitPeriod,
       masterTrainingSchedule: req.body.masterTrainingSchedule,
+      isOnlineInterview: req.body.isOnlineInterview,
+      faceTofaceInterviewPlace: req.body.faceTofaceInterviewPlace,
+      interviewWaitingPlace: req.body.interviewWaitingPlace,
     },
     (err) => {
       if (err) console.log(err);
@@ -125,6 +128,9 @@ modifyBasicInfoRoute.post("/modify/resultInfo", (req, res) => {
       designPreAssignmentPixelSize: req.body.designPreAssignmentPixelSize,
       designPreAssignmentSubmitPeriod: req.body.designPreAssignmentSubmitPeriod,
       masterTrainingSchedule: req.body.masterTrainingSchedule,
+      isOnlineInterview: req.body.isOnlineInterview,
+      faceTofaceInterviewPlace: req.body.faceTofaceInterviewPlace,
+      interviewWaitingPlace: req.body.interviewWaitingPlace,
     },
     { new: true },
     (err, data) => {
