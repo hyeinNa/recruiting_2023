@@ -89,6 +89,12 @@ const basicInfoSchema = mongoose.Schema({
   interviewWaitingPlace: {
     type: String,
   },
+  masterTrainingWaitingPlace: {
+    type: String,
+  },
+  masterTrainingWaitingTime: {
+    type: String,
+  },
 });
 
 //BasicInfo 모델 생성

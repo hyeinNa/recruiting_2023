@@ -66,6 +66,8 @@ modifyBasicInfoRoute.post("/init", (req, res) => {
       isOnlineInterview: req.body.isOnlineInterview,
       faceTofaceInterviewPlace: req.body.faceTofaceInterviewPlace,
       interviewWaitingPlace: req.body.interviewWaitingPlace,
+      masterTrainingWaitingPlace: req.body.masterTrainingWaitingPlace,
+      masterTrainingWaitingTime: req.body.masterTrainingWaitingTime,
     },
     (err) => {
       if (err) console.log(err);
@@ -131,6 +133,8 @@ modifyBasicInfoRoute.post("/modify/resultInfo", (req, res) => {
       isOnlineInterview: req.body.isOnlineInterview,
       faceTofaceInterviewPlace: req.body.faceTofaceInterviewPlace,
       interviewWaitingPlace: req.body.interviewWaitingPlace,
+      masterTrainingWaitingPlace: req.body.masterTrainingWaitingPlace,
+      masterTrainingWaitingTime: req.body.masterTrainingWaitingTime,
     },
     { new: true },
     (err, data) => {

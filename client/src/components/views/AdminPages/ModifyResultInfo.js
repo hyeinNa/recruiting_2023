@@ -27,6 +27,8 @@ function ModifyResultInfo() {
     isOnlineInterview: "",
     faceTofaceInterviewPlace: "",
     interviewWaitingPlace: "",
+    masterTrainingWaitingPlace: "",
+    masterTrainingWaitingTime: "",
   });
   const {
     is1stResultPeriod,
@@ -46,6 +48,8 @@ function ModifyResultInfo() {
     isOnlineInterview,
     faceTofaceInterviewPlace,
     interviewWaitingPlace,
+    masterTrainingWaitingPlace,
+    masterTrainingWaitingTime,
   } = inputs;
   const onChange = (e) => {
     const { value, name } = e.target;
@@ -92,6 +96,8 @@ function ModifyResultInfo() {
           isOnlineInterview: response.data.isOnlineInterview,
           faceTofaceInterviewPlace: response.data.faceTofaceInterviewPlace,
           interviewWaitingPlace: response.data.interviewWaitingPlace,
+          masterTrainingWaitingPlace: response.data.masterTrainingWaitingPlace,
+          masterTrainingWaitingTime: response.data.masterTrainingWaitingTime,
         });
       })
       .catch((error) => {
@@ -119,6 +125,8 @@ function ModifyResultInfo() {
         isOnlineInterview: inputs.isOnlineInterview,
         faceTofaceInterviewPlace: inputs.faceTofaceInterviewPlace,
         interviewWaitingPlace: inputs.interviewWaitingPlace,
+        masterTrainingWaitingPlace: inputs.masterTrainingWaitingPlace,
+        masterTrainingWaitingTime: inputs.masterTrainingWaitingTime,
       })
       .then((response) => {
         console.log(response.data.basicInfoUpdateSuccess);
@@ -226,15 +234,33 @@ function ModifyResultInfo() {
               onChange={onChange}
               placeholder="0월 00일(요일) 오전/오후 00시 00분"
               required
-            />
-          </div>
-          <div className="recruitInfo_isApplyPeriod recruitInfo_forms">
+            />{" "}
             <div className="resultInfo_label">마스터 교육 장소</div>
             <input
               className="resultInfo_inputs_style"
               type="text"
               name="masterTrainingPlace"
               value={masterTrainingPlace || ""}
+              onChange={onChange}
+              required
+            />
+          </div>
+          <div className="recruitInfo_isApplyPeriod recruitInfo_forms">
+            <div className="resultInfo_label">마스터 교육 대기 장소</div>
+            <input
+              className="resultInfo_inputs_style"
+              type="text"
+              name="masterTrainingWaitingPlace"
+              value={masterTrainingWaitingPlace || ""}
+              onChange={onChange}
+              required
+            />
+            <div className="resultInfo_label">대기 가능 시간</div>
+            <input
+              className="resultInfo_inputs_style"
+              type="text"
+              name="masterTrainingWaitingTime"
+              value={masterTrainingWaitingTime || ""}
               onChange={onChange}
               required
             />

@@ -61,6 +61,8 @@ function GenerateDB() {
           isOnlineInterview: false,
           faceTofaceInterviewPlace: "",
           interviewWaitingPlace: "",
+          masterTrainingWaitingPlace: "",
+          masterTrainingWaitingTime: "",
         })
         .then((response) => {
           console.log(response.data.basicInfoCreate);
