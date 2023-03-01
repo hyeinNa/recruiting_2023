@@ -16,7 +16,7 @@ function NewApplicantEnroll() {
         applicant: ""
     });
     const [file, setFile] = useState('');
-    const [filename, setFilename] = useState('Choose File');
+    const [filename, setFilename] = useState('파일을 선택하세요');
     const { /*team,*/ name, studentId, ewhaianId, applicant } = inputs;
 
     const onChange = (e) => {
@@ -47,14 +47,14 @@ function NewApplicantEnroll() {
     const register = async (e) => {
         e.preventDefault();
         const formData = new FormData();
-        formData.append('applicant', file)
+        formData.append('applicant', file) //formdata(name,value) formdata의 name은 backend부분과 일치해야함
         formData.append('name', name)
         formData.append('studentId', studentId)
         formData.append('ewhaianId', ewhaianId)
 
         const config = { headers: { 'Content-Type': 'multipart/form-data' } };
         try { //고유 id 및 폼에 입력받은 정보를 수정하기 api로 전달
-            const response = await axios.put("/api/register/register", formData, config, {
+            const response = await axios.post("/api/register/register", formData, config, {
                 //team:
                 name: inputs.name,
                 studentId: inputs.studentId,
@@ -86,11 +86,11 @@ function NewApplicantEnroll() {
 
                     <form className="register_newEnroll_form_container" onSubmit={register}>
                         <div className="register_newEnroll_teamForm_wrapper">
-                            <div className="register_newEnroll_teamForm_radioBtn">
+                            {/* <div className="register_newEnroll_teamForm_radioBtn">
                                 <input type="radio" name="team" value="1" onChange={onChange} required />마케팅팀
                                 <input type="radio" name="team" value="2" onChange={onChange} required />디자인팀
                                 <input type="radio" name="team" value="3" onChange={onChange} required />웹개발팀
-                            </div>
+                            </div> */}
                         </div>
                         <div className="register_newEnroll_fileDownload_wrapper">
                             <div className="register_newEnroll_fileDownload">
@@ -170,7 +170,7 @@ function NewApplicantEnroll() {
                                 <div >
                                     <label for="input_file" className="upload_file_text_container">
                                         <div className="upload_file_text">
-                                            파일을 선택해주세요.
+                                            {filename}
                                         </div>
                                         <div className="upload_file_img_container">
                                             <img src="/img/newApplicantEnroll/fileUpload.png" className="upload_file_img" />
