@@ -11,10 +11,10 @@ app.use('/', express.static(path.join(__dirname, 'static'))) */
 registerRoute.post('/register', uploadRouter.single('applicant'), async (req, res) => {
     const { name, studentId, ewhaianId } = req.body
 
-    //validation과정: 잘못된 형식의 정보를 입력하는 경우 에러 메시지를 나타내도록 함.
-    if (!team) {
-        return res.json({ status: 'error', error: '지원하려는 팀을 선택하세요.' })
-    }
+    /*  //validation과정: 잘못된 형식의 정보를 입력하는 경우 에러 메시지를 나타내도록 함.
+     if (!team) {
+         return res.json({ status: 'error', error: '지원하려는 팀을 선택하세요.' })
+     } */
     if (!name || typeof name !== 'string') {
         return res.json({ status: 'error', error: '성명을 입력하세요.' })
     }
