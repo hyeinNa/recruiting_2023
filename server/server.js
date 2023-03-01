@@ -20,6 +20,7 @@ const adminRouter = require("./routes/adminLogin");
 const updateRouter = require("./routes/update");
 const modifyBasicInfoRoute = require("./routes/modifyBasicInfo");
 const loadBasicInfoRoute = require("./routes/loadBasicInfo");
+const applicantListRouter = require("./routes/applicantList");
 //body-parser 관련 코드
 app.use(bodyParser.urlencoded({ extended: true }));
 app.use(bodyParser.json());
@@ -58,6 +59,8 @@ app.use("/api/admin", adminRouter);
 app.use("/api/update", updateRouter);
 app.use("/api/manager", modifyBasicInfoRoute);
 app.use("/api/var", loadBasicInfoRoute);
+app.use("/api/applicantlist", applicantListRouter);
+
 //app 객체를 통해서 express 서버 열어주는 곳
 app.listen(PORT, () => {
   console.log(`recruiting-site server listening on port ${PORT}`);
