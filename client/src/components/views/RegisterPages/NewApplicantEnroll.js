@@ -9,7 +9,7 @@ import { cardinal_number } from "../../../Var";
 
 function NewApplicantEnroll() {
     const [inputs, setInputs] = useState({
-        //team: "",
+        team: "",
         name: "",
         studentId: "",
         ewhaianId: "",
@@ -17,7 +17,7 @@ function NewApplicantEnroll() {
     });
     const [file, setFile] = useState('');
     const [filename, setFilename] = useState('파일을 선택하세요');
-    const { /*team,*/ name, studentId, ewhaianId, applicant } = inputs;
+    const { team, name, studentId, ewhaianId, applicant } = inputs;
 
     const onChange = (e) => {
         const { value, name } = e.target;
@@ -29,19 +29,6 @@ function NewApplicantEnroll() {
         setFilename(e.target.files[0].name);//주석 설명
     };
 
-    const [selectedFile, setSelectedFile] = useState();
-    /*  \\const onFileChange = (e) => {
-         setSelectedFile(e.target.files[0]);
-         var fileInput = document.getElementsByClassName("newEnroll_file");
-         var fileText = document.getElementById("upload_file_text");
-         for (var i = 0; i < fileInput.length; i++) {
-             if (fileInput[i].files.length > 0) {
-                 for (var j = 0; j < fileInput[i].files.length; j++) {
-                     fileText.textContent = fileInput[i].files[j].name;
-                 }
-             }
-         }
-     } */
 
     //폼에 입력받은 정보를 정보 확인 api로 전달
     const register = async (e) => {
@@ -51,11 +38,12 @@ function NewApplicantEnroll() {
         formData.append('name', name)
         formData.append('studentId', studentId)
         formData.append('ewhaianId', ewhaianId)
+        formData.append('team', team)
 
         const config = { headers: { 'Content-Type': 'multipart/form-data' } };
         try { //고유 id 및 폼에 입력받은 정보를 수정하기 api로 전달
             const response = await axios.post("/api/register/register", formData, config, {
-                //team:
+                team: inputs.team,
                 name: inputs.name,
                 studentId: inputs.studentId,
                 ewhaianId: inputs.ewhaianId
@@ -86,11 +74,11 @@ function NewApplicantEnroll() {
 
                     <form className="register_newEnroll_form_container" onSubmit={register}>
                         <div className="register_newEnroll_teamForm_wrapper">
-                            {/* <div className="register_newEnroll_teamForm_radioBtn">
+                            <div className="register_newEnroll_teamForm_radioBtn">
                                 <input type="radio" name="team" value="1" onChange={onChange} required />마케팅팀
                                 <input type="radio" name="team" value="2" onChange={onChange} required />디자인팀
                                 <input type="radio" name="team" value="3" onChange={onChange} required />웹개발팀
-                            </div> */}
+                            </div>
                         </div>
                         <div className="register_newEnroll_fileDownload_wrapper">
                             <div className="register_newEnroll_fileDownload">
