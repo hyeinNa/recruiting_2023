@@ -4,71 +4,42 @@ const { Applicant } = require("../models/Applicant");
 const applicantListRouter = express.Router();
 
 //관리자페이지
-const applyList = async (req, res) => {
-
-    console.log("실행 확인 1");
-    try {
-        const data = await Applicant.findOne({
-            team: "마케팅",
-        });
-        return res.json(data);
-    } catch (err) {
-        console.log(err);
+const applyList = (req, res) => {
+    // 지원자 목록 프론트로 전송
+    const { team } = req.query;
+    // 마케팅 팀 지원자 정보 전송
+    if (team === "1") {
+        try {
+            console.log("실행1");
+            Applicant.find({ team: "마케팅" }, function (error, data) {
+                res.json({ result: data });
+            })
+        } catch (err) {
+            console.error(err);
+        }
     }
-    console.log("실행 확인2");
-
-    //지원자 목록 프론트로 전송
-    //마케팅 팀 지원자 정보 전송
-    // const { team } = req.query;
-    // if (team === 1) {
-    //     Applicant.findOne(
-    //         {
-    //             team: "마케팅",
-    //         },
-    //         (err, data) => {
-    //             if (err) {
-    //                 console.log(err);
-    //             } else {
-    //                 console.log(data);
-    //                 res.json(data);
-    //             }
-    //         }
-    //     );
-    // }
-    // //디자인 팀 지원자 정보 전송
-    // else if (team === 2) {
-    //Applicant.findOne(
-    //         {
-    //             team: "디자인",
-    //         },
-    //         (err, data) => {
-    //             if (err) {
-    //                 console.log(err);
-    //             } else {
-    //                 console.log(data);
-    //                 res.json(data);
-    //             }
-    //         }
-    //     );
-    // }
-    // //웹개발 팀 지원자 정보 전송. team===3
-    // else {
-    //Applicant.findOne(
-    //         {
-    //             team: "웹개발",
-    //         },
-    //         (err, data) => {
-    //             if (err) {
-    //                 console.log(err);
-    //             } else {
-    //                 console.log(data);
-    //                 res.json(data);
-    //             }
-    //         }
-    //     );
-    // }
-
+    //디자인 팀 지원자 정보 전송
+    else if (team === "2") {
+        try {
+            Applicant.find({ team: "디자인" }, function (error, data) {
+                res.json({ result: data });
+            })
+        } catch (err) {
+            console.error(err);
+        }
+    }
+    //웹개발 팀 지원자 정보 전송. team===3
+    else {
+        try {
+            Applicant.find({ team: "웹개발" }, function (error, data) {
+                res.json({ result: data });
+            })
+        } catch (err) {
+            console.error(err);
+        }
+    }
 }
+
 
 
 //지원자의 합불 여부를 결정
