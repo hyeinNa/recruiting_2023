@@ -23,7 +23,9 @@ import GenerateDB from "./components/views/AdminPages/GenerateDB";
 import ApplicantList from "./components/views/AdminPages/ApplicantList";
 
 import NotPeriodCheck from "./components/views/ResultPages/checkUI";
-
+import DesignDetailActivity from "./components/views/TeamInfoPages/DetailActivities/DesignDetailActivity";
+import WebDevDetailActivity from "./components/views/TeamInfoPages/DetailActivities/WebDevDetailActivity";
+import MarketingDetailActivity from "./components/views/TeamInfoPages/DetailActivities/MarketingDetailActivity";
 function App() {
   return (
     <div className="App">
@@ -32,6 +34,21 @@ function App() {
           <Route exact path="/" element={<LandingPage />} />
           <Route exact path="/ewhaianInfo" element={<EwhaianInfo />} />
           <Route exact path="/teamInfo" element={<TeamInfo />} />
+          <Route
+            exact
+            path="/teamInfo/detail/design"
+            element={<DesignDetailActivity />}
+          />
+          <Route
+            exact
+            path="/teamInfo/detail/web"
+            element={<WebDevDetailActivity />}
+          />
+          <Route
+            exact
+            path="/teamInfo/detail/marketing"
+            element={<MarketingDetailActivity />}
+          />
           <Route exact path="/register" element={<RegisterLanding />} />
           <Route
             exact
@@ -49,7 +66,11 @@ function App() {
           <Route exact path="/result/notperiod/:id" element={<NotPeriod />} />
           <Route exact path="/admin/login" element={<AdminLogin />} />
           <Route exact path="/admin/modifyInfo/:id" element={<Modify />} />
-          <Route exact path="/result/notperiod/check" element={<NotPeriodCheck />} />
+          <Route
+            exact
+            path="/result/notperiod/check"
+            element={<NotPeriodCheck />}
+          />
           <Route
             exact
             path="/admin/applicantList"
