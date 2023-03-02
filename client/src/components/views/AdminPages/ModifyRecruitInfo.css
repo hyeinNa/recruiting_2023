@@ -95,6 +95,14 @@
   position: absolute;
   appearance: none;
 }
+#switch2 {
+  position: absolute;
+  appearance: none;
+}
+#switch3 {
+  position: absolute;
+  appearance: none;
+}
 .switch_label {
   position: relative;
   cursor: pointer;
@@ -129,6 +137,20 @@
 #switch:checked + .switch_label:hover {
   background: var(--ewhaian-pink);
 }
+#switch2:checked + .switch_label {
+  background: var(--ewhaian-pink);
+  border: 2px solid var(--ewhaian-pink);
+}
+#switch2:checked + .switch_label:hover {
+  background: var(--ewhaian-pink);
+}
+#switch3:checked + .switch_label {
+  background: var(--ewhaian-pink);
+  border: 2px solid var(--ewhaian-pink);
+}
+#switch3:checked + .switch_label:hover {
+  background: var(--ewhaian-pink);
+}
 
 /* move */
 #switch:checked + .switch_label .onf_btn {
@@ -136,7 +158,16 @@
   background: #fff;
   box-shadow: 1px 2px 3px #00000020;
 }
-
+#switch2:checked + .switch_label .onf_btn {
+  left: 33px;
+  background: #fff;
+  box-shadow: 1px 2px 3px #00000020;
+}
+#switch3:checked + .switch_label .onf_btn {
+  left: 33px;
+  background: #fff;
+  box-shadow: 1px 2px 3px #00000020;
+}
 /* 폼 별 효과 */
 .recruitInfo_cardinalNum input {
   width: 80px;

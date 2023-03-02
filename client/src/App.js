@@ -22,6 +22,8 @@ import Modify from "./components/views/AdminPages/ModifyInfo";
 import GenerateDB from "./components/views/AdminPages/GenerateDB";
 import ApplicantList from "./components/views/AdminPages/ApplicantList";
 
+import NotPeriodCheck from "./components/views/ResultPages/checkUI";
+
 function App() {
   return (
     <div className="App">
@@ -47,6 +49,7 @@ function App() {
           <Route exact path="/result/notperiod/:id" element={<NotPeriod />} />
           <Route exact path="/admin/login" element={<AdminLogin />} />
           <Route exact path="/admin/modifyInfo/:id" element={<Modify />} />
+          <Route exact path="/result/notperiod/check" element={<NotPeriodCheck />} />
           <Route
             exact
             path="/admin/applicantList"

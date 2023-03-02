@@ -52,6 +52,19 @@
   margin-left: 20px;
   background-color: var(--toneDown-white);
 }
+.preAssignment_design_inputs_style {
+  border-radius: 6px;
+  margin-left: 20px;
+  width: 230px;
+  height: 20px;
+  background-color: var(--toneDown-white);
+}
+.design_input1 {
+  width: 100px;
+}
+.design_input2 {
+  width: 150px;
+}
 .visible {
   visibility: visible;
 }

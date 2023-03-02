@@ -1,0 +1,107 @@
+:root {
+    --not-period-title-font-size: 45px;
+    --not-period-title-font-weight: 600;
+    --not-period-title-small-font-size: 20px;
+    --not-period-title-small-font-weight: 300;
+    --back-to-main-btn-color: #5b5b5b;
+}
+
+/*1차, 최종 지원기간 둘 다 아닐 때*/
+.not_Both_ResultPeriods {
+    width: 100%;
+    height: 100%;
+    background-color: var(--toneDown-black);
+
+}
+
+.not_both_wrapper {
+    max-width: var(--nav-bar-max-width);
+    margin: 0 auto;
+    width: 100%;
+    height: auto;
+    padding-top: 150px;
+    padding-bottom: 196px;
+
+}
+
+.not_both_inner_container {
+    width: 92%;
+    height: 100%;
+    margin: 0 auto;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: flex-start;
+}
+
+.not_both_text_container {
+    color: var(--toneDown-white);
+    width: 100%;
+    text-align: center;
+    font-size: var(--not-period-title-font-size);
+    font-weight: var(--not-period-title-font-weight);
+    letter-spacing: 2px;
+    margin-top: 5%;
+}
+
+.not_both_text_small_container {
+    color: var(--toneDown-white);
+    width: 100%;
+    text-align: center;
+    font-size: var(--not-period-title-small-font-size);
+    font-weight: var(--not-period-title-small-font-weight);
+    letter-spacing: 1px;
+    margin-top: 2%;
+}
+
+.circles {
+    width: 100%;
+    height: auto;
+    text-align: center;
+    display: flex;
+    justify-content: center;
+    margin-top: 9%;
+}
+
+.circles div:nth-child(1) {
+    width: 100px;
+    height: 100px;
+    background-color: var(--ewhaian-pink);
+    color: var(--toneDown-white);
+    border-radius: 50%;
+}
+
+.circles div:nth-child(2),
+.circles div:nth-child(3),
+.circles div:nth-child(4),
+.circles div:nth-child(5) {
+    width: 100px;
+    height: 100px;
+    background-color: var(--toneDown-white);
+    border-radius: 50%;
+    margin-left: 5%;
+}
+
+.back_to_main_btn {
+    margin-top: 15%;
+    width: 200px;
+    height: 50px;
+    background-color: var(--back-to-main-btn-color);
+    border-radius: 40px;
+    text-align: center;
+    line-height: 50px;
+    font-weight: var(--not-period-title-font-weight);
+}
+
+.back_to_main_btn:hover {
+    background-color: var(--ewhaian-pink);
+    color: var(--toneDown-white);
+    cursor: pointer;
+    transition: 0.3s;
+}
+
+/*1차 확인 기간이 아닐 때*/
+
+
+
+/*2차 확인 기간이 아닐 때*/

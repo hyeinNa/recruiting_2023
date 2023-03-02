@@ -41,7 +41,10 @@ const basicInfoSchema = mongoose.Schema({
   masterTrainingPlace: {
     type: String,
   },
-  isResultPeriod: {
+  is1stResultPeriod: {
+    type: Boolean,
+  },
+  isFinalResultPeriod: {
     type: Boolean,
   },
   surveyFormLink: {
@@ -62,7 +65,34 @@ const basicInfoSchema = mongoose.Schema({
   designPreAssignment: {
     type: String,
   },
+  designPreAssignmentBannerName: {
+    type: String,
+  },
+  designPreAssignmentPixelSize: {
+    type: String,
+  },
+  designPreAssignmentSubmitPeriod: {
+    type: String,
+  },
   webDevPreAssignment: {
+    type: String,
+  },
+  masterTrainingSchedule: {
+    type: String,
+  },
+  isOnlineInterview: {
+    type: Boolean,
+  },
+  faceTofaceInterviewPlace: {
+    type: String,
+  },
+  interviewWaitingPlace: {
+    type: String,
+  },
+  masterTrainingWaitingPlace: {
+    type: String,
+  },
+  masterTrainingWaitingTime: {
     type: String,
   },
 });

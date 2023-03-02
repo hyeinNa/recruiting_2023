@@ -9,7 +9,7 @@ app.use('/', express.static(path.join(__dirname, 'static'))) */
 
 //지원하기(유저 정보 등록)
 registerRoute.post('/register', uploadRouter.single('applicant'), async (req, res) => {
-    const { name, studentId, ewhaianId } = req.body
+    const { team, name, studentId, ewhaianId } = req.body
 
     //validation과정: 잘못된 형식의 정보를 입력하는 경우 에러 메시지를 나타내도록 함.
     if (!team) {
@@ -42,6 +42,7 @@ registerRoute.post('/register', uploadRouter.single('applicant'), async (req, re
     //입력받은 정보를 바탕으로 새로운 applicant 생성하기
     try {
         const response = await Applicant.create({
+            team,
             name,
             studentId,
             ewhaianId,
