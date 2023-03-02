@@ -12,6 +12,11 @@
     padding-bottom: 150px;
 }
 
+.qna_inner_inner_container {
+    width: 92%;
+    margin: auto;
+}
+
 .qna_title{
     padding-top: 150px;
     font-weight: 600;

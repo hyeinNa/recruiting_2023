@@ -1,4 +1,6 @@
-import React, {useEffect} from "react";
+import React, { useEffect } from "react";
+import Footer from "../../Footer/Footer";
+import Header from "../../Header/Header";
 import "./QnA.css";
 import AOS from 'aos';
 import 'aos/dist/aos.css';
@@ -9,8 +11,10 @@ function QnA() {
     },[])
     return (
       <div className="qna_container">
+        <Header />
         <div className="qna_inner_container">
-          <div className="qna_title">자주 묻는 질문</div>
+        <div className="qna_inner_inner_container">
+            <div className="qna_title">자주 묻는 질문</div>
             <div className="qna_question_list">
                 <li className="qna_question_list_box" data-aos="fade-up">
                     <div className="qna_question">Q. 운영진 모집에 있어 우대하는 학과가 있나요?</div>
@@ -18,13 +22,13 @@ function QnA() {
                     사랑하는 마음과 열정으로 충분히 운영진 활동을 펼쳐나갈 수 있답니다!
                     </div>
                 </li>
-                <li className="qna_question_list_box" data-aos="fade-up" data-aos-delay= "1000">
+                <li className="qna_question_list_box" data-aos="fade-up">
                     <div className="qna_question">Q. 운영진 활동을 위한 필수 조건이 있나요?</div>
                     <div className="qna_answer">앞서 말씀드린 것처럼 이화이언에 대한 애정과 열정이 제일 중요하겠지만, 
                     학번에 상관 없이 2년 이상 활동이 가능해야 한답니다.
                     </div>
                 </li>
-                <li className="qna_question_list_box" data-aos="fade-up" data-aos-delay= "2000">
+                <li className="qna_question_list_box" data-aos="fade-up">
                     <div className="qna_question">Q. 운영진에게 주어지는 혜택이 있나요?</div>
                     <div className="qna_answer">이화이언 운영진에게는 매달 전체 운영진 회식비가 제공되고, 우수 운영진
                     대상으로는 기프티콘도 지급됩니다. 또한 인터넷 강의나 교육 도서, 유료
@@ -67,10 +71,11 @@ function QnA() {
                     </div>
                 </li>
     
-            </div>   
-
+            </div>  
         </div>
         </div>
+        <Footer />
+    </div>
         
 
     );
