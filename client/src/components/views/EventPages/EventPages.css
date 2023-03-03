@@ -1,0 +1,73 @@
+#wrap {
+    width: 100%;
+    height: auto;
+    background-color: var(--toneDown-black);
+}
+
+.event_inner_container {
+    width: 92%;
+    height: 100%;
+    margin: auto;
+    padding-bottom: 150px;
+}
+
+.event_title {
+    padding-top: 150px;
+    font-weight: 600;
+    font-size: 45px;
+    line-height: 54px;
+
+    color: var(--toneDown-white);
+}
+
+.event_describe {
+    margin-top: 10px;
+    font-weight: 200;
+    font-size: 17px;
+    line-height: 27px;
+
+    color: var(--toneDown-white);
+
+    margin-bottom: 5%;
+}
+
+.event_pic {
+    justify-content: space-between;
+    float: left;
+}
+
+.classopeningbooth, .may, .pearflowergarden, .offlineevent {
+    width: 40%;
+    position: relative;
+    float: left;
+
+    margin-bottom: 2%;
+}
+
+.classopeningbooth_pic, .may_pic, .pearflowergarden_pic, .offlineevent_pic {
+    opacity: 1.0;
+}
+
+
+.classopeningbooth_text, .may_text, .pearflowergarden_text, .offlineevent_text {
+    position: absolute;
+    top: 1%;
+    left: 2%;
+    font-weight: 600;
+    font-size: 30px;
+    line-height: 33px;
+
+    color: var(--toneDown-white);
+}
+
+.classopeningbooth_discribe, .may_discribe, .pearflowergarden_discribe, .offlineevent_discribe {
+    position: absolute;
+    top: 20%;
+    left: 2%;
+    font-weight: 150;
+    font-size: 16px;
+    line-height: 27px;
+
+
+    color: var(--toneDown-white);
+}
