@@ -1,5 +1,5 @@
 import React from "react";
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import axios from "axios";
 import "./NewApplicantEnroll.css";
 import Footer from "../../Footer/Footer";
@@ -28,6 +28,21 @@ function NewApplicantEnroll() {
         setFile(e.target.files[0]);
         setFilename(e.target.files[0].name);//주석 설명
     };
+    const [cardinalNum, setCardinalNum] = useState("");
+    useEffect(() => {
+        axios
+            .post("/api/var/load", {
+                key: 1234,
+            })
+            .then((response) => {
+                console.log(response.data);
+                if (response.data.isInDB === "false") {
+                    setCardinalNum("");
+                } else {
+                    setCardinalNum(response.data.cardinalNumber);
+                }
+            });
+    }, []);
 
 
     //폼에 입력받은 정보를 정보 확인 api로 전달
@@ -53,7 +68,7 @@ function NewApplicantEnroll() {
             let message = response.data.message;
             if (status === "ok") {//register api의 message출력
                 console.log(message);
-                alert(message)
+                alert("성공적으로 지원되었습니다.")
             }
             else {
                 console.log(err);
@@ -141,7 +156,7 @@ function NewApplicantEnroll() {
                                 </div>
                                 <div className="label_text">
                                     <br></br>
-                                    *파일 이름: {cardinal_number}기 지원서_디자인(팀명)_이화연(성명)
+                                    *파일 이름: {cardinalNum}기 지원서_디자인(팀명)_이화연(성명)
                                 </div>
                             </div>
                             <input
