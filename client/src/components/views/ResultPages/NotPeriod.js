@@ -64,6 +64,7 @@ function NotPeriod() {
               <div>
                 <p><b>01</b></p>
                 <p><b>지원서 제출</b></p>
+                <p></p>
               </div>
               <div>
                 <p><b>02</b></p>
