@@ -36,27 +36,24 @@ function TeamInfo() {
           </div>
           <div className="teamInfo_button_container">
             <button
-              className={`teamInfo_marketing_btn teamInfo_btn ${
-                isClicked[0] ? "clicked" : "unclicked"
-              }`}
+              className={`teamInfo_marketing_btn teamInfo_btn ${isClicked[0] ? "clicked" : "unclicked"
+                }`}
               onClick={handleClickButton}
               name="marketing"
             >
               마케팅팀
             </button>
             <button
-              className={`teamInfo_design_btn teamInfo_btn ${
-                isClicked[1] ? "clicked" : "unclicked"
-              }`}
+              className={`teamInfo_design_btn teamInfo_btn ${isClicked[1] ? "clicked" : "unclicked"
+                }`}
               onClick={handleClickButton}
               name="design"
             >
               디자인팀
             </button>
             <button
-              className={`teamInfo_webdev_btn teamInfo_btn ${
-                isClicked[2] ? "clicked" : "unclicked"
-              }`}
+              className={`teamInfo_webdev_btn teamInfo_btn ${isClicked[2] ? "clicked" : "unclicked"
+                }`}
               onClick={handleClickButton}
               name="webdev"
             >
