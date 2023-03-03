@@ -1,6 +1,7 @@
 import { BrowserRouter, Route, Routes } from "react-router-dom";
 import LandingPage from "./components/views/LandingPage";
 import EwhaianInfo from "./components/views/EwhaianInfoPages/EwhaianInfo";
+import Event from "./components/views/EventPages/EventPages"
 import TeamInfo from "./components/views/TeamInfoPages/TeamInfo";
 import Update from "./components/views/UpdatePages/UpdatePage";
 import RegisterLanding from "./components/views/RegisterPages/RegisterLanding";
@@ -31,6 +32,7 @@ function App() {
         <Routes>
           <Route exact path="/" element={<LandingPage />} />
           <Route exact path="/ewhaianInfo" element={<EwhaianInfo />} />
+          <Route exact path="/event" element={<Event />} />
           <Route exact path="/teamInfo" element={<TeamInfo />} />
           <Route exact path="/register" element={<RegisterLanding />} />
           <Route
