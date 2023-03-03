@@ -4,6 +4,8 @@ function Acivity(props) {
     var activity_name = props.name;
     var activity_date = props.text;
     var img_path = props.img_path;
+    var activity_type = props.type;
+    // activity_type: 클래스 지정하여 이벤트스케치 연결
     return (
         <div className="EachActivity">
             <div className="ActivityText">

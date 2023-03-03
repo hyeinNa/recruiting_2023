@@ -1,155 +1,381 @@
+@import url(../../utilis/font.css);
+
+/**웹(노트북/데스크탑)**/
 .ActivitiesBackGround {
+    /*Activities 페이지 전체 일괄적용*/
     background-color: var(--toneDown-black);
     color: var(--toneDown-white);
+    width: 100%;
+    /* font: font.css에서 일괄적용됨 */
+    /* font-family: "Pretendard-Regular"; */
 }
 
 .ActivitiesHeader {
     color: var(--ewhaian-pink);
-    font-family: 'Inter';
-    font-style: normal;
-    font-weight: 700;
-    font-size: 3vw;
-    margin-left: 15.6vw;
-    margin-bottom: 5vh;
-    margin-top: 20px;
+    /* font-weight가 500,600정도로만 바뀜 */
+    font-weight: 600;
+    font-size: 45px;
+    /* 첫 activity부터 보여줄 떄 위치 */
+    margin-left: 334.5px;
+    /* figma와 같이 보여줄 때 위치 */
+    /*margin-left: 207.5px;*/
+    margin-bottom: 51px;
+    /* padding-top: 헤더 높이 59.2px +나머지 간격 30px*/
+    padding-top: 89.2px;
     line-height: 1;
     width: auto;
-}
-
-.ActivitiesAll {
-    display: flex;
-    width: 100vw;
-    height: auto;
-    /* flex-wrap: nowrap; */
-    justify-content: flex-start;
-    overflow-x: auto;
-    overflow-y: hidden;
-    /* white-space: nowrap; */
-    /* margin-left: 5vw; */
+    margin-top: 0;
 }
 
 .EachActivity {
 
-    width: 16.7vw;
+    /* width: 16.7vw; */
+    width: 267px;
     height: auto;
-    margin-left: 2.5vw;
-    margin-right: 2.5vw;
+    /* margin-left: 2.5vw; */
+    margin-left: 22.5px;
+    margin-right: 22.5px;
+    /* margin-right: 2.5vw; */
+
+    /* 여기가 스크롤바 위 마진 */
+
+    /* figma와 같이 조절한 버전 */
+    margin-bottom: 171px;
+    /*헤더까지 포함하면 스크롤바가 한눈에 안들어와서 수정한 버전*/
+    /* margin-bottom: 100px; */
 }
 
 .TurnToImg {
-    /* background-color: gray; */
-    width: 16.7vw;
-    /* height: 21.9vw; */
-    height: auto;
-    margin-bottom: 1.5vh;
-    object-fit: scale-down;
+    width: 267px;
+    height: 377px;
+    align-items: flex-start;
     justify-content: center;
     display: flex;
 }
 
-.TurnToImg img {}
+.TurnToImg img {
+    object-fit: scale-down;
+
+}
 
 .ActivityText {
     /* outline-color: var(--ewhaian-pink); */
     border-left: 3px solid var(--ewhaian-pink);
+    padding-left: 11px;
 }
 
 .ActivityName {
     color: var(--ewhaian-pink);
-    font-family: 'Inter';
     font-style: normal;
     font-weight: 400;
-    /* font-size: 1.9vw; */
     font-size: 20px;
     line-height: 1;
-    margin-bottom: 1vh;
+    margin-bottom: 5px;
 
 }
 
 .ActivityDate {
-    font-family: 'Inter';
+
     font-style: normal;
     font-weight: 400;
     font-size: 12px;
     line-height: 1;
-    margin-bottom: 15px;
+    margin-bottom: 5px;
 }
 
 .LinkToEventSketch {
-    font-family: 'Pretendard';
     font-style: normal;
-    font-weight: 300;
+    font-weight: 400;
     font-size: 9px;
-    line-height: 19px;
+    line-height: 0.5;
     text-decoration-line: underline;
     text-align: right;
-    color: #9A9A9A
+    color: #9A9A9A;
 }
 
+.ActivitiesAll {
+    display: flex;
+    width: 100%;
+    height: auto;
+    /* flex-wrap: nowrap; */
+    /* justify-content: flex-start; */
+    overflow-x: scroll;
+    overflow-y: hidden;
+    white-space: nowrap;
+    /* margin-left: 5vw; */
+    border-bottom: 141.3px solid transparent;
+}
 
 .ActivitiesAll::-webkit-scrollbar {
-    padding-top: 10vh;
-    height: 30px !important;
-    width: 100px;
-    /* width: 431px; */
+    display: block;
+    position: relative;
+
+    /* thumb 포함한 높이 */
+    height: 6.7px;
+
     border-radius: 194px;
-    background-color: transparent;
+    background-clip: content-box;
+
+    /* thumb와 track 높이 차이 */
+    border-top: 2.87px solid transparent;
+    border-bottom: 2.87px solid transparent;
+    background-color: #555555;
 }
 
-.ActivitiesAll::-webkit-resizer {
-    background-color: aqua;
+.ActivitiesAll::-webkit-scrollbar-button {
+    /* width: 291px; */
+    width: 20.2%;
+    background-color: var(--toneDown-black);
 }
 
-.ActivitiesAll::-webkit-scrollbar-track {
-    visibility: visible;
-    height: 1px;
-    width: 100px;
-    color: white;
-    /* background-color: palevioletred; */
-}
 
 .ActivitiesAll::-webkit-scrollbar-thumb {
-    /* height: 24px;
-    width: 173px; */
-    padding-top: 10vh;
-    height: 5px;
+    /* thumb 높이는 scrollbar에서 지정됨 */
+    width: 5%;
+    display: block;
+    background-clip: content-box;
+    padding: 0;
     background-color: var(--ewhaian-pink);
     border-radius: 194px;
+    /* max-width: 50px; */
 }
 
-/* 스크롤바 사이즈 조정해야함-사이즈 조정 안됨*/
-
-@media screen and (max-width: 360px) {
+/**아이폰**/
+@media screen and (max-width: 390px) {
 
     .ActivitiesHeader {
-        font-size: 18px;
-        margin-bottom: 10px;
-        margin-top: 5px;
-    }
+        /* font-family: "Pretendard-Regular"; */
+        font-weight: 500;
+        font-size: 17px;
+        /* 첫 activity부터 보여줄 떄 위치 */
+        margin-left: 126.5px;
+        /* figma와 같이 보여줄 때 위치 */
+        /* margin-left: 79px; */
 
-    .ActivityName {
-        font-size: 12px;
-        margin-bottom: 3px;
-    }
-
-    .ActivityDate {
-        font-size: 12px;
-        margin-bottom: 5px;
-    }
-
-    .LinkToEventSketch {
-        font-size: 7px;
-        /* white-space: nowrap; */
+        /* padding-top: 헤더 높이 55.5px +나머지 간격 20px*/
+        padding-top: 75.5px;
+        margin-bottom: 24px;
+        line-height: 1;
+        width: auto;
     }
 
     .EachActivity {
-        width: 90px;
+        width: 94px;
         height: auto;
+
+        margin-left: 10.5px;
+        margin-right: 10.5px;
+
+        /* 여기가 스크롤바 위 마진 */
+        /* margin-bottom: 46.3px; */
+        margin-bottom: 61px;
         justify-content: center;
     }
 
     .TurnToImg {
-        width: 70px;
-        height: 90px;
+        display: flex;
+        width: 94px;
+        height: 124px;
+        /* align-items: flex-start; */
+        justify-content: center;
     }
+
+    .TurnToImg img {
+        max-width: 94px;
+        max-height: 124px;
+        object-fit: scale-down;
+
+    }
+
+    .ActivityText {
+        width: 94px;
+        border-left: 3px solid var(--ewhaian-pink);
+        padding-left: 5px;
+    }
+
+    .ActivityName {
+        font-weight: 300;
+        font-size: 10px;
+        zoom: 0.8;
+        line-height: 1;
+        margin-bottom: 4px;
+
+    }
+
+    .ActivityDate {
+        font-weight: 300;
+        font-size: 10px;
+        zoom: 0.5;
+        line-height: 1;
+        margin-bottom: 5px;
+    }
+
+    .LinkToEventSketch {
+        width: auto;
+        font-weight: 300;
+        font-size: 10px;
+        zoom: 0.4;
+        line-height: 1;
+        text-align: right;
+        text-decoration-line: underline;
+    }
+
+    .ActivitiesAll {
+        display: flex;
+        width: 100%;
+        height: auto;
+        white-space: nowrap;
+        border-bottom: 50.3px solid transparent;
+    }
+
+    .ActivitiesAll::-webkit-scrollbar {
+
+        /* thumb 포함한 높이 */
+        height: 6.7px;
+
+        border-radius: 194px;
+        background-clip: content-box;
+
+        /* thumb와 track 높이 차이 */
+        border-top: 2.87px solid transparent;
+        border-bottom: 2.87px solid transparent;
+    }
+
+    .ActivitiesAll::-webkit-scrollbar-button {
+        /* width에 작성한 px *2 만큼 양쪽에서 scrollbar-track 길이가 줄어듦 */
+
+        /* 스크롤바 길이 똑같이 할 때 */
+        width: 28.75px;
+
+        /* 스크롤바 비율 똑같이 할 때 */
+        width: 20%;
+    }
+
+
+    .ActivitiesAll::-webkit-scrollbar-thumb {
+        width: 3%;
+    }
+}
+
+/*그 외 모바일*/
+@media screen and (min-width:390.5px) and (max-width: 768px) {
+
+    .ActivitiesHeader {
+        font-weight: 600;
+        font-size: 35px;
+        /* 첫 activity부터 보여줄 떄 위치 */
+        margin-left: 249.2px;
+        /* figma와 같이 보여줄 때 위치 */
+        /* margin-left: 155.6px; */
+
+        /* padding-top: 헤더 높이 55.5px +나머지 간격 38px*/
+        padding-top: 103.5px;
+        margin-bottom: 47.3px;
+        line-height: 1;
+        width: auto;
+    }
+
+    .EachActivity {
+        /* display: flex; */
+        width: 185.2px;
+        height: auto;
+
+        margin-left: 20.7px;
+        margin-right: 20.7px;
+
+        /* 여기가 스크롤바 위 마진 */
+        /* margin-bottom: 46.3px; */
+        margin-bottom: 120.17px;
+        justify-content: center;
+    }
+
+    .TurnToImg {
+        display: flex;
+        width: 185.2px;
+        height: 244.3px;
+        /* align-items: flex-start; */
+        justify-content: center;
+    }
+
+    .TurnToImg img {
+        width: 185.2px;
+        max-height: 244.3px;
+        object-fit: scale-down;
+
+    }
+
+    .ActivityText {
+        width: 185.2px;
+        border-left: 6px solid var(--ewhaian-pink);
+        padding-left: 10px;
+    }
+
+    .ActivityName {
+        font-weight: 300;
+        font-size: 16px;
+        line-height: 1;
+        margin-bottom: 8px;
+
+    }
+
+    .ActivityDate {
+        font-weight: 300;
+        font-size: 10px;
+        line-height: 1;
+        margin-bottom: 10px;
+    }
+
+    .LinkToEventSketch {
+        width: auto;
+        font-weight: 300;
+        font-size: 8px;
+        line-height: 1;
+        text-align: right;
+        text-decoration-line: underline;
+    }
+
+    .ActivitiesAll {
+        display: flex;
+        width: 100%;
+        height: auto;
+        white-space: nowrap;
+        border-bottom: 99px solid transparent;
+    }
+
+    .ActivitiesAll::-webkit-scrollbar {
+
+        /* thumb 포함한 높이 */
+        /* height: 13.2px; */
+        height: 6.7px;
+
+        border-radius: 194px;
+        background-clip: content-box;
+        /* thumb와 track 높이 차이 */
+
+        /* border-top: 5.7px solid transparent; */
+        /* border-bottom: 5.7px solid transparent; */
+
+        border-top: 2.87px solid transparent;
+        border-bottom: 2.87px solid transparent;
+    }
+
+    .ActivitiesAll::-webkit-scrollbar-button {
+        /* width에 작성한 px *2 만큼 양쪽에서 scrollbar-track 길이가 줄어듦 */
+
+        /* 스크롤바 길이 똑같이 할 때 */
+        /*width: 56.5px;*/
+
+        /* 스크롤바 비율 똑같이 할 때 */
+        width: 20%;
+    }
+
+
+    .ActivitiesAll::-webkit-scrollbar-thumb {
+        width: 3%;
+    }
+
+    .ActivitiesAll::-webkit-scrollbar-track-piece {
+        width: 20%;
+    }
+
 }
