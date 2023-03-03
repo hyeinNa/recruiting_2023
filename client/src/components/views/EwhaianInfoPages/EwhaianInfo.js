@@ -1,13 +1,120 @@
-import React from "react";
+import React, { useEffect, useState } from "react";
+import axios from "axios";
 import { Link } from "react-router-dom";
 import "./EwhaianInfo.css";
 
 function EwhaianInfo() {
+  const [visibleMarketing, doesRecruitMarketing] = useState(true);
+  const [visibleDesign, doesRecruitDesign] = useState(true);
+  const [visibleWebDev, doesRecruitWebDev] = useState(true);
+  const [applicationSubmission, applicationSubmissionPeriod] = useState("");
+  const [firstPresentation, firstPresentationPeriod] = useState("");
+  const [interview, interviewPeriod] = useState("");
+  const [finalPresentation, finalPresentationPeriod] = useState("");
+  useEffect(() => {
+    axios
+      .post("/api/var/load", {
+        key: 1234,
+      })
+      .then((response) => {
+        console.log(response.data);
+        if (response.data.isInDB === "false") {
+          doesRecruitMarketing(false);
+        } else {
+          doesRecruitMarketing(response.data.doesRecruitMarketing);
+        }
+      });
+  }, []);
+  useEffect(() => {
+    axios
+      .post("/api/var/load", {
+        key: 1234,
+      })
+      .then((response) => {
+        console.log(response.data);
+        if (response.data.isInDB === "false") {
+          doesRecruitDesign(false);
+        } else {
+          doesRecruitDesign(response.data.doesRecruitDesign);
+        }
+      });
+  }, []);
+  useEffect(() => {
+    axios
+      .post("/api/var/load", {
+        key: 1234,
+      })
+      .then((response) => {
+        console.log(response.data);
+        if (response.data.isInDB === "false") {
+          doesRecruitWebDev(false);
+        } else {
+          doesRecruitWebDev(response.data.doesRecruitWebDev);
+        }
+      });
+  }, []);
+  useEffect(() => {
+    axios
+      .post("/api/var/load", {
+        key: 1234,
+      })
+      .then((response) => {
+        console.log(response.data);
+        if (response.data.isInDB === "false") {
+          applicationSubmissionPeriod("");
+        } else {
+          applicationSubmissionPeriod(response.data.applicationSubmissionPeriod);
+        }
+      });
+  }, []);
+   useEffect(() => {
+    axios
+      .post("/api/var/load", {
+        key: 1234,
+      })
+      .then((response) => {
+        console.log(response.data);
+        if (response.data.isInDB === "false") {
+          firstPresentationPeriod("");
+        } else {
+          firstPresentationPeriod(response.data.firstPresentationPeriod);
+        }
+      });
+   }, []);
+   useEffect(() => {
+    axios
+      .post("/api/var/load", {
+        key: 1234,
+      })
+      .then((response) => {
+        console.log(response.data);
+        if (response.data.isInDB === "false") {
+          interviewPeriod("");
+        } else {
+          interviewPeriod(response.data.interviewPeriod);
+        }
+      });
+   }, []);
+   useEffect(() => {
+    axios
+      .post("/api/var/load", {
+        key: 1234,
+      })
+      .then((response) => {
+        console.log(response.data);
+        if (response.data.isInDB === "false") {
+          finalPresentationPeriod("");
+        } else {
+          finalPresentationPeriod(response.data.finalPresentationPeriod);
+        }
+      });
+  }, []);
   return (
     <div className="info_body_container">
-    <div className="info_container">
+      <div className="info_container">
         <div className="info_inner_container">
             <div className="info_inner_inner_container">
+            <div className="info_inner_inner_inner_container">
                 <div className="info_content_title">이화이언이 뭔가요?</div>
                 <div className="info_content_text">
                     <div>이화이언은 이화여대 최대의 온라인 커뮤니티이자</div>
@@ -24,46 +131,74 @@ function EwhaianInfo() {
         </div>
         
         <div className="info_recruitment">
+          <div className="info_recruitment_detail">
             <div className="info_recruitment_schedule">
                   <div className="info_recruitment_title">모집일정</div>
                   <div className="info_recruitment_content">
-                    <ul className="info_recruitment_schedule_list">
+                    <div className="info_recruitment_schedule_list">
                         <li>
+                              <div className="info_recruitment_schedule_num">01</div>
                               <div className="info_recruitment_schedule_stage">지원서 제출</div>
-                              <div className="info_recruitment_schedule_date">09.22(목)</div>
+                              <div className="info_recruitment_schedule_date">{applicationSubmission}</div>
                           </li>
-                          <div className="arrow">&#8594;</div>
+                          <div className="arrow">
+                            <img
+                              className="arrowImg"
+                              src="/img/ewhaianInfo/Vector.png"
+                              alt="Vector"
+                            />
+                          </div>
                           <li>
+                              <div className="info_recruitment_schedule_num">02</div>
                               <div className="info_recruitment_schedule_stage">1차 발표</div>
-                              <div className="info_recruitment_schedule_date">09.23(금)</div>
+                              <div className="info_recruitment_schedule_date">{firstPresentation}</div>
                           </li>
-                          <div className="arrow">&#8594;</div>
+                          <div className="arrow">
+                            <img
+                              className="arrowImg"
+                              src="/img/ewhaianInfo/Vector.png"
+                              alt="Vector"
+                            />
+                          </div>
                           <li>
+                              <div className="info_recruitment_schedule_num">03</div>
                               <div className="info_recruitment_schedule_stage">심층면접</div>
-                              <div className="info_recruitment_schedule_date">09.24(토)</div>
+                              <div className="info_recruitment_schedule_date">{interview}</div>
                           </li>
-                          <div className="arrow">&#8594;</div>
-                          <li>
+                          <div className="arrow">
+                            <img
+                              className="arrowImg"
+                              src="/img/ewhaianInfo/Vector.png"
+                              alt="Vector"
+                            />
+                          </div>
+                        <li>
+                              <div className="info_recruitment_schedule_num">04</div>
                               <div className="info_recruitment_schedule_stage">합격발표</div>
-                              <div className="info_recruitment_schedule_date">09.25(일)</div>
+                              <div className="info_recruitment_schedule_date">{finalPresentation}</div>
                         </li>
-                    </ul>
+                    </div>
                   </div>
             </div>
             <div className="info_recruitment_section">
                   <div className="info_recruitment_title">모집부문</div>
                   <div className="info_recruitment_content">
-                      <ul className="info_recruitment_section_list">
-                      <div className="info_recruitment_section_list_list">
+                  <ul className="info_recruitment_section_list">
+                    {
+                      visibleMarketing && <div className="info_recruitment_section_list_list">
                               <span>마케팅팀</span>
                       </div>
-                      
-                      <div className="info_recruitment_section_list_list">
+                    }
+                    {
+                      visibleDesign && <div className="info_recruitment_section_list_list">
                               <span>디자인팀</span>
                       </div>
-                      <div className="info_recruitment_section_list_list">
+                    }
+                    {
+                      visibleWebDev && <div className="info_recruitment_section_list_list">
                               <span>웹개발팀</span>
                       </div>
+                    }
                     </ul>
                   </div>
             </div>
@@ -81,8 +216,9 @@ function EwhaianInfo() {
 
                   </div>
             </div>
-
-              <ul className="info_recruitment_menu">
+          </div>
+            <div className="info_recruitment_register">
+                <ul className="info_recruitment_menu">
                 <div className="info_recruitment_menu_list_1">
                       <Link to="/register">지원하기</Link>
                   </div>
@@ -91,13 +227,13 @@ function EwhaianInfo() {
                 </div>
               
               
-              </ul>      
+              </ul>  
+            </div>    
 
 
               
         </div>
-  
-
+        </div>
       </div>
     </div>
   );
