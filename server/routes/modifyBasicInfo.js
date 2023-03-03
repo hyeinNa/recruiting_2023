@@ -50,6 +50,7 @@ modifyBasicInfoRoute.post("/init", (req, res) => {
       masterName: req.body.masterName,
       masterPhoneNumber: req.body.masterPhoneNumber,
       masterTrainingPlace: req.body.masterTrainingPlace,
+      showResultToApplicant: req.body.showResultToApplicant,
       is1stResultPeriod: req.body.is1stResultPeriod,
       isFinalResultPeriod: req.body.isFinalResultPeriod,
       surveyFormLink: req.body.surveyFormLink,
@@ -116,6 +117,7 @@ modifyBasicInfoRoute.post("/modify/resultInfo", (req, res) => {
   BasicInfo.findOneAndUpdate(
     { key: 1234 },
     {
+      showResultToApplicant: req.body.showResultToApplicant,
       is1stResultPeriod: req.body.is1stResultPeriod,
       isFinalResultPeriod: req.body.isFinalResultPeriod,
       surveyFormLink: req.body.surveyFormLink,

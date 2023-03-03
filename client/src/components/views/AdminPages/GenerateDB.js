@@ -12,7 +12,8 @@ function GenerateDB() {
   const [isInDB, setIsInDB] = useState(0);
   const [objectId, setObjectId] = useState("");
   useEffect(() => {
-    axios.get("/api/admin/landing")
+    axios
+      .get("/api/admin/landing")
       .then((response) => {
         //로그인 안 했으면 login 창으로
         if (response.data.loggedIn !== true)
@@ -55,6 +56,7 @@ function GenerateDB() {
           doesRecruitMarketing: false,
           doesRecruitDesign: false,
           doesRecruitWebDev: false,
+          showResultToApplicant: false,
           is1stResultPeriod: false,
           isFinalResultPeriod: false,
           surveyFormLink: "",

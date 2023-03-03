@@ -12,6 +12,7 @@ function ModifyResultInfo() {
   const objectId = pathName.substring(18, pathName.length);
   //입력 폼에 대한 변수와 함수
   const [inputs, setInputs] = useState({
+    showResultToApplicant: false,
     is1stResultPeriod: false,
     isFinalResultPeriod: false,
     surveyFormLink: "",
@@ -33,6 +34,7 @@ function ModifyResultInfo() {
     masterTrainingWaitingTime: "",
   });
   const {
+    showResultToApplicant,
     is1stResultPeriod,
     isFinalResultPeriod,
     surveyFormLink,
@@ -72,8 +74,8 @@ function ModifyResultInfo() {
   };
 
   useEffect(() => {
-
-    axios.get("/api/admin/applicantlist")
+    axios
+      .get("/api/admin/applicantlist")
       .then((response) => {
         //로그인 안 했으면 login 창으로
         if (response.data.loggedIn !== true)
@@ -89,6 +91,7 @@ function ModifyResultInfo() {
       })
       .then((response) => {
         setInputs({
+          showResultToApplicant: response.data.showResultToApplicant,
           is1stResultPeriod: response.data.is1stResultPeriod,
           isFinalResultPeriod: response.data.isFinalResultPeriod,
           surveyFormLink: response.data.surveyFormLink,
@@ -121,6 +124,7 @@ function ModifyResultInfo() {
   const updateInfo = () => {
     axios
       .post("/api/manager/modify/resultInfo", {
+        showResultToApplicant: inputs.showResultToApplicant,
         is1stResultPeriod: inputs.is1stResultPeriod,
         isFinalResultPeriod: inputs.isFinalResultPeriod,
         surveyFormLink: inputs.surveyFormLink,
@@ -154,6 +158,22 @@ function ModifyResultInfo() {
     <div className="modify_recruitInfo_container resultInfo_container">
       <div className="modify_recruitInfo_inner_container">
         <div className="modify_recruitInfo_content_container">
+          <div className="recruitInfo_isApplyPeriod recruitInfo_forms">
+            <div className="resultInfo_label">지원자에게 결과 공개</div>
+            <div className="switch_wrapper">
+              <input
+                type="checkbox"
+                name="showResultToApplicant"
+                value={showResultToApplicant || false}
+                id="switch4"
+                checked={showResultToApplicant}
+                onChange={checkingCheckBox}
+              />
+              <label htmlFor="switch4" className="switch_label">
+                <span className="onf_btn"></span>
+              </label>
+            </div>
+          </div>
           <div className="recruitInfo_isApplyPeriod recruitInfo_forms">
             <div className="resultInfo_label">1차 결과 확인 기간</div>
             <div className="switch_wrapper">
@@ -319,8 +339,9 @@ function ModifyResultInfo() {
             </div>
             <div className="resultInfo_preAssignment">
               <div
-                className={`preAssignment_marketing presAssignment_form ${inputs.isMarketingPreAssignment ? "visible" : "hidden"
-                  } `}
+                className={`preAssignment_marketing presAssignment_form ${
+                  inputs.isMarketingPreAssignment ? "visible" : "hidden"
+                } `}
               >
                 <textarea
                   className="preAssignment_inputs_style"
@@ -333,8 +354,9 @@ function ModifyResultInfo() {
                 ></textarea>
               </div>
               <div
-                className={`preAssignment_design presAssignment_form ${inputs.isDesignPreAssignment ? "visible" : "hidden"
-                  } `}
+                className={`preAssignment_design presAssignment_form ${
+                  inputs.isDesignPreAssignment ? "visible" : "hidden"
+                } `}
               >
                 <input
                   className="preAssignment_design_inputs_style design_input1"
@@ -365,8 +387,9 @@ function ModifyResultInfo() {
                 />
               </div>
               <div
-                className={`preAssignment_webdev presAssignment_form ${inputs.isWebDevPreAssignment ? "visible" : "hidden"
-                  } `}
+                className={`preAssignment_webdev presAssignment_form ${
+                  inputs.isWebDevPreAssignment ? "visible" : "hidden"
+                } `}
               >
                 <textarea
                   className="preAssignment_inputs_style"

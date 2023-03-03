@@ -41,6 +41,9 @@ const basicInfoSchema = mongoose.Schema({
   masterTrainingPlace: {
     type: String,
   },
+  showResultToApplicant: {
+    type: Boolean,
+  },
   is1stResultPeriod: {
     type: Boolean,
   },

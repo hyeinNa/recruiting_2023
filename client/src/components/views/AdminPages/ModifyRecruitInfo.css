@@ -103,6 +103,10 @@
   position: absolute;
   appearance: none;
 }
+#switch4 {
+  position: absolute;
+  appearance: none;
+}
 .switch_label {
   position: relative;
   cursor: pointer;
@@ -151,6 +155,13 @@
 #switch3:checked + .switch_label:hover {
   background: var(--ewhaian-pink);
 }
+#switch4:checked + .switch_label {
+  background: var(--ewhaian-pink);
+  border: 2px solid var(--ewhaian-pink);
+}
+#switch4:checked + .switch_label:hover {
+  background: var(--ewhaian-pink);
+}
 
 /* move */
 #switch:checked + .switch_label .onf_btn {
@@ -164,6 +175,11 @@
   box-shadow: 1px 2px 3px #00000020;
 }
 #switch3:checked + .switch_label .onf_btn {
+  left: 33px;
+  background: #fff;
+  box-shadow: 1px 2px 3px #00000020;
+}
+#switch4:checked + .switch_label .onf_btn {
   left: 33px;
   background: #fff;
   box-shadow: 1px 2px 3px #00000020;
