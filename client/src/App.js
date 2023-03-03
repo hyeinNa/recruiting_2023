@@ -79,6 +79,7 @@ function App() {
 
           <Route exact path="/admin/landing" element={<GenerateDB />} />
           <Route exact path="/QnA" element={<QnA />} />
+          <Route exact path="/activities" element={<Activities />}></Route>
         </Routes>
       </BrowserRouter>
     </div>
