@@ -68,7 +68,7 @@ function NewApplicantEnroll() {
             let message = response.data.message;
             if (status === "ok") {//register api의 message출력
                 console.log(message);
-                alert("성공적으로 지원되었습니다.")
+                alert("지원해주셔서 감사합니다.")
             }
             else {
                 console.log(err);
