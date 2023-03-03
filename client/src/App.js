@@ -1,13 +1,12 @@
 import { BrowserRouter, Route, Routes } from "react-router-dom";
 import LandingPage from "./components/views/LandingPage";
 import EwhaianInfo from "./components/views/EwhaianInfoPages/EwhaianInfo";
-import Event from "./components/views/EventPages/EventPages"
+import Event from "./components/views/EventPages/EventPages";
 import TeamInfo from "./components/views/TeamInfoPages/TeamInfo";
 import Update from "./components/views/UpdatePages/UpdatePage";
 import RegisterLanding from "./components/views/RegisterPages/RegisterLanding";
 import ExistingApplicantCheckInfo from "./components/views/RegisterPages/ExistingApplicantCheckInfo";
 import CheckResult from "./components/views/ResultPages/CheckResult";
-import ShowResult from "./components/views/ResultPages/ShowResult";
 import QnA from "./components/views/QnAPages/QnA";
 //어떤 파일이든 색상 변수 사용할 수 있도록, color css파일 불러오기
 import "./components/utilis/color.css";
@@ -64,7 +63,6 @@ function App() {
           />
           <Route exact path="/update/:id" element={<Update />} />
           <Route exact path="/result/checkinfo" element={<CheckResult />} />
-          <Route exact path="/result/:id" element={<ShowResult />} />
           <Route exact path="/result/notperiod/:id" element={<NotPeriod />} />
           <Route exact path="/admin/login" element={<AdminLogin />} />
           <Route exact path="/admin/modifyInfo/:id" element={<Modify />} />
