@@ -1,8 +1,10 @@
 import React from "react";
+import BackBtn from "../../../utilis/BackBtn";
 import "./WebDevDetailActivity.css";
 function WebDevDetailActivity() {
   return (
     <div className="web_detail_activity_container">
+      <BackBtn path="/" />
       <div className="web_detail_actvity_inner_container">
         <div className="web_detail_activity_content_container">
           <div className="part1_container">

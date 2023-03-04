@@ -1,4 +1,5 @@
 import React, { useState } from "react";
+import BackBtn from "../../../utilis/BackBtn";
 import Marketing from "../InfoContent/Marketing";
 import "./DesignDetailActivity.css";
 import PopupBackground from "./popup/PopupBackground";
@@ -20,6 +21,7 @@ function DesignDetailActivity() {
   const [isClicked, setIsClicked] = useState([false, false, false, false]);
   return (
     <div className="design_detail_activity_container">
+      <BackBtn path="/" />
       <div className="design_detail_activity_inner_container">
         <div className="design_detail_activity_content_container">
           <div className="design_detail_activity_part1_container design_detail_activity_part_container">

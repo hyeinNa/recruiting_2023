@@ -3,11 +3,13 @@ import { Link } from "react-router-dom";
 import "./RegisterLanding.css";
 import Footer from "../../Footer/Footer";
 import Header from "../../Header/Header";
+import BackBtn from "../../utilis/BackBtn";
 function RegisterLanding() {
   return (
     <div className="register_landing">
       <Header />
       <div className="register_landing_container">
+        <BackBtn path="/" />
         <div className="register_landing_inner_container">
           <div className="register_landing_content_container">
             <div className="register_landing_title">지원 확인</div>
