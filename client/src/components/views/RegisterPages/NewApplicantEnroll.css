@@ -91,7 +91,6 @@
 }
 
 [type="radio"]:checked {
-    vertical-align: center;
     appearance: none;
     border-radius: 50%;
     width: 1em;
