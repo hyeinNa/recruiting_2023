@@ -14,6 +14,7 @@ import "./components/utilis/color.css";
 import "./components/utilis/font.css";
 import NotPeriod from "./components/views/ResultPages/NotPeriod";
 import NewApplicantEnroll from "./components/views/RegisterPages/NewApplicantEnroll";
+import ApplySuccess from "./components/views/RegisterPages/ApplySuccess";
 import AdminLogin from "./components/views/AdminPages/AdminLogin";
 
 import Activities from "./components/views/Activities/Activities";
@@ -61,6 +62,7 @@ function App() {
             path="/register/newEnroll"
             element={<NewApplicantEnroll />}
           />
+          <Route exact path="/register/success" element={<ApplySuccess />} />
           <Route exact path="/update/:id" element={<Update />} />
           <Route exact path="/result/checkinfo" element={<CheckResult />} />
           <Route exact path="/result/notperiod/:id" element={<NotPeriod />} />

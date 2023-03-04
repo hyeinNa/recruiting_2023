@@ -86,17 +86,18 @@
 
 }
 
-[type="radio"]:checked {
-    vertical-align: middle;
-    appearance: none;
-    border: max(2px, 0.1em) solid gray;
-    border-radius: 50%;
-    width: 1.1em;
-    height: 1.1em;
+[type="radio"] {
+    margin-left: 3%;
 }
 
 [type="radio"]:checked {
-    border: 0.3em solid var(--ewhaian-pink);
+    vertical-align: center;
+    appearance: none;
+    border-radius: 50%;
+    width: 1em;
+    height: 1em;
+    background-color: var(--ewhaian-pink);
+    border: max(1px, 0.1em) solid gray;
 }
 
 [type="radio"]:hover {
@@ -159,7 +160,7 @@
 .upload_file_text {
     color: var(--register-checkInfo-forms-fileUpload-color);
     font-size: 17px;
-    padding-left: 30%;
+    padding-left: 3%;
 }
 
 .upload_file_text_container {
