@@ -136,7 +136,7 @@ function EwhaianInfo() {
                   <div className="info_recruitment_title">모집일정</div>
                   <div className="info_recruitment_content">
                     <div className="info_recruitment_schedule_list">
-                        <li>
+                        <li className="info_recruitment_schedule_list_start">
                               <div className="info_recruitment_schedule_num">01</div>
                               <div className="info_recruitment_schedule_stage">지원서 제출</div>
                               <div className="info_recruitment_schedule_date">{applicationSubmission}</div>
@@ -148,7 +148,7 @@ function EwhaianInfo() {
                               alt="Vector"
                             />
                           </div>
-                          <li>
+                          <li className="info_recruitment_schedule_list_rest">
                               <div className="info_recruitment_schedule_num">02</div>
                               <div className="info_recruitment_schedule_stage">1차 발표</div>
                               <div className="info_recruitment_schedule_date">{firstPresentation}</div>
@@ -160,7 +160,7 @@ function EwhaianInfo() {
                               alt="Vector"
                             />
                           </div>
-                          <li>
+                          <li className="info_recruitment_schedule_list_rest">
                               <div className="info_recruitment_schedule_num">03</div>
                               <div className="info_recruitment_schedule_stage">심층면접</div>
                               <div className="info_recruitment_schedule_date">{interview}</div>
@@ -172,7 +172,7 @@ function EwhaianInfo() {
                               alt="Vector"
                             />
                           </div>
-                        <li>
+                        <li className="info_recruitment_schedule_list_rest">
                               <div className="info_recruitment_schedule_num">04</div>
                               <div className="info_recruitment_schedule_stage">합격발표</div>
                               <div className="info_recruitment_schedule_date">{finalPresentation}</div>
@@ -218,7 +218,7 @@ function EwhaianInfo() {
             </div>
           </div>
             <div className="info_recruitment_register">
-                <ul className="info_recruitment_menu">
+                <div className="info_recruitment_menu">
                 <div className="info_recruitment_menu_list_1">
                       <Link to="/register">지원하기</Link>
                   </div>
@@ -227,7 +227,7 @@ function EwhaianInfo() {
                 </div>
               
               
-              </ul>  
+              </div>  
             </div>    
 
 

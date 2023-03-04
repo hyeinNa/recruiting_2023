@@ -10,13 +10,13 @@ function Etc() {
     return (
             
         <div className="qna_question_list">
-            <li className="qna_question_list_box" data-aos="fade-up">
+            <li className="qna_question_list_box" data-aos="fade-up" data-aos-once="false">
                 <div className="qna_question">Q. 다른 팀과의 교류가 있나요?</div>
                 <div className="qna_answer">네, 있습니다! 전체 회의 시간과 업무에 대한
                     교류는 물론, 회식과 MT 등의 활동을 통해 다른 팀 운영진들과 교류할 수 있습니다.
                 </div>
             </li>
-            <li className="qna_question_list_box" data-aos="fade-up">
+            <li className="qna_question_list_box" data-aos="fade-up" data-aos-once="false">
                 <div className="qna_question">Q. 운영진 수료 후 관련하여 나아갈 수 있는 진로가 있나요?</div>
                 <div className="qna_answer">이화이언은 다방면의 경험을 깊게 쌓아갈 수 있는 최고의 포트폴리오와도 같다고 하죠!
                     이화이언에서의 활동은 어디든 유용하게 사용될 수 있는 소중한 경험과도 같답니다.

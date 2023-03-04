@@ -93,17 +93,28 @@
     align-items: center;
 }
 
-.info_recruitment_schedule_list {
-    width: 770px;
+.info_recruitment_content{
     display: flex;
-    list-style-type: none;
-    justify-content: space-between;
+    justify-content: flex-start;
 }
 
-.info_recruitment_schedule_list li{
+.info_recruitment_schedule_list {
+    display: flex;
+    list-style-type: none;
+    justify-content:space-around;
+}
+
+.info_recruitment_schedule_list_start {
     display: flex;
     flex-direction: column;
-    margin : 0 auto;
+    margin: 0 60px 0 40px;
+    justify-content: center;
+}
+
+.info_recruitment_schedule_list_rest{
+    display: flex;
+    flex-direction: column;
+    margin : 0 60px 0 60px;
     justify-content: center;
 }
 .info_recruitment_schedule_num{
@@ -199,8 +210,8 @@
 
 .info_recruitment_menu{
     margin-top: 10%;
+    margin-left: 0;
     display: flex;
-    list-style-type: none;
     justify-content: center;
 }
 
@@ -241,8 +252,11 @@
 
 /* 모바일 버전 */
 @media screen and (max-width: 976px) {
-    .info_recruitment_schedule_list {
-        width: 600px;
+    .info_recruitment_schedule_list_start {
+        margin: 0 40px 0 40px;
+    }
+    .info_recruitment_schedule_list_rest {
+        margin: 0 40px 0 40px;
     }
 }
 
@@ -286,8 +300,15 @@
         height: 270px;
     }
 
-    .info_recruitment_schedule_list {
-        width: 500px;
+    .info_recruitment_detail {
+        padding: 0 0 0 60px;
+    }    
+
+    .info_recruitment_schedule_list_start {
+        margin: 0 20px 0 40px;
+    }
+    .info_recruitment_schedule_list_rest {
+        margin: 0 20px 0 20px;
     }
 
     .info_recruitment_menu_list_1 a {
@@ -298,7 +319,13 @@
     }
 }
 
-@media screen and (max-width: 638px) {
+@media screen and (max-width: 685px) {
+    .info_recruitment_detail {
+        padding: 0 0 0 50px;
+    }  
+}
+
+@media screen and (max-width: 639px) {
     .info_content_title {
         font-size: 35px;
         line-height: 44px;
@@ -308,6 +335,9 @@
         font-size: 14px;
         line-height: 23px;
     }
+    .info_recruitment_detail {
+        padding: 0 0 0 60px;
+    }  
 
     .info_recruitment_title{
         font-size: 17px;
@@ -317,6 +347,13 @@
     .info_recruitment_schedule_num{
         font-size: 12px;
         line-height: 20px;
+    }
+
+    .info_recruitment_schedule_list_start {
+        margin: 0 20px 0 40px;
+    }
+    .info_recruitment_schedule_list_rest {
+        margin: 0 20px 0 20px;
     }
 
     .info_recruitment_schedule_stage{
@@ -352,11 +389,6 @@
         font-size: 14px;
         line-height: 25px;
     }
-    .info_recruitment_schedule_list {
-        margin-left: 5%;
-        width: 400px;
-    }
-
     .info_recruitment_menu_list_1 a {
         width: 200px;
         height: 40px;
@@ -369,6 +401,30 @@
         font-size: 17px;
         line-height: 40px;
     }
+}
+
+@media screen and (max-width: 589px) {
+    .info_recruitment_detail {
+        padding: 0 0 0 30px;
+    }
+}
+@media screen and (max-width: 557px) {
+    .info_recruitment_detail {
+        padding: 0 0 0 20px;
+    }
+    .info_recruitment_schedule_list_start {
+        margin: 0 18px 0 20px;
+    }
+    .info_recruitment_schedule_list_rest {
+        margin: 0 18px 0 18px;
+    }
+    .info_recruitment_section_list {
+        padding-left: 20px;
+    }
+    .info_recruitment_requirements_list {
+        padding-left: 20px;
+    }
+
 }
 
 @media screen and (max-width: 515px) {
@@ -385,15 +441,21 @@
         font-size: 13px;
         line-height: 20px;
     }
+    .info_recruitment_detail {
+        padding: 0 0 0 40px;
+    }
 
     .info_recruitment_title {
         font-size: 15px;
         line-height: 20px;
     }
-    .info_recruitment_schedule_list {
-        margin-left: 10%;
-        width: 300px;
+    .info_recruitment_schedule_list_start {
+        margin: 0 15px 0 30px;
     }
+    .info_recruitment_schedule_list_rest {
+        margin: 0 15px 0 15px;
+    }
+
     .arrowImg {
         width: 3.5px;
         height: 7px;
@@ -419,6 +481,7 @@
     .info_recruitment_section_list {
         font-size: 12px;
         line-height: 25px;
+        padding-left: 30px;
     }
 
     .info_recruitment_section_list_list {
@@ -441,6 +504,7 @@
     .info_recruitment_requirements_list {
         font-size: 14px;
         line-height: 25px;
+        padding-left: 30px;
     }
 
     .info_recruitment_menu_list_1 a {
@@ -457,6 +521,28 @@
         line-height: 30px;
     }
 }
+@media screen and (max-width: 471px) {
+    .info_recruitment_detail {
+        padding: 0 0 0 20px;
+    }
+
+    .info_recruitment_schedule_list_start {
+        margin: 0 10px 0 20px;
+    }
+
+    .info_recruitment_schedule_list_rest {
+        margin: 0 10px 0 10px;
+    }
+
+    .info_recruitment_section_list {
+        padding-left: 20px;
+    }
+
+    .info_recruitment_requirements_list {
+        padding-left: 20px;
+    }
+
+}
 
 @media screen and (max-width: 426px) {
     .info_content_title {
@@ -468,16 +554,22 @@
         font-size: 10px;
         line-height: 20px;
     }
+    .info_recruitment_detail{
+        padding: 0 0 0 40px;
+    }
 
     .info_recruitment_title {
         font-size: 12px;
         line-height: 20px;
     }
 
-    .info_recruitment_schedule_list {
-        margin-left: 17%;
-        width: 230px;
+    .info_recruitment_schedule_list_start {
+        margin: 0 10px 0 20px;
     }
+    .info_recruitment_schedule_list_rest {
+        margin: 0 10px 0 10px;
+    }
+
 
     .arrowImg {
         width: 3.5px;
@@ -504,6 +596,7 @@
     .info_recruitment_section_list {
         font-size: 9px;
         line-height: 25px;
+        padding-left: 20px;
     }
 
     .info_recruitment_section_list_list {
@@ -526,6 +619,7 @@
     .info_recruitment_requirements_list {
         font-size: 12px;
         line-height: 25px;
+        padding-left: 20px;
     }
 
     .info_recruitment_menu_list_1 a {
@@ -540,6 +634,18 @@
         height: 25px;
         font-size: 12px;
         line-height: 25px;
+    }
+}
+
+@media screen and (max-width: 394px) {
+    .info_recruitment_detail {
+        padding: 0 0 0 30px;
+    }    
+}
+
+@media screen and (max-width: 371px) {
+    .info_recruitment_detail {
+        padding: 0 0 0 25px;
     }
 }
 
