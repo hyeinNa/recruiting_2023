@@ -10,7 +10,7 @@ function ImageTemplate(props) {
       document.getElementById("imageTemplate_container").style.flexDirection =
         "column";
     }
-  }, []);
+  }, [props]);
 
   if (props.imgNum === 1) {
     return (

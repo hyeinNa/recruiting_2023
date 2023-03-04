@@ -1,0 +1,32 @@
+{
+  "2020": [
+    {
+      "name": "배꽃정원",
+      "src": "/img/teamInfo/detailActivities/web/project/2020/pearflower.png"
+    }
+  ],
+  "2021": [
+    {
+      "name": "배꽃정원",
+      "src": "/img/teamInfo/detailActivities/web/project/2021/pearflower.png"
+    },
+    {
+      "name": "리쿠르팅 사이트",
+      "src": "/img/teamInfo/detailActivities/web/project/2021/recruitingSite.png"
+    },
+    {
+      "name": "이화이언 애정도 테스트",
+      "src": "/img/teamInfo/detailActivities/web/project/2021/affectionTest.png"
+    }
+  ],
+  "2022": [
+    {
+      "name": "배꽃정원",
+      "src": "/img/teamInfo/detailActivities/web/project/2022/pearflower.png"
+    },
+    {
+      "name": "웹 게임 사이트",
+      "src": "/img/teamInfo/detailActivities/web/project/2022/webGame.png"
+    }
+  ]
+}
