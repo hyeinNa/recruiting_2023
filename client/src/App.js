@@ -27,6 +27,7 @@ import DesignDetailActivity from "./components/views/TeamInfoPages/DetailActivit
 import WebDevDetailActivity from "./components/views/TeamInfoPages/DetailActivities/WebDevDetailActivity";
 import MarketingDetailActivity from "./components/views/TeamInfoPages/DetailActivities/MarketingDetailActivity";
 import PopupBackground from "./components/views/TeamInfoPages/DetailActivities/popup/PopupBackground";
+import MarketingStudyProject from "./components/views/TeamInfoPages/DetailActivities/MarketingStudyProject";
 function App() {
   return (
     <div className="App">
@@ -50,6 +51,11 @@ function App() {
             exact
             path="/teamInfo/detail/marketing"
             element={<MarketingDetailActivity />}
+          />
+          <Route
+            exact
+            path="/teamInfo/detail/marketing/studyproject"
+            element={<MarketingStudyProject />}
           />
           <Route exact path="/register" element={<RegisterLanding />} />
           <Route
