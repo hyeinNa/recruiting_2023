@@ -16,7 +16,7 @@ function NewApplicantEnroll() {
         applicant: ""
     });
     const [file, setFile] = useState('');
-    const [filename, setFilename] = useState('파일을 선택하세요');
+    const [filename, setFilename] = useState('파일을 선택하세요.');
     const { team, name, studentId, ewhaianId, applicant } = inputs;
 
     const onChange = (e) => {
