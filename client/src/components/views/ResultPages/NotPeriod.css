@@ -5,6 +5,8 @@
     --not-period-title-small-font-weight: 300;
     --not-period-arrow-font-weight: 900;
     --back-to-main-btn-color: #5b5b5b;
+    --not-period-light-pink: #ffe4ef;
+    --not-period-light-pink-inset: #ffffff;
 }
 
 /*1차, 최종 지원기간 둘 다 아닐 때*/
@@ -85,6 +87,7 @@
     border-radius: 50%;
     margin-left: 2%;
     color: var(--toneDown-black);
+    box-shadow: 5px 5px 10px inset rgb(141, 141, 141);
 }
 
 .circles .arrow {
@@ -163,9 +166,21 @@
     margin-top: 9%;
 }
 
+.not_first_circles div:nth-child(1) {
+    width: 130px;
+    height: 130px;
+    margin-left: 2%;
+    background-color: var(--not-period-light-pink);
+    color: var(--toneDown-black);
+    border-radius: 50%;
+    box-shadow: 5px 5px 10px inset var(--not-period-light-pink-inset);
+
+}
+
 .not_first_circles div:nth-child(3) {
     width: 130px;
     height: 130px;
+    margin-left: 2%;
     background-color: var(--ewhaian-pink);
     color: var(--toneDown-white);
     border-radius: 50%;
@@ -173,7 +188,6 @@
 
 }
 
-.not_first_circles div:nth-child(1),
 .not_first_circles div:nth-child(5),
 .not_first_circles div:nth-child(7),
 .not_first_circles div:nth-child(9) {
@@ -183,6 +197,7 @@
     border-radius: 50%;
     margin-left: 2%;
     color: var(--toneDown-black);
+    box-shadow: 5px 5px 10px inset rgb(141, 141, 141);
 }
 
 .not_first_circles .arrow {
@@ -192,7 +207,7 @@
 }
 
 
-/*2차 확인 기간이 아닐 때*/
+/*최종 확인 기간이 아닐 때*/
 .not_final_wrapper {
     max-width: var(--nav-bar-max-width);
     margin: 0 auto;
@@ -246,6 +261,7 @@
 .not_final_circles div:nth-child(7) {
     width: 130px;
     height: 130px;
+    margin-left: 2%;
     background-color: var(--ewhaian-pink);
     color: var(--toneDown-white);
     border-radius: 50%;
@@ -255,7 +271,16 @@
 
 .not_final_circles div:nth-child(1),
 .not_final_circles div:nth-child(3),
-.not_final_circles div:nth-child(5),
+.not_final_circles div:nth-child(5) {
+    width: 130px;
+    height: 130px;
+    margin-left: 2%;
+    background-color: var(--not-period-light-pink);
+    color: var(--toneDown-black);
+    border-radius: 50%;
+    box-shadow: 5px 5px 10px inset var(--not-period-light-pink-inset);
+}
+
 .not_final_circles div:nth-child(9) {
     width: 130px;
     height: 130px;
@@ -263,6 +288,7 @@
     border-radius: 50%;
     margin-left: 2%;
     color: var(--toneDown-black);
+    box-shadow: 5px 5px 10px inset rgb(141, 141, 141);
 }
 
 .not_final_circles .arrow {

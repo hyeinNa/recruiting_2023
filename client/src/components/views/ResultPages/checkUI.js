@@ -34,14 +34,21 @@ function NotPeriodCheck() {
     }, [applicantId]);
     //현재 어떤 기간인지 받아오기
     useEffect(() => {
-        try {
-            const response = axios.get('api/var/load', {})
-            setis1stResultPeriod(response.data.is1stResultPeriod);
-            setisFinalResultPeriod(response.data.isFinalResultPeriod);
-        } catch (e) {
-            console.error('error');
-        }
-    }, [])
+        axios
+            .post("/api/var/load", {
+                key: 1234,
+            })
+            .then((response) => {
+                console.log(response.data);
+                if (response.data.isInDB === "false") {
+                    setis1stResultPeriod("");
+                    setisFinalResultPeriod("");
+                } else {
+                    setis1stResultPeriod(response.data.is1stResultPeriod);
+                    setisFinalResultPeriod(response.data.isFinalResultPeriod);
+                }
+            });
+    }, []);
     //결과 발표 일정 받아오기
     useEffect(() => {
         axios
@@ -169,7 +176,7 @@ function NotPeriodCheck() {
         </div>
         );
     }
-    else if (!is1stResultPeriod && !isFinalResultPeriod && !showResultToApplicant) {
+    else if (!showResultToApplicant) {
         return (
             <div className="ResultPeriods">
                 <Header />
