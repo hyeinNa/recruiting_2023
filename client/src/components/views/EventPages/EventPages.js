@@ -15,6 +15,7 @@ function EventPages() {
             
 
                     <div className="events_pic">
+                        <div className="event_pic_inner">
                         <div className="classopeningbooth">
                             <div className="classopeningbooth_content">
                                 <div className="classopeningbooth_title">개강부스</div>
@@ -64,7 +65,9 @@ function EventPages() {
                                 </div>
                             </div>
                         </div>
-
+                        </div>
+                        
+                        <div className="event_pic_inner">
                         <div className="pearflowergarden">
                             <div className="pearflowergarden_content">
                                 <div className="pearflowergarden_title">배꽃정원</div>
@@ -114,6 +117,8 @@ function EventPages() {
                                 </div>
                             </div>
                         </div>
+                        </div>
+                        
                 
                     </div>
                 </div>
