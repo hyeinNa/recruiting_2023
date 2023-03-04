@@ -12,10 +12,11 @@ function NotPeriod() {
   const [pass, setPass] = useState("");
   const [is1stResultPeriod, setis1stResultPeriod] = useState("");
   const [isFinalResultPeriod, setisFinalResultPeriod] = useState("");
-  // const [applicationSubmissionPeriod, setisApplicationSubmissionPeriod] = useState("");
-  // const [firstPresentationPeriod, setisFirstPresentationPeriod] = useState("");
-  // const [interviewPeriod, setisInterviewPeriod] = useState("");
-  // const [finalPresentationPeriod, setisFinalPresentationPeriod] = useState("");
+  const [applicationSubmissionPeriod, setApplicationSubmissionPeriod] = useState("");
+  const [firstPresentationPeriod, setFirstPresentationPeriod] = useState("");
+  const [interviewPeriod, setInterviewPeriod] = useState("");
+  const [finalPresentationPeriod, setFinalPresentationPeriod] = useState("");
+  const [showResultToApplicant, setshowResultToApplicant] = useState("");
 
 
   //첫 렌더링 때, url에서 알아낸 지원자 id를 통해 몇차 결과 확인 기간이 아닌지 확인
@@ -31,57 +32,89 @@ function NotPeriod() {
         console.log("An error occurred: ", error.response);
       });
   }, [applicantId]);
-
+  //현재 어떤 기간인지 받아오기
   useEffect(() => {
-    try {
-      const response = axios.get('api/var/load', {})
-      setis1stResultPeriod(response.data.is1stResultPeriod);
-      setisFinalResultPeriod(response.data.isFinalResultPeriod);
-      //    setisApplicationSubmissionPeriod(response.data.applicationSubmissionPeriod),
-      //         setisFirstPresentationPeriod(response.data.finalPresentationPeriod),
-      //         setisInterviewPeriod(response.data.interviewPeriod), 
-      //         setisFinalPresentationPeriod(response.data.finalPresentationPeriod)
-    } catch (e) {
-      console.error('error');
-    }
-  }, [])
+    axios
+      .post("/api/var/load", {
+        key: 1234,
+      })
+      .then((response) => {
+        console.log(response.data);
+        if (response.data.isInDB === "false") {
+          setis1stResultPeriod("");
+          setisFinalResultPeriod("");
+        } else {
+          setis1stResultPeriod(response.data.is1stResultPeriod);
+          setisFinalResultPeriod(response.data.isFinalResultPeriod);
+        }
+      });
+  }, []);
+  //결과 발표 일정 받아오기
+  useEffect(() => {
+    axios
+      .post("/api/var/load", {
+        key: 1234,
+      })
+      .then((response) => {
+        console.log(response.data);
+        if (response.data.isInDB === "false") {
+          setApplicationSubmissionPeriod("");
+          setFirstPresentationPeriod("");
+          setInterviewPeriod("");
+          setFinalPresentationPeriod("");
+          setshowResultToApplicant("");
+        } else {
+          setApplicationSubmissionPeriod(response.data.applicationSubmissionPeriod);
+          setFirstPresentationPeriod(response.data.firstPresentationPeriod);
+          setInterviewPeriod(response.data.interviewPeriod);
+          setFinalPresentationPeriod(response.data.finalPresentationPeriod);
+          setshowResultToApplicant(response.data.showResultToApplicant);
+        }
+      });
+  }, []);
 
   //결과 확인 기간인지를 알려주는 변수: is1stResultPeriod, isFinalResultPeriod
   //결과 확인 아닌 기간에 따라 보여지는 화면 다르게
-  if (!is1stResultPeriod && !isFinalResultPeriod) {
+  if (is1stResultPeriod && !showResultToApplicant) {
     return (
-      <div className="not_Both_ResultPeriods">
+      <div className="ResultPeriods">
         <Header />
-        <div className="not_both_wrapper">
-          <div className="not_both_inner_container">
-            <div className="not_both_text_container">
-              아직 결과 확인 기간이 아닙니다!
+        <div className="not_first_wrapper">
+          <div className="not_first_inner_container">
+            <div className="not_first_text_container">
+              아직 1차 발표 기간이 아닙니다!
             </div>
-            <div className="not_both_text_small_container">
-              상단의 지원하기 버튼을 통해 <br></br> 이화이언 수습운영진에 지원하세요!
+            <div className="not_first_text_small_container">
+              지원자님의 서류를 검토하고 있습니다. <br></br> 조금만 더 기다려주세요!
             </div>
-            <div className="circles">
+            <div className="not_first_circles">
               <div>
-                <p><b>01</b></p>
+                <p><b><u>01</u></b></p>
                 <p><b>지원서 제출</b></p>
-                <p></p>
+                <p>{applicationSubmissionPeriod}</p>
               </div>
+              <p className="arrow">></p>
               <div>
-                <p><b>02</b></p>
+                <p><b><u>02</u></b></p>
                 <p><b>서류 검토</b></p>
               </div>
+              <p className="arrow">></p>
               <div>
-                <p><b>03</b></p>
+                <p><b><u>03</u></b></p>
                 <p><b>1차 발표</b></p>
-
+                <p>{firstPresentationPeriod}</p>
               </div>
+              <p className="arrow">></p>
               <div>
-                <p><b>04</b></p>
+                <p><b><u>04</u></b></p>
                 <p><b>심층 면접</b></p>
+                <p>{interviewPeriod}</p>
               </div>
+              <p className="arrow">></p>
               <div>
-                <p><b>05</b></p>
+                <p><b><u>05</u></b></p>
                 <p><b>최종 합격</b></p>
+                <p>{finalPresentationPeriod}</p>
               </div>
             </div>
             <div className="back_to_main_btn">
@@ -93,23 +126,106 @@ function NotPeriod() {
       </div>
     );
   }
-  else if (!is1stResultPeriod) {
-    return (
-      <div>
-
+  if (isFinalResultPeriod && !showResultToApplicant) {
+    return (<div className="ResultPeriods">
+      <Header />
+      <div className="not_final_wrapper">
+        <div className="not_final_inner_container">
+          <div className="not_final_text_container">
+            아직 최종 발표 기간이 아닙니다!
+          </div>
+          <div className="not_final_text_small_container">
+            지원자님의 면접 결과를 신중하게 상의하고 있습니다. <br></br> 조금만 더 기다려주세요!
+          </div>
+          <div className="not_final_circles">
+            <div>
+              <p><b><u>01</u></b></p>
+              <p><b>지원서 제출</b></p>
+              <p>{applicationSubmissionPeriod}</p>
+            </div>
+            <p className="arrow">></p>
+            <div>
+              <p><b><u>02</u></b></p>
+              <p><b>서류 검토</b></p>
+            </div>
+            <p className="arrow">></p>
+            <div>
+              <p><b><u>03</u></b></p>
+              <p><b>1차 발표</b></p>
+              <p>{firstPresentationPeriod}</p>
+            </div>
+            <p className="arrow">></p>
+            <div>
+              <p><b><u>04</u></b></p>
+              <p><b>심층 면접</b></p>
+              <p>{interviewPeriod}</p>
+            </div>
+            <p className="arrow">></p>
+            <div>
+              <p><b><u>05</u></b></p>
+              <p><b>최종 합격</b></p>
+              <p>{finalPresentationPeriod}</p>
+            </div>
+          </div>
+          <div className="back_to_main_btn">
+            <Link to='/'>메인으로 돌아가기</Link>
+          </div>
+        </div>
       </div>
-    )
-  } else if (!isFinalResultPeriod) {
+      <Footer />
+    </div>
+    );
+  }
+  else if (!showResultToApplicant) {
     return (
-      <div>
-
+      <div className="ResultPeriods">
+        <Header />
+        <div className="not_both_wrapper">
+          <div className="not_both_inner_container">
+            <div className="not_both_text_container">
+              아직 결과 확인 기간이 아닙니다!
+            </div>
+            <div className="not_both_text_small_container">
+              상단의 지원하기 버튼을 통해 <br></br> 이화이언 수습운영진에 지원하세요!
+            </div>
+            <div className="circles">
+              <div>
+                <p><b><u>01</u></b></p>
+                <p><b>지원서 제출</b></p>
+                <p>{applicationSubmissionPeriod}</p>
+              </div>
+              <p className="arrow">></p>
+              <div>
+                <p><b><u>02</u></b></p>
+                <p><b>서류 검토</b></p>
+              </div>
+              <p className="arrow">></p>
+              <div>
+                <p><b><u>03</u></b></p>
+                <p><b>1차 발표</b></p>
+                <p>{firstPresentationPeriod}</p>
+              </div>
+              <p className="arrow">></p>
+              <div>
+                <p><b><u>04</u></b></p>
+                <p><b>심층 면접</b></p>
+                <p>{interviewPeriod}</p>
+              </div>
+              <p className="arrow">></p>
+              <div>
+                <p><b><u>05</u></b></p>
+                <p><b>최종 합격</b></p>
+                <p>{finalPresentationPeriod}</p>
+              </div>
+            </div>
+            <div className="back_to_main_btn">
+              <Link to='/'>메인으로 돌아가기</Link>
+            </div>
+          </div>
+        </div>
+        <Footer />
       </div>
-      // <div>
-      //   NotFinalPassPeriod
-      //   <div>지원 기간 여부 : {pass}</div>
-      // </div>
     );
   }
 }
-
 export default NotPeriod;
