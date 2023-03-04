@@ -6,7 +6,8 @@ var storage = multer.diskStorage({
         cb(null, 'server/uploads/')//파일이 저장될 위치
     },
     filename: function (req, file, cb) {
-        cb(null, file.originalname)
+        file.originalname = Buffer.from(file.originalname, 'latin1').toString('utf8')// 서버에서 기본 charset latin1로 된 문자열을 utf8으로 변환
+        cb(null, file.originalname) // 저장되는 파일명
     }
 })
 
@@ -16,8 +17,10 @@ var upload = multer({
         if (file.mimetype == 'application/pdf' || 'application/vnd.openxmlformats-officedocument.wordprocessingml.document' || 'application/msword') {//msword파일만 허용
             cb(null, true)
         }
+        else{
+        req.fileValidationError = "~파일만 업로드 가능"
+        return cb(null,false); //return cb(new Error("Wrong filetype"))
         //잘못된 파일타입안내문, 파일명 설정 (ex)41기_00팀_000 변경가능하게 설정)
-        return cb(new Error('Wrong file type'));
     }, */
     limits: {
         fileSize: 1024 * 1024 * 5 //파일허용사이즈 5MB
