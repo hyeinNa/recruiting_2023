@@ -48,6 +48,7 @@
   margin-bottom: 5px;
 }
 .design_detail_activity_part2_container {
+  position: relative;
   border-bottom: 1px solid rgba(208, 208, 208, 0.17);
 }
 .design_detail_activity_part2_subContent_wrapper {
@@ -118,4 +119,10 @@
   width: 90%;
   display: block;
   margin: 0 auto;
+}
+.popup {
+  width: 100%;
+  position: absolute;
+  top: 0;
+  margin-top: 10%;
 }
