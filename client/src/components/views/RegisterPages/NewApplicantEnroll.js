@@ -4,7 +4,7 @@ import axios from "axios";
 import "./NewApplicantEnroll.css";
 import Footer from "../../Footer/Footer";
 import Header from "../../Header/Header";
-import { cardinal_number } from "../../../Var";
+import { Link } from "react-router-dom";
 
 
 function NewApplicantEnroll() {
@@ -15,10 +15,9 @@ function NewApplicantEnroll() {
         ewhaianId: "",
         applicant: ""
     });
-    const [file, setFile] = useState('');
+    const [file, setFile] = useState(false);
     const [filename, setFilename] = useState('파일을 선택하세요.');
     const { team, name, studentId, ewhaianId, applicant } = inputs;
-
     const onChange = (e) => {
         const { value, name } = e.target;
         setInputs({
@@ -69,6 +68,7 @@ function NewApplicantEnroll() {
             if (status === "ok") {//register api의 message출력
                 console.log(message);
                 alert("지원해주셔서 감사합니다.")
+                window.location.replace("/register/success");
             }
             else {
                 console.log(err);
@@ -187,7 +187,6 @@ function NewApplicantEnroll() {
                             <button
                                 type="submit"
                                 className="register_newEnroll_button"
-                            //onClick={register}
                             >
                                 확인
                             </button>
