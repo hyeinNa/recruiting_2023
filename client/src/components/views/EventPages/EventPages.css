@@ -59,7 +59,7 @@
     flex-direction: row;
     justify-content: space-between;
     align-items: center;
-    background-color: aqua;
+
 }
 
 .classopeningbooth {
@@ -103,24 +103,26 @@
 }
 
 .classopeningbooth_content, .may_content, .pearflowergarden_content, .offlineevent_content {
-    height: 100%;
+    height: 95%;
     overflow: auto;
-    padding-left: 4%;
-    padding-top: 5px;
+    padding-left: 6%;
+    padding-top: 20px;
     padding-right: 10%;
 }
 
 .classopeningbooth_title, .may_title, .pearflowergarden_title, .offlineevent_title {
     color: var(--toneDown-white);
-    font-size: larger;
-    font-weight: bold;
+    font-size: 22px;
+    font-weight: 900;
     line-height: 33px;
+
 } 
 
 .classopeningbooth_description, .may_description, .pearflowergarden_description, .offlineevent_description {
     color: var(--toneDown-white);
     display: none;
     font-size: 300;
+    margin-top: 2%;
 }
 
 .classopeningbooth:hover .classopeningbooth_description {
@@ -139,4 +141,18 @@
     display: block;
 }
 
+.classopeningbooth:hover .classopeningbooth_content{
+    background-color: rgb(10, 10, 10, 0.8);
+}
 
+.may:hover .may_content{
+    background-color: rgb(10, 10, 10, 0.8);
+}
+
+.pearflowergarden:hover .pearflowergarden_content{
+    background-color: rgb(10, 10, 10, 0.8);
+}
+
+.offlineevent:hover .offlineevent_content{
+    background-color: rgb(10, 10, 10, 0.8);
+}
