@@ -20,7 +20,7 @@ function UpdatePage() {
     applicant: "",
   });
   const [file, setFile] = useState('');
-  const [filename, setFilename] = useState('Choose File');
+  const [filename, setFilename] = useState('파일을 선택하세요');
   const { team, name, studentId, ewhaianId, applicant } = inputs;
 
   const onChange = (e) => {
@@ -66,18 +66,20 @@ function UpdatePage() {
         id: applicantId, team: inputs.team,
         name: inputs.name,
         studentId: inputs.studentId,
-        ewhaianId: inputs.ewhaianId
+        ewhaianId: inputs.ewhaianId,
+        filename: inputs.applicant
       });
       let status = response.data.status;
       let err = response.data.error;
       let message = response.data.message;
-      if (status === "ok") {
+
+      if (status === "error") {
         console.log(message);
         alert(message)
       }
       else {
-        console.log(err);
-        alert(err) //수정하기 api에서 각 if문에 맞는 error문 출력
+        //console.log(err);
+        alert("지원자 정보가 수정되었습니다") //수정하기 api에서 각 if문에 맞는 error문 출력
       }
       //const { fileName, filePath } = response.data;
       //setUploadedFile({ fileName, filePath });
@@ -180,6 +182,7 @@ function UpdatePage() {
                 <div >
                   <label for="input_file" className="upload_file_text_container">
                     <div className="upload_file_text">
+                      {filename}
                     </div>
                     <div className="upload_file_img_container">
                       <img src="/img/newApplicantEnroll/fileUpload.png" className="upload_file_img" />
