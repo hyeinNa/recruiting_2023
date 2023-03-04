@@ -28,6 +28,8 @@ import NotPeriodCheck from "./components/views/ResultPages/checkUI";
 import DesignDetailActivity from "./components/views/TeamInfoPages/DetailActivities/DesignDetailActivity";
 import WebDevDetailActivity from "./components/views/TeamInfoPages/DetailActivities/WebDevDetailActivity";
 import MarketingDetailActivity from "./components/views/TeamInfoPages/DetailActivities/MarketingDetailActivity";
+import PopupBackground from "./components/views/TeamInfoPages/DetailActivities/popup/PopupBackground";
+import MarketingStudyProject from "./components/views/TeamInfoPages/DetailActivities/MarketingStudyProject";
 function App() {
   return (
     <div className="App">
@@ -51,6 +53,11 @@ function App() {
             exact
             path="/teamInfo/detail/marketing"
             element={<MarketingDetailActivity />}
+          />
+          <Route
+            exact
+            path="/teamInfo/detail/marketing/studyproject"
+            element={<MarketingStudyProject />}
           />
           <Route exact path="/register" element={<RegisterLanding />} />
           <Route
@@ -84,6 +91,7 @@ function App() {
           <Route exact path="/admin/landing" element={<GenerateDB />} />
           <Route exact path="/QnA" element={<QnA />} />
           <Route exact path="/activities" element={<Activities />}></Route>
+          <Route exact path="/popup" element={<PopupBackground />} />
         </Routes>
       </BrowserRouter>
     </div>

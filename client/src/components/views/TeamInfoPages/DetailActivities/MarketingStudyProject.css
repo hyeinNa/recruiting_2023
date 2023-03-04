@@ -1,0 +1,71 @@
+.marketing_study_project_container {
+  width: 100%;
+  background-color: var(--toneDown-black);
+}
+.marketing_study_project_inner_container {
+  max-width: var(--nav-bar-max-width);
+  margin: 0 auto;
+}
+.marketing_study_project_content_container {
+  width: 92%;
+  margin: 0 auto;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+.marketing_study_project_title {
+  font-size: 45px;
+  font-weight: 600;
+  padding-top: 143px;
+  color: var(--title-color);
+}
+.marketing_study_project_description {
+  color: var(--description-color);
+  text-align: center;
+  line-height: 27px;
+  margin-top: 37px;
+  margin-bottom: 66px;
+}
+.marketing_study_project_plan_wrapper {
+  width: 108%;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 200px;
+}
+.marketing_study_project_plans {
+  width: 30%;
+  background-color: #e6e6e6;
+  border-radius: 32px;
+  display: flex;
+  box-shadow: 13px 11px 8px 0px rgba(255, 255, 255, 0.2);
+}
+.marketing_study_project_plan_inner_container {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  margin: 33px 12px 40px 12px;
+}
+.marketing_study_project_plan_title {
+  font-size: 24px;
+  font-weight: 600;
+  color: #121212;
+  margin-bottom: 12px;
+}
+.marketing_study_project_plan_description {
+  font-size: 15px;
+  font-weight: 500;
+  line-height: 27px;
+  color: #2d2d2d;
+}
+.marketing_study_project_plan_description li {
+  word-break: keep-all;
+  margin-left: -8px;
+}
+.plan_description1 {
+  margin-bottom: 20px;
+}

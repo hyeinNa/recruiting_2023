@@ -1,4 +1,5 @@
 import React from "react";
+import { Link } from "react-router-dom";
 import "../teamContent.css";
 import "../../../utilis/ani.css";
 function Design() {
@@ -54,8 +55,14 @@ function Design() {
           </li>
         </ul>
       </div>
+
       <div className="goSubActivity">
-        <img src="/img/teamInfo/goSubActivityDesign.png" alt="goSubActivity" />
+        <Link to="/teaminfo/detail/design">
+          <img
+            src="/img/teamInfo/goSubActivityDesign.png"
+            alt="goSubActivity"
+          />
+        </Link>
       </div>
     </div>
   );

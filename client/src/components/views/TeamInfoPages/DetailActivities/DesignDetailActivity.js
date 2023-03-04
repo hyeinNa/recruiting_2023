@@ -1,6 +1,23 @@
-import React from "react";
+import React, { useState } from "react";
+import Marketing from "../InfoContent/Marketing";
 import "./DesignDetailActivity.css";
+import PopupBackground from "./popup/PopupBackground";
 function DesignDetailActivity() {
+  const [popupContent, setPopupContent] = useState("");
+  const selectComponent = {
+    siteBanner: (
+      <PopupBackground
+        title="사이트 메인 배너"
+        label="계절 배너"
+        description="디자인팀에서는 계절 별로 온라인 사이트 상단에 위치한 메인배너를 
+    계절 분위기에 맞게 디자인하고 있습니다. "
+      />
+    ),
+    goodsDesign: <Marketing />,
+    placeDesign: <Marketing />,
+    logoRenewal: <Marketing />,
+  };
+  const [isClicked, setIsClicked] = useState([false, false, false, false]);
   return (
     <div className="design_detail_activity_container">
       <div className="design_detail_activity_inner_container">
@@ -33,7 +50,13 @@ function DesignDetailActivity() {
               이어지기도 한답니다.
             </div>
             <div className="design_detail_activity_part2_subContent_wrapper">
-              <div className="design_subContent_btn subContent1">
+              <div
+                className="design_subContent_btn subContent1"
+                onClick={() => {
+                  setPopupContent("siteBanner");
+                  document.getElementById("popup").style.visibility = "visible";
+                }}
+              >
                 <img
                   src="/img/teamInfo/detailActivities/design_winter_banner.png"
                   alt="desgin_banner"
@@ -62,6 +85,7 @@ function DesignDetailActivity() {
                 <div className="design_subContent_label">로고 리뉴얼</div>
               </div>
             </div>
+            <div className="popup">{selectComponent[popupContent]}</div>
           </div>
           <div className="design_detail_activity_part3_container design_detail_activity_part_container">
             <div className="design_detaiil_activity_part3_subTitle design_detail_activity_subTitle">

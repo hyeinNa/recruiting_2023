@@ -1,4 +1,5 @@
 import React from "react";
+import { Link } from "react-router-dom";
 import "../teamContent.css";
 import "../../../utilis/ani.css";
 function Marketing() {
@@ -51,11 +52,14 @@ function Marketing() {
           </li>
         </ul>
       </div>
+
       <div className="goSubActivity">
-        <img
-          src="/img/teamInfo/goSubActivityMarketing.png"
-          alt="goSubActivity"
-        />
+        <Link to="/teaminfo/detail/marketing">
+          <img
+            src="/img/teamInfo/goSubActivityMarketing.png"
+            alt="goSubActivity"
+          />
+        </Link>
       </div>
     </div>
   );
