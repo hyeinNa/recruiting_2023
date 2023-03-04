@@ -1,4 +1,5 @@
 import React, { useState, useEffect } from "react";
+import { Link } from "react-router-dom";
 import "../teamContent.css";
 import "../webTechColor.css";
 import "../../../utilis/ani.css";
@@ -89,8 +90,11 @@ function WebDev() {
           </div>
         </div>
       </div>
+
       <div className="goSubActivity">
-        <img src="/img/teamInfo/goSubActivityWeb.png" alt="goSubActivity" />
+        <Link to="/teaminfo/detail/web">
+          <img src="/img/teamInfo/goSubActivityWeb.png" alt="goSubActivity" />
+        </Link>
       </div>
     </div>
   );

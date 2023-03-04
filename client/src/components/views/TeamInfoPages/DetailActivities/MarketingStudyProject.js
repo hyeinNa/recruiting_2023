@@ -38,7 +38,7 @@ function MarketingStudyProject() {
             <div className="marketing_study_project_plans">
               <div className="marketing_study_project_plan_inner_container">
                 <div className="marketing_study_project_plan_title">
-                  개인 노션 포트폴리오 제작
+                  자체 마케팅 프로젝트 진행
                 </div>
                 <ul className="marketing_study_project_plan_description">
                   <li className="plan_description1">
@@ -57,7 +57,7 @@ function MarketingStudyProject() {
             <div className="marketing_study_project_plans">
               <div className="marketing_study_project_plan_inner_container">
                 <div className="marketing_study_project_plan_title">
-                  개인 노션 포트폴리오 제작
+                  마케팅 공모전 참여
                 </div>
                 <ul className="marketing_study_project_plan_description">
                   <li className="plan_description1">
