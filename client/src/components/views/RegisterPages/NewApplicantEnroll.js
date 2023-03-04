@@ -97,7 +97,7 @@ function NewApplicantEnroll() {
                         </div>
                         <div className="register_newEnroll_fileDownload_wrapper">
                             <div className="register_newEnroll_fileDownload">
-                                <a href="/fileUpload/지원서양식.docx" download="이화이언 수습운영진 지원서 양식">
+                                <a href="/fileUpload/43기_지원서 양식.docx" download="이화이언 수습운영진 지원서 양식">
                                     <b> 지원서 다운로드 </b>
                                 </a>
                             </div>
