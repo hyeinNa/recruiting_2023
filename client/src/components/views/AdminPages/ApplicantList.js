@@ -34,13 +34,17 @@ function ApplicantList() {
         const data = Object.entries(response.data);
         const list = data.map((value, idx) => {
           const result = Object.entries(value[1]);
+          console.log(idx);
           return result;
         });
-        console.log("list:", list);
-        const result = list.map((value, idx) => {
-          console.log("idx:", idx);
-          return value;
-        });
+        let arr = [];
+        for (let i = 0; i < list[0].length; i++) {
+          console.log("now:", list[0][i][1]);
+          arr[i] = list[0][i][1];
+        }
+        console.log(arr[0].name);
+        // console.log(list[0][0][1]);
+        // console.log(list[0][1][1]);
 
         return data;
       })
@@ -58,9 +62,18 @@ function ApplicantList() {
       <h1>지원자 리스트</h1>
       <div className="applicant_list_container">
         <nav>
-          <button type="button" onClick={() => setTeam(1)}>마케팅</button> |
-          <button type="button" onClick={() => setTeam(2)}>디자인</button> |
-          <button type="button" onClick={() => setTeam(3)}>웹개발</button>
+          <button type="button" onClick={() => {
+            setTeam(1);
+            getList(team);
+          }}>마케팅</button> |
+          <button type="button" onClick={() => {
+            setTeam(2);
+            getList(team);
+          }}>디자인</button> |
+          <button type="button" onClick={() => {
+            setTeam(3);
+            getList(team);
+          }}>웹개발</button>
         </nav>
         <h2>
           <div className="index">이름</div>

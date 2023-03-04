@@ -172,10 +172,12 @@
         padding: 10px;
         border-width: 0;
         margin-right: 15px;
+        cursor: pointer;
     }
 
     .admin_login_form_wrapper button img {
         width: 40%;
         height: auto;
+        cursor: pointer;
     }
 }
