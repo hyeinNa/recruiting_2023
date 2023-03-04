@@ -1,8 +1,6 @@
 .between_wrapper {
-  padding-top: 60px;
-  display: block;
-  min-height: 100%;
-  padding-bottom: 196px;
+  display: flex;
+  flex-direction: column;
 }
 @media screen and (max-width: 768px) {
   .between_wrapper {
