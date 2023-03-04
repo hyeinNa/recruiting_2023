@@ -13,6 +13,7 @@ function WebDevDetailActivity() {
     else if (year === 2021) setIsClicked([false, true, false]);
     else if (year === 2020) setIsClicked([true, false, false]);
   };
+
   return (
     <div className="web_detail_activity_container">
       <BackBtn path="/" />

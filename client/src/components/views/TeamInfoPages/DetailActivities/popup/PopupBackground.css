@@ -51,6 +51,13 @@
   margin-top: 32px;
   margin-bottom: 100px;
 }
+.popup_img_container_webProject {
+  margin-top: 32px;
+  margin-bottom: 100px;
+  display: flex;
+  flex-direction: column;
+  overflow-y: auto;
+}
 .popup_exitBtn_wrapper {
   width: 30px;
   height: 30px;
