@@ -3,44 +3,37 @@
         {
             "name": "이화이언 스무 번째 봄",
             "text": "2021.05.17~2021.05.23",
-            "img_path": "/img/activities/2021_20th_spring.png",
-            "type": "others"
+            "img_path": "/img/activities/2021_20th_spring.png"
         },
         {
             "name": "배꽃정원",
             "text": "2020.11.16~2020.11.22",
-            "img_path": "/img/activities/2020_pearflower.png",
-            "type": "pear_flower"
+            "img_path": "/img/activities/2020_pearflower.png"
         },
         {
             "name": "이화이언 사이버 캠퍼스",
             "text": "2020.05.13~2020.05.29",
-            "img_path": "/img/activities/2020_cybercampus.png",
-            "type": "others"
+            "img_path": "/img/activities/2020_cybercampus.png"
         },
         {
             "name": "배꽃정원",
             "text": "2019.11.21",
-            "img_path": "/img/activities/2019_pearflower.png",
-            "type": "pear_flower"
+            "img_path": "/img/activities/2019_pearflower.png"
         },
         {
             "name": "오월드림",
             "text": "2019.05.23",
-            "img_path": "/img/activities/2019_May.png",
-            "type": "May_event"
+            "img_path": "/img/activities/2019_May.png"
         },
         {
             "name": "배꽃정원",
             "text": "2018.11.29",
-            "img_path": "/img/activities/2018_pearflower.png",
-            "type": "pear_flower"
+            "img_path": "/img/activities/2018_pearflower.png"
         },
         {
             "name": "첫 번째 생일파티",
             "text": "2018.05.24",
-            "img_path": "/img/activities/2018_1st_birthday.png",
-            "type": "others"
+            "img_path": "/img/activities/2018_1st_birthday.png"
         }
     ]
 }
