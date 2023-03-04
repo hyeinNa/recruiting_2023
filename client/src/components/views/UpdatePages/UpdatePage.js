@@ -20,7 +20,7 @@ function UpdatePage() {
     applicant: "",
   });
   const [file, setFile] = useState('');
-  const [filename, setFilename] = useState('파일을 선택하세요');
+  const [filename, setFilename] = useState('수정할 파일을 선택하세요');
   const { team, name, studentId, ewhaianId, applicant } = inputs;
 
   const onChange = (e) => {
@@ -43,6 +43,7 @@ function UpdatePage() {
           name: response.data.name,
           studentId: response.data.studentId,
           ewhaianId: response.data.ewhaianId,
+          team: response.data.team,
         });
       })
       .catch((error) => {
@@ -57,6 +58,7 @@ function UpdatePage() {
     formData.append('applicant', file)
     formData.append('id', applicantId)
     formData.append('name', name)
+    formData.append('team', team)
     formData.append('studentId', studentId)
     formData.append('ewhaianId', ewhaianId)
 
@@ -78,8 +80,7 @@ function UpdatePage() {
         alert(message)
       }
       else {
-        //console.log(err);
-        alert("지원자 정보가 수정되었습니다") //수정하기 api에서 각 if문에 맞는 error문 출력
+        window.location.replace("/update/success");
       }
       //const { fileName, filePath } = response.data;
       //setUploadedFile({ fileName, filePath });

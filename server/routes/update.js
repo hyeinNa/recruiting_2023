@@ -84,17 +84,4 @@ updateRoute.put("/update", uploadRouter.single('applicant'), async (req, res) =>
 
 });
 
-/* updateRoute.delete("/upload", async (req, res) => {
-  //const file_name = req.body.applicant
-
-  if (fs.existsSync("server/uploads/" + file_name)) {
-    // 파일이 존재한다면 true 그렇지 않은 경우 false 반환
-    try {
-      fs.unlinkSync("/uploads" + file_name);
-      console.log("file deleted");
-    } catch (error) {
-      console.log(error);
-    }
-  }
-}); */
 module.exports = updateRoute;
