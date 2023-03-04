@@ -1,8 +1,10 @@
 import React from "react";
+import BackBtn from "../../../utilis/BackBtn";
 import "./MarketingStudyProject.css";
 function MarketingStudyProject() {
   return (
     <div className="marketing_study_project_container">
+      <BackBtn path="/teaminfo/detail/marketing" />
       <div className="marketing_study_project_inner_container">
         <div className="marketing_study_project_content_container">
           <div className="marketing_study_project_title">

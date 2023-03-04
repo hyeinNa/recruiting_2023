@@ -1,0 +1,13 @@
+.back_btn {
+  width: 60px;
+  position: absolute;
+  top: 70px;
+  left: 10%;
+  content: url(../../../public/img/backArrow.png);
+}
+.back_btn:hover {
+  content: url(../../../public/img/backArrowHover.png);
+}
+.back_btn img {
+  width: 100%;
+}

@@ -1,9 +1,11 @@
 import React from "react";
 import { Link } from "react-router-dom";
+import BackBtn from "../../../utilis/BackBtn";
 import "./MarketingDetailAcitivity.css";
 function MarketingDetailActivity() {
   return (
     <div className="marketing_detail_activity_container">
+      <BackBtn path="/" />
       <div className="marketing_detail_activity_inner_container">
         <div className="marketing_detail_activity_content_container">
           <div className="marketing_part1_container">

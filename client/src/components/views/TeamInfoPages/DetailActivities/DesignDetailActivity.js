@@ -1,25 +1,75 @@
 import React, { useState } from "react";
-import Marketing from "../InfoContent/Marketing";
+import BackBtn from "../../../utilis/BackBtn";
 import "./DesignDetailActivity.css";
 import PopupBackground from "./popup/PopupBackground";
+import PopupData from "./popup/DesignPopUpData.json";
 function DesignDetailActivity() {
   const [popupContent, setPopupContent] = useState("");
+  const [isPopOpen, setIsPopOpen] = useState(false);
+  const popUpOpen = (contentNum) => {
+    setIsPopOpen(true);
+    if (contentNum === 1) setPopupContent("siteBanner");
+    else if (contentNum === 2) setPopupContent("goodsDesign");
+    else if (contentNum === 3) setPopupContent("placeDesign");
+    else setPopupContent("logoRenewal");
+  };
+  const closePopUp = () => {
+    setIsPopOpen(false);
+  };
   const selectComponent = {
     siteBanner: (
       <PopupBackground
-        title="사이트 메인 배너"
-        label="계절 배너"
-        description="디자인팀에서는 계절 별로 온라인 사이트 상단에 위치한 메인배너를 
-    계절 분위기에 맞게 디자인하고 있습니다. "
+        title={PopupData.designPopUpDatas[0].title}
+        label={PopupData.designPopUpDatas[0].label}
+        description={PopupData.designPopUpDatas[0].description}
+        direction="column"
+        imgNum={2}
+        imgSrc1={PopupData.designPopUpDatas[0].imgSrc1}
+        imgSrc2={PopupData.designPopUpDatas[0].imgSrc2}
+        closePopUp={closePopUp}
       />
     ),
-    goodsDesign: <Marketing />,
-    placeDesign: <Marketing />,
-    logoRenewal: <Marketing />,
+    goodsDesign: (
+      <PopupBackground
+        title={PopupData.designPopUpDatas[1].title}
+        label={PopupData.designPopUpDatas[1].label}
+        direction="row"
+        imgNum={2}
+        description={PopupData.designPopUpDatas[1].description}
+        imgSrc1={PopupData.designPopUpDatas[1].imgSrc1}
+        imgSrc2={PopupData.designPopUpDatas[1].imgSrc2}
+        closePopUp={closePopUp}
+      />
+    ),
+    placeDesign: (
+      <PopupBackground
+        title={PopupData.designPopUpDatas[2].title}
+        label={PopupData.designPopUpDatas[2].label}
+        description={PopupData.designPopUpDatas[2].description}
+        direction="column"
+        imgNum={1}
+        imgSrc1={PopupData.designPopUpDatas[2].imgSrc1}
+        imgSrc2={PopupData.designPopUpDatas[2].imgSrc2}
+        closePopUp={closePopUp}
+      />
+    ),
+    logoRenewal: (
+      <PopupBackground
+        title={PopupData.designPopUpDatas[3].title}
+        label={PopupData.designPopUpDatas[3].label}
+        direction="column"
+        imgNum={1}
+        description={PopupData.designPopUpDatas[3].description}
+        imgSrc1={PopupData.designPopUpDatas[3].imgSrc1}
+        imgSrc2={PopupData.designPopUpDatas[3].imgSrc2}
+        closePopUp={closePopUp}
+      />
+    ),
   };
-  const [isClicked, setIsClicked] = useState([false, false, false, false]);
+
   return (
     <div className="design_detail_activity_container">
+      <BackBtn path="/" />
       <div className="design_detail_activity_inner_container">
         <div className="design_detail_activity_content_container">
           <div className="design_detail_activity_part1_container design_detail_activity_part_container">
@@ -53,8 +103,7 @@ function DesignDetailActivity() {
               <div
                 className="design_subContent_btn subContent1"
                 onClick={() => {
-                  setPopupContent("siteBanner");
-                  document.getElementById("popup").style.visibility = "visible";
+                  popUpOpen(1);
                 }}
               >
                 <img
@@ -63,21 +112,36 @@ function DesignDetailActivity() {
                 />
                 <div className="design_subContent_label">사이트 배너</div>
               </div>
-              <div className="design_subContent_btn subContent2">
+              <div
+                className="design_subContent_btn subContent2"
+                onClick={() => {
+                  popUpOpen(2);
+                }}
+              >
                 <img
                   src="/img/teamInfo/detailActivities/design_goods_img.png"
                   alt="desgin_goodsDesign"
                 />
                 <div className="design_subContent_label">굿즈 디자인</div>
               </div>
-              <div className="design_subContent_btn subContent3">
+              <div
+                className="design_subContent_btn subContent3"
+                onClick={() => {
+                  popUpOpen(3);
+                }}
+              >
                 <img
                   src="/img/teamInfo/detailActivities/design_place_design.png"
                   alt="desgin_placeDesign"
                 />
                 <div className="design_subContent_label">공간 디자인</div>
               </div>
-              <div className="design_subContent_btn subContent4">
+              <div
+                className="design_subContent_btn subContent4"
+                onClick={() => {
+                  popUpOpen(4);
+                }}
+              >
                 <img
                   src="/img/teamInfo/detailActivities/design_logo_renewal.png"
                   alt="desgin_logo_renewal"
@@ -85,7 +149,9 @@ function DesignDetailActivity() {
                 <div className="design_subContent_label">로고 리뉴얼</div>
               </div>
             </div>
-            <div className="popup">{selectComponent[popupContent]}</div>
+            <div className="popup">
+              {isPopOpen ? selectComponent[popupContent] : null}
+            </div>
           </div>
           <div className="design_detail_activity_part3_container design_detail_activity_part_container">
             <div className="design_detaiil_activity_part3_subTitle design_detail_activity_subTitle">

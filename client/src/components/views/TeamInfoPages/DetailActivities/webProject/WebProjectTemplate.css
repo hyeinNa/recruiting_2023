@@ -1,0 +1,26 @@
+.webProject {
+  width: 20%;
+  border-radius: 25px;
+  margin-right: 5%;
+  position: relative;
+}
+.webProjectHover {
+  top: 0;
+  left: 0;
+  position: absolute;
+  width: 100%;
+  padding-bottom: 100.36%;
+  border-radius: 25px;
+  background-color: rgba(37, 37, 37, 0.63);
+  visibility: hidden;
+}
+.webProject:hover > .webProjectHover {
+  visibility: visible;
+}
+.webProject img {
+  width: 100%;
+  border-radius: 25px;
+}
+.webProject:hover > .notHover {
+  visibility: hidden;
+}

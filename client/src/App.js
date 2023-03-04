@@ -33,67 +33,61 @@ import MarketingStudyProject from "./components/views/TeamInfoPages/DetailActivi
 function App() {
   return (
     <div className="App">
-      <BrowserRouter>
-        <Routes>
-          <Route exact path="/" element={<LandingPage />} />
-          <Route exact path="/ewhaianInfo" element={<EwhaianInfo />} />
-          <Route exact path="/event" element={<Event />} />
-          <Route exact path="/teamInfo" element={<TeamInfo />} />
-          <Route
-            exact
-            path="/teamInfo/detail/design"
-            element={<DesignDetailActivity />}
-          />
-          <Route
-            exact
-            path="/teamInfo/detail/web"
-            element={<WebDevDetailActivity />}
-          />
-          <Route
-            exact
-            path="/teamInfo/detail/marketing"
-            element={<MarketingDetailActivity />}
-          />
-          <Route
-            exact
-            path="/teamInfo/detail/marketing/studyproject"
-            element={<MarketingStudyProject />}
-          />
-          <Route exact path="/register" element={<RegisterLanding />} />
-          <Route
-            exact
-            path="/register/checkinfo"
-            element={<ExistingApplicantCheckInfo />}
-          />
-          <Route
-            exact
-            path="/register/newEnroll"
-            element={<NewApplicantEnroll />}
-          />
-          <Route exact path="/register/success" element={<ApplySuccess />} />
-          <Route exact path="/update/:id" element={<Update />} />
-          <Route exact path="/update/success" element={<UpdateSuccess />} />
-          <Route exact path="/result/checkinfo" element={<CheckResult />} />
-          <Route exact path="/result/notperiod/:id" element={<NotPeriod />} />
-          <Route exact path="/admin/login" element={<AdminLogin />} />
-          <Route exact path="/admin/modifyInfo/:id" element={<Modify />} />
-          <Route
-            exact
-            path="/result/notperiod/check"
-            element={<NotPeriodCheck />}
-          />
-          <Route
-            exact
-            path="/admin/applicantList"
-            element={<ApplicantList />}
-          />
+      <Routes>
+        <Route exact path="/" element={<LandingPage />} />
+        <Route exact path="/ewhaianInfo" element={<EwhaianInfo />} />
+        <Route exact path="/event" element={<Event />} />
+        <Route exact path="/teamInfo" element={<TeamInfo />} />
+        <Route
+          exact
+          path="/teamInfo/detail/design"
+          element={<DesignDetailActivity />}
+        />
+        <Route
+          exact
+          path="/teamInfo/detail/web"
+          element={<WebDevDetailActivity />}
+        />
+        <Route
+          exact
+          path="/teamInfo/detail/marketing"
+          element={<MarketingDetailActivity />}
+        />
+        <Route
+          exact
+          path="/teamInfo/detail/marketing/studyproject"
+          element={<MarketingStudyProject />}
+        />
+        <Route exact path="/register" element={<RegisterLanding />} />
+        <Route
+          exact
+          path="/register/checkinfo"
+          element={<ExistingApplicantCheckInfo />}
+        />
+        <Route
+          exact
+          path="/register/newEnroll"
+          element={<NewApplicantEnroll />}
+        />
+        <Route exact path="/register/success" element={<ApplySuccess />} />
+        <Route exact path="/update/:id" element={<Update />} />
+        <Route exact path="/update/success" element={<UpdateSuccess />} />
+        <Route exact path="/result/checkinfo" element={<CheckResult />} />
+        <Route exact path="/result/notperiod/:id" element={<NotPeriod />} />
+        <Route exact path="/admin/login" element={<AdminLogin />} />
+        <Route exact path="/admin/modifyInfo/:id" element={<Modify />} />
+        <Route
+          exact
+          path="/result/notperiod/check"
+          element={<NotPeriodCheck />}
+        />
+        <Route exact path="/admin/applicantList" element={<ApplicantList />} />
 
-          <Route exact path="/admin/landing" element={<GenerateDB />} />
-          <Route exact path="/QnA" element={<QnA />} />
-          <Route exact path="/activities" element={<Activities />}></Route>
-          <Route exact path="/popup" element={<PopupBackground />} />
-        </Routes>
-      </BrowserRouter>
+        <Route exact path="/admin/landing" element={<GenerateDB />} />
+        <Route exact path="/QnA" element={<QnA />} />
+        <Route exact path="/activities" element={<Activities />}></Route>
+        <Route exact path="/popup" element={<PopupBackground />} />
+      </Routes>
     </div>
   );
 }
