@@ -1,16 +1,7 @@
-import React, { useEffect, useState } from "react";
+import React from "react";
+import ImageTemplate from "./ImageTemplate";
 import "./PopupBackground.css";
 function PopupBackground(props) {
-  const [isExit, setIsExit] = useState(false);
-  const clickXbtn = () => {
-    setIsExit(true);
-  };
-  useEffect(() => {
-    document.getElementById("popup").style.visibility = "visible";
-  }, []);
-  const close = () => {
-    document.getElementById("popup").style.visibility = "hidden";
-  };
   return (
     <div className="popup_container" id="popup">
       <div className="popup_inner_container">
@@ -32,11 +23,16 @@ function PopupBackground(props) {
             <div className="popup_category_label">관련이미지</div>
           </div>
           <div className="popup_img_container">
-            <img />
+            <ImageTemplate
+              direction={props.direction}
+              imgNum={props.imgNum}
+              imgSrc1={props.imgSrc1}
+              imgSrc2={props.imgSrc2}
+            />
           </div>
         </div>
       </div>
-      <div className="popup_exitBtn_wrapper" onClick={close}>
+      <div className="popup_exitBtn_wrapper" onClick={props.closePopUp}>
         <div className="popup_exitBtn_x">
           <img
             className="popup_xBtn"
