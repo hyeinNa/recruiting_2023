@@ -22,6 +22,7 @@ function ApplicantList() {
       .catch((error) => {
         console.log("An error occurred: ", error.response);
       });
+    setButtonColor(1);
 
   }, []);
   // eslint-disable-next-line react-hooks/exhaustive-deps
@@ -29,24 +30,48 @@ function ApplicantList() {
   // 버튼 클릭할 때, team이 바뀔 때마다 getList 새로 호출
   useEffect(() => {
     GetList(team);
+    setButtonColor(team);
   }, [team]);
+
+  const setButtonColor = (team) => {
+    console.log("team:", team);
+    if (team === 1) {
+      console.log("실행1");
+      document.getElementById("1").style.backgroundColor = "#EB1568";
+      document.getElementById("2").style.backgroundColor = "var(--register-checkInfo-forms-color)";
+      document.getElementById("3").style.backgroundColor = "var(--register-checkInfo-forms-color)";
+    } else if (team === 2) {
+      console.log("실행2");
+      document.getElementById("2").style.backgroundColor = "#EB1568";
+      document.getElementById("1").style.backgroundColor = "var(--register-checkInfo-forms-color)";
+      document.getElementById("3").style.backgroundColor = "var(--register-checkInfo-forms-color)";
+    }
+    if (team === 3) {
+      console.log("실행3");
+      document.getElementById("3").style.backgroundColor = "#EB1568";
+      document.getElementById("1").style.backgroundColor = "var(--register-checkInfo-forms-color)";
+      document.getElementById("2").style.backgroundColor = "var(--register-checkInfo-forms-color)";
+    }
+  }
+
 
 
   //합불 선택자 DB에 전송
   const changePass = () => {
     const pass = document.getElementById("pass"); //select box id 가져오기
-    const studentId = pass.options[pass.selectedIndex].value; //검색할 학번 가져오기
+    const _id = pass.options[pass.selectedIndex].value; //검색할 학번 가져오기
     let result;
     if (pass.selectedIndex === 0) result = "pass"; //0번 index 선택 시 pass 전달
     else result = "nonpass";                      // 1번 index 선택 시 nonpass 전달
 
     // 서버의 selectPass 함수로 전달
-    axios.post("/api/applicantlist", {
-      studentId: studentId,
+    axios.put("/api/applicantlist", {
+      _id: _id,
       pass: result
     })
       .then((response) => {
         console.log(response.data.message);
+        console.log(arr[0].pass);
       })
       .catch((error) => {
         console.error(error);
@@ -77,6 +102,22 @@ function ApplicantList() {
 
   }
 
+  //서버에서 지원자 파일 다운로드
+  const handleFileDownload = async (title) => {
+    const url = "server/uploads/" + title;
+    const response = await fetch(url);
+    const file = await response.blob();
+    const downloadUrl = window.URL.createObjectURL(file); // 해당 file을 가리키는 url 생성
+
+    const anchorElement = document.createElement('a');
+    document.body.appendChild(anchorElement);
+    anchorElement.download = title; // a tag에 download 속성을 줘서 클릭할 때 다운로드가 일어날 수 있도록 함. 공백은 기본값
+    anchorElement.href = downloadUrl; // href에 url 달아주기
+
+    anchorElement.click();
+  }
+
+
 
   return (
     <div className="main">
@@ -84,9 +125,18 @@ function ApplicantList() {
       <h1>지원자 리스트</h1>
       <div className="applicant_list_container">
         <nav>
-          <button type="button" onClick={() => { setTeam(1) }}>마케팅</button>
-          <button type="button" onClick={() => { setTeam(2) }}>디자인</button> |
-          <button type="button" onClick={() => { setTeam(3) }}>웹개발</button>
+          <button type="button" id="1" onClick={() => {
+            setTeam(1);
+            setButtonColor(team);
+          }}>마케팅</button>
+          <button type="button" id="2" onClick={() => {
+            setTeam(2);
+            setButtonColor(team);
+          }}>디자인</button>
+          <button type="button" id="3" onClick={() => {
+            setTeam(3);
+            setButtonColor(team);
+          }}>웹개발</button>
         </nav>
         <h2>
           <div className="index">이름</div>
@@ -99,17 +149,17 @@ function ApplicantList() {
         <section className="apply_list">
           {arr && arr.map((appli, idx) => (
             <p key={idx}>
-              <div >{appli.name}</div>
-              <div >{appli.studentId}</div>
-              <div >{appli.ewhaianId}</div>
-              <div >면접 일정</div>
-              <div >
+              <div>{appli.name}</div>
+              <div>{appli.studentId}</div>
+              <div>{appli.ewhaianId}</div>
+              <div>
                 <select id="pass" onChange={() => changePass()}>
-                  <option value={appli.studentId} value2="pass">합격</option>
-                  <option value={appli.studentId} value2="nonpass">불합격</option>
+                  <option value={appli._id} value2="pass">합격</option>
+                  <option value={appli._id} value2="nonpass">불합격</option>
                 </select>
               </div>
-              <div ><button type="button">
+              <div>면접 일정</div>
+              <div ><button type="button" onClick={() => handleFileDownload(appli.applicant)}>
                 <img src="/img/admin/application.png" alt="download" /></button></div>
             </p>
           ))}
