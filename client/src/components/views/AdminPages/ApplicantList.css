@@ -60,11 +60,12 @@
 section {
     width: 100%;
     display: flex;
-    flex-direction: row;
+    flex-direction: column;
 }
 
 .apply_list p {
     width: 100%;
+    height: 30px;
     display: flex;
     flex-direction: row;
 }
@@ -72,10 +73,11 @@ section {
 .apply_list div {
     background-color: var(--toneDown-white);
     border-color: transparent;
-    width: 210px;
-    font-size: 18px;
+    width: 215px;
+    height: 37px;
+    font-size: 17px;
     font-weight: 600;
     padding: 10px;
-    margin-right: 5px;
     text-align: center;
+    margin: auto;
 }
