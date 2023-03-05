@@ -35,18 +35,19 @@ function ApplicantList() {
   //합불 선택자 DB에 전송
   const changePass = () => {
     const pass = document.getElementById("pass"); //select box id 가져오기
-    const studentId = pass.options[pass.selectedIndex].value; //검색할 학번 가져오기
+    const _id = pass.options[pass.selectedIndex].value; //검색할 학번 가져오기
     let result;
     if (pass.selectedIndex === 0) result = "pass"; //0번 index 선택 시 pass 전달
     else result = "nonpass";                      // 1번 index 선택 시 nonpass 전달
 
     // 서버의 selectPass 함수로 전달
-    axios.post("/api/applicantlist", {
-      studentId: studentId,
+    axios.put("/api/applicantlist", {
+      _id: _id,
       pass: result
     })
       .then((response) => {
         console.log(response.data.message);
+        console.log(arr[0].pass);
       })
       .catch((error) => {
         console.error(error);
@@ -77,6 +78,7 @@ function ApplicantList() {
 
   }
 
+  //서버에서 지원자 파일 다운로드
   const handleFileDownload = async (title) => {
     const url = "server/uploads/" + title;
     const response = await fetch(url);
@@ -119,8 +121,8 @@ function ApplicantList() {
               <div >면접 일정</div>
               <div >
                 <select id="pass" onChange={() => changePass()}>
-                  <option value={appli.studentId} value2="pass">합격</option>
-                  <option value={appli.studentId} value2="nonpass">불합격</option>
+                  <option value={appli._id} value2="pass">합격</option>
+                  <option value={appli._id} value2="nonpass">불합격</option>
                 </select>
               </div>
               <div ><button type="button" onClick={() => handleFileDownload(appli.applicant)}>

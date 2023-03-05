@@ -42,19 +42,17 @@ const applyList = (req, res) => {
 
 
 //지원자의 합불 여부를 결정
-const selectPass = (req, res) => {
-    const { studentId, pass } = req.body;
+const selectPass = async (req, res) => {
+    const { _id, pass } = req.body;
 
     try {
-        console.log(studentId, pass);
-        Applicant.updateOne(
-            {
-                studentId: studentId,
-            },
-            {   //합불여부 update
-                pass: pass,
+        const data = await Applicant.findByIdAndUpdate(
+            _id, {
+            $set: {
+                pass,
             }
-        )
+        });
+
         return res.json({
             message: "수정 완료",
         });
@@ -65,6 +63,6 @@ const selectPass = (req, res) => {
     }
 }
 
-applicantListRouter.route("/").get(applyList).post(selectPass);
+applicantListRouter.route("/").get(applyList).put(selectPass);
 
 module.exports = applicantListRouter;
