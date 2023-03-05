@@ -26,7 +26,7 @@ function ApplicantList() {
   // eslint-disable-next-line react-hooks/exhaustive-deps
 
   //서버에서 지원자 DB 받아오기
-  const getList = (team) => {
+  const GetList = (team) => {
     axios.get("/api/applicantlist", { params: { team: team } })
       .then((response) => {
 
@@ -36,13 +36,24 @@ function ApplicantList() {
           const result = Object.entries(value[1]);
           return result;
         });
-        console.log("list:", list);
-        const result = list.map((value, idx) => {
-          console.log("idx:", idx);
-          return value;
-        });
-
-        return data;
+        //arr에 지원자 객체만 배열로 저장
+        let arr = [];
+        for (let i = 0; i < list[0].length; i++) {
+          arr[i] = list[0][i][1];
+        }
+        return (
+          <div className="apply_list">
+            {arr.map((it) => (
+              <p id={it.id}>
+                <div >{it.name}</div>
+                <div >{it.studentId}</div>
+                <div >{it.ewhaianId}</div>
+                <div>면접 일정</div>
+                <div>지원서</div>
+              </p>
+            ))}
+          </div>
+        );
       })
       .catch((error) => {
         console.error(error);
@@ -50,7 +61,7 @@ function ApplicantList() {
 
   }
 
-  const data = getList(team);
+  const data = GetList(team);
 
   return (
     <div className="main">
@@ -58,9 +69,18 @@ function ApplicantList() {
       <h1>지원자 리스트</h1>
       <div className="applicant_list_container">
         <nav>
-          <button type="button" onClick={() => setTeam(1)}>마케팅</button> |
-          <button type="button" onClick={() => setTeam(2)}>디자인</button> |
-          <button type="button" onClick={() => setTeam(3)}>웹개발</button>
+          <button type="button" onClick={() => {
+            setTeam(1);
+            GetList(team);
+          }}>마케팅</button> |
+          <button type="button" onClick={() => {
+            setTeam(2);
+            GetList(team);
+          }}>디자인</button> |
+          <button type="button" onClick={() => {
+            setTeam(3);
+            GetList(team);
+          }}>웹개발</button>
         </nav>
         <h2>
           <div className="index">이름</div>
@@ -72,17 +92,7 @@ function ApplicantList() {
         </h2>
         <section>
           <h3>
-            {/* <div className="apply_list">
-              {data.map((it) => (
-                <p>
-                  <div>{it.name}</div>
-                  <div>{it.studentId}</div>
-                  <div>{it.ewhaianId}</div>
-                  <div>면접 일정</div>
-                  <div>지원서</div>
-                </p>
-              ))}
-            </div> */}
+            <GetList team={team} />
           </h3>
         </section>
 
