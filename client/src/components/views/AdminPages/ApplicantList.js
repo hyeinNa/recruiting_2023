@@ -26,6 +26,7 @@ function ApplicantList() {
   }, []);
   // eslint-disable-next-line react-hooks/exhaustive-deps
 
+  // 버튼 클릭할 때, team이 바뀔 때마다 getList 새로 호출
   useEffect(() => {
     GetList(team);
   }, [team]);
@@ -33,12 +34,13 @@ function ApplicantList() {
 
   //합불 선택자 DB에 전송
   const changePass = () => {
-    const pass = document.getElementById("pass");
-    const studentId = pass.options[pass.selectedIndex].value;
+    const pass = document.getElementById("pass"); //select box id 가져오기
+    const studentId = pass.options[pass.selectedIndex].value; //검색할 학번 가져오기
     let result;
-    if (pass.selectedIndex === 0) result = "pass";
-    else result = "nonpass";
+    if (pass.selectedIndex === 0) result = "pass"; //0번 index 선택 시 pass 전달
+    else result = "nonpass";                      // 1번 index 선택 시 nonpass 전달
 
+    // 서버의 selectPass 함수로 전달
     axios.post("/api/applicantlist", {
       studentId: studentId,
       pass: result
