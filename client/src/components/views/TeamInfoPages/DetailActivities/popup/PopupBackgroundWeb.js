@@ -1,7 +1,7 @@
 import React from "react";
-import ImageTemplate from "./ImageTemplate";
 import "./PopupBackground.css";
-function PopupBackground(props) {
+
+function PopupBackgroundWeb(props) {
   return (
     <div className="popup_container" id="popup">
       <div className="popup_inner_container">
@@ -22,13 +22,10 @@ function PopupBackground(props) {
             />
             <div className="popup_category_label">관련이미지</div>
           </div>
-          <div className="popup_img_container">
-            <ImageTemplate
-              direction={props.direction}
-              imgNum={props.imgNum}
-              imgSrc1={props.imgSrc1}
-              imgSrc2={props.imgSrc2}
-            />
+          <div className="popup_img_container_webProject">
+            <img src={props.imgSrc1} alt="img1" />
+            <img src={props.imgSrc1} alt="img1" />
+            <img src={props.imgSrc1} alt="img1" />
           </div>
         </div>
       </div>
@@ -45,4 +42,4 @@ function PopupBackground(props) {
   );
 }
 
-export default PopupBackground;
+export default PopupBackgroundWeb;

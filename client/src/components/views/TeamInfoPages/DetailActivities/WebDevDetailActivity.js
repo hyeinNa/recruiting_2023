@@ -1,8 +1,22 @@
 import React from "react";
+import { useState } from "react";
+import BackBtn from "../../../utilis/BackBtn";
 import "./WebDevDetailActivity.css";
+import WebProjectTemplate from "./webProject/WebProjectTemplate";
+import projectImg from "./webProject/webProjectImg.json";
 function WebDevDetailActivity() {
+  const [year, setYear] = useState(2022);
+  const [isClicked, setIsClicked] = useState([false, false, true]);
+  const clickYearBtn = (year) => {
+    setYear(year);
+    if (year === 2022) setIsClicked([false, false, true]);
+    else if (year === 2021) setIsClicked([false, true, false]);
+    else if (year === 2020) setIsClicked([true, false, false]);
+  };
+
   return (
     <div className="web_detail_activity_container">
+      <BackBtn path="/" />
       <div className="web_detail_actvity_inner_container">
         <div className="web_detail_activity_content_container">
           <div className="part1_container">
@@ -17,15 +31,41 @@ function WebDevDetailActivity() {
             </div>
             <div className="part1_webProject_container">
               <div className="webProject_year_btns_container">
-                <button className="webProject_year_btn">2022</button>
-                <button className="webProject_year_btn">2021</button>
-                <button className="webProject_year_btn">2020</button>
+                <button
+                  className={`webProject_year_btn ${
+                    isClicked[2] ? "clicked" : "unclicked"
+                  }`}
+                  onClick={() => {
+                    clickYearBtn(2022);
+                  }}
+                >
+                  2022
+                </button>
+                <button
+                  className={`webProject_year_btn ${
+                    isClicked[1] ? "clicked" : "unclicked"
+                  }`}
+                  onClick={() => {
+                    clickYearBtn(2021);
+                  }}
+                >
+                  2021
+                </button>
+                <button
+                  className={`webProject_year_btn ${
+                    isClicked[0] ? "clicked" : "unclicked"
+                  }`}
+                  onClick={() => {
+                    clickYearBtn(2020);
+                  }}
+                >
+                  2020
+                </button>
               </div>
               <div className="part1_projects_content_wrapper">
-                <div className="part1_project_content">img1</div>
-                <div className="part1_project_content">img2</div>
-                <div className="part1_project_content">img3</div>
-                <div className="part1_project_content">img4</div>
+                {projectImg[year].map((data) => {
+                  return <WebProjectTemplate name={data.name} src={data.src} />;
+                })}
               </div>
             </div>
           </div>

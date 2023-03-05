@@ -5,7 +5,7 @@
     /*Activities 페이지 전체 일괄적용*/
     background-color: var(--toneDown-black);
     color: var(--toneDown-white);
-    width: 100%;
+    /* width: 100%; */
     /* font: font.css에서 일괄적용됨 */
     /* font-family: "Pretendard-Regular"; */
 }
@@ -20,8 +20,8 @@
     /* figma와 같이 보여줄 때 위치 */
     /*margin-left: 207.5px;*/
     margin-bottom: 51px;
-    /* padding-top: 헤더 높이 59.2px +나머지 간격 30px*/
-    padding-top: 89.2px;
+    /* padding-top: 헤더 높이 59.2px */
+    padding-top: 59.2px;
     line-height: 1;
     width: auto;
     margin-top: 0;
@@ -84,6 +84,7 @@
 }
 
 .LinkToEventSketch {
+    width: 100%;
     font-style: normal;
     font-weight: 400;
     font-size: 9px;
@@ -91,11 +92,16 @@
     text-decoration-line: underline;
     text-align: right;
     color: #9A9A9A;
+    background-color: transparent;
+    padding: 0;
+    border: 0;
 }
 
 .ActivitiesAll {
     display: flex;
     width: 100%;
+    max-width: 2184px;
+    margin: 0 auto;
     height: auto;
     /* flex-wrap: nowrap; */
     /* justify-content: flex-start; */
@@ -146,25 +152,26 @@
     .ActivitiesHeader {
         /* font-family: "Pretendard-Regular"; */
         font-weight: 500;
-        font-size: 17px;
+        font-size: 30px;
         /* 첫 activity부터 보여줄 떄 위치 */
-        margin-left: 126.5px;
+        margin-left: 162.5px;
         /* figma와 같이 보여줄 때 위치 */
         /* margin-left: 79px; */
 
         /* padding-top: 헤더 높이 55.5px +나머지 간격 20px*/
-        padding-top: 75.5px;
+        padding-top: 55.5px;
         margin-bottom: 24px;
         line-height: 1;
         width: auto;
     }
 
     .EachActivity {
-        width: 94px;
+        /* width: 94px; */
+        width: 130px;
         height: auto;
 
-        margin-left: 10.5px;
-        margin-right: 10.5px;
+        margin-left: 12.5px;
+        margin-right: 12.5px;
 
         /* 여기가 스크롤바 위 마진 */
         /* margin-bottom: 46.3px; */
@@ -174,29 +181,29 @@
 
     .TurnToImg {
         display: flex;
-        width: 94px;
-        height: 124px;
+        /* width: 94px; */
+        width: 130px;
+        height: 171.5px;
         /* align-items: flex-start; */
         justify-content: center;
     }
 
     .TurnToImg img {
-        max-width: 94px;
-        max-height: 124px;
+        max-width: 130px;
+        max-height: 171.5px;
         object-fit: scale-down;
 
     }
 
     .ActivityText {
-        width: 94px;
+        width: 100%;
         border-left: 3px solid var(--ewhaian-pink);
         padding-left: 5px;
     }
 
     .ActivityName {
-        font-weight: 300;
-        font-size: 10px;
-        zoom: 0.8;
+        font-weight: 600;
+        font-size: 14px;
         line-height: 1;
         margin-bottom: 4px;
 
@@ -205,19 +212,21 @@
     .ActivityDate {
         font-weight: 300;
         font-size: 10px;
-        zoom: 0.5;
+        zoom: 0.9;
         line-height: 1;
         margin-bottom: 5px;
     }
 
     .LinkToEventSketch {
-        width: auto;
+        width: 100%;
         font-weight: 300;
         font-size: 10px;
-        zoom: 0.4;
+        zoom: 0.7;
         line-height: 1;
         text-align: right;
         text-decoration-line: underline;
+        background-color: transparent;
+        margin-bottom: 5px;
     }
 
     .ActivitiesAll {
@@ -225,7 +234,8 @@
         width: 100%;
         height: auto;
         white-space: nowrap;
-        border-bottom: 50.3px solid transparent;
+        /* border-bottom: 50.3px solid transparent; */
+        border-bottom: 80.3px solid transparent;
     }
 
     .ActivitiesAll::-webkit-scrollbar {
@@ -269,7 +279,7 @@
         /* margin-left: 155.6px; */
 
         /* padding-top: 헤더 높이 55.5px +나머지 간격 38px*/
-        padding-top: 103.5px;
+        padding-top: 55.5px;
         margin-bottom: 47.3px;
         line-height: 1;
         width: auto;
@@ -311,8 +321,8 @@
     }
 
     .ActivityName {
-        font-weight: 300;
-        font-size: 16px;
+        font-weight: 600;
+        font-size: 17px;
         line-height: 1;
         margin-bottom: 8px;
 
@@ -320,18 +330,20 @@
 
     .ActivityDate {
         font-weight: 300;
-        font-size: 10px;
+        font-size: 12px;
         line-height: 1;
         margin-bottom: 10px;
     }
 
     .LinkToEventSketch {
-        width: auto;
+        width: 100%;
         font-weight: 300;
-        font-size: 8px;
+        font-size: 10px;
         line-height: 1;
         text-align: right;
         text-decoration-line: underline;
+        background-color: transparent;
+        margin-bottom: 5px;
     }
 
     .ActivitiesAll {
@@ -378,4 +390,12 @@
         width: 20%;
     }
 
+}
+
+@media screen and (min-width: 2184px) {
+    .ActivitiesHeader {
+        width: 1500px;
+        margin: 0 auto;
+        margin-bottom: 51px;
+    }
 }

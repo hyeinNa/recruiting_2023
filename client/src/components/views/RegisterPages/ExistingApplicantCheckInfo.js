@@ -5,6 +5,7 @@ import axios from "axios";
 import "./ExistingApplicantCheckInfo.css";
 import Footer from "../../Footer/Footer";
 import Header from "../../Header/Header";
+import BackBtn from "../../utilis/BackBtn";
 function ExistingApplicantCheckInfo() {
   const navigate = useNavigate();
   const [inputs, setInputs] = useState({
@@ -51,6 +52,7 @@ function ExistingApplicantCheckInfo() {
     <div className="register_checkInfo">
       <Header />
       <div className="register_checkInfo_container">
+        <BackBtn path="/register" />
         <div className="register_checkInfo_inner_container">
           <div className="register_checkInfo_title">정보 확인</div>
           <form className="register_checkInfo_form_container">
