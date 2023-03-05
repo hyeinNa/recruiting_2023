@@ -17,6 +17,11 @@ import NewApplicantEnroll from "./components/views/RegisterPages/NewApplicantEnr
 import ApplySuccess from "./components/views/RegisterPages/ApplySuccess";
 import UpdateSuccess from "./components/views/UpdatePages/UpdateSuccess";
 import AdminLogin from "./components/views/AdminPages/AdminLogin";
+import ShowResult1stPass from "./components/views/ResultPages/ShowResult1stPass";
+import ShowResultFail from "./components/views/ResultPages/ShowResultFail";
+import ShowResultFinal from "./components/views/ResultPages/ShowResultFinal";
+import ShowResult from "./components/views/ResultPages/ShowResult";
+
 
 import Activities from "./components/views/Activities/Activities";
 //import ModifyInfo from "./components/views/ManagerPages/ModifyInfo";
@@ -30,6 +35,7 @@ import WebDevDetailActivity from "./components/views/TeamInfoPages/DetailActivit
 import MarketingDetailActivity from "./components/views/TeamInfoPages/DetailActivities/MarketingDetailActivity";
 import PopupBackground from "./components/views/TeamInfoPages/DetailActivities/popup/PopupBackground";
 import MarketingStudyProject from "./components/views/TeamInfoPages/DetailActivities/MarketingStudyProject";
+
 function App() {
   return (
     <div className="App">
@@ -84,6 +90,26 @@ function App() {
           />
           <Route
             exact
+            path="/result/ShowResult"
+            element={<ShowResult1stPass />}
+          />
+          <Route
+            exact
+            path="/result/ShowResult1stPass"
+            element={<ShowResult1stPass />}
+          />
+          <Route
+            exact
+            path="/result/ShowResultFail"
+            element={<ShowResultFail />}
+          />
+          <Route
+            exact
+            path="/result/ShowResultFinal"
+            element={<ShowResultFinal />}
+          />
+          <Route
+            exact
             path="/admin/applicantList"
             element={<ApplicantList />}
           />
@@ -92,6 +118,7 @@ function App() {
           <Route exact path="/QnA" element={<QnA />} />
           <Route exact path="/activities" element={<Activities />}></Route>
           <Route exact path="/popup" element={<PopupBackground />} />
+
         </Routes>
       </BrowserRouter>
     </div>

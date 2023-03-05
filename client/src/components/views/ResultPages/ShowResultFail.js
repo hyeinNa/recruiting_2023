@@ -4,6 +4,8 @@ import axios from "axios";
 import Footer from "../../Footer/Footer";
 import Header from "../../Header/Header";
 import { Link } from "react-router-dom";
+=======
+>>>>>>> Stashed changes
 import "./ShowResult.css";
 
 
