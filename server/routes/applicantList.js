@@ -43,20 +43,19 @@ const applyList = (req, res) => {
 
 //지원자의 합불 여부를 결정
 const selectPass = (req, res) => {
-    const { name, studentId, ewhaianId, pass, key } = req.body;
+    const { studentId, pass } = req.body;
 
     try {
+        console.log(studentId, pass);
         Applicant.updateOne(
             {
-                name: name,
                 studentId: studentId,
-                ewhaianId: ewhaianId,
             },
-            {   //합불여부, key update
+            {   //합불여부 update
                 pass: pass,
             }
         )
-        res.json({
+        return res.json({
             message: "수정 완료",
         });
     }

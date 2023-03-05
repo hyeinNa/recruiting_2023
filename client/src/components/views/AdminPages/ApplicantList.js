@@ -32,10 +32,19 @@ function ApplicantList() {
 
 
   //합불 선택자 DB에 전송
-  const changePass = (target) => {
-    axios.post("/api/admin", { pass: target.value })
+  const changePass = () => {
+    const pass = document.getElementById("pass");
+    const studentId = pass.options[pass.selectedIndex].value;
+    let result;
+    if (pass.selectedIndex === 0) result = "pass";
+    else result = "nonpass";
+
+    axios.post("/api/applicantlist", {
+      studentId: studentId,
+      pass: result
+    })
       .then((response) => {
-        console.log(response.message);
+        console.log(response.data.message);
       })
       .catch((error) => {
         console.error(error);
@@ -57,7 +66,6 @@ function ApplicantList() {
         for (let i = 0; i < list[0].length; i++) {
           arr[i] = list[0][i][1];
         }
-        console.log(arr);
         setArr(arr);
         return arr;
       })
@@ -94,9 +102,9 @@ function ApplicantList() {
               <div >{appli.ewhaianId}</div>
               <div >면접 일정</div>
               <div >
-                <select onChange={changePass}>
-                  <option value="pass">합격</option>
-                  <option value="nonpass">불합격</option>
+                <select id="pass" onChange={() => changePass()}>
+                  <option value={appli.studentId} value2="pass">합격</option>
+                  <option value={appli.studentId} value2="nonpass">불합격</option>
                 </select>
               </div>
               <div ><button type="button">
