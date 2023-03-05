@@ -2,6 +2,9 @@
     --success-text-font-size: 45px;
     --success-text-font-weight: 800;
     --success-text-line-height: 3.8rem;
+    --mobile-success-text-font-size: 25px;
+    --mobile-success-text-font-weight: 800;
+    --mobile-success-text-line-height: 2.4rem;
 }
 
 .apply_success {
@@ -35,7 +38,7 @@
     height: 50px;
 }
 
-.success_text {
+.apply_success_text {
     width: 100%;
     text-align: center;
     font-size: var(--success-text-font-size);
@@ -63,4 +66,17 @@
     color: var(--toneDown-white);
     cursor: pointer;
     transition: 0.3s;
+}
+
+@media screen and (max-width: 768px) {
+    .apply_success_text {
+        width: 100%;
+        text-align: center;
+        font-size: var(--mobile-success-text-font-size);
+        font-weight: var(--mobile-success-text-font-weight);
+        letter-spacing: 2px;
+        color: var(--toneDown-white);
+        margin-top: 2%;
+        line-height: var(--mobile-success-text-line-height);
+    }
 }

@@ -16,7 +16,7 @@ function ApplySuccess() {
                     <div className="success_checkmark_wrapper">
                         <img src="/img/newApplicantEnroll/applySuccessMark.png" className="success_checkmark" />
                     </div>
-                    <div className="success_text">
+                    <div className="apply_success_text">
                         제출에 성공했습니다!
                         <br></br>
                         지원해주셔서 감사합니다.
