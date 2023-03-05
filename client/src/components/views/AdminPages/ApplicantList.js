@@ -9,7 +9,8 @@ import Header from "../../Header/Header";
 
 function ApplicantList() {
   const navigate = useNavigate();
-  const [team, setTeam] = useState(1);
+  const [team, setTeam] = useState("1");
+  const [arr, setArr] = useState([]);
 
   useEffect(() => {
     axios.get("/api/admin/")
@@ -25,11 +26,37 @@ function ApplicantList() {
   }, []);
   // eslint-disable-next-line react-hooks/exhaustive-deps
 
+  // 버튼 클릭할 때, team이 바뀔 때마다 getList 새로 호출
+  useEffect(() => {
+    GetList(team);
+  }, [team]);
+
+
+  //합불 선택자 DB에 전송
+  const changePass = () => {
+    const pass = document.getElementById("pass"); //select box id 가져오기
+    const studentId = pass.options[pass.selectedIndex].value; //검색할 학번 가져오기
+    let result;
+    if (pass.selectedIndex === 0) result = "pass"; //0번 index 선택 시 pass 전달
+    else result = "nonpass";                      // 1번 index 선택 시 nonpass 전달
+
+    // 서버의 selectPass 함수로 전달
+    axios.post("/api/applicantlist", {
+      studentId: studentId,
+      pass: result
+    })
+      .then((response) => {
+        console.log(response.data.message);
+      })
+      .catch((error) => {
+        console.error(error);
+      });
+  }
+
   //서버에서 지원자 DB 받아오기
   const GetList = (team) => {
     axios.get("/api/applicantlist", { params: { team: team } })
       .then((response) => {
-
         //객체를 배열로
         const data = Object.entries(response.data);
         const list = data.map((value, idx) => {
@@ -41,19 +68,8 @@ function ApplicantList() {
         for (let i = 0; i < list[0].length; i++) {
           arr[i] = list[0][i][1];
         }
-        return (
-          <div className="apply_list">
-            {arr.map((it) => (
-              <p id={it.id}>
-                <div >{it.name}</div>
-                <div >{it.studentId}</div>
-                <div >{it.ewhaianId}</div>
-                <div>면접 일정</div>
-                <div>지원서</div>
-              </p>
-            ))}
-          </div>
-        );
+        setArr(arr);
+        return arr;
       })
       .catch((error) => {
         console.error(error);
@@ -61,7 +77,6 @@ function ApplicantList() {
 
   }
 
-  const data = GetList(team);
 
   return (
     <div className="main">
@@ -69,18 +84,9 @@ function ApplicantList() {
       <h1>지원자 리스트</h1>
       <div className="applicant_list_container">
         <nav>
-          <button type="button" onClick={() => {
-            setTeam(1);
-            GetList(team);
-          }}>마케팅</button> |
-          <button type="button" onClick={() => {
-            setTeam(2);
-            GetList(team);
-          }}>디자인</button> |
-          <button type="button" onClick={() => {
-            setTeam(3);
-            GetList(team);
-          }}>웹개발</button>
+          <button type="button" onClick={() => { setTeam(1) }}>마케팅</button>
+          <button type="button" onClick={() => { setTeam(2) }}>디자인</button> |
+          <button type="button" onClick={() => { setTeam(3) }}>웹개발</button>
         </nav>
         <h2>
           <div className="index">이름</div>
@@ -90,10 +96,23 @@ function ApplicantList() {
           <div className="index">면접 일정</div>
           <div className="index">지원서</div>
         </h2>
-        <section>
-          <h3>
-            <GetList team={team} />
-          </h3>
+        <section className="apply_list">
+          {arr && arr.map((appli, idx) => (
+            <p key={idx}>
+              <div >{appli.name}</div>
+              <div >{appli.studentId}</div>
+              <div >{appli.ewhaianId}</div>
+              <div >면접 일정</div>
+              <div >
+                <select id="pass" onChange={() => changePass()}>
+                  <option value={appli.studentId} value2="pass">합격</option>
+                  <option value={appli.studentId} value2="nonpass">불합격</option>
+                </select>
+              </div>
+              <div ><button type="button">
+                <img src="/img/admin/application.png" alt="download" /></button></div>
+            </p>
+          ))}
         </section>
 
       </div>
@@ -103,5 +122,6 @@ function ApplicantList() {
     </div>
   );
 }
+
 
 export default ApplicantList;
