@@ -1,18 +1,26 @@
 {
   "2020": [
     {
-      "name": "배꽃정원",
+      "name": "2020 배꽃정원",
       "src": "/img/teamInfo/detailActivities/web/project/2020/pearflower.png"
+    },
+    {
+      "name": "이화이언 성향 테스트",
+      "src": "/img/teamInfo/detailActivities/web/project/2020/characterTest.png"
     }
   ],
   "2021": [
     {
-      "name": "배꽃정원",
+      "name": "2021 배꽃정원",
       "src": "/img/teamInfo/detailActivities/web/project/2021/pearflower.png"
     },
     {
-      "name": "리쿠르팅 사이트",
+      "name": "2021 리쿠르팅 사이트",
       "src": "/img/teamInfo/detailActivities/web/project/2021/recruitingSite.png"
+    },
+    {
+      "name": "이화이언 스무 번째 봄",
+      "src": "/img/teamInfo/detailActivities/web/project/2021/20thBirth.png"
     },
     {
       "name": "이화이언 애정도 테스트",
@@ -21,7 +29,7 @@
   ],
   "2022": [
     {
-      "name": "배꽃정원",
+      "name": "2022 배꽃정원",
       "src": "/img/teamInfo/detailActivities/web/project/2022/pearflower.png"
     },
     {

@@ -1,9 +1,11 @@
 import React from "react";
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import BackBtn from "../../../utilis/BackBtn";
 import "./WebDevDetailActivity.css";
 import WebProjectTemplate from "./webProject/WebProjectTemplate";
 import projectImg from "./webProject/webProjectImg.json";
+import PopupBackgroundWeb from "./popup/PopupBackgroundWeb";
+import webProjectPopupData from "./popup/webProjectPopUp.json";
 function WebDevDetailActivity() {
   const [year, setYear] = useState(2022);
   const [isClicked, setIsClicked] = useState([false, false, true]);
@@ -13,7 +15,33 @@ function WebDevDetailActivity() {
     else if (year === 2021) setIsClicked([false, true, false]);
     else if (year === 2020) setIsClicked([true, false, false]);
   };
-
+  const [isPopOpen, setIsPopOpen] = useState(false);
+  const [title, setTitle] = useState("");
+  const [description, setDescription] = useState("");
+  const [githubLink, setGithubLink] = useState("");
+  const [imgSrc1, setImgSrc1] = useState("");
+  const [imgSrc2, setImgSrc2] = useState("");
+  const [imgSrc3, setImgSrc3] = useState("");
+  const popUpOpen = (name) => {
+    if (!(name === "웹 게임 사이트")) {
+      setIsPopOpen(true);
+      webProjectPopupData[year].find((element) => {
+        if (element.title === name) {
+          setTitle(element.title);
+          setDescription(element.description);
+          setImgSrc1(element.imgSrc1);
+          setImgSrc2(element.imgSrc2);
+          setImgSrc3(element.imgSrc3);
+          setGithubLink(element.gitHubLink);
+        }
+      });
+    }
+  };
+  const closePopUp = () => {
+    setIsPopOpen(false);
+    console.log("닫힘 버튼");
+    console.log(isPopOpen);
+  };
   return (
     <div className="web_detail_activity_container">
       <BackBtn path="/" />
@@ -64,9 +92,31 @@ function WebDevDetailActivity() {
               </div>
               <div className="part1_projects_content_wrapper">
                 {projectImg[year].map((data) => {
-                  return <WebProjectTemplate name={data.name} src={data.src} />;
+                  return (
+                    <WebProjectTemplate
+                      name={data.name}
+                      src={data.src}
+                      year={year}
+                      popUpOpen={() => {
+                        popUpOpen(data.name);
+                      }}
+                    />
+                  );
                 })}
               </div>
+            </div>
+            <div className="webProjectPopup">
+              {isPopOpen ? (
+                <PopupBackgroundWeb
+                  title={title}
+                  description={description}
+                  imgSrc1={imgSrc1}
+                  imgSrc2={imgSrc2}
+                  imgSrc3={imgSrc3}
+                  gitHubLink={githubLink}
+                  closePopUp={closePopUp}
+                />
+              ) : null}
             </div>
           </div>
           <div className="part2_container">
