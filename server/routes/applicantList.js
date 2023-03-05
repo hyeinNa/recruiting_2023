@@ -10,7 +10,6 @@ const applyList = (req, res) => {
     // 마케팅 팀 지원자 정보 전송
     if (team === "1") {
         try {
-            console.log("실행1");
             Applicant.find({ team: "마케팅" }, function (error, data) {
                 res.json({ result: data });
             })
@@ -47,7 +46,7 @@ const selectPass = (req, res) => {
     const { name, studentId, ewhaianId, pass, key } = req.body;
 
     try {
-        Applicant.find(
+        Applicant.updateOne(
             {
                 name: name,
                 studentId: studentId,
@@ -55,7 +54,6 @@ const selectPass = (req, res) => {
             },
             {   //합불여부, key update
                 pass: pass,
-                key: key,
             }
         )
         res.json({
