@@ -99,29 +99,16 @@
     color: #D9D9D9;
 }
 
-.register_showResult_mainPage_button_container {
-    width: 92%;
-    height: 100%;
+.register_showResult_back_to_main_container {
     margin: 0 auto;
-    display: flex;
-    justify-content: center;
-}
-
-.register_showResult_mainPage_button {
-    width: 92%;
-    height: 100%;
-    margin: 0 auto;
-    display: flex;
-    justify-content: center;
-    background: #505050;
-    border-radius: 100px;
-
-    font-weight: 700;
-    font-size: 25px;
-    line-height: 37px;
+    margin-top: 5%;
+    width: 220px;
+    height: 50px;
+    background-color: var(--back-to-main-btn-color);
+    border-radius: 40px;
     text-align: center;
-
-    color: #FFFFFF;
+    line-height: 50px;
+    font-weight: var(--not-period-title-font-weight);
 }
 
 .register_showResult_bottomDetail {
@@ -130,4 +117,37 @@
     line-height: 21px;
     color: #C8C7C7;
     align-self: center;
+}
+
+.register_showResult_masterTraining_container {
+    width: 92%;
+    height: 100%;
+    margin: 0 auto;
+    display: flex;
+    flex-direction: column;
+    align-items: left;
+    justify-content: flex-start;
+}
+
+
+.register_showResult_masterTraining_info {
+    font-weight: 700;
+    font-size: 27px;
+    line-height: 33px;
+    color: var(--ewhaian-pink)
+}
+
+.register_showResult_masterTraining_description {
+    font-weight: 400;
+    font-size: 19px;
+    line-height: 137.02%;
+    /* or 26px */
+    color: #D9D9D9;
+}
+
+.register_showResult_masterTraining_end {
+    font-weight: 400;
+    font-size: 23px;
+    line-height: 28px;
+    color: #C8C7C7;
 }

@@ -1,12 +1,42 @@
 import React from "react";
 import { useEffect, useState } from "react";
 import axios from "axios";
-import "./ShowResult1stPass.css";
+import Footer from "../../Footer/Footer";
+import Header from "../../Header/Header";
+import { Link } from "react-router-dom";
+import "./ShowResult.css";
 
-function ShowResult() {
+
+function ShowResultFail() {
+
+  const [cardinalNumber, setCardinalNumber] = useState("");
+  const [masterName, setMasterName] = useState("");
+  const [masterPhoneNumber, setmasterPhoneNumber] = useState("");
+
+  useEffect(() => {
+    axios
+      .post("/api/var/load", {
+        key: 1234,
+      })
+      .then((response) => {
+        console.log(response.data);
+        if (response.data.isInDB === "false") {
+          setCardinalNumber("");
+          setMasterName("");
+          setmasterPhoneNumber("");
+
+        } else {
+          setCardinalNumber(response.data.cardinalNumber);
+          setMasterName(response.data.masterName);
+          setmasterPhoneNumber(response.data.masterPhoneNumber);
+        }
+      });
+  }, []);
+
   //url에서 지원자 고유 id 알아내기
   const pathName = window.location.pathname;
   const applicantId = pathName.substring(8, pathName.length);
+
   const [inputs, setInputs] = useState({
     name: "",
     team: "",
@@ -30,6 +60,7 @@ function ShowResult() {
         console.log("An error occurred: ", error.response);
       });
   }, [applicantId]);
+
   //변수 team과 pass에 저장된 값에 따라 다른 결과 페이지가 보이도록 하기.
   //팀 :  web,design,marketing
   //합격 여부 : 1stPass, finalPass, fail
@@ -57,18 +88,14 @@ function ShowResult() {
               * 추가적인 문의사항이 있으신 경우, 마스터 {masterName}({masterPhoneNumber})에게 연락 부탁드립니다.
             </div>
           </div >
-          <div className="register_showResult_button_container">
-            <button
-              className="register_showResult_mainPage_button"
-              onClick={handleClickButton}
-            >
-              메인으로 돌아가기
-            </button>
+          <div className="register_showResult_back_to_main_container">
+            <Link to="/">메인으로 돌아가기</Link>
           </div>
         </div >
       </div >
+      <Footer />
     </div >
   );
 }
 
-export default ShowResult;
+export default ShowResultFail;

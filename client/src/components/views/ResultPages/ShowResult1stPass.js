@@ -1,12 +1,53 @@
 import React from "react";
 import { useEffect, useState } from "react";
 import axios from "axios";
-import "./ShowResult1stPass.css";
-function ShowResult() {
+import Footer from "../../Footer/Footer";
+import Header from "../../Header/Header";
+import { Link } from "react-router-dom";
+import "./ShowResult.css";
+
+//1차합격(대면)-사전과제가 없는 경우 서류합격
+function ShowResult1stPass() {
+
+  const [cardinalNumber, setCardinalNumber] = useState("");
+  const [surveyFormLink, setSurveyFormLink] = useState("");
+  const [interviewPeriod, setInterviewPeriod] = useState("");
+  const [faceTofaceInterviewPlace, setfaceTofaceInterviewPlace] = useState("");
+  const [interviewWaitingPlace, setInterviewWaitingPlace] = useState("");
+  const [masterName, setMasterName] = useState("");
+  const [masterPhoneNumber, setMasterPhoneNumber] = useState("");
+
+  useEffect(() => {
+    axios
+      .post("/api/var/load", {
+        key: 1234,
+      })
+      .then((response) => {
+        console.log(response.data);
+        if (response.data.isInDB === "false") {
+          setCardinalNumber("");
+          setSurveyFormLink("");
+          setInterviewPeriod("");
+          setfaceTofaceInterviewPlace("");
+          setInterviewWaitingPlace("");
+          setMasterName("");
+          setMasterPhoneNumber("");
+
+        } else {
+          setCardinalNumber(response.data.cardinalNumber);
+          setSurveyFormLink(response.data.surveyFormLink);
+          setInterviewPeriod(response.data.interviewPeriod);
+          setfaceTofaceInterviewPlace(response.data.faceTofaceInterviewPlace);
+          setInterviewWaitingPlace(response.data.interviewWaitingPlace);
+          setMasterName(response.data.masterName);
+          setMasterPhoneNumber(response.data.masterPhoneNumber);
+        }
+      });
+  }, []);
+
   //url에서 지원자 고유 id 알아내기
-  const interviewWaitingTime = "";  //수정필요
-  const pathName = window.location.pathname;
-  const applicantId = pathName.substring(8, pathName.length);
+  pathName = window.location.pathname;
+  applicantId = pathName.substring(8, pathName.length);
   const [inputs, setInputs] = useState({
     name: "",
     team: "",
@@ -30,6 +71,7 @@ function ShowResult() {
         console.log("An error occurred: ", error.response);
       });
   }, [applicantId]);
+
   //변수 team과 pass에 저장된 값에 따라 다른 결과 페이지가 보이도록 하기.
   //팀 :  web,design,marketing
   //합격 여부 : 1stPass, finalPass, fail
@@ -63,25 +105,21 @@ function ShowResult() {
           <div className="register_showResult_interview_date">
             면접일정 : {interviewPeriod}
             <br />
-            면접장소 : {surveyFormLink}
+            면접장소 : {faceTofaceInterviewPlace}
           </div>
           <ul className="register_showResult_interview_content">
-            <li>일찍 오신 분들은 {interviewWaitingPlace}({interviewWaitingTime}부터 이용 가능)에서 대기하실 수 있습니다</li>
+            <li>일찍 오신 분들은 {interviewWaitingPlace}에서 대기하실 수 있습니다</li>
             <li>면접의 경우, 불가피하게 배정된 면접 시간에서 10분 내외로 지연될 수 있습니다.</li>
             <li>추가적인 문의사항이 있으신 경우, 마스터 {masterName}({masterPhoneNumber})에게 연락 부탁드립니다.</li>
           </ul>
         </div>
-        <div className="register_showResult_button_container">
-          <button
-            className="register_showResult_mainPage_button"
-            onClick={handleClickButton}
-          >
-            메인으로 돌아가기
-          </button>
+        <div className="register_showResult_back_to_main_container">
+          <Link to="/">메인으로 돌아가기</Link>
         </div>
       </div >
+      <Footer />
     </div >
   );
 }
 
-export default ShowResult;
+export default ShowResult1stPass;
