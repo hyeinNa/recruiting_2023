@@ -95,7 +95,7 @@ function UpdatePage() {
       <Header />
       <div className="register_newEnroll_container">
         <div className="register_newEnroll_inner_container">
-          <div className="register_newEnroll_title">지원확인</div>
+          <div className="register_newEnroll_title">지원 수정</div>
 
           <form className="register_newEnroll_form_container" onSubmit={updateInfo}>
             <div className="register_newEnroll_teamForm_wrapper">
@@ -107,8 +107,13 @@ function UpdatePage() {
             </div>
             <div className="register_newEnroll_fileDownload_wrapper">
               <div className="register_newEnroll_fileDownload">
-                <a href="/fileUpload/지원서양식.docx" download="이화이언 수습운영진 지원서 양식">
-                  <b> 지원서 다운로드 </b>
+                <a
+                  href="/fileUpload/43기_지원서 양식.docx"
+                  download="이화이언 수습운영진 지원서 양식"
+                >
+                  <div className="fileDownload_text">
+                    <b>지원서 다운로드</b>
+                  </div>
                 </a>
               </div>
             </div>
