@@ -93,24 +93,24 @@
 //                                 <p><b>지원서 제출</b></p>
 //                                 <p>{applicationSubmissionPeriod}</p>
 //                             </div>
-//                             <p className="arrow">></p>
+//                             <div className="arrow"></div>
 //                             <div>
 //                                 <p><b><u>02</u></b></p>
 //                                 <p><b>서류 검토</b></p>
 //                             </div>
-//                             <p className="arrow">></p>
+//                             <div className="arrow"></div>
 //                             <div>
 //                                 <p><b><u>03</u></b></p>
 //                                 <p><b>1차 발표</b></p>
 //                                 <p>{firstPresentationPeriod}</p>
 //                             </div>
-//                             <p className="arrow">></p>
+//                             <div className="arrow"></div>
 //                             <div>
 //                                 <p><b><u>04</u></b></p>
 //                                 <p><b>심층 면접</b></p>
 //                                 <p>{interviewPeriod}</p>
 //                             </div>
-//                             <p className="arrow">></p>
+//                             <div className="arrow"></div>
 //                             <div>
 //                                 <p><b><u>05</u></b></p>
 //                                 <p><b>최종 합격</b></p>
@@ -143,24 +143,24 @@
 //                             <p><b>지원서 제출</b></p>
 //                             <p>{applicationSubmissionPeriod}</p>
 //                         </div>
-//                         <p className="arrow">></p>
+//                         <div className="arrow">></div>
 //                         <div>
 //                             <p><b><u>02</u></b></p>
 //                             <p><b>서류 검토</b></p>
 //                         </div>
-//                         <p className="arrow">></p>
+//                         <div className="arrow">></div>
 //                         <div>
 //                             <p><b><u>03</u></b></p>
 //                             <p><b>1차 발표</b></p>
 //                             <p>{firstPresentationPeriod}</p>
 //                         </div>
-//                         <p className="arrow">></p>
+//                         <div className="arrow">></div>
 //                         <div>
 //                             <p><b><u>04</u></b></p>
 //                             <p><b>심층 면접</b></p>
 //                             <p>{interviewPeriod}</p>
 //                         </div>
-//                         <p className="arrow">></p>
+//                         <div className="arrow">></div>
 //                         <div>
 //                             <p><b><u>05</u></b></p>
 //                             <p><b>최종 합격</b></p>
@@ -194,24 +194,24 @@
 //                                 <p><b>지원서 제출</b></p>
 //                                 <p>{applicationSubmissionPeriod}</p>
 //                             </div>
-//                             <p className="arrow">></p>
+//                             <div className="arrow"></div>
 //                             <div>
 //                                 <p><b><u>02</u></b></p>
 //                                 <p><b>서류 검토</b></p>
 //                             </div>
-//                             <p className="arrow">></p>
+//                             <div className="arrow"></div>
 //                             <div>
 //                                 <p><b><u>03</u></b></p>
 //                                 <p><b>1차 발표</b></p>
 //                                 <p>{firstPresentationPeriod}</p>
 //                             </div>
-//                             <p className="arrow">></p>
+//                             <div className="arrow"></div>
 //                             <div>
 //                                 <p><b><u>04</u></b></p>
 //                                 <p><b>심층 면접</b></p>
 //                                 <p>{interviewPeriod}</p>
 //                             </div>
-//                             <p className="arrow">></p>
+//                             <div className="arrow"></div>
 //                             <div>
 //                                 <p><b><u>05</u></b></p>
 //                                 <p><b>최종 합격</b></p>
