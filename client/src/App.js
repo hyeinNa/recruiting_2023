@@ -20,7 +20,6 @@ import AdminLogin from "./components/views/AdminPages/AdminLogin";
 import ShowResult1stPass from "./components/views/ResultPages/ShowResult1stPass";
 import ShowResultFail from "./components/views/ResultPages/ShowResultFail";
 import ShowResultFinal from "./components/views/ResultPages/ShowResultFinal";
-import ShowResult from "./components/views/ResultPages/ShowResult";
 
 
 import Activities from "./components/views/Activities/Activities";
@@ -90,11 +89,6 @@ function App() {
           />
           <Route
             exact
-            path="/result/ShowResult"
-            element={<ShowResult1stPass />}
-          />
-          <Route
-            exact
             path="/result/ShowResult1stPass"
             element={<ShowResult1stPass />}
           />
@@ -121,7 +115,7 @@ function App() {
 
         </Routes>
       </BrowserRouter>
-    </div >
+    </div>
   );
 }
 

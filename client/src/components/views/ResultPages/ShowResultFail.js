@@ -3,12 +3,8 @@ import { useEffect, useState } from "react";
 import axios from "axios";
 import Footer from "../../Footer/Footer";
 import Header from "../../Header/Header";
-<<<<<<< Updated upstream
 import { Link } from "react-router-dom";
-=======
->>>>>>> Stashed changes
 import "./ShowResult.css";
-
 
 function ShowResultFail() {
 
@@ -81,7 +77,7 @@ function ShowResultFail() {
               이화이언 {cardinalNumber}기 수습 운영진 모집에 지원해주신점 진심으로 감사드립니다.
             </div>
             <div className="register_showResult_main_content_description">
-              아쉽게도 이번 44기 운영진에서 지원자님과 함께 하지 못하게 된 점 전달드리며,
+              아쉽게도 이번 {cardinalNumber}기 운영진에서 지원자님과 함께 하지 못하게 된 점 전달드리며,
               <br />
               다음 기회에 보다 좋은 인연으로 만나뵐 수 있기를 기대하겠습니다.
               <br />
