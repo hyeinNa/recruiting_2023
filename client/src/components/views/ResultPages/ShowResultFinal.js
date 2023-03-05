@@ -3,10 +3,8 @@ import { useEffect, useState } from "react";
 import axios from "axios";
 import Footer from "../../Footer/Footer";
 import Header from "../../Header/Header";
-<<<<<<< Updated upstream
 import { Link } from "react-router-dom";
-=======
->>>>>>> Stashed changes
+
 import "./ShowResult.css";
 
 //1차합격(대면)-사전과제가 없는 경우 서류합격
@@ -18,12 +16,6 @@ function ShowResultFinal() {
   const [masterTrainingPlace, setMasterTrainingPlace] = useState("");
   const [masterTrainingSchedule, setMasterTrainingSchedule] = useState("");
 
-<<<<<<< Updated upstream
-=======
-  pathName = window.location.pathname;
-  applicantId = pathName.substring(8, pathName.length);
-
->>>>>>> Stashed changes
   useEffect(() => {
     axios
       .post("/api/var/load", {
@@ -47,22 +39,15 @@ function ShowResultFinal() {
       });
   }, []);
 
-<<<<<<< Updated upstream
   //url에서 지원자 고유 id 알아내기
   pathName = window.location.pathname;
   applicantId = pathName.substring(8, pathName.length);
 
-=======
->>>>>>> Stashed changes
   const [inputs, setInputs] = useState({
     name: "",
     team: "",
     pass: "",
   });
-<<<<<<< Updated upstream
-
-=======
->>>>>>> Stashed changes
   const { name, team, pass } = inputs;
   //첫 렌더링 때, url에서 알아낸 지원자 id를 통해 지원자의 지원 팀과 통과 여부를 확인하기
   useEffect(() => {
@@ -117,11 +102,7 @@ function ShowResultFinal() {
           <div className="register_showResult_masterTraining_end">
             감사합니다.
           </div>
-<<<<<<< Updated upstream
-=======
-
->>>>>>> Stashed changes
-        </div>
+        </div >
         <div className="register_showResult_button_container">
           <div className="register_showResult_back_to_main_container">
             <Link to="/">메인으로 돌아가기</Link>

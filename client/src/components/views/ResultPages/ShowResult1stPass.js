@@ -3,16 +3,12 @@ import { useEffect, useState } from "react";
 import axios from "axios";
 import Footer from "../../Footer/Footer";
 import Header from "../../Header/Header";
-<<<<<<< Updated upstream
 import { Link } from "react-router-dom";
-=======
->>>>>>> Stashed changes
+
 import "./ShowResult.css";
 
 //1차합격(대면)-사전과제가 없는 경우 서류합격
 function ShowResult1stPass() {
-<<<<<<< Updated upstream
-
   const [cardinalNumber, setCardinalNumber] = useState("");
   const [surveyFormLink, setSurveyFormLink] = useState("");
   const [interviewPeriod, setInterviewPeriod] = useState("");
@@ -50,45 +46,6 @@ function ShowResult1stPass() {
   }, []);
 
   //url에서 지원자 고유 id 알아내기
-=======
-  //url에서 지원자 고유 id 알아내기
-  const [cardinalNumber, setCardinalNumber] = useState("");
-  const [surveyFormLink, setSurveyFormLink] = useState("");
-  const [interviewPeriod, setInterviewPeriod] = useState("");
-  const [faceTofaceInterviewPlace, setfaceTofaceInterviewPlace] = useState("");
-  const [interviewWaitingPlace, setInterviewWaitingPlace] = useState("");
-  const [masterName, setMasterName] = useState("");
-  const [masterPhoneNumber, setMasterPhoneNumber] = useState("");
-
-  useEffect(() => {
-    axios
-      .post("/api/var/load", {
-        key: 1234,
-      })
-      .then((response) => {
-        console.log(response.data);
-        if (response.data.isInDB === "false") {
-          setCardinalNumber("");
-          setSurveyFormLink("");
-          setInterviewPeriod("");
-          setfaceTofaceInterviewPlace("");
-          setInterviewWaitingPlace("");
-          setMasterName("");
-          setMasterPhoneNumber("");
-
-        } else {
-          setCardinalNumber(response.data.cardinalNumber);
-          setSurveyFormLink(response.data.surveyFormLink);
-          setInterviewPeriod(response.data.interviewPeriod);
-          setfaceTofaceInterviewPlace(response.data.faceTofaceInterviewPlace);
-          setInterviewWaitingPlace(response.data.interviewWaitingPlace);
-          setMasterName(response.data.masterName);
-          setMasterPhoneNumber(response.data.masterPhoneNumber);
-        }
-      });
-  }, []);
-
->>>>>>> Stashed changes
   pathName = window.location.pathname;
   applicantId = pathName.substring(8, pathName.length);
   const [inputs, setInputs] = useState({
