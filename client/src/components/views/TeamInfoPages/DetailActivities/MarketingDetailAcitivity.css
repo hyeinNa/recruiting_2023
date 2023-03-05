@@ -66,6 +66,7 @@
   margin-bottom: 40px;
 }
 .marketing_part2_img_wrapper img {
+  width: 100%;
 }
 .marketing_part3_contianer {
   display: flex;
@@ -80,6 +81,7 @@
 }
 .marketing_part3_sponsoredCompany_wrapper {
   width: 90%;
+  margin-top: 20px;
   margin-bottom: 50px;
 }
 .marketing_part3_sponsoredCompany_wrapper img {
@@ -131,4 +133,7 @@
   color: var(--ewhaian-pink);
   font-size: 28px;
   font-weight: 700;
+}
+.marketing_description2 {
+  margin-top: 12px;
 }
