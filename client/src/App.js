@@ -17,6 +17,7 @@ import NewApplicantEnroll from "./components/views/RegisterPages/NewApplicantEnr
 import ApplySuccess from "./components/views/RegisterPages/ApplySuccess";
 import UpdateSuccess from "./components/views/UpdatePages/UpdateSuccess";
 import AdminLogin from "./components/views/AdminPages/AdminLogin";
+import NotRegisterPeriod from "./components/views/RegisterPages/NotRegisterPeriod";
 
 import Activities from "./components/views/Activities/Activities";
 //import ModifyInfo from "./components/views/ManagerPages/ModifyInfo";
@@ -70,6 +71,7 @@ function App() {
           element={<NewApplicantEnroll />}
         />
         <Route exact path="/register/success" element={<ApplySuccess />} />
+        <Route exact path="/register/notperiod" element={<NotRegisterPeriod />} />
         <Route exact path="/update/:id" element={<Update />} />
         <Route exact path="/update/success" element={<UpdateSuccess />} />
         <Route exact path="/result/checkinfo" element={<CheckResult />} />

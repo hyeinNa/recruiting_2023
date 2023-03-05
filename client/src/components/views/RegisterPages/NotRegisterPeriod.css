@@ -1,0 +1,75 @@
+:root {
+    --not-period-text-font-weight: 800;
+    --not-period-text-line-height: 3.2rem;
+    --not-period-large-font-size: 45px;
+    --not-period-small-font-size: 20px;
+}
+
+.not_register_period {
+    width: 100%;
+    height: 100%;
+    background-color: var(--toneDown-black);
+}
+
+.not_register_container {
+    max-width: var(--nav-bar-max-width);
+    margin: 0 auto;
+    width: 100%;
+    height: auto;
+    padding-top: 60px;
+    padding-bottom: 196px;
+}
+
+.not_register_period_inner_container {
+    max-width: var(--nav-bar-max-width);
+    margin: 0 auto;
+    width: 100%;
+    height: auto;
+    padding-top: 20%;
+}
+
+.not_period_checkmark_wrapper {
+    text-align: center;
+}
+
+.not_period_checkmark {
+    height: 50px;
+}
+
+.not_period_text {
+    width: 100%;
+    text-align: center;
+
+    font-weight: var(--not-period-text-font-weight);
+    letter-spacing: 2px;
+    color: var(--toneDown-white);
+    margin-top: 2%;
+    line-height: var(--not-period-text-line-height);
+}
+
+.not_period_large_text {
+    font-size: var(--not-period-large-font-size);
+}
+
+.not_period_small_text {
+    font-size: var(--not-period-small-font-size);
+}
+
+.success_back_to_main_btn {
+    margin: 0 auto;
+    margin-top: 5%;
+    width: 220px;
+    height: 50px;
+    background-color: var(--back-to-main-btn-color);
+    border-radius: 40px;
+    text-align: center;
+    line-height: 50px;
+    font-weight: var(--not-period-title-font-weight);
+}
+
+.success_back_to_main_btn:hover {
+    background-color: var(--ewhaian-pink);
+    color: var(--toneDown-white);
+    cursor: pointer;
+    transition: 0.3s;
+}
