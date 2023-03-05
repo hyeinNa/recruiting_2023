@@ -76,6 +76,7 @@
   margin-bottom: 90px;
   display: flex;
   flex-direction: row;
+  flex-wrap: wrap;
 }
 .part1_project_content {
   max-width: 192px;
@@ -240,4 +241,10 @@
   border-radius: 15px;
   border: 1px solid rgba(255, 255, 255, 0.5);
   margin-top: 5%;
+}
+/*웹 프로젝트 팝업*/
+.webProjectPopup {
+  width: 100%;
+  position: absolute;
+  top: 0;
 }
