@@ -7,7 +7,6 @@ import { Link } from "react-router-dom";
 
 import "./ShowResult.css";
 
-//1차합격(대면)-사전과제가 없는 경우 서류합격
 function ShowResultFinal() {
   //url에서 지원자 고유 id 알아내기
   const [cardinalNumber, setCardinalNumber] = useState("");
