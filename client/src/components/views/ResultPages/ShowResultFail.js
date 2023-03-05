@@ -3,6 +3,7 @@ import { useEffect, useState } from "react";
 import axios from "axios";
 import Footer from "../../Footer/Footer";
 import Header from "../../Header/Header";
+<<<<<<< Updated upstream
 import { Link } from "react-router-dom";
 =======
 >>>>>>> Stashed changes
