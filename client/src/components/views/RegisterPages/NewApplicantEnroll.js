@@ -73,7 +73,7 @@ function NewApplicantEnroll() {
       if (status === "ok") {
         //register api의 message출력
         console.log(message);
-        alert("지원해주셔서 감사합니다.");
+        // alert("지원해주셔서 감사합니다.");
         window.location.replace("/register/success");
       } else {
         console.log(err);
