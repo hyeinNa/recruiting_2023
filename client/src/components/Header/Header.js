@@ -1,9 +1,33 @@
 import React, { useState, useEffect } from "react";
 import { Link } from "react-router-dom";
+import axios from "axios";
 import "./Header.css";
 
 function Header() {
   const [isMenuOpen, setMenuOpen] = useState(true);
+  const [apply, isApplicationPeriod] = useState(true);
+  const ApplyStatus = () => {
+    if (isApplicationPeriod) {
+      window.location.replace("/register");
+    }
+    else {
+      window.location.replace('/register/notperiod');
+    }
+  }
+  useEffect(() => {
+    axios
+      .post("/api/var/load", {
+        key: 1234,
+      })
+      .then((response) => {
+        console.log(response.data);
+        if (response.data.isInDB === "true") {
+          isApplicationPeriod(response.data.isApplicationPeriod);
+        } else {
+          isApplicationPeriod(false);
+        }
+      });
+  }, []);
   const toggleMenu = () => {
     const toggleImg = document.getElementById("nav_bar_toggleBtn_img_id");
     setMenuOpen((isMenuOpen) => !isMenuOpen);
@@ -40,13 +64,13 @@ function Header() {
           </div>
           <ul className="nav_bar_menu" id="nav_bar_menu">
             <div className="nav_bar_apply_btn_container">
-              <Link
-                to="/register"
+              <button
+                onClick={ApplyStatus}
                 className="nav_register_btn nav_apply_btns"
                 id="nav_register_btn"
               >
                 <div className="nav_apply_btn_text">지원하기</div>
-              </Link>
+              </button>
               <Link
                 to="/result/checkinfo"
                 className="nav_result_btn nav_apply_btns"
