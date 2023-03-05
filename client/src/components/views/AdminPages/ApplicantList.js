@@ -77,6 +77,20 @@ function ApplicantList() {
 
   }
 
+  const handleFileDownload = async (title) => {
+    const url = "server/uploads/" + title;
+    const response = await fetch(url);
+    const file = await response.blob();
+    const downloadUrl = window.URL.createObjectURL(file); // 해당 file을 가리키는 url 생성
+
+    const anchorElement = document.createElement('a');
+    document.body.appendChild(anchorElement);
+    anchorElement.download = title; // a tag에 download 속성을 줘서 클릭할 때 다운로드가 일어날 수 있도록 함. 공백은 기본값
+    anchorElement.href = downloadUrl; // href에 url 달아주기
+
+    anchorElement.click();
+  }
+
 
   return (
     <div className="main">
@@ -109,7 +123,7 @@ function ApplicantList() {
                   <option value={appli.studentId} value2="nonpass">불합격</option>
                 </select>
               </div>
-              <div ><button type="button">
+              <div ><button type="button" onClick={() => handleFileDownload(appli.applicant)}>
                 <img src="/img/admin/application.png" alt="download" /></button></div>
             </p>
           ))}
