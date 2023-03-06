@@ -71,3 +71,8 @@
   margin-bottom: 10px;
   border-radius: 5px;
 }
+@media screen and (max-width: 480px) {
+  .popup_container_web {
+    width: 90%;
+  }
+}

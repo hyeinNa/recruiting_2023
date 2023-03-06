@@ -25,12 +25,77 @@ function MarketingDetailActivity() {
           </div>
           <div className="marketing_part2_container">
             <div className="marketing_title">SNS 마케팅 프로세스</div>
-            <div className="marketing_part2_img_wrapper">
-              <img
-                src="/img/teamInfo/detailActivities/marketing/marketingSnSProcess.png"
-                alt="snsMarketingProcess"
-              />
+            <div className="marketing_part2_process_container">
+              <div className="sns_process_step12">
+                <div className="sns_process_step_wrapper">
+                  <div className="sns_process_step_img_wrapper">
+                    <img
+                      src="/img/teamInfo/detailActivities/marketing/snsMarketingProcess/step1.png"
+                      alt="step1"
+                    />
+                  </div>
+                  <div className="sns_process_label">아이디어 회의</div>
+                </div>
+                <div className="sns_process_arrow">
+                  <img
+                    src="/img/teamInfo/detailActivities/web/arrow.png"
+                    alt="arrow"
+                    className="step1_img"
+                  />
+                </div>
+                <div className="sns_process_step_wrapper">
+                  <div className="sns_process_step_img_wrapper">
+                    <img
+                      src="/img/teamInfo/detailActivities/marketing/snsMarketingProcess/step2.png"
+                      alt="step2"
+                      className="step2_img"
+                    />
+                  </div>
+                  <div className="sns_process_label">
+                    운영진 별 개인 게시물 기획
+                  </div>
+                </div>
+              </div>
+              <div className="sns_process_arrow" id="arrow2">
+                <img
+                  src="/img/teamInfo/detailActivities/web/arrow.png"
+                  alt="arrow"
+                />
+              </div>
+              <div className="sns_process_step34">
+                <div className="sns_process_step_wrapper">
+                  <div className="sns_process_step_img_wrapper">
+                    <img
+                      src="/img/teamInfo/detailActivities/marketing/snsMarketingProcess/step3.png"
+                      alt="step3"
+                      className="step3_img"
+                    />
+                  </div>
+                  <div className="sns_process_label">상호 피드백</div>
+                </div>
+                <div className="sns_process_arrow">
+                  <img
+                    src="/img/teamInfo/detailActivities/web/arrow.png"
+                    alt="arrow"
+                  />
+                </div>
+                <div className="sns_process_step_wrapper">
+                  <div className="sns_process_step_img_wrapper">
+                    <img
+                      src="/img/teamInfo/detailActivities/marketing/snsMarketingProcess/step4.png"
+                      alt="step4"
+                      className="step4_img"
+                    />
+                  </div>
+                  <div className="sns_process_label">
+                    제작 및 업로드를 통한
+                    <br />
+                    개인 포트폴리오 누적
+                  </div>
+                </div>
+              </div>
             </div>
+
             <div className="marketing_description">
               이화이언 마케팅팀은 팀 회의를 거쳐 각 운영진별 주차에 맞게 개인의
               아이디어와 상상력을 가득 담은 개인 게시물을 기획합니다.
