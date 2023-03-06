@@ -305,6 +305,24 @@
     .register_newEnroll_title {
         font-size: var(--register-landing-title-font-size);
     }
+
+    [type="radio"] {
+        vertical-align: initial;
+        margin-left: 3%;
+        border-radius: 50%;
+        width: 1.2em;
+        height: 1.2em;
+    }
+
+    [type="radio"]:checked {
+        vertical-align: initial;
+        appearance: none;
+        border-radius: 50%;
+        width: 1.2em;
+        height: 1.2em;
+        background-color: var(--ewhaian-pink);
+        border: max(1px, 0.1em) solid gray;
+    }
 }
 
 @media screen and (max-width: 650px) {
