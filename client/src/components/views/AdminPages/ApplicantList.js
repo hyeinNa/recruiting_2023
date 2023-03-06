@@ -61,7 +61,7 @@ function ApplicantList() {
     const pass = document.getElementById("pass"); //select box id 가져오기
     const _id = pass.options[pass.selectedIndex].value; //수정할 id 가져오기
     let input;
-    if (pass.selectedIndex === 0) input = ""; //
+    if (pass.selectedIndex === 0) input = "default"; //
     else if (pass.selectedIndex === 1) input = "1stPass";
     else if (pass.selectedIndex === 2) input = "finalPass";
     else input = "fail";
