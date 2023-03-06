@@ -19,7 +19,7 @@ function EventPages() {
                         <div className="classopeningbooth">
                             <div className="classopeningbooth_content">
                                 <div className="classopeningbooth_title">개강부스
-                                                    <br /><div className="classopeningbooth_plus">&nbsp;+ </div></div>
+                                                    <br /><img src="./img/event/plus.png" className="classopeningbooth_plus" /></div>
                                 <div className="classopeningbooth_description">
                                     매 해 3월과 9월, 개강을 맞이한 벗들을 위한 소소한 이벤트!
                                     <br />
@@ -31,7 +31,7 @@ function EventPages() {
                         <div className="may">
                             <div className="may_content">
                                 <div className="may_title">오월드림
-                                                    <br /><div className="may_plus">&nbsp;+ </div></div>
+                                                    <br /><img src="./img/event/plus.png" className="may_plus" /></div>
                                 <div className="may_description">
                                     꽃이 만개하는 5월,
                                     <br />
@@ -49,7 +49,7 @@ function EventPages() {
                         <div className="pearflowergarden">
                             <div className="pearflowergarden_content">
                                 <div className="pearflowergarden_title">배꽃정원
-                                                    <br /><div className="pearflowergarden_plus">&nbsp;+ </div></div>
+                                                    <br /><img src="./img/event/plus.png" className="pearflowergarden_plus" /></div>
                                 <div className="pearflowergarden_description">
                                 가을볕이 따스한 11월,
                                     <br />
@@ -63,7 +63,7 @@ function EventPages() {
                         <div className="offlineevent">
                             <div className="offlineevent_content">
                                 <div className="offlineevent_title">오프라인 이벤트
-                                                    <br /><div className="offlineevent_plus">&nbsp;+ </div></div>
+                                                    <br /><img src="./img/event/plus.png" className="offlineevent_plus" /></div>
                                 <div className="offlineevent_description">
                                 이화이언은 유저들에게 유익한 경험을 제공하기 위해 최선을 다합니다.
                                     <br />

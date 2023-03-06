@@ -126,16 +126,19 @@
 }
 
 .classopeningbooth_plus, .may_plus, .pearflowergarden_plus, .offlineevent_plus {
-    font-size: 20px;
+    width: 17px;
+    height: 17px;
     opacity: 1;
-    transition: all 0.3s;
+    padding-left: 2px;
+    transition: all 0.2s;
 
 }
 .classopeningbooth_description, .may_description, .pearflowergarden_description, .offlineevent_description {
     color: var(--toneDown-white);
     opacity: 0;
     font-size: 16px;
-    margin-top: 3%;
+    line-height: 22px;
+    margin-top: 1%;
     transition: all 0.3s;
     
 }
