@@ -8,7 +8,7 @@ function EwhaianInfo() {
   const [visibleMarketing, doesRecruitMarketing] = useState(true);
   const [visibleDesign, doesRecruitDesign] = useState(true);
   const [visibleWebDev, doesRecruitWebDev] = useState(true);
-  const [apply, isApplicationPeriod] = useState(true);
+  const [isApplicationPeriod, setApplicationPeriod] = useState(true);
   const [applicationSubmission, applicationSubmissionPeriod] = useState("");
   const [firstPresentation, firstPresentationPeriod] = useState("");
   const [interview, interviewPeriod] = useState("");
@@ -28,10 +28,11 @@ function EwhaianInfo() {
       })
       .then((response) => {
         console.log(response.data);
-        if (response.data.isInDB === "true") {
-          isApplicationPeriod(response.data.isApplicationPeriod);
+        if (response.data.isInDB === "false") {
+          setApplicationPeriod(false);
+
         } else {
-          isApplicationPeriod(false);
+          setApplicationPeriod(response.data.isApplicationPeriod);
         }
       });
   }, []);
@@ -250,7 +251,7 @@ function EwhaianInfo() {
                 </div>
                 <div className="info_recruitment_menu_list_2">
                   <button type="button" id="checkbutton" onClick={() => {
-                  window.location.replace("/result/checkinfo");
+                    window.location.replace("/result/checkinfo");
                   }}>
                     <div className="apply_btns_text">결과확인</div>
                   </button>

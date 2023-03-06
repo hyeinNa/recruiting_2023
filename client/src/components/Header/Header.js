@@ -5,14 +5,15 @@ import "./Header.css";
 
 function Header() {
   const [isMenuOpen, setMenuOpen] = useState(true);
-  const [apply, isApplicationPeriod] = useState(true);
+  const [isApplicationPeriod, setApplicationPeriod] = useState(true);
   const ApplyStatus = () => {
     if (isApplicationPeriod) {
       window.location.replace("/register");
-    } else {
-      window.location.replace("/register/notperiod");
     }
-  };
+    else {
+      window.location.replace('/register/notperiod');
+    }
+  }
   useEffect(() => {
     axios
       .post("/api/var/load", {
@@ -20,10 +21,11 @@ function Header() {
       })
       .then((response) => {
         console.log(response.data);
-        if (response.data.isInDB === "true") {
-          isApplicationPeriod(response.data.isApplicationPeriod);
+        if (response.data.isInDB === "false") {
+          setApplicationPeriod(false);
+
         } else {
-          isApplicationPeriod(false);
+          setApplicationPeriod(response.data.isApplicationPeriod);
         }
       });
     const pathName = window.location.pathname;
