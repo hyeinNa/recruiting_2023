@@ -61,11 +61,11 @@ function ApplicantList() {
     const pass = document.getElementById("pass"); //select box id 가져오기
     const _id = pass.options[pass.selectedIndex].value; //수정할 id 가져오기
     let input;
-    if (pass.selectedIndex === 0) input = ""; //
+    if (pass.selectedIndex === 0) input = "default"; //
     else if (pass.selectedIndex === 1) input = "1stPass";
     else if (pass.selectedIndex === 2) input = "finalPass";
     else input = "fail";
-    console.log("index", pass.selectedIndex);
+    console.log("id", _id);
     console.log("input:", input);
 
     // 서버의 selectPass 함수로 전달
@@ -158,7 +158,7 @@ function ApplicantList() {
               <div>{appli.ewhaianId}</div>
               <div>
                 <select id="pass" onChange={() => changePass()}>
-                  <option value={appli._id} >선택</option>
+                  <option value={appli._id} >{appli._id}</option>
                   <option value={appli._id} >서류합격</option>
                   <option value={appli._id} >최종합격</option>
                   <option value={appli._id} >불합격</option>
