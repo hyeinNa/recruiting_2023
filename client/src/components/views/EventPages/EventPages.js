@@ -18,7 +18,7 @@ function EventPages() {
                         <div className="event_pic_inner">
                         <div className="classopeningbooth">
                             <div className="classopeningbooth_content">
-                                <div className="classopeningbooth_title">개강부스</div>
+                                <div className="classopeningbooth_title">&nbsp;개강부스</div>
                                 <div className="classopeningbooth_description">
                                     꽃이 만개하는 5월,
                                     <br />
@@ -43,7 +43,7 @@ function EventPages() {
 
                         <div className="may">
                             <div className="may_content">
-                                <div className="may_title">오월드림</div>
+                                <div className="may_title">&nbsp;오월드림</div>
                                 <div className="may_description">
                                     꽃이 만개하는 5월,
                                     <br />
@@ -70,7 +70,7 @@ function EventPages() {
                         <div className="event_pic_inner">
                         <div className="pearflowergarden">
                             <div className="pearflowergarden_content">
-                                <div className="pearflowergarden_title">배꽃정원</div>
+                                <div className="pearflowergarden_title">&nbsp;배꽃정원</div>
                                 <div className="pearflowergarden_description">
                                     꽃이 만개하는 5월,
                                     <br />
@@ -95,7 +95,7 @@ function EventPages() {
 
                         <div className="offlineevent">
                             <div className="offlineevent_content">
-                                <div className="offlineevent_title">오프라인 이벤트</div>
+                                <div className="offlineevent_title">&nbsp;오프라인 이벤트</div>
                                 <div className="offlineevent_description">
                                     꽃이 만개하는 5월,
                                     <br />
