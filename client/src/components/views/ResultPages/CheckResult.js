@@ -1,5 +1,5 @@
 import React from "react";
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import { useNavigate } from "react-router-dom";
 import axios from "axios";
 import "../RegisterPages/ExistingApplicantCheckInfo.css";
@@ -21,6 +21,21 @@ function CheckResult() {
       [name]: value,
     });
   };
+  const [showResultToApplicant, setShowResultToApplicant] = useState(false);
+  useEffect(() => {
+    axios
+      .post("/api/var/load", {
+        key: 1234,
+      })
+      .then((response) => {
+        console.log(response.data);
+        if (response.data.isInDB === "false") {
+          setShowResultToApplicant(false);
+        } else {
+          setShowResultToApplicant(response.data.showResultToApplicant);
+        }
+      });
+  }, []);
   //폼에 입력받은 정보를 정보 확인 api로 전달
   const checkInfo = () => {
     axios
@@ -32,15 +47,15 @@ function CheckResult() {
       .then((response) => {
         let isInDb = response.data.checkInfoSuccess;
         let applicantId = response.data.applicantId;
-        let pass = response.data.pass;
         if (isInDb) {
           //DB안에 일치하는 지원자 정보가 존재한다면
           console.log(response.data.message);
-          //1차 합격 or 최종 합격 확인 기간이 아니라면
-          if (pass === "not1stPassPeriod" || pass === "notFinalPassPeriod") {
+          //지원자에게 결과를 보여주지 않는다면
+          if (!showResultToApplicant) {
+            //결과 기간 아닌 페이지로 이동
             navigate("/result/notperiod/" + applicantId, { replace: true });
           } else {
-            //확인 기간이 맞다면
+            //지원자에게 결과를 보여준다면
             navigate("/result/" + applicantId, { replace: true });
           }
         } else {
