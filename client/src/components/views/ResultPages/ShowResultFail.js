@@ -1,7 +1,10 @@
 import React from "react";
 import { useEffect, useState } from "react";
 import axios from "axios";
-import "./ShowResult1stPass.css";
+import Footer from "../../Footer/Footer";
+import Header from "../../Header/Header";
+import { Link } from "react-router-dom";
+import "./ShowResult.css";
 
 function ShowResultFail(props) {
   const [cardinalNumber, setCardinalNumber] = useState("");
@@ -29,6 +32,7 @@ function ShowResultFail(props) {
 
   return (
     <div className="register_showResult">
+      <Header />
       <div className="register_showResult_container">
         <div className="register_showResult_inner_container">
           <div className="register_showResult_main_content_container">
@@ -52,12 +56,13 @@ function ShowResultFail(props) {
             </div>
           </div>
           <div className="register_showResult_button_container">
-            <button className="register_showResult_mainPage_button">
-              메인으로 돌아가기
-            </button>
+            <div className="register_showResult_back_to_main_container">
+              <Link to="/">메인으로 돌아가기</Link>
+            </div>
           </div>
         </div>
       </div>
+      <Footer />
     </div>
   );
 }
