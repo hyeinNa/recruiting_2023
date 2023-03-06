@@ -68,10 +68,6 @@ finalPass : 최종 합격
 fail : 불합격
 */
 
-  //(1차합격)대면면접, 사전과제 O
-  //(1차합격)대면면접, 사전과제 x
-  //(1차합격)비대면면접, 사전과제 o
-  //(1차합격)비대면면접, 사전과제 x
   if (inputs.pass === "1stPass") {
     console.log(inputs.pass);
     return (

@@ -5,6 +5,7 @@ import Footer from "../../Footer/Footer";
 import Header from "../../Header/Header";
 import { Link } from "react-router-dom";
 import "./ShowResult.css";
+
 function ShowResult1stPass(props) {
   //변수 team과 pass에 저장된 값에 따라 다른 결과 페이지가 보이도록 하기.
   //팀 :  web,design,marketing
@@ -57,6 +58,35 @@ function ShowResult1stPass(props) {
       });
   }, []);
 
+  //웹개발, 마케팅팀 사전과제 있을 시에 사용
+  /* 
+  useEffect(() => {
+    axios
+      .post("/api/var/load", {
+        key: 1234,
+      })
+      .then((response) => {
+        console.log(response.data);
+        if (response.data.isInDB === "false") {
+          setIsMarketingPreAssignment("");
+          setIsDesignPreAssignment("");
+          setIsWebDevPreAssignment("");
+          setMarketingPreAssignment("");
+          setDesignPreAssignment("");
+          setWebDevPreAssignment("");
+        } else {
+          setIsMarketingPreAssignment(response.data.isMarketingPreAssignment);
+          setIsDesignPreAssignment(response.data.isDesignPreAssignment);
+          setIsWebDevPreAssignment(response.data.isWebDevPreAssignment);
+          setMarketingPreAssignment(response.data.marketingPreAssignment);
+          setDesignPreAssignment(response.data.master.designPreAssignment);
+          setWebDevPreAssignment(response.data.master.webDevPreAssignment);
+        }
+      });
+  }, []);
+
+  */
+
   return (
     <div className="register_showResult">
       <Header />
@@ -101,49 +131,49 @@ function ShowResult1stPass(props) {
             </div>
           </div>
           <div className="register_showResult_interview_container">
-            {isOnlineInterview === "true"
-              ?
-              <p>
-                <div className="register_showResult_interview_date">
-                  면접일정 : {interviewPeriod}
-                </div>
-                <ul className="register_showResult_interview_content">
-                  <li>
-                    면접 당일에 문자로 발송되는 줌 링크로 면접 시간에 맞춰 접속해주시기 바랍니다.
-                  </li>
-                  <li>
-                    면접의 경우, 불가피하게 배정된 면접 시간에서 10분 내외로 지연될 수
-                    있습니다.
-                  </li>
-                  <li>
-                    추가적인 문의사항이 있으신 경우, 마스터 {masterName}(
-                    {masterPhoneNumber})에게 연락 부탁드립니다.
-                  </li>
-                </ul>
-              </p>
-              : <p>
-                <div className="register_showResult_interview_date">
-                  면접일정 : {interviewPeriod}
-                  <br />
-                  면접장소 : {faceTofaceInterviewPlace}
-                </div>
-                <ul className="register_showResult_interview_content">
-                  <li>
-                    일찍 오신 분들은 ({interviewWaitingPlace}
-                    부터 이용 가능)에서 대기하실 수 있습니다
-                  </li>
-                  <li>
-                    면접의 경우, 불가피하게 배정된 면접 시간에서 10분 내외로 지연될 수
-                    있습니다.
-                  </li>
-                  <li>
-                    추가적인 문의사항이 있으신 경우, 마스터 {masterName}(
-                    {masterPhoneNumber})에게 연락 부탁드립니다.
-                  </li>
-                </ul>
-              </p>
+            {
+              isOnlineInterview === "true"
+                ?
+                <p>
+                  <div className="register_showResult_interview_date">
+                    면접일정 : {interviewPeriod}
+                  </div>
+                  <ul className="register_showResult_interview_content">
+                    <li>
+                      면접 당일에 문자로 발송되는 줌 링크로 면접 시간에 맞춰 접속해주시기 바랍니다.
+                    </li>
+                    <li>
+                      면접의 경우, 불가피하게 배정된 면접 시간에서 10분 내외로 지연될 수
+                      있습니다.
+                    </li>
+                    <li>
+                      추가적인 문의사항이 있으신 경우, 마스터 {masterName}(
+                      {masterPhoneNumber})에게 연락 부탁드립니다.
+                    </li>
+                  </ul>
+                </p>
+                : <p>
+                  <div className="register_showResult_interview_date">
+                    면접일정 : {interviewPeriod}
+                    <br />
+                    면접장소 : {faceTofaceInterviewPlace}
+                  </div>
+                  <ul className="register_showResult_interview_content">
+                    <li>
+                      일찍 오신 분들은 ({interviewWaitingPlace}
+                      부터 이용 가능)에서 대기하실 수 있습니다
+                    </li>
+                    <li>
+                      면접의 경우, 불가피하게 배정된 면접 시간에서 10분 내외로 지연될 수
+                      있습니다.
+                    </li>
+                    <li>
+                      추가적인 문의사항이 있으신 경우, 마스터 {masterName}(
+                      {masterPhoneNumber})에게 연락 부탁드립니다.
+                    </li>
+                  </ul>
+                </p>
             }
-
           </div>
         </div>
         <div className="register_showResult_button_container">
