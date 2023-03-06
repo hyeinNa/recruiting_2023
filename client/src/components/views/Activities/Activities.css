@@ -16,14 +16,16 @@
     font-weight: 600;
     font-size: 45px;
     /* 첫 activity부터 보여줄 떄 위치 */
-    margin-left: 334.5px;
+    width: 92%;
+    /* max-width: --nav-bar-max-width: 1140px의 92% */
+    max-width: 1048.8px;
+    margin: auto;
     /* figma와 같이 보여줄 때 위치 */
     /*margin-left: 207.5px;*/
     margin-bottom: 51px;
     /* padding-top: 헤더 높이 59.2px */
     padding-top: 59.2px;
     line-height: 1;
-    width: auto;
     margin-top: 0;
 }
 
@@ -101,6 +103,8 @@
     display: flex;
     width: 100%;
     max-width: 2184px;
+    /* 화면이 커졌을 때 전체 Activity를 보여주는 부분이 다른 부분의 width와 같게하는 경우 */
+    /* max-width: 1048px; */
     margin: 0 auto;
     height: auto;
     /* flex-wrap: nowrap; */
@@ -147,22 +151,24 @@
 }
 
 /**아이폰**/
-@media screen and (max-width: 390px) {
+@media screen and (max-width: 390.5px) {
 
     .ActivitiesHeader {
         /* font-family: "Pretendard-Regular"; */
         font-weight: 500;
         font-size: 30px;
         /* 첫 activity부터 보여줄 떄 위치 */
-        margin-left: 162.5px;
+        margin-left: 23px;
         /* figma와 같이 보여줄 때 위치 */
         /* margin-left: 79px; */
 
         /* padding-top: 헤더 높이 55.5px +나머지 간격 20px*/
         padding-top: 55.5px;
-        margin-bottom: 24px;
+
         line-height: 1;
-        width: auto;
+        width: 92%;
+        margin-left: 23px;
+        margin-bottom: 24px;
     }
 
     .EachActivity {
@@ -170,8 +176,9 @@
         width: 130px;
         height: auto;
 
-        margin-left: 12.5px;
-        margin-right: 12.5px;
+        /* margin-left: 12.5px; */
+        margin-left: 0px;
+        margin-right: 25px;
 
         /* 여기가 스크롤바 위 마진 */
         /* margin-bottom: 46.3px; */
@@ -236,6 +243,7 @@
         white-space: nowrap;
         /* border-bottom: 50.3px solid transparent; */
         border-bottom: 80.3px solid transparent;
+        padding-left: 23px;
     }
 
     .ActivitiesAll::-webkit-scrollbar {
@@ -268,30 +276,30 @@
 }
 
 /*그 외 모바일*/
-@media screen and (min-width:390.5px) and (max-width: 768px) {
+@media screen and (min-width:391px) and (max-width: 768px) {
 
     .ActivitiesHeader {
         font-weight: 600;
-        font-size: 35px;
+        font-size: 45px;
         /* 첫 activity부터 보여줄 떄 위치 */
-        margin-left: 249.2px;
+        /* margin-left: 249.2px; */
         /* figma와 같이 보여줄 때 위치 */
         /* margin-left: 155.6px; */
 
         /* padding-top: 헤더 높이 55.5px +나머지 간격 38px*/
         padding-top: 55.5px;
-        margin-bottom: 47.3px;
         line-height: 1;
-        width: auto;
+        width: 84%;
+        margin: 0 auto;
+        margin-bottom: 47.3px;
     }
 
     .EachActivity {
         /* display: flex; */
-        width: 185.2px;
+        width: 256.1px;
         height: auto;
-
-        margin-left: 20.7px;
-        margin-right: 20.7px;
+        margin-left: 0px;
+        margin-right: 41.4px;
 
         /* 여기가 스크롤바 위 마진 */
         /* margin-bottom: 46.3px; */
@@ -301,28 +309,28 @@
 
     .TurnToImg {
         display: flex;
-        width: 185.2px;
-        height: 244.3px;
+        width: 256.1px;
+        height: 337.9px;
         /* align-items: flex-start; */
         justify-content: center;
     }
 
     .TurnToImg img {
-        width: 185.2px;
-        max-height: 244.3px;
+        width: 256.1px;
+        max-height: 337.9px;
         object-fit: scale-down;
 
     }
 
     .ActivityText {
-        width: 185.2px;
+        width: 256.1px;
         border-left: 6px solid var(--ewhaian-pink);
         padding-left: 10px;
     }
 
     .ActivityName {
         font-weight: 600;
-        font-size: 17px;
+        font-size: 20px;
         line-height: 1;
         margin-bottom: 8px;
 
@@ -352,6 +360,8 @@
         height: auto;
         white-space: nowrap;
         border-bottom: 99px solid transparent;
+        /* padding-left: 23px; */
+        padding-left: 8%;
     }
 
     .ActivitiesAll::-webkit-scrollbar {
