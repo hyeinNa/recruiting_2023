@@ -9,11 +9,10 @@ function Header() {
   const ApplyStatus = () => {
     if (isApplicationPeriod) {
       window.location.replace("/register");
+    } else {
+      window.location.replace("/register/notperiod");
     }
-    else {
-      window.location.replace('/register/notperiod');
-    }
-  }
+  };
   useEffect(() => {
     axios
       .post("/api/var/load", {
@@ -23,7 +22,6 @@ function Header() {
         console.log(response.data);
         if (response.data.isInDB === "false") {
           setApplicationPeriod(false);
-
         } else {
           setApplicationPeriod(response.data.isApplicationPeriod);
         }
@@ -57,14 +55,17 @@ function Header() {
     <nav className="nav_bar">
       <div className="nav_bar_container">
         <div className="nav_bar_inner_container">
-          <div className="nav_bar_logo">
-            <Link to="/">
-              <img
-                className="nav_bar_logoImg"
-                src="/img/header/white_logo.png"
-                alt="ewhaianLogo"
-              />
-            </Link>
+          <div
+            className="nav_bar_logo"
+            onClick={() => {
+              window.location.replace("/");
+            }}
+          >
+            <img
+              className="nav_bar_logoImg"
+              src="/img/header/white_logo.png"
+              alt="ewhaianLogo"
+            />
           </div>
           <ul className="nav_bar_menu" id="nav_bar_menu">
             <div className="nav_bar_apply_btn_container">

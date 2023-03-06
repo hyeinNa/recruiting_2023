@@ -45,6 +45,8 @@
 .teamInfo_btn:hover {
   background-color: white;
   color: #3c3c3c;
+  cursor: pointer;
+  transition: 0.3s;
 }
 .unclicked {
   background-color: var(--teamInfo-bg-color);
