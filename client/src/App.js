@@ -83,13 +83,13 @@ function App() {
         <Route exact path="/result/:id" element={<ShowResult />} />
         <Route exact path="/admin/login" element={<AdminLogin />} />
         <Route exact path="/admin/modifyInfo/:id" element={<Modify />} />
-        {/*}
-        <Route
+
+        {/* <Route
           exact
           path="/result/notperiod/check"
           element={<NotPeriodCheck />}
-        />
-        */}
+        /> */}
+
         <Route exact path="/admin/applicantList" element={<ApplicantList />} />
 
         <Route exact path="/admin/landing" element={<GenerateDB />} />
