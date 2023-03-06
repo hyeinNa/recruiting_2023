@@ -6,7 +6,7 @@ import Header from "../../Header/Header";
 import { Link } from "react-router-dom";
 import "./ShowResult.css";
 
-function ShowResultFail() {
+function ShowResultFail(props) {
 
   const [cardinalNumber, setCardinalNumber] = useState("");
   const [masterName, setMasterName] = useState("");
@@ -32,39 +32,6 @@ function ShowResultFail() {
       });
   }, []);
 
-  //url에서 지원자 고유 id 알아내기
-  const pathName = window.location.pathname;
-  const applicantId = pathName.substring(8, pathName.length);
-
-  const [inputs, setInputs] = useState({
-    name: "",
-    team: "",
-    pass: "",
-  });
-  const { name, team, pass } = inputs;
-  //첫 렌더링 때, url에서 알아낸 지원자 id를 통해 지원자의 지원 팀과 통과 여부를 확인하기
-  useEffect(() => {
-    axios
-      .post("/api/update/get", {
-        id: applicantId,
-      })
-      .then((response) => {
-        setInputs({
-          name: response.data.name,
-          team: response.data.team,
-          pass: response.data.pass,
-        });
-      })
-      .catch((error) => {
-        console.log("An error occurred: ", error.response);
-      });
-  }, [applicantId]);
-
-  //변수 team과 pass에 저장된 값에 따라 다른 결과 페이지가 보이도록 하기.
-  //팀 :  web,design,marketing
-  //합격 여부 : 1stPass, finalPass, fail
-  //지원기간이 아닌 경우는 다른 페이지에서 다룸
-
   return (
     <div className="register_showResult">
       <Header />
@@ -72,7 +39,7 @@ function ShowResultFail() {
         <div className="register_showResult_inner_container">
           <div className="register_showResult_main_content_container">
             <div className="register_showResult_main_content">
-              안녕하세요, {name}님.
+              안녕하세요, {props.name}님.
               <br />
               이화이언 {cardinalNumber}기 수습 운영진 모집에 지원해주신점 진심으로 감사드립니다.
             </div>

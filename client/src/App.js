@@ -22,7 +22,6 @@ import ShowResultFail from "./components/views/ResultPages/ShowResultFail";
 import ShowResultFinal from "./components/views/ResultPages/ShowResultFinal";
 import ShowResult from "./components/views/ResultPages/ShowResult";
 
-
 import Activities from "./components/views/Activities/Activities";
 //import ModifyInfo from "./components/views/ManagerPages/ModifyInfo";
 import Modify from "./components/views/AdminPages/ModifyInfo";
@@ -88,6 +87,7 @@ function App() {
             path="/result/notperiod/check"
             element={<NotPeriodCheck />}
           />
+
           <Route
             exact
             path="/result/ShowResult1stPass"
@@ -103,6 +103,7 @@ function App() {
             path="/result/ShowResultFinal"
             element={<ShowResultFinal />}
           />
+
           <Route
             exact
             path="/result/:id"
