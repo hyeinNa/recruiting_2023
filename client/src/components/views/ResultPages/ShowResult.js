@@ -38,13 +38,16 @@ function ShowResult() {
     //지원기간이 아닌 경우는 다른 페이지에서 다룸
 
     if (pass === "1stPass") {
-        return <ShowResult1stPass name={name} team={team} pass={pass} />;
+        return <ShowResult1stPass name={name} />;
     }
     else if (pass == "finalPass") {
-        return <ShowResultFinal name={name} team={team} pass={pass} />;
+        return <ShowResultFinal name={name} />;
     }
     else if (pass == "fail") {
-        return <ShowResultFail name={name} team={team} pass={pass} />;
+        return <ShowResultFail name={name} />;
+    }
+    else {
+        return <div>error</div>
     }
 }
 
