@@ -11,6 +11,7 @@ function ApplicantList() {
   const navigate = useNavigate();
   const [team, setTeam] = useState("1");
   const [arr, setArr] = useState([]);
+  const result = ["선택", "서류합격", "최종합격", "불합격"];
 
   useEffect(() => {
     axios.get("/api/admin/")
@@ -56,35 +57,10 @@ function ApplicantList() {
 
 
 
-  //합불 선택자 DB에 전송
-  const changePass = () => {
-    const pass = document.getElementById("pass"); //select box id 가져오기
-    const _id = pass.options[pass.selectedIndex].value; //수정할 id 가져오기
-    let input;
-    if (pass.selectedIndex === 0) input = "default"; //
-    else if (pass.selectedIndex === 1) input = "1stPass";
-    else if (pass.selectedIndex === 2) input = "finalPass";
-    else input = "fail";
-    console.log("index", pass.selectedIndex);
-    console.log("input:", input);
-
-    // 서버의 selectPass 함수로 전달
-    axios.put("/api/applicantlist/selectPass", {
-      _id: _id,
-      pass: input
-    })
-      .then((response) => {
-        console.log(response.data.message);
-        console.log(response.result);
-      })
-      .catch((error) => {
-        console.error(error);
-      });
-  }
 
   //서버에서 지원자 DB 받아오기
   const GetList = (team) => {
-    axios.get("/api/applicantlist/applyList", { params: { team: team } })
+    axios.get("/api/applicantlist/", { params: { team: team } })
       .then((response) => {
         //객체를 배열로
         const data = Object.entries(response.data);
@@ -130,6 +106,65 @@ function ApplicantList() {
     }
   }
 
+  //합불 선택자 DB에 전송
+  const changePass = (idx, option_idx) => {
+    console.log("idx, option", idx, option_idx);
+    const _id = arr[idx]._id; //지원자의 id
+    // const box_id = document.getElementById("box_id");
+    // const value = box_id.value; //select box id 가져오기
+    // //const value = box_id.options[box_id.selectedIndex].value; // 전달할 값
+    let input;
+    // if (box_id.selectedIndex === 0) input = ""; //
+    // else if (box_id.selectedIndex === 1) input = "1stPass";
+    // else if (box_id.selectedIndex === 2) input = "finalPass";
+    // else input = "fail";
+
+    if (option_idx === 0) input = "default";
+    else if (option_idx === 1) input = "1stPass";
+    else if (option_idx === 2) input = "finalPass";
+    else if (option_idx === 3) input = "fail";
+
+    console.log(input);
+    console.log(_id);
+
+    // 서버의 selectPass 함수로 전달
+    axios.put("/api/applicantlist/", {
+      _id: _id,
+      pass: input,
+    })
+      .then((response) => {
+        console.log(response.data.message);
+      })
+      .catch((error) => {
+        console.error(error);
+      });
+  }
+
+  const setPass = (e, idx) => {
+
+    const select = e.target.closest("select"); //option
+    let value;
+    if (select.value === "선택") value = "default";
+    else if (select.value === "서류합격") value = "1stPass";
+    else if (select.value === "최종합격") value = "finalPass";
+    else if (select.value === "불합격") value = "fail";
+
+    const _id = arr[idx]._id; //수정할 지원자의 id
+
+    // 서버의 selectPass 함수로 전달
+    axios.put("/api/applicantlist/", {
+      _id: _id,
+      pass: value,
+    })
+      .then((response) => {
+        console.log(response.data.message);
+      })
+      .catch((error) => {
+        console.error(error);
+      });
+  }
+
+
 
   return (
     <div className="main">
@@ -158,18 +193,25 @@ function ApplicantList() {
           <div className="index">면접 일정</div>
           <div className="index">지원서</div>
         </h2>
-        <section className="apply_list">
-          {arr && arr.map((appli, idx) => (
+        <section className="apply_list" >
+          {arr && arr.map((appli, idx) => ( //서버에서 받아와서
             <p key={idx}>
               <div>{appli.name}</div>
               <div>{appli.studentId}</div>
               <div>{appli.ewhaianId}</div>
               <div>
-                <select id="pass" onChange={() => changePass()}>
-                  <option value={appli._id} >선택</option>
-                  <option value={appli._id} >서류합격</option>
-                  <option value={appli._id} >최종합격</option>
-                  <option value={appli._id} >불합격</option>
+                <select id="box_id" onChange={(e) => setPass(e, idx)}>
+                  {["선택", "서류합격", "최종합격", "불합격"].map((option, idx) => (
+                    <option key={idx}
+                      value={option}
+
+                    >
+                      {option}
+                    </option>
+                  ))}
+                  {/* {["선택", "서류합격", "최종합격", "불합격"].map((it, option_idx) => {
+                    return <option key={option_idx} value={it}>{it}</option>
+                  })} */}
                 </select>
               </div>
               <div>면접 일정</div>
