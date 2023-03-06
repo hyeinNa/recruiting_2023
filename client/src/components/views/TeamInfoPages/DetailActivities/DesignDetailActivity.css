@@ -24,6 +24,7 @@
   font-size: 45px;
   font-weight: 600;
   color: var(--title-color);
+  text-align: center;
 }
 .design_detail_activity_description {
   font-size: 17px;
@@ -46,6 +47,7 @@
   color: var(--title-color);
   margin-top: 48px;
   margin-bottom: 5px;
+  text-align: center;
 }
 .design_detail_activity_part2_container {
   position: relative;
@@ -74,8 +76,8 @@
   color: var(--title-color);
   position: absolute;
   top: 0;
-  margin-top: 34px;
-  margin-left: 29px;
+  margin-top: 8%;
+  margin-left: 7%;
 }
 .subContent1 {
   margin-right: 20px;
@@ -123,6 +125,43 @@
 .popup {
   width: 100%;
   position: absolute;
-  top: 0;
-  margin-top: 10%;
+  top: 15vh;
+}
+@media screen and (max-width: 700px) {
+  .design_detail_activity_part2_subContent_wrapper {
+    width: 100%;
+  }
+  .design_subContent_btn {
+    width: 40%;
+  }
+  .subContent1 {
+    margin-right: 12px;
+    margin-bottom: 8px;
+  }
+  .subContent2 {
+    margin-left: 12px;
+    margin-bottom: 8px;
+  }
+  .subContent3 {
+    margin-right: 12px;
+    margin-top: 8px;
+  }
+  .subContent4 {
+    margin-left: 12px;
+    margin-top: 8px;
+  }
+}
+@media screen and (max-width: 480px) {
+  .design_detail_activity_title {
+    font-size: 30px;
+  }
+  .design_detail_activity_subTitle {
+    font-size: 16px;
+  }
+  .design_subContent_label {
+    font-size: 15px;
+  }
+  .design_detail_activity_part3_subContent_wrapper {
+    margin-top: 70px;
+  }
 }

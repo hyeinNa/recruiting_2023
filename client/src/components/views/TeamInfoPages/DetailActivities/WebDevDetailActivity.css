@@ -248,3 +248,10 @@
   position: absolute;
   top: 0;
 }
+@media screen and (max-width: 700px) {
+}
+@media screen and (max-width: 480px) {
+  .web_detail_activity_title {
+    font-size: 30px;
+  }
+}
