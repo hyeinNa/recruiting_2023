@@ -4,6 +4,7 @@ import axios from "axios";
 import ShowResultFail from "./ShowResultFail";
 import ShowResult1stPass from "./ShowResult1stPass";
 import ShowResultFinal from "./ShowResultFinal";
+import "./ShowResult.css";
 
 function ShowResult() {
     //url에서 지원자 고유 id 알아내기
@@ -40,14 +41,14 @@ function ShowResult() {
     if (pass === "1stPass") {
         return <ShowResult1stPass name={name} />;
     }
-    else if (pass == "finalPass") {
+    else if (pass === "finalPass") {
         return <ShowResultFinal name={name} />;
     }
-    else if (pass == "fail") {
+    else if (pass === "fail") {
         return <ShowResultFail name={name} />;
     }
     else {
-        return <div>error</div>
+        return <div> error </div>
     }
 }
 
