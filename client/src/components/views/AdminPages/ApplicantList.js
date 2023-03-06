@@ -59,19 +59,23 @@ function ApplicantList() {
   //합불 선택자 DB에 전송
   const changePass = () => {
     const pass = document.getElementById("pass"); //select box id 가져오기
-    const _id = pass.options[pass.selectedIndex].value; //검색할 학번 가져오기
-    let result;
-    if (pass.selectedIndex === 0) result = "pass"; //0번 index 선택 시 pass 전달
-    else result = "nonpass";                      // 1번 index 선택 시 nonpass 전달
+    const _id = pass.options[pass.selectedIndex].value; //수정할 id 가져오기
+    let input;
+    if (pass.selectedIndex === 0) input = ""; //
+    else if (pass.selectedIndex === 1) input = "1stPass";
+    else if (pass.selectedIndex === 2) input = "finalPass";
+    else input = "fail";
+    console.log("index", pass.selectedIndex);
+    console.log("input:", input);
 
     // 서버의 selectPass 함수로 전달
     axios.put("/api/applicantlist/selectPass", {
       _id: _id,
-      pass: result
+      pass: input
     })
       .then((response) => {
         console.log(response.data.message);
-        console.log(arr[0].pass);
+        console.log(response.result);
       })
       .catch((error) => {
         console.error(error);
@@ -162,8 +166,10 @@ function ApplicantList() {
               <div>{appli.ewhaianId}</div>
               <div>
                 <select id="pass" onChange={() => changePass()}>
-                  <option value={appli._id} value2="pass">합격</option>
-                  <option value={appli._id} value2="nonpass">불합격</option>
+                  <option value={appli._id} >선택</option>
+                  <option value={appli._id} >서류합격</option>
+                  <option value={appli._id} >최종합격</option>
+                  <option value={appli._id} >불합격</option>
                 </select>
               </div>
               <div>면접 일정</div>
