@@ -87,6 +87,19 @@
     color: var(--ewhaian-pink);
 }
 
+.register_showResult_preAssignment_container {
+    display: flex;
+}
+
+.register_showResult_preAssignment_content {
+    font-size: var(--register-showResult-main-content-description-font-size);
+    font-weight: 400;
+    line-height: var(--register-showResult-list-line-height);
+    text-align: left;
+    margin-bottom: 1%;
+    color: var(--gray-white);
+}
+
 .register_showResult_interview_container {
     width: 92%;
     height: 100%;
