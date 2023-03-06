@@ -3,7 +3,7 @@ import ImageTemplate from "./ImageTemplate";
 import "./PopupBackground.css";
 function PopupBackground(props) {
   return (
-    <div className="popup_container" id="popup">
+    <div className="popup_container zoomIn" id="popup">
       <div className="popup_inner_container">
         <div className="popup_content_wrapper">
           <div className="popup_content_title">{props.title}</div>

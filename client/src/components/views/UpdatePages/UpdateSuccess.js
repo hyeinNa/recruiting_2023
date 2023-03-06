@@ -17,7 +17,7 @@ function UpdateSuccess() {
                         <img src="/img/newApplicantEnroll/applySuccessMark.png" className="success_checkmark" />
                     </div>
                     <div className="success_text">
-                        제출에 성공했습니다!
+                        수정에 성공했습니다!
                         <br></br>
                         지원해주셔서 감사합니다.
                     </div>

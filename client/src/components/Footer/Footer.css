@@ -16,6 +16,7 @@
   height: 600px;
   bottom: 0;
   background-color: var(--toneDown-black);
+  border-top: 1px solid rgba(208, 208, 208, 0.17);
 }
 .footer_inner_container {
   max-width: var(--nav-bar-max-width);
@@ -27,7 +28,6 @@
 }
 .footer_inner_inner_container {
   width: 92%;
-  height: 50%;
   display: flex;
   flex-direction: row;
   align-items: flex-start;

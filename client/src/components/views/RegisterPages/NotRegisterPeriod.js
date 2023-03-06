@@ -20,7 +20,7 @@ function NotRegisterPeriod() {
                 if (response.data.isInDB === "false") {
                     setApplicationSubmissionPeriod("");
                 } else {
-                    setApplicationSubmissionPeriod(applicationSubmissionPeriod);
+                    setApplicationSubmissionPeriod(response.data.applicationSubmissionPeriod);
                 }
             });
     }, []);
