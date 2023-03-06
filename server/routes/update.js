@@ -36,6 +36,9 @@ updateRoute.put("/update", uploadRouter.single('applicant'), async (req, res) =>
     ewhaianId,
   };
   try {
+    if (!team) {
+      return res.json({ status: 'error', message: '지원하려는 팀을 선택하세요.' })
+    }
     if (!name || typeof name !== "string") {
       return res.json({ status: "error", message: "성명을 입력하세요." });
     }
@@ -68,7 +71,7 @@ updateRoute.put("/update", uploadRouter.single('applicant'), async (req, res) =>
      } */
     const updated = await Applicant.findByIdAndUpdate(id, { $set: updatedData }); //findByIDAndUpdate (조건:id, 갱신: updatedData)
     if (req.file) {
-      updated.applicant = req.file.path;
+      updated.applicant = req.file.filename;
       fs.writeFileSync(filename, file, encoding = 'utf-8') //fs.writeFile(filename, data, encoding='utf-8', [콜백함수])
     }
     res.json({
