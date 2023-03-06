@@ -112,25 +112,32 @@
 
 .classopeningbooth_title, .may_title, .pearflowergarden_title, .offlineevent_title {
     color: var(--toneDown-white);
-    width: 92px;
-    font-size: 22px;
+    width: 126px;
+    font-size: 30px;
     font-weight: 900;
-    line-height: 33px;
-    background-color: rgb(10, 10, 10, 0.3);
-    border-radius: 7px;
+    line-height: 35px;
+    border-radius: 15px;
+    margin-top: 10px;
+    transition: all 0.3s;
 }
 
 .offlineevent_title {
-    width: 160px;
+    width: 215px;
 }
 
+.classopeningbooth_plus, .may_plus, .pearflowergarden_plus, .offlineevent_plus {
+    font-size: 20px;
+    opacity: 1;
+    transition: all 0.3s;
+
+}
 .classopeningbooth_description, .may_description, .pearflowergarden_description, .offlineevent_description {
     color: var(--toneDown-white);
     opacity: 0;
-    font-size: 300;
-    margin-top: 2%;
-    transition: all 1s;
-
+    font-size: 16px;
+    margin-top: 3%;
+    transition: all 0.3s;
+    
 }
 
 .classopeningbooth:hover .classopeningbooth_description {
@@ -167,20 +174,52 @@
 }
 
 
-.classopeningbooth:hover .classopeningbooth_title{
+.classopeningbooth:hover .classopeningbooth_title {
     background-color: transparent;
+    font-size: 27px;
+    margin-top: 25px;
+    padding-right: 50%;
+    font-weight: 900;
 }
 
 .may:hover .may_title{
     background-color: transparent;
+    font-size: 27px;
+    margin-top: 25px;
+    padding-right: 50%;
+    font-weight: 900;
 }
 
 .pearflowergarden:hover .pearflowergarden_title{
     background-color: transparent;
+    font-size: 27px;
+    margin-top: 25px;
+    padding-right: 50%;
+    font-weight: 900;
 }
 
 .offlineevent:hover .offlineevent_title{
     background-color: transparent;
+    font-size: 27px;
+    margin-top: 25px;
+    padding-right: 50%;
+    font-weight: 900;
+}
+
+.classopeningbooth:hover .classopeningbooth_plus {
+    opacity: 0;
+}
+
+.may:hover .may_plus {
+    opacity: 0;
+}
+
+.pearflowergarden:hover .pearflowergarden_plus {
+    opacity: 0;
+}
+
+.offlineevent:hover .offlineevent_plus {
+    opacity: 0;
 }
 
 @media (max-width: 768px){
