@@ -7,9 +7,9 @@ function GoToEvent() {
                 top: 2400, behavior: "smooth"
             })
             :
-            window.innerWidth > 391 ?
+            window.innerWidth > 425 ?
                 window.scrollTo({
-                    top: 2600, behavior: "smooth"
+                    top: 2550, behavior: "smooth"
                 })
                 : window.scrollTo({
                     top: 2200, behavior: "smooth"
