@@ -3,7 +3,7 @@ import "./PopupBackground.css";
 import "./PopupBackgroundWeb.css";
 function PopupBackgroundWeb(props) {
   return (
-    <div className="popup_container_web" id="popup">
+    <div className="popup_container_web zoomIn" id="popup">
       <div className="popup_inner_container">
         <div className="popup_content_wrapper">
           <div className="popup_content_title">{props.title}</div>

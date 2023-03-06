@@ -60,11 +60,11 @@ a {
   background-color: var(--ewhaian-pink);
 }
 
-.nav_apply_btns:hover .nav_apply_btn_text {
+.nav_apply_btns:hover .nav_apply_btns_text {
   color: var(--toneDown-white);
 }
 
-#nav_register_btn {
+.nav_register_btn {
   margin-right: 20px;
 }
 
@@ -76,6 +76,9 @@ a {
 
 .nav_bar_menu li {
   padding: 4px 12px;
+  text-decoration: none;
+  color: var(--toneDown-white);
+  font-size: var(--header-font-size);
 }
 
 .nav_bar_content_btn_container {

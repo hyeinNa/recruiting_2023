@@ -9,11 +9,10 @@ function Header() {
   const ApplyStatus = () => {
     if (isApplicationPeriod) {
       window.location.replace("/register");
+    } else {
+      window.location.replace("/register/notperiod");
     }
-    else {
-      window.location.replace('/register/notperiod');
-    }
-  }
+  };
   useEffect(() => {
     axios
       .post("/api/var/load", {
@@ -27,6 +26,12 @@ function Header() {
           isApplicationPeriod(false);
         }
       });
+    const pathName = window.location.pathname;
+    document.documentElement.style.setProperty("--mobile-menu-display", "none");
+    if (!(pathName === "/")) {
+      document.getElementById("nav_bar_content_btn_container").style.display =
+        "none";
+    }
   }, []);
   const toggleMenu = () => {
     const toggleImg = document.getElementById("nav_bar_toggleBtn_img_id");
@@ -46,9 +51,6 @@ function Header() {
       );
     }
   };
-  useEffect(() => {
-    document.documentElement.style.setProperty("--mobile-menu-display", "none");
-  }, []);
   return (
     <nav className="nav_bar">
       <div className="nav_bar_container">
@@ -64,32 +66,56 @@ function Header() {
           </div>
           <ul className="nav_bar_menu" id="nav_bar_menu">
             <div className="nav_bar_apply_btn_container">
-              <button
-                onClick={ApplyStatus}
+              <buttton
                 className="nav_register_btn nav_apply_btns"
-                id="nav_register_btn"
+                onClick={ApplyStatus}
               >
-                <div className="nav_apply_btn_text">지원하기</div>
-              </button>
-              <Link
-                to="/result/checkinfo"
+                <div className="nav_apply_btns_text">지원하기</div>
+              </buttton>
+              <buttton
                 className="nav_result_btn nav_apply_btns"
+                onClick={() => {
+                  window.location.replace("/result/checkinfo");
+                }}
               >
-                <div className="nav_apply_btn_text">결과확인</div>
-              </Link>
+                <div className="nav_apply_btns_text">결과확인</div>
+              </buttton>
             </div>
-            <div className="nav_bar_content_btn_container">
-              <li>
-                <Link to="/register">이화이언 소개</Link>
+            <div
+              className="nav_bar_content_btn_container"
+              id="nav_bar_content_btn_container"
+            >
+              <li
+                onClick={() => {
+                  const element = document.getElementById("ewhaianInfo");
+                  element.scrollIntoView({ behavior: "smooth" });
+                }}
+              >
+                이화이언 소개
               </li>
-              <li>
-                <Link to="/teamInfo">팀 소개</Link>
+              <li
+                onClick={() => {
+                  const element = document.getElementById("teamInfo");
+                  element.scrollIntoView({ behavior: "smooth" });
+                }}
+              >
+                팀 소개
               </li>
-              <li>
-                <Link to="/">지난 이화이언</Link>
+              <li
+                onClick={() => {
+                  const element = document.getElementById("activities");
+                  element.scrollIntoView({ behavior: "smooth" });
+                }}
+              >
+                지난 이화이언
               </li>
-              <li>
-                <Link to="/">자주 묻는 질문</Link>
+              <li
+                onClick={() => {
+                  const element = document.getElementById("qna");
+                  element.scrollIntoView({ behavior: "smooth" });
+                }}
+              >
+                자주 묻는 질문
               </li>
             </div>
           </ul>
