@@ -30,6 +30,7 @@ import WebDevDetailActivity from "./components/views/TeamInfoPages/DetailActivit
 import MarketingDetailActivity from "./components/views/TeamInfoPages/DetailActivities/MarketingDetailActivity";
 import PopupBackground from "./components/views/TeamInfoPages/DetailActivities/popup/PopupBackground";
 import MarketingStudyProject from "./components/views/TeamInfoPages/DetailActivities/MarketingStudyProject";
+import ShowResult from "./components/views/ResultPages/ShowResult";
 function App() {
   return (
     <div className="App">
@@ -74,6 +75,7 @@ function App() {
         <Route exact path="/update/success" element={<UpdateSuccess />} />
         <Route exact path="/result/checkinfo" element={<CheckResult />} />
         <Route exact path="/result/notperiod/:id" element={<NotPeriod />} />
+        <Route exact path="/result/:id" element={<ShowResult />} />
         <Route exact path="/admin/login" element={<AdminLogin />} />
         <Route exact path="/admin/modifyInfo/:id" element={<Modify />} />
         {/*}
