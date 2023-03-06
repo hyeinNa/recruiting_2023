@@ -1,10 +1,11 @@
 const express = require("express");
 const { Applicant } = require("../models/Applicant");
-
+const downloadRouter = express.Router();
 const applicantListRouter = express.Router();
+var fs = require("fs");
 
 //관리자페이지
-const applyList = (req, res) => {
+applicantListRouter.get("/applyList", async (req, res) => {
     // 지원자 목록 프론트로 전송
     const { team } = req.query;
     // 마케팅 팀 지원자 정보 전송
@@ -37,12 +38,39 @@ const applyList = (req, res) => {
             console.error(err);
         }
     }
-}
+});
+applicantListRouter.get("/download", async (req, res) => {
+    // 지원자 목록 프론트로 전송
+    const fileName = req.body.applicant;
 
+    let isFileExist;
+
+    try {
+        // fs.existsSync()를 사용하여 파일 존재 여부를 검증한다. Boolean 타입의 값을 반환한다.
+        isFileExist = fs.existsSync(fileName);
+        console.log(fileName)
+    } catch (err) {
+        console.log(err)
+
+        // next(err);
+    }
+
+    // 파일이 존재하지 않는다면 에러 처리
+    if (!isFileExist) {
+        console.log("there is no file")
+    }
+
+    try {
+        // download()를 사용해서 파일을 프론트쪽으로 보내준다.
+        res.download(fileName);
+    } catch (err) {
+        console.log("file download failed")
+    }
+});
 
 
 //지원자의 합불 여부를 결정
-const selectPass = async (req, res) => {
+applicantListRouter.put("/selectPass", async (req, res) => {
     const { _id, pass } = req.body;
     console.log(_id, pass);
 
@@ -64,8 +92,8 @@ const selectPass = async (req, res) => {
         console.error(err);
         return res.status(500).send({ err: err.message });
     }
-}
+});
 
-applicantListRouter.route("/").get(applyList).put(selectPass);
+//applicantListRouter.route("/").get(applyList).put(selectPass);
 
 module.exports = applicantListRouter;

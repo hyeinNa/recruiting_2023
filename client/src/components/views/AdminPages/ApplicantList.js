@@ -69,7 +69,7 @@ function ApplicantList() {
     console.log("input:", input);
 
     // 서버의 selectPass 함수로 전달
-    axios.put("/api/applicantlist", {
+    axios.put("/api/applicantlist/selectPass", {
       _id: _id,
       pass: input
     })
@@ -84,7 +84,7 @@ function ApplicantList() {
 
   //서버에서 지원자 DB 받아오기
   const GetList = (team) => {
-    axios.get("/api/applicantlist", { params: { team: team } })
+    axios.get("/api/applicantlist/applyList", { params: { team: team } })
       .then((response) => {
         //객체를 배열로
         const data = Object.entries(response.data);
@@ -107,20 +107,28 @@ function ApplicantList() {
   }
 
   //서버에서 지원자 파일 다운로드
-  const handleFileDownload = async (title) => {
-    const url = "server/uploads/" + title;
-    const response = await fetch(url);
-    const file = await response.blob();
-    const downloadUrl = window.URL.createObjectURL(file); // 해당 file을 가리키는 url 생성
+  const handleFileDownload = async (title, e) => {
+    console.log(title)
+    try { //고유 id 및 폼에 입력받은 정보를 수정하기 api로 전달
+      const response = await axios.get("/api/applicantlist/download", {
+        fileName: title
+      });
+      /* const url = "server/uploads/" + title;
+      const response = await fetch(url); */
+      /* const file = await response.blob();
+      const downloadUrl = window.URL.createObjectURL(file); // 해당 file을 가리키는 url 생성
 
-    const anchorElement = document.createElement('a');
-    document.body.appendChild(anchorElement);
-    anchorElement.download = title; // a tag에 download 속성을 줘서 클릭할 때 다운로드가 일어날 수 있도록 함. 공백은 기본값
-    anchorElement.href = downloadUrl; // href에 url 달아주기
+      const anchorElement = document.createElement('a');
+      document.body.appendChild(anchorElement);
+      anchorElement.download = title; // a tag에 download 속성을 줘서 클릭할 때 다운로드가 일어날 수 있도록 함. 공백은 기본값
+      anchorElement.href = downloadUrl; // href에 url 달아주기
 
-    anchorElement.click();
+      anchorElement.click(); */
+    }
+    catch (error) {
+      console.log(error.response);
+    }
   }
-
 
 
   return (
@@ -165,7 +173,7 @@ function ApplicantList() {
                 </select>
               </div>
               <div>면접 일정</div>
-              <div ><button type="button" onClick={() => handleFileDownload(appli.applicant)}>
+              <div ><button type="button" onClick={(e) => handleFileDownload(appli.applicant, e)}>
                 <img src="/img/admin/application.png" alt="download" /></button></div>
             </p>
           ))}
