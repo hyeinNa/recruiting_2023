@@ -7,6 +7,8 @@
 }
 .back_btn:hover {
   content: url(../../../public/img/backArrowHover.png);
+  cursor: pointer;
+  transition: 0.3s;
 }
 .back_btn img {
   width: 100%;
@@ -15,5 +17,6 @@
   .back_btn {
     width: 30px;
     left: 7%;
+    top: 90px;
   }
 }

@@ -5,6 +5,7 @@ import axios from "axios";
 import "../RegisterPages/ExistingApplicantCheckInfo.css";
 import Footer from "../../Footer/Footer";
 import Header from "../../Header/Header";
+import BackBtn from "../../utilis/BackBtn";
 function CheckResult() {
   const navigate = useNavigate();
   const [inputs, setInputs] = useState({
@@ -55,7 +56,6 @@ function CheckResult() {
             //결과 기간 아닌 페이지로 이동
             navigate("/result/notperiod/" + applicantId, { replace: true });
           } else {
-            //지원자에게 결과를 보여준다면
             navigate("/result/" + applicantId, { replace: true });
           }
         } else {
@@ -130,6 +130,7 @@ function CheckResult() {
             </div>
           </form>
         </div>
+        <BackBtn path="/" />
       </div>
       <Footer />
     </div>

@@ -29,7 +29,8 @@
     margin: 0 auto;
     width: 100%;
     height: auto;
-    padding-top: 20%;
+    padding-top: 30%;
+    padding-bottom: 30%;
 }
 
 .not_period_checkmark_wrapper {
@@ -44,7 +45,7 @@
     width: 100%;
     text-align: center;
     font-weight: var(--not-period-text-font-weight);
-    letter-spacing: 2px;
+    letter-spacing: 1px;
     color: var(--toneDown-white);
     margin-top: 2%;
     line-height: var(--not-period-text-line-height);
@@ -85,11 +86,24 @@
         font-weight: var(--mobile-success-text-font-weight);
         letter-spacing: 2px;
         color: var(--toneDown-white);
-        margin-top: 2%;
+        margin-top: 5%;
         line-height: var(--mobile-success-text-line-height);
     }
 
     .not_period_small_text {
         font-size: var(--mobile-not-period-small-font-size);
+    }
+
+    .not_register_period_inner_container {
+        max-width: var(--nav-bar-max-width);
+        margin: 0 auto;
+        width: 100%;
+        height: auto;
+        padding-top: 40%;
+        padding-bottom: 30%;
+    }
+
+    .success_back_to_main_btn {
+        margin-top: 15%;
     }
 }

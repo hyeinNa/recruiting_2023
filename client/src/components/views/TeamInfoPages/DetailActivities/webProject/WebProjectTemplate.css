@@ -14,6 +14,8 @@
 }
 .webProject:hover > .webProjectHover {
   visibility: visible;
+  cursor: pointer;
+  transition: 0.3s;
 }
 .webProject img {
   width: 100%;

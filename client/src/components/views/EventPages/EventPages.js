@@ -18,46 +18,24 @@ function EventPages() {
                         <div className="event_pic_inner">
                         <div className="classopeningbooth">
                             <div className="classopeningbooth_content">
-                                <div className="classopeningbooth_title">&nbsp;개강부스</div>
+                                <div className="classopeningbooth_title">개강부스
+                                                    <br /><div className="classopeningbooth_plus">&nbsp;+ </div></div>
                                 <div className="classopeningbooth_description">
-                                    꽃이 만개하는 5월,
+                                    매 해 3월과 9월, 개강을 맞이한 벗들을 위한 소소한 이벤트!
                                     <br />
-                                    오월드림은 매년 색다른 테마의 프로젝트로 이화인들을 찾아갑니다.
-                                    <br />
-                                    <br />
-                                    오월드림은 운영진들과 함께 게임도 하고 선물도 받아가는 이벤트
-                                    <br />
-                                    프로그램, 비밀의 화원에 접속하지 못한 이화인들을 위한 인증부터
-                                    <br />
-                                    특별 이벤트, 마지막으로 봄의 활기를 가득 돋아줄 공연과 토크쇼까지
-                                    <br />
-                                    아주 다채롭게 구상되어 있는 이화이언의 오프라인 이벤트입니다.
-                                    <br />
-                                    <br />
-                                    싱그러운 봄, 이화인들에게 특별하고 따뜻한 기억을 선사하는 오월드림.
-                                    <br />
-                                    다음 5월의 프로젝트를 꾸려나갈 주인공이 되어보는 건 어떨까요?
+                                    벗들의 새로운 시작을 응원하는 소중한 경험으로 당신을 초대합니다!
                                 </div>
                             </div>
                         </div>
 
                         <div className="may">
                             <div className="may_content">
-                                <div className="may_title">&nbsp;오월드림</div>
+                                <div className="may_title">오월드림
+                                                    <br /><div className="may_plus">&nbsp;+ </div></div>
                                 <div className="may_description">
                                     꽃이 만개하는 5월,
                                     <br />
                                     오월드림은 매년 색다른 테마의 프로젝트로 이화인들을 찾아갑니다.
-                                    <br />
-                                    <br />
-                                    오월드림은 운영진들과 함께 게임도 하고 선물도 받아가는 이벤트
-                                    <br />
-                                    프로그램, 비밀의 화원에 접속하지 못한 이화인들을 위한 인증부터
-                                    <br />
-                                    특별 이벤트, 마지막으로 봄의 활기를 가득 돋아줄 공연과 토크쇼까지
-                                    <br />
-                                    아주 다채롭게 구상되어 있는 이화이언의 오프라인 이벤트입니다.
-                                    <br />
                                     <br />
                                     싱그러운 봄, 이화인들에게 특별하고 따뜻한 기억을 선사하는 오월드림.
                                     <br />
@@ -70,50 +48,28 @@ function EventPages() {
                         <div className="event_pic_inner">
                         <div className="pearflowergarden">
                             <div className="pearflowergarden_content">
-                                <div className="pearflowergarden_title">&nbsp;배꽃정원</div>
+                                <div className="pearflowergarden_title">배꽃정원
+                                                    <br /><div className="pearflowergarden_plus">&nbsp;+ </div></div>
                                 <div className="pearflowergarden_description">
-                                    꽃이 만개하는 5월,
+                                가을볕이 따스한 11월,
                                     <br />
-                                    오월드림은 매년 색다른 테마의 프로젝트로 이화인들을 찾아갑니다.
+                                    배꽃정원에는 매년 색다른 재능 나눔 부스와 협찬 기업 부스 그리고 푸짐한 상품이 준비되어 있습니다.
                                     <br />
-                                    <br />
-                                    오월드림은 운영진들과 함께 게임도 하고 선물도 받아가는 이벤트
-                                    <br />
-                                    프로그램, 비밀의 화원에 접속하지 못한 이화인들을 위한 인증부터
-                                    <br />
-                                    특별 이벤트, 마지막으로 봄의 활기를 가득 돋아줄 공연과 토크쇼까지
-                                    <br />
-                                    아주 다채롭게 구상되어 있는 이화이언의 오프라인 이벤트입니다.
-                                    <br />
-                                    <br />
-                                    싱그러운 봄, 이화인들에게 특별하고 따뜻한 기억을 선사하는 오월드림.
-                                    <br />
-                                    다음 5월의 프로젝트를 꾸려나갈 주인공이 되어보는 건 어떨까요?
+                                    이화인들 간의 따뜻하고 깊은 정을 나눌 수 있는 다양한 이벤트를 직접 기획해보세요!
                                 </div>
                             </div>
                         </div>
 
                         <div className="offlineevent">
                             <div className="offlineevent_content">
-                                <div className="offlineevent_title">&nbsp;오프라인 이벤트</div>
+                                <div className="offlineevent_title">오프라인 이벤트
+                                                    <br /><div className="offlineevent_plus">&nbsp;+ </div></div>
                                 <div className="offlineevent_description">
-                                    꽃이 만개하는 5월,
+                                이화이언은 유저들에게 유익한 경험을 제공하기 위해 최선을 다합니다.
                                     <br />
-                                    오월드림은 매년 색다른 테마의 프로젝트로 이화인들을 찾아갑니다.
+                                    네트워킹부터 강연까지, 온라인 커뮤니티의 한계를 넘어 오프라인에서도 이화 안의 더 큰 만남을 도모합니다.
                                     <br />
-                                    <br />
-                                    오월드림은 운영진들과 함께 게임도 하고 선물도 받아가는 이벤트
-                                    <br />
-                                    프로그램, 비밀의 화원에 접속하지 못한 이화인들을 위한 인증부터
-                                    <br />
-                                    특별 이벤트, 마지막으로 봄의 활기를 가득 돋아줄 공연과 토크쇼까지
-                                    <br />
-                                    아주 다채롭게 구상되어 있는 이화이언의 오프라인 이벤트입니다.
-                                    <br />
-                                    <br />
-                                    싱그러운 봄, 이화인들에게 특별하고 따뜻한 기억을 선사하는 오월드림.
-                                    <br />
-                                    다음 5월의 프로젝트를 꾸려나갈 주인공이 되어보는 건 어떨까요?
+                                    우리의 꿈이 숨 쉬는 곳, 이화이언~~
                                 </div>
                             </div>
                         </div>

@@ -13,6 +13,8 @@ const bodyParser = require("body-parser");
 const session = require("express-session");
 //connect-mongo 가져오기
 const MongoStore = require("connect-mongo");
+//호스팅 위해 필요한 코드 부분
+const path = require("path");
 //Route 가져오기
 const checkInfoRoutes = require("./routes/checkInfo");
 const registerRouter = require("./routes/register");
@@ -25,7 +27,8 @@ const applicantListRouter = require("./routes/applicantList");
 app.use(bodyParser.urlencoded({ extended: true }));
 app.use(bodyParser.json());
 app.use("/uploads", express.static("uploads"));
-
+//호스팅 위해 필요한 코드 부분
+app.use(express.static(path.join(__dirname, "client/build")));
 //session middleware 추가
 app.use(
   session({

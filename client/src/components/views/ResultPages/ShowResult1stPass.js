@@ -68,32 +68,33 @@ function ShowResult1stPass(props) {
               </div>
               <a
                 href={surveyFormLink}
-                className="register_ShowResult_main_content_survey_link"
+                className="register_showResult_main_content_survey_link"
               >
                 → 설문하러 가기
               </a>
             </div>
           </div>
-          <div className="register_showResult_interview_container"></div>
-          <div className="register_showResult_interview_date">
-            면접일정 : {interviewPeriod}
-            <br />
-            면접장소 : {faceTofaceInterviewPlace}
+          <div className="register_showResult_interview_container">
+            <div className="register_showResult_interview_date">
+              면접일정 : {interviewPeriod}
+              <br />
+              면접장소 : {faceTofaceInterviewPlace}
+            </div>
+            <ul className="register_showResult_interview_content">
+              <li>
+                일찍 오신 분들은 {interviewWaitingPlace}
+                부터 이용 가능)에서 대기하실 수 있습니다
+              </li>
+              <li>
+                면접의 경우, 불가피하게 배정된 면접 시간에서 10분 내외로 지연될 수
+                있습니다.
+              </li>
+              <li>
+                추가적인 문의사항이 있으신 경우, 마스터 {masterName}(
+                {masterPhoneNumber})에게 연락 부탁드립니다.
+              </li>
+            </ul>
           </div>
-          <ul className="register_showResult_interview_content">
-            <li>
-              일찍 오신 분들은 {interviewWaitingPlace}
-              부터 이용 가능)에서 대기하실 수 있습니다
-            </li>
-            <li>
-              면접의 경우, 불가피하게 배정된 면접 시간에서 10분 내외로 지연될 수
-              있습니다.
-            </li>
-            <li>
-              추가적인 문의사항이 있으신 경우, 마스터 {masterName}(
-              {masterPhoneNumber})에게 연락 부탁드립니다.
-            </li>
-          </ul>
         </div>
         <div className="register_showResult_button_container">
           <div className="register_showResult_back_to_main_container">
