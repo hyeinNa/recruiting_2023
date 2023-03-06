@@ -43,7 +43,7 @@ function ShowResultFail(props) {
               진심으로 감사드립니다.
             </div>
             <div className="register_showResult_main_content_description">
-              아쉽게도 이번 44기 운영진에서 지원자님과 함께 하지 못하게 된 점
+              아쉽게도 이번 {cardinalNumber}기 운영진에서 지원자님과 함께 하지 못하게 된 점
               전달드리며,
               <br />
               다음 기회에 보다 좋은 인연으로 만나뵐 수 있기를 기대하겠습니다.

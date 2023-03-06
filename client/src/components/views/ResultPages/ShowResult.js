@@ -48,7 +48,10 @@ fail : 불합격
   }
   else if (inputs.pass === "finalPass") {
     console.log(inputs.pass);
-    return <div>{inputs.pass}</div>;
+    return (
+      <div>
+        <ShowResultFinal name={inputs.name} team={inputs.team} />
+      </div>)
   }
   else if (inputs.pass === "fail") {
     console.log(inputs.pass);
