@@ -44,16 +44,19 @@ const applyList = (req, res) => {
 //지원자의 합불 여부를 결정
 const selectPass = async (req, res) => {
     const { _id, pass } = req.body;
+    console.log(_id, pass);
 
     try {
-        const data = await Applicant.findByIdAndUpdate(
-            _id, {
-            $set: {
-                pass,
-            }
-        });
+        const result = await Applicant.findByIdAndUpdate(
+            _id,
+            {
+                $set: {
+                    pass,
+                }
+            });
 
         return res.json({
+            result,
             message: "수정 완료",
         });
     }
