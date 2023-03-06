@@ -1,11 +1,7 @@
 import React from "react";
 import { useEffect, useState } from "react";
 import axios from "axios";
-import Footer from "../../Footer/Footer";
-import Header from "../../Header/Header";
-import { Link } from "react-router-dom";
-import "./ShowResult.css";
-
+import "./ShowResult1stPass.css";
 function ShowResult1stPass(props) {
   //변수 team과 pass에 저장된 값에 따라 다른 결과 페이지가 보이도록 하기.
   //팀 :  web,design,marketing
@@ -48,7 +44,6 @@ function ShowResult1stPass(props) {
   }, []);
   return (
     <div className="register_showResult">
-      <Header />
       <div className="register_showResult_container">
         <div className="register_showResult_inner_container">
           <div className="register_showResult_main_content_container">
@@ -97,12 +92,11 @@ function ShowResult1stPass(props) {
           </ul>
         </div>
         <div className="register_showResult_button_container">
-          <div className="register_showResult_back_to_main_container">
-            <Link to="/">메인으로 돌아가기</Link>
-          </div>
+          <button className="register_showResult_mainPage_button">
+            메인으로 돌아가기
+          </button>
         </div>
       </div>
-      <Footer />
     </div>
   );
 }
