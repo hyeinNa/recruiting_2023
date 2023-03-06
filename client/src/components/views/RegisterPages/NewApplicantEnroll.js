@@ -28,7 +28,6 @@ function NewApplicantEnroll() {
     setFilename(e.target.files[0].name); //주석 설명
   };
   const [cardinalNum, setCardinalNum] = useState("");
-  const [pass, setPass] = useState("");
   useEffect(() => {
     axios
       .post("/api/var/load", {
@@ -73,7 +72,6 @@ function NewApplicantEnroll() {
       let message = response.data.message;
       if (status === "ok") {
         //register api의 message출력
-        setPass("default");
         console.log(message);
         // alert("지원해주셔서 감사합니다.");
         window.location.replace("/register/success");
