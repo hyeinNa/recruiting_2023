@@ -29,6 +29,7 @@
   font-size: 45px;
   font-weight: 600;
   color: var(--title-color);
+  word-break: keep-all;
 }
 .marketing_description {
   font-size: 17px;
@@ -66,6 +67,7 @@
   margin-bottom: 40px;
 }
 .marketing_part2_img_wrapper img {
+  width: 100%;
 }
 .marketing_part3_contianer {
   display: flex;
@@ -80,6 +82,7 @@
 }
 .marketing_part3_sponsoredCompany_wrapper {
   width: 90%;
+  margin-top: 20px;
   margin-bottom: 50px;
 }
 .marketing_part3_sponsoredCompany_wrapper img {
@@ -108,11 +111,11 @@
 }
 .marketing_part4_detail_btn {
   margin-top: 50px;
-  width: 30%;
+  width: 35%;
   margin-bottom: 200px;
   display: flex;
   flex-direction: row;
-  justify-content: space-between;
+  justify-content: center;
   align-items: center;
   padding: 8px 18px;
 }
@@ -121,14 +124,136 @@
   border-radius: 30px;
 }
 .marketing_part4_detail_btn_img_wrapper {
-  width: 24%;
+  width: 20%;
 }
 .marketing_part4_detail_btn_img_wrapper img {
   width: 100%;
 }
 .marketing_part4_detail_btn_label {
   width: 70%;
+  font-size: 24px;
   color: var(--ewhaian-pink);
-  font-size: 28px;
   font-weight: 700;
+  text-align: center;
+  margin-left: 8px;
+}
+.marketing_description2 {
+  margin-top: 12px;
+}
+/* SNS 마케팅 프로세스 */
+.marketing_part2_process_container {
+  width: 100%;
+  height: 230px;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+  align-items: flex-end;
+  margin-bottom: 50px;
+  margin-top: 20px;
+}
+.sns_process_step_wrapper {
+  display: flex;
+  height: 100%;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: center;
+}
+.sns_process_step_img_wrapper {
+  width: 150px;
+  height: 150px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  border-radius: 25px;
+  background-color: var(--toneDown-white);
+  margin-top: 15px;
+}
+.sns_process_step_img_wrapper img {
+  width: 70%;
+}
+.sns_process_label {
+  color: var(--ewhaian-pink);
+  font-size: 15px;
+  font-weight: 600;
+  padding: 6px 30px;
+  border: solid 1px var(--ewhaian-pink);
+  border-radius: 30px;
+  text-align: center;
+  word-break: keep-all;
+}
+.sns_process_arrow img {
+  height: 18px;
+  margin-bottom: 3px;
+}
+.step2_img,
+.step3_img,
+.step4_img {
+  width: 76% !important;
+}
+.sns_process_step12,
+.sns_process_step34 {
+  display: contents;
+}
+@media screen and (max-width: 950px) {
+  .marketing_part2_process_container {
+    flex-wrap: wrap;
+    height: auto;
+    justify-content: space-around;
+  }
+  .sns_process_step12,
+  .sns_process_step34 {
+    width: 80%;
+    display: flex;
+    flex-direction: row;
+    align-items: flex-end;
+    justify-content: space-evenly;
+  }
+  .sns_process_label {
+    margin-top: 10px;
+  }
+  .sns_process_step_img_wrapper {
+    width: 180px;
+    height: 180px;
+  }
+  #arrow2 {
+    display: none;
+  }
+}
+@media screen and (max-width: 700px) {
+  .sns_process_step_img_wrapper {
+    width: 130px;
+    height: 130px;
+  }
+  .marketing_part4_detail_btn_label {
+    font-size: 20px;
+  }
+}
+@media screen and (max-width: 480px) {
+  .marketing_title {
+    font-size: 30px;
+  }
+  .marketing_description {
+    font-size: 17px;
+  }
+  .sns_process_label {
+    font-size: 12px;
+  }
+  .sns_process_step12,
+  .sns_process_step34 {
+    align-items: flex-start;
+  }
+  .sns_process_arrow {
+    display: none;
+  }
+  .marketing_part4_detail_btn_label {
+    font-size: 15px;
+    margin-left: 2px;
+  }
+  .sns_process_label {
+    padding: 4px 12px;
+  }
+  .marketing_part3_sponsoredCompany_wrapper {
+    margin-bottom: 5px;
+  }
 }

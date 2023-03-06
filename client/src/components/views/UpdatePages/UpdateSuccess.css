@@ -64,3 +64,16 @@
     cursor: pointer;
     transition: 0.3s;
 }
+
+@media screen and (max-width: 768px) {
+    .success_text {
+        width: 100%;
+        text-align: center;
+        font-size: var(--mobile-success-text-font-size);
+        font-weight: var(--mobile-success-text-font-weight);
+        letter-spacing: 2px;
+        color: var(--toneDown-white);
+        margin-top: 2%;
+        line-height: var(--mobile-success-text-line-height);
+    }
+}

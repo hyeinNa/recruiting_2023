@@ -10,8 +10,7 @@ const applyList = (req, res) => {
     // 마케팅 팀 지원자 정보 전송
     if (team === "1") {
         try {
-            console.log("실행1");
-            Applicant.find({ team: "마케팅" }, function (error, data) {
+            Applicant.find({ team: "1" }, function (error, data) {
                 res.json({ result: data });
             })
         } catch (err) {
@@ -21,7 +20,7 @@ const applyList = (req, res) => {
     //디자인 팀 지원자 정보 전송
     else if (team === "2") {
         try {
-            Applicant.find({ team: "디자인" }, function (error, data) {
+            Applicant.find({ team: "2" }, function (error, data) {
                 res.json({ result: data });
             })
         } catch (err) {
@@ -31,7 +30,7 @@ const applyList = (req, res) => {
     //웹개발 팀 지원자 정보 전송. team===3
     else {
         try {
-            Applicant.find({ team: "웹개발" }, function (error, data) {
+            Applicant.find({ team: "3" }, function (error, data) {
                 res.json({ result: data });
             })
         } catch (err) {
@@ -43,22 +42,18 @@ const applyList = (req, res) => {
 
 
 //지원자의 합불 여부를 결정
-const selectPass = (req, res) => {
-    const { name, studentId, ewhaianId, pass, key } = req.body;
+const selectPass = async (req, res) => {
+    const { _id, pass } = req.body;
 
     try {
-        Applicant.find(
-            {
-                name: name,
-                studentId: studentId,
-                ewhaianId: ewhaianId,
-            },
-            {   //합불여부, key update
-                pass: pass,
-                key: key,
+        const data = await Applicant.findByIdAndUpdate(
+            _id, {
+            $set: {
+                pass,
             }
-        )
-        res.json({
+        });
+
+        return res.json({
             message: "수정 완료",
         });
     }
@@ -68,6 +63,6 @@ const selectPass = (req, res) => {
     }
 }
 
-applicantListRouter.route("/").get(applyList).post(selectPass);
+applicantListRouter.route("/").get(applyList).put(selectPass);
 
 module.exports = applicantListRouter;

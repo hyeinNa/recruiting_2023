@@ -7,4 +7,5 @@
 }
 * {
   font-family: "Pretendard-Regular";
+  word-break: keep-all;
 }

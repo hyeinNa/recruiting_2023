@@ -5,6 +5,7 @@
   --nav-bar-max-width: 1140px;
   --header-menu-hover-border-radius: 15px;
 }
+
 .nav_bar {
   position: fixed;
   z-index: 1;
@@ -13,12 +14,14 @@
   left: 0;
   background-color: var(--toneDown-black);
 }
+
 .nav_bar_container {
   max-width: var(--nav-bar-max-width);
   width: 100%;
   height: 100%;
   margin: auto;
 }
+
 .nav_bar_inner_container {
   width: 92%;
   height: 100%;
@@ -27,20 +30,24 @@
   justify-content: space-between;
   margin: 0 auto;
 }
+
 a {
   text-decoration: none;
   color: var(--toneDown-white);
   font-size: var(--header-font-size);
 }
+
 .nav_bar_logoImg {
   width: var(--header-logo-size);
 }
+
 .nav_bar_apply_btn_container {
   display: flex;
   flex-direction: row;
   justify-content: center;
   align-items: center;
 }
+
 .nav_apply_btns {
   padding: 4px 12px;
   border-radius: var(--header-menu-hover-border-radius);
@@ -48,63 +55,77 @@ a {
   border: solid;
   border-width: 1px;
 }
+
 .nav_apply_btns:hover {
   background-color: var(--ewhaian-pink);
 }
+
 .nav_apply_btns:hover .nav_apply_btn_text {
   color: var(--toneDown-white);
 }
+
 #nav_register_btn {
   margin-right: 20px;
 }
+
 .nav_bar_menu {
   display: flex;
   list-style-type: none;
   padding-left: 0;
 }
+
 .nav_bar_menu li {
   padding: 4px 12px;
 }
+
 .nav_bar_content_btn_container {
   display: flex;
   flex-direction: row;
   margin-left: 2vw;
 }
+
 .nav_bar_menu li:hover {
   background-color: var(--header-hover);
   border-radius: var(--header-menu-hover-border-radius);
 }
+
 .nav_bar_toggleBtn {
   position: absolute;
   right: 22px;
   display: none;
   padding-top: 4px;
 }
+
 .nav_bar_toggleBtn img {
   width: 20px;
 }
+
 @media screen and (max-width: 768px) {
   .nav_bar_inner_container {
     flex-direction: column;
     align-items: flex-start;
     padding: 13px 23px;
   }
+
   .nav_bar_menu {
     display: var(--mobile-menu-display);
     width: 100%;
     flex-direction: column;
     align-items: center;
   }
+
   .nav_bar_menu li {
     width: 80%;
     text-align: center;
     padding: 8px 12px;
   }
+
   .nav_bar_content_btn_container {
     flex-direction: column;
     margin: 0 auto;
     margin-top: 10px;
   }
+
   .nav_bar_toggleBtn {
     display: block;
   }

@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import BackBtn from "../../../utilis/BackBtn";
 import "./DesignDetailActivity.css";
 import PopupBackground from "./popup/PopupBackground";
@@ -149,7 +149,7 @@ function DesignDetailActivity() {
                 <div className="design_subContent_label">로고 리뉴얼</div>
               </div>
             </div>
-            <div className="popup">
+            <div className="popup" id="popup">
               {isPopOpen ? selectComponent[popupContent] : null}
             </div>
           </div>

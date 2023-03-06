@@ -18,6 +18,7 @@
   font-size: 45px;
   font-weight: 600;
   color: var(--title-color);
+  text-align: center;
 }
 .web_detail_activity_description {
   font-size: 17px;
@@ -46,8 +47,6 @@
   width: 100%;
   margin-top: 70px;
 }
-.webProject_year_btns_container {
-}
 .webProject_year_btn {
   background-color: var(--teamInfo-bg-color);
   border: 0;
@@ -74,8 +73,9 @@
   width: 100%;
   margin-top: 18px;
   margin-bottom: 90px;
-  display: flex;
-  flex-direction: row;
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr 1fr;
+  gap: 10px;
 }
 .part1_project_content {
   max-width: 192px;
@@ -96,6 +96,7 @@
   color: var(--title-color);
   margin-bottom: 5px;
   margin-top: 70px;
+  text-align: center;
 }
 .part2_img_container {
   width: 100%;
@@ -125,6 +126,7 @@
   flex-direction: row;
   align-items: flex-end;
   justify-content: center;
+  flex-wrap: wrap;
 }
 .process_step_wrapper {
   display: flex;
@@ -151,12 +153,15 @@
   border: 1.1px solid var(--ewhaian-pink);
   border-radius: 15px;
   padding: 4px 13px;
+  text-align: center;
+  margin-top: 10px;
 }
 .process_label {
   color: var(--ewhaian-pink);
   font-size: 12px;
   font-weight: 500;
-  margin-bottom: 5px;
+  margin-bottom: -5px;
+  margin-top: 10px;
 }
 .part2_description {
   margin-top: 40px;
@@ -240,4 +245,36 @@
   border-radius: 15px;
   border: 1px solid rgba(255, 255, 255, 0.5);
   margin-top: 5%;
+}
+/*웹 프로젝트 팝업*/
+.webProjectPopup {
+  width: 100%;
+  position: absolute;
+  top: 0;
+}
+@media screen and (max-width: 700px) {
+}
+@media screen and (max-width: 480px) {
+  .web_detail_activity_title {
+    font-size: 30px;
+  }
+  .web_deatil_activity_subTitle {
+    font-size: 16px;
+  }
+  .webProject_year_btn {
+    font-size: 14px;
+    padding: 10px 20px;
+  }
+  .part1_projects_content_wrapper {
+    grid-template-columns: 1fr 1fr 1fr;
+  }
+  .part2_statistic_container {
+    flex-direction: column;
+  }
+  .part2_statistic_img_wrapper {
+    width: 60%;
+  }
+  .part2_statistic_description {
+    font-size: 18px;
+  }
 }

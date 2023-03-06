@@ -51,13 +51,6 @@
   margin-top: 32px;
   margin-bottom: 100px;
 }
-.popup_img_container_webProject {
-  margin-top: 32px;
-  margin-bottom: 100px;
-  display: flex;
-  flex-direction: column;
-  overflow-y: auto;
-}
 .popup_exitBtn_wrapper {
   width: 30px;
   height: 30px;
@@ -66,8 +59,8 @@
   position: absolute;
   top: 0;
   right: 0;
-  margin-top: 43px;
-  margin-right: 45px;
+  margin-top: 10%;
+  margin-right: 8%;
   box-shadow: 8px 6px 4px 0px rgba(0, 0, 0, 0.3) inset;
   display: flex;
   flex-direction: row;
@@ -77,10 +70,13 @@
 .popup_exitBtn_x {
   width: 50%;
   height: 50%;
+  position: relative;
 }
 .popup_exitBtn_x img {
   width: 100%;
   visibility: hidden;
+  position: absolute;
+  top: 0;
 }
 .popup_exitBtn_x:hover > .popup_xBtn {
   visibility: visible;
@@ -90,4 +86,26 @@
 }
 .popup_img1 {
   margin-bottom: 20px;
+}
+@media screen and (max-width: 700px) {
+  .popup_container {
+    width: 90%;
+  }
+  .popup_exitBtn_wrapper {
+    width: 24px;
+    height: 24px;
+  }
+}
+
+@media screen and (max-width: 480px) {
+  .popup_container {
+    width: 100%;
+  }
+  .popup_exitBtn_wrapper {
+    width: 20px;
+    height: 20px;
+  }
+  .popup_content_title {
+    font-size: 27px;
+  }
 }
