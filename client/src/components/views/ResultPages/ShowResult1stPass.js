@@ -74,7 +74,7 @@ function ShowResult1stPass(props) {
           <div className="register_showResult_interview_date">
             면접일정 : {interviewPeriod}
             <br />
-            면접장소 : {surveyFormLink}
+            면접장소 : {faceTofaceInterviewPlace}
           </div>
           <ul className="register_showResult_interview_content">
             <li>

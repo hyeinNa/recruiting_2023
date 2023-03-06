@@ -3,6 +3,8 @@ import { useState, useEffect } from "react";
 import axios from "axios";
 import ShowResult1stPass from "./ShowResult1stPass";
 import ShowResultFail from "./ShowResultFail";
+import ShowResultFinal from "./ShowResultFinal";
+
 function ShowResult() {
   //url에서 지원자 고유 id 알아내기
   const pathName = window.location.pathname;
@@ -43,10 +45,12 @@ fail : 불합격
         <ShowResult1stPass name={inputs.name} team={inputs.team} />
       </div>
     );
-  } else if (inputs.pass === "finalPass") {
+  }
+  else if (inputs.pass === "finalPass") {
     console.log(inputs.pass);
     return <div>{inputs.pass}</div>;
-  } else if (inputs.pass === "fail") {
+  }
+  else if (inputs.pass === "fail") {
     console.log(inputs.pass);
     return (
       <div>

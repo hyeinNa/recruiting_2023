@@ -128,8 +128,6 @@
     align-items: left;
     justify-content: flex-start;
 }
-
-
 .register_showResult_masterTraining_info {
     font-weight: 700;
     font-size: 27px;
@@ -151,3 +149,4 @@
     line-height: 28px;
     color: #C8C7C7;
 }
+
