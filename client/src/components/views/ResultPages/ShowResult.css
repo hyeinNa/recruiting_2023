@@ -1,5 +1,12 @@
 :root {
-    --register-showResult-main-content-font-size: 35.5px;
+    --register-showResult-main-content-font-size: 32px;
+    --register-showResult-main-content-description-font-size: 20px;
+    --register-showResult-interview-date-font-size: 24px;
+    --register-showResult-interview-content-font-size: 16px;
+    --register-showResult-masterTraining-info-font-size: 24px;
+    --register-showResult-masterTraining-description-font-size: 16px;
+    --register-showResult-list-line-height: 28px;
+    --register-showResult-masterTraining-end-font-size: 20px;
 }
 
 .register_showResult {
@@ -24,79 +31,84 @@
     display: flex;
     flex-direction: column;
     align-items: left;
-    justify-content: flex-start;
+    justify-content: center;
 }
 
 .register_showResult_main_content_container {
-    width: 92%;
+    width: 100%;
     height: 100%;
-    margin: 0 auto;
+    margin-top: 5%;
     display: flex;
     flex-direction: column;
     align-items: left;
-    justify-content: flex-start;
+    justify-content: center;
 }
 
 .register_showResult_main_content {
-    font-size: 35.5px;
+    margin-top: 3%;
+    margin-bottom: 3%;
+    font-size: var(--register-showResult-main-content-font-size);
     font-weight: 700;
     line-height: 43px;
     letter-spacing: 2px;
     color: var(--toneDown-white);
-    margin-top: 5%;
+
 }
 
 .register_showResult_main_content_description {
-    font-size: 23px;
+    font-size: var(--register-showResult-main-content-description-font-size);
     font-weight: 400;
-    line-height: 28px;
+    line-height: var(--register-showResult-list-line-height);
     text-align: left;
-    color: #C8C7C7;
+    margin-bottom: 1%;
+    color: var(--gray-white);
 }
 
 
 .register_showResult_main_content_survey_container {
-    display: inline-block;
+    display: flex;
+
 }
 
 .register_showResult_main_content_survey {
-    font-size: 23px;
+    font-size: var(--register-showResult-main-content-description-font-size);
     font-weight: 400;
     line-height: 28px;
     text-align: left;
-    color: #C8C7C7;
+    color: var(--gray-white);
 }
 
-.register_showResult_main_content_survey {
-    font-size: 23px;
+.register_showResult_main_content_survey_link {
+    font-size: var(--register-showResult-main-content-description-font-size);
     font-weight: 400;
     line-height: 28px;
     text-align: left;
+    margin-left: 2%;
     color: var(--ewhaian-pink);
 }
 
 .register_showResult_interview_container {
     width: 92%;
     height: 100%;
-    margin: 0 auto;
+    margin-top: 5%;
     display: flex;
     flex-direction: column;
     align-items: left;
-    justify-content: flex-start;
+    justify-content: center;
 }
 
 .register_showResult_interview_date {
     font-weight: 700;
-    font-size: 27px;
+    font-size: var(--register-showResult-interview-date-font-size);
     line-height: 40px;
     color: var(--ewhaian-pink);
 }
 
 .register_showResult_interview_content {
     font-weight: 400;
-    font-size: 19px;
-    line-height: 23px;
-    color: #D9D9D9;
+    font-size: var(--register-showResult-interview-content-font-size);
+    line-height: 28px;
+    color: var(--gray-white);
 }
 
 .register_showResult_back_to_main_container {
@@ -115,7 +127,7 @@
     font-weight: 400;
     font-size: 17px;
     line-height: 21px;
-    color: #C8C7C7;
+    color: var(--gray-white);
     align-self: center;
 }
 
@@ -128,25 +140,26 @@
     align-items: left;
     justify-content: flex-start;
 }
+
 .register_showResult_masterTraining_info {
+    margin-top: 3%;
     font-weight: 700;
-    font-size: 27px;
+    font-size: var(--register-showResult-masterTraining-info-font-size);
     line-height: 33px;
-    color: var(--ewhaian-pink)
+    color: var(--ewhaian-pink);
 }
 
 .register_showResult_masterTraining_description {
+    margin-bottom: 3%;
     font-weight: 400;
-    font-size: 19px;
-    line-height: 137.02%;
+    font-size: var(--register-showResult-masterTraining-description-font-size);
+    line-height: var(--register-showResult-list-line-height);
     /* or 26px */
-    color: #D9D9D9;
+    color: var(--gray-white);
 }
 
 .register_showResult_masterTraining_end {
     font-weight: 400;
-    font-size: 23px;
-    line-height: 28px;
-    color: #C8C7C7;
+    font-size: var(--register-showResult-masterTraining-end-font-size);
+    color: var(--gray-white);
 }
-
