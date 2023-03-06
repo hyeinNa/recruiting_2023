@@ -12,11 +12,21 @@ function LandingPage() {
     <div>
       <Header />
       <div className="between_wrapper">
-        <EwhaianInfo />
-        <TeamInfo />
-        <Event />
-        <Activities />
-        <QnA />
+        <div id="ewhaianInfo">
+          <EwhaianInfo />
+        </div>
+        <div id="teamInfo">
+          <TeamInfo />
+        </div>
+        <div id="event">
+          <Event />
+        </div>
+        <div id="activities">
+          <Activities />
+        </div>
+        <div id="qna">
+          <QnA />
+        </div>
       </div>
       <Footer />
     </div>
