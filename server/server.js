@@ -26,9 +26,10 @@ const applicantListRouter = require("./routes/applicantList");
 //body-parser 관련 코드
 app.use(bodyParser.urlencoded({ extended: true }));
 app.use(bodyParser.json());
-app.use("/uploads", express.static("uploads"));
 //호스팅 위해 필요한 코드 부분
 app.use(express.static(path.join(__dirname, "client/build")));
+app.use("/uploads", express.static("uploads"));
+
 //session middleware 추가
 app.use(
   session({
