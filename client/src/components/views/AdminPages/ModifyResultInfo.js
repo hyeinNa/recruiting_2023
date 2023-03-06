@@ -244,6 +244,7 @@ function ModifyResultInfo() {
               value={interviewWaitingPlace || ""}
               onChange={onChange}
               required
+              placeholder="면접 대기 장소(대기 가능 시간)"
             />
           </div>
           <div className=" recruitInfo_forms">
