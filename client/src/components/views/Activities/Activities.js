@@ -13,7 +13,7 @@ function Activities() {
                 {/*data.json 파일의 경우 최근 것을 위에 추가해주면 됨 */}
                 {activitydata.activity
                     ? activitydata.activity.map((a => {
-                        return <Activity name={a.name} text={a.text} img_path={a.img_path} ></Activity>
+                        return <Activity name={a.name} text={a.text} img_path={a.img_path} link={a.link}></Activity>
                     }))
                     : <div></div>
                 }

@@ -1,27 +1,11 @@
 import React from "react";
-// 이벤트 페이지로 스크롤
-function GoToEvent() {
-    {
-        window.innerWidth > 769 ?
-            window.scrollTo({
-                top: 2400, behavior: "smooth"
-            })
-            :
-            window.innerWidth > 425 ?
-                window.scrollTo({
-                    top: 2550, behavior: "smooth"
-                })
-                : window.scrollTo({
-                    top: 2200, behavior: "smooth"
-                })
-
-    }
-}
+import { Link } from "react-router-dom";
 
 function Acivity(props) {
     var activity_name = props.name;
     var activity_date = props.text;
     var img_path = props.img_path;
+    var activity_link = props.link;
 
     return (
         <div className="EachActivity">
@@ -29,8 +13,8 @@ function Acivity(props) {
                 <div className="ActivityName">{activity_name}</div>
                 <div className="ActivityDate">{activity_date}</div>
             </div>
-            <button className="LinkToEventSketch" onClick={GoToEvent} >
-                이벤트 스케치 바로가기</button>
+            <Link to={activity_link} className="LinkToEventSketch"  >
+                이벤트 스케치 바로가기</Link>
 
             <div className="TurnToImg">
                 <img src={img_path}></img>

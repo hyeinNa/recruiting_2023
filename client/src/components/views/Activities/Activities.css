@@ -5,7 +5,7 @@
     /*Activities 페이지 전체 일괄적용*/
     background-color: var(--toneDown-black);
     color: var(--toneDown-white);
-    /* width: 100%; */
+    width: 100%;
     /* font: font.css에서 일괄적용됨 */
     /* font-family: "Pretendard-Regular"; */
 }
@@ -86,17 +86,19 @@
 }
 
 .LinkToEventSketch {
-    width: 100%;
+    /* width: 100%; */
     font-style: normal;
     font-weight: 400;
     font-size: 9px;
-    line-height: 0.5;
+    line-height: 1;
     text-decoration-line: underline;
     text-align: right;
+    margin-left: 175px;
     color: #9A9A9A;
     background-color: transparent;
     padding: 0;
     border: 0;
+    margin-bottom: 5px;
 }
 
 .ActivitiesAll {
@@ -191,7 +193,7 @@
         /* width: 94px; */
         width: 130px;
         height: 171.5px;
-        /* align-items: flex-start; */
+        align-items: flex-start;
         justify-content: center;
     }
 
@@ -225,11 +227,12 @@
     }
 
     .LinkToEventSketch {
-        width: 100%;
+
         font-weight: 300;
         font-size: 10px;
         zoom: 0.7;
         line-height: 1;
+        margin-left: 160px;
         text-align: right;
         text-decoration-line: underline;
         background-color: transparent;
@@ -277,6 +280,9 @@
 
 /*그 외 모바일*/
 @media screen and (min-width:391px) and (max-width: 768px) {
+    .ActivitiesBackGround {
+        width: 100%;
+    }
 
     .ActivitiesHeader {
         font-weight: 600;
@@ -311,12 +317,12 @@
         display: flex;
         width: 256.1px;
         height: 337.9px;
-        /* align-items: flex-start; */
+        align-items: flex-start;
         justify-content: center;
     }
 
     .TurnToImg img {
-        width: 256.1px;
+        max-width: 256.1px;
         max-height: 337.9px;
         object-fit: scale-down;
 
@@ -330,7 +336,7 @@
 
     .ActivityName {
         font-weight: 600;
-        font-size: 20px;
+        font-size: 17px;
         line-height: 1;
         margin-bottom: 8px;
 
@@ -344,14 +350,15 @@
     }
 
     .LinkToEventSketch {
-        width: 100%;
+        margin-left: 160px;
         font-weight: 300;
         font-size: 10px;
         line-height: 1;
         text-align: right;
         text-decoration-line: underline;
         background-color: transparent;
-        margin-bottom: 5px;
+        border-bottom: 5px solid transparent;
+        margin-bottom: 0;
     }
 
     .ActivitiesAll {
