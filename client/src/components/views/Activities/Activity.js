@@ -13,8 +13,10 @@ function Acivity(props) {
                 <div className="ActivityName">{activity_name}</div>
                 <div className="ActivityDate">{activity_date}</div>
             </div>
-            <Link to={activity_link} className="LinkToEventSketch"  >
-                이벤트 스케치 바로가기</Link>
+            <div className="LinkToEventSketch">
+                <Link to={activity_link} className="GoToEventSketch" >
+                    이벤트 스케치 바로가기</Link></div>
+
 
             <div className="TurnToImg">
                 <img src={img_path}></img>
