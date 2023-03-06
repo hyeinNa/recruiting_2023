@@ -3,8 +3,3 @@
   flex-direction: column;
   margin-top: 53px;
 }
-@media screen and (max-width: 768px) {
-  .between_wrapper {
-    padding-top: 54.53px;
-  }
-}
