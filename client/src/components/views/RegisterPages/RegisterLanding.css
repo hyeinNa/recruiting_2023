@@ -73,17 +73,25 @@
 /* hover 시 효과 */
 .register_landing_applicant_type_existing_container:hover {
   background-color: var(--ewhaian-pink);
+  cursor: pointer;
+  transition: 0.3s;
 }
 .register_landing_applicant_type_existing_container:hover
   .existing_applicant_description {
   color: var(--toneDown-white);
+  cursor: pointer;
+  transition: 0.3s;
 }
 .register_landing_applicant_type_new_container:hover {
   background-color: var(--ewhaian-pink);
+  cursor: pointer;
+  transition: 0.3s;
 }
 .register_landing_applicant_type_new_container:hover
   .new_applicant_description {
   color: var(--toneDown-white);
+  cursor: pointer;
+  transition: 0.3s;
 }
 .register_landing_border_style {
   border: solid;

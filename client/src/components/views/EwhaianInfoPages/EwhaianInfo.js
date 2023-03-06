@@ -8,7 +8,7 @@ function EwhaianInfo() {
   const [visibleMarketing, doesRecruitMarketing] = useState(true);
   const [visibleDesign, doesRecruitDesign] = useState(true);
   const [visibleWebDev, doesRecruitWebDev] = useState(true);
-  const [apply, isApplicationPeriod] = useState(true);
+  const [isApplicationPeriod, setApplicationPeriod] = useState(true);
   const [applicationSubmission, applicationSubmissionPeriod] = useState("");
   const [firstPresentation, firstPresentationPeriod] = useState("");
   const [interview, interviewPeriod] = useState("");
@@ -28,10 +28,11 @@ function EwhaianInfo() {
       })
       .then((response) => {
         console.log(response.data);
-        if (response.data.isInDB === "true") {
-          isApplicationPeriod(response.data.isApplicationPeriod);
+        if (response.data.isInDB === "false") {
+          setApplicationPeriod(false);
+
         } else {
-          isApplicationPeriod(false);
+          setApplicationPeriod(response.data.isApplicationPeriod);
         }
       });
   }, []);
@@ -244,10 +245,16 @@ function EwhaianInfo() {
             <div className="info_recruitment_register">
               <div className="info_recruitment_menu">
                 <div className="info_recruitment_menu_list_1">
-                  <button type="button" id="applybutton" onClick={ApplyStatus}>지원하기</button>
+                  <button type="button" id="applybutton" onClick={ApplyStatus}>
+                    <div className="apply_btns_text">지원하기</div>
+                  </button>
                 </div>
                 <div className="info_recruitment_menu_list_2">
-                  <button type="button" id="checkbutton">결과확인</button>
+                  <button type="button" id="checkbutton" onClick={() => {
+                    window.location.replace("/result/checkinfo");
+                  }}>
+                    <div className="apply_btns_text">결과확인</div>
+                  </button>
                 </div>
 
 

@@ -1,9 +1,5 @@
 .between_wrapper {
   display: flex;
   flex-direction: column;
-}
-@media screen and (max-width: 768px) {
-  .between_wrapper {
-    padding-top: 54.53px;
-  }
+  margin-top: 53px;
 }

@@ -7,13 +7,15 @@
   left: 0;
   position: absolute;
   width: 100%;
-  padding-bottom: 100.36%;
+  padding-bottom: 101%;
   border-radius: 25px;
   background-color: rgba(37, 37, 37, 0.63);
   visibility: hidden;
 }
 .webProject:hover > .webProjectHover {
   visibility: visible;
+  cursor: pointer;
+  transition: 0.3s;
 }
 .webProject img {
   width: 100%;

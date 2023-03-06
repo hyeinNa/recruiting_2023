@@ -59,19 +59,23 @@ function ApplicantList() {
   //합불 선택자 DB에 전송
   const changePass = () => {
     const pass = document.getElementById("pass"); //select box id 가져오기
-    const _id = pass.options[pass.selectedIndex].value; //검색할 학번 가져오기
-    let result;
-    if (pass.selectedIndex === 0) result = "pass"; //0번 index 선택 시 pass 전달
-    else result = "nonpass";                      // 1번 index 선택 시 nonpass 전달
+    const _id = pass.options[pass.selectedIndex].value; //수정할 id 가져오기
+    let input;
+    if (pass.selectedIndex === 0) input = "default"; //
+    else if (pass.selectedIndex === 1) input = "1stPass";
+    else if (pass.selectedIndex === 2) input = "finalPass";
+    else input = "fail";
+    console.log("index", pass.selectedIndex);
+    console.log("input:", input);
 
     // 서버의 selectPass 함수로 전달
-    axios.put("/api/applicantlist", {
+    axios.put("/api/applicantlist/selectPass", {
       _id: _id,
-      pass: result
+      pass: input
     })
       .then((response) => {
         console.log(response.data.message);
-        console.log(arr[0].pass);
+        console.log(response.result);
       })
       .catch((error) => {
         console.error(error);
@@ -80,7 +84,7 @@ function ApplicantList() {
 
   //서버에서 지원자 DB 받아오기
   const GetList = (team) => {
-    axios.get("/api/applicantlist", { params: { team: team } })
+    axios.get("/api/applicantlist/applyList", { params: { team: team } })
       .then((response) => {
         //객체를 배열로
         const data = Object.entries(response.data);
@@ -103,20 +107,28 @@ function ApplicantList() {
   }
 
   //서버에서 지원자 파일 다운로드
-  const handleFileDownload = async (title) => {
-    const url = "server/uploads/" + title;
-    const response = await fetch(url);
-    const file = await response.blob();
-    const downloadUrl = window.URL.createObjectURL(file); // 해당 file을 가리키는 url 생성
+  const handleFileDownload = async (title, e) => {
+    console.log(title)
+    try { //고유 id 및 폼에 입력받은 정보를 수정하기 api로 전달
+      const response = await axios.get("/api/applicantlist/download", {
+        fileName: title
+      });
+      /* const url = "server/uploads/" + title;
+      const response = await fetch(url); */
+      /* const file = await response.blob();
+      const downloadUrl = window.URL.createObjectURL(file); // 해당 file을 가리키는 url 생성
 
-    const anchorElement = document.createElement('a');
-    document.body.appendChild(anchorElement);
-    anchorElement.download = title; // a tag에 download 속성을 줘서 클릭할 때 다운로드가 일어날 수 있도록 함. 공백은 기본값
-    anchorElement.href = downloadUrl; // href에 url 달아주기
+      const anchorElement = document.createElement('a');
+      document.body.appendChild(anchorElement);
+      anchorElement.download = title; // a tag에 download 속성을 줘서 클릭할 때 다운로드가 일어날 수 있도록 함. 공백은 기본값
+      anchorElement.href = downloadUrl; // href에 url 달아주기
 
-    anchorElement.click();
+      anchorElement.click(); */
+    }
+    catch (error) {
+      console.log(error.response);
+    }
   }
-
 
 
   return (
@@ -154,12 +166,14 @@ function ApplicantList() {
               <div>{appli.ewhaianId}</div>
               <div>
                 <select id="pass" onChange={() => changePass()}>
-                  <option value={appli._id} value2="pass">합격</option>
-                  <option value={appli._id} value2="nonpass">불합격</option>
+                  <option value={appli._id} >선택</option>
+                  <option value={appli._id} >서류합격</option>
+                  <option value={appli._id} >최종합격</option>
+                  <option value={appli._id} >불합격</option>
                 </select>
               </div>
               <div>면접 일정</div>
-              <div ><button type="button" onClick={() => handleFileDownload(appli.applicant)}>
+              <div ><button type="button" onClick={(e) => handleFileDownload(appli.applicant, e)}>
                 <img src="/img/admin/application.png" alt="download" /></button></div>
             </p>
           ))}

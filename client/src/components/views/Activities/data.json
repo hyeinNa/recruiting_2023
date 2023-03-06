@@ -3,37 +3,44 @@
         {
             "name": "이화이언 스무 번째 봄",
             "text": "2021.05.17~2021.05.23",
-            "img_path": "/img/activities/2021_20th_spring.png"
+            "img_path": "/img/activities/2021_20th_spring.png",
+            "link": "http://www.ewhaian.com/Ewha_board/Ewha_View.asp?psize=1&page=1&es_idx=0&ct_idx=0&bm_idx=11&sfield=&bp_idx=2030159&orderby=0&startDt=2001-01-01&endDt=2023-03-06&sword_type=&inputTagList=&bordtype=&sword=&useSdate=&sword2=6749476"
         },
         {
             "name": "배꽃정원",
             "text": "2020.11.16~2020.11.22",
-            "img_path": "/img/activities/2020_pearflower.png"
+            "img_path": "/img/activities/2020_pearflower.png",
+            "link": "http://www.ewhaian.com/Ewha_board/Ewha_View.asp?psize=1&page=1&es_idx=0&ct_idx=0&bm_idx=11&sfield=&bp_idx=1953722&orderby=0&startDt=2001-01-01&endDt=2023-03-06&sword_type=&inputTagList=&bordtype=&sword=&useSdate=&sword2=9419809"
         },
         {
             "name": "이화이언 사이버 캠퍼스",
             "text": "2020.05.13~2020.05.29",
-            "img_path": "/img/activities/2020_cybercampus.png"
+            "img_path": "/img/activities/2020_cybercampus.png",
+            "link": "http://www.ewhaian.com/Ewha_board/Ewha_View.asp?psize=1&page=1&es_idx=0&ct_idx=0&bm_idx=11&sfield=&bp_idx=1896845&orderby=0&startDt=2001-01-01&endDt=2023-03-06&sword_type=&inputTagList=&bordtype=&sword=&useSdate=&sword2=1408811"
         },
         {
             "name": "배꽃정원",
             "text": "2019.11.21",
-            "img_path": "/img/activities/2019_pearflower.png"
+            "img_path": "/img/activities/2019_pearflower.png",
+            "link": "http://www.ewhaian.com/Ewha_board/Ewha_View.asp?psize=1&page=1&es_idx=0&ct_idx=0&bm_idx=11&sfield=&bp_idx=1778635&orderby=0&startDt=2001-01-01&endDt=2023-03-06&sword_type=&inputTagList=&bordtype=&sword=&useSdate=&sword2=5515506"
         },
         {
             "name": "오월드림",
             "text": "2019.05.23",
-            "img_path": "/img/activities/2019_May.png"
+            "img_path": "/img/activities/2019_May.png",
+            "link": "http://www.ewhaian.com/Ewha_board/Ewha_View.asp?psize=1&page=1&es_idx=0&ct_idx=0&bm_idx=11&sfield=&bp_idx=1720733&orderby=0&startDt=2001-01-01&endDt=2023-03-06&sword_type=&inputTagList=&bordtype=&sword=&useSdate=&sword2=5449144"
         },
         {
             "name": "배꽃정원",
             "text": "2018.11.29",
-            "img_path": "/img/activities/2018_pearflower.png"
+            "img_path": "/img/activities/2018_pearflower.png",
+            "link": "http://www.ewhaian.com/Ewha_board/Ewha_View.asp?psize=1&page=1&es_idx=0&ct_idx=0&bm_idx=11&sfield=&bp_idx=1628376&orderby=0&startDt=2001-01-01&endDt=2023-03-06&sword_type=&inputTagList=&bordtype=&sword=&useSdate=&sword2=2992438"
         },
         {
             "name": "첫 번째 생일파티",
             "text": "2018.05.24",
-            "img_path": "/img/activities/2018_1st_birthday.png"
+            "img_path": "/img/activities/2018_1st_birthday.png",
+            "link": "http://www.ewhaian.com/Ewha_board/Ewha_View.asp?psize=1&page=1&es_idx=0&ct_idx=0&bm_idx=11&sfield=&bp_idx=1428124&orderby=0&startDt=2001-01-01&endDt=2023-03-06&sword_type=&inputTagList=&bordtype=&sword=&useSdate=&sword2=362556"
         }
     ]
 }

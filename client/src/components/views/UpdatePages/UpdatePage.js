@@ -97,7 +97,7 @@ function UpdatePage() {
         <div className="register_newEnroll_inner_container">
           <div className="register_newEnroll_title">지원 수정</div>
 
-          <form className="register_newEnroll_form_container" onSubmit={updateInfo}>
+          <form className="register_newEnroll_form_container">
             <div className="register_newEnroll_teamForm_wrapper">
               <div className="register_newEnroll_teamForm_radioBtn">
                 <input type="radio" name="team" value="1" onChange={onChange} required />마케팅팀
@@ -202,7 +202,7 @@ function UpdatePage() {
               <button
                 type="submit"
                 className="register_newEnroll_button"
-              //onClick={register}
+                onClick={updateInfo}
               >
                 확인
               </button>

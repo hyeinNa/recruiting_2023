@@ -82,18 +82,22 @@
 .subContent1 {
   margin-right: 20px;
   margin-bottom: 8px;
+  cursor: pointer;
 }
 .subContent2 {
   margin-left: 20px;
   margin-bottom: 8px;
+  cursor: pointer;
 }
 .subContent3 {
   margin-right: 20px;
   margin-top: 8px;
+  cursor: pointer;
 }
 .subContent4 {
   margin-left: 20px;
   margin-top: 8px;
+  cursor: pointer;
 }
 .design_detail_activity_part3_subContent_wrapper {
   width: 100%;

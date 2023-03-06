@@ -40,7 +40,13 @@ a {
 .nav_bar_logoImg {
   width: var(--header-logo-size);
 }
-
+.nav_bar_logo:hover {
+  border-radius: 25px;
+  background-color: rgba(208, 208, 208, 0.17);
+  padding: 4px 12px;
+  cursor: pointer;
+  transition: 0.3s;
+}
 .nav_bar_apply_btn_container {
   display: flex;
   flex-direction: row;
@@ -58,13 +64,17 @@ a {
 
 .nav_apply_btns:hover {
   background-color: var(--ewhaian-pink);
+  cursor: pointer;
+  transition: 0.3s;
 }
 
-.nav_apply_btns:hover .nav_apply_btn_text {
+.nav_apply_btns:hover .nav_apply_btns_text {
   color: var(--toneDown-white);
+  cursor: pointer;
+  transition: 0.3s;
 }
 
-#nav_register_btn {
+.nav_register_btn {
   margin-right: 20px;
 }
 
@@ -76,6 +86,9 @@ a {
 
 .nav_bar_menu li {
   padding: 4px 12px;
+  text-decoration: none;
+  color: var(--toneDown-white);
+  font-size: var(--header-font-size);
 }
 
 .nav_bar_content_btn_container {
@@ -87,6 +100,8 @@ a {
 .nav_bar_menu li:hover {
   background-color: var(--header-hover);
   border-radius: var(--header-menu-hover-border-radius);
+  cursor: pointer;
+  transition: 0.3s;
 }
 
 .nav_bar_toggleBtn {
