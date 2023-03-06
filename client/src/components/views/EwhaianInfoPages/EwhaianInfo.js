@@ -244,10 +244,16 @@ function EwhaianInfo() {
             <div className="info_recruitment_register">
               <div className="info_recruitment_menu">
                 <div className="info_recruitment_menu_list_1">
-                  <button type="button" id="applybutton" onClick={ApplyStatus}>지원하기</button>
+                  <button type="button" id="applybutton" onClick={ApplyStatus}>
+                    <div className="apply_btns_text">지원하기</div>
+                  </button>
                 </div>
                 <div className="info_recruitment_menu_list_2">
-                  <button type="button" id="checkbutton">결과확인</button>
+                  <button type="button" id="checkbutton" onClick={() => {
+                  window.location.replace("/result/checkinfo");
+                  }}>
+                    <div className="apply_btns_text">결과확인</div>
+                  </button>
                 </div>
 
 
