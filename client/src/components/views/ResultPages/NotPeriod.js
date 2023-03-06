@@ -93,24 +93,36 @@ function NotPeriod() {
                 <p><b>지원서 제출</b></p>
                 <p>{applicationSubmissionPeriod}</p>
               </div>
-              <p className="arrow">></p>
+              <div className="arrow">
+                <img src="/img/notPeriod/webArrow.png" id="browser_arrow" alt="pc용"></img>
+                <img src="/img/notPeriod/mobileArrow.png" id="mobile_arrow" alt="모바일용"></img>
+              </div>
               <div>
                 <p><b><u>02</u></b></p>
                 <p><b>서류 검토</b></p>
               </div>
-              <p className="arrow">></p>
+              <div className="arrow">
+                <img src="/img/notPeriod/webArrow.png" id="browser_arrow" alt="pc용"></img>
+                <img src="/img/notPeriod/mobileArrow.png" id="mobile_arrow" alt="모바일용"></img>
+              </div>
               <div>
                 <p><b><u>03</u></b></p>
                 <p><b>1차 발표</b></p>
                 <p>{firstPresentationPeriod}</p>
               </div>
-              <p className="arrow">></p>
+              <div className="arrow">
+                <img src="/img/notPeriod/webArrow.png" id="browser_arrow" alt="pc용"></img>
+                <img src="/img/notPeriod/mobileArrow.png" id="mobile_arrow" alt="모바일용"></img>
+              </div>
               <div>
                 <p><b><u>04</u></b></p>
                 <p><b>심층 면접</b></p>
                 <p>{interviewPeriod}</p>
               </div>
-              <p className="arrow">></p>
+              <div className="arrow">
+                <img src="/img/notPeriod/webArrow.png" id="browser_arrow" alt="pc용"></img>
+                <img src="/img/notPeriod/mobileArrow.png" id="mobile_arrow" alt="모바일용"></img>
+              </div>
               <div>
                 <p><b><u>05</u></b></p>
                 <p><b>최종 합격</b></p>
@@ -143,24 +155,36 @@ function NotPeriod() {
               <p><b>지원서 제출</b></p>
               <p>{applicationSubmissionPeriod}</p>
             </div>
-            <p className="arrow">></p>
+            <div className="arrow">
+              <img src="/img/notPeriod/webArrow.png" id="browser_arrow" alt="pc용"></img>
+              <img src="/img/notPeriod/mobileArrow.png" id="mobile_arrow" alt="모바일용"></img>
+            </div>
             <div>
               <p><b><u>02</u></b></p>
               <p><b>서류 검토</b></p>
             </div>
-            <p className="arrow">></p>
+            <div className="arrow">
+              <img src="/img/notPeriod/webArrow.png" id="browser_arrow" alt="pc용"></img>
+              <img src="/img/notPeriod/mobileArrow.png" id="mobile_arrow" alt="모바일용"></img>
+            </div>
             <div>
               <p><b><u>03</u></b></p>
               <p><b>1차 발표</b></p>
               <p>{firstPresentationPeriod}</p>
             </div>
-            <p className="arrow">></p>
+            <div className="arrow">
+              <img src="/img/notPeriod/webArrow.png" id="browser_arrow" alt="pc용"></img>
+              <img src="/img/notPeriod/mobileArrow.png" id="mobile_arrow" alt="모바일용"></img>
+            </div>
             <div>
               <p><b><u>04</u></b></p>
               <p><b>심층 면접</b></p>
               <p>{interviewPeriod}</p>
             </div>
-            <p className="arrow">></p>
+            <div className="arrow">
+              <img src="/img/notPeriod/webArrow.png" id="browser_arrow" alt="pc용"></img>
+              <img src="/img/notPeriod/mobileArrow.png" id="mobile_arrow" alt="모바일용"></img>
+            </div>
             <div>
               <p><b><u>05</u></b></p>
               <p><b>최종 합격</b></p>
@@ -194,24 +218,37 @@ function NotPeriod() {
                 <p><b>지원서 제출</b></p>
                 <p>{applicationSubmissionPeriod}</p>
               </div>
-              <p className="arrow">></p>
+              <div className="arrow">
+                <img src="/img/notPeriod/webArrow.png" id="browser_arrow" alt="pc용"></img>
+                <img src="/img/notPeriod/mobileArrow.png" id="mobile_arrow" alt="모바일용"></img>
+              </div>
+
               <div>
                 <p><b><u>02</u></b></p>
                 <p><b>서류 검토</b></p>
               </div>
-              <p className="arrow">></p>
+              <div>
+                <img src="/img/notPeriod/webArrow.png" id="browser_arrow" alt="pc용"></img>
+                <img src="/img/notPeriod/mobileArrow.png" id="mobile_arrow" alt="모바일용"></img>
+              </div>
               <div>
                 <p><b><u>03</u></b></p>
                 <p><b>1차 발표</b></p>
                 <p>{firstPresentationPeriod}</p>
               </div>
-              <p className="arrow">></p>
+              <div>
+                <img src="/img/notPeriod/webArrow.png" id="browser_arrow" alt="pc용"></img>
+                <img src="/img/notPeriod/mobileArrow.png" id="mobile_arrow" alt="모바일용"></img>
+              </div>
               <div>
                 <p><b><u>04</u></b></p>
                 <p><b>심층 면접</b></p>
                 <p>{interviewPeriod}</p>
               </div>
-              <p className="arrow">></p>
+              <div>
+                <img src="/img/notPeriod/webArrow.png" id="browser_arrow" alt="pc용"></img>
+                <img src="/img/notPeriod/mobileArrow.png" id="mobile_arrow" alt="모바일용"></img>
+              </div>
               <div>
                 <p><b><u>05</u></b></p>
                 <p><b>최종 합격</b></p>
