@@ -60,12 +60,12 @@ updateRoute.put("/update", uploadRouter.single('applicant'), async (req, res) =>
         message: "이화이언 아이디는 최대 20글자입니다.",
       });
     }
-    if (!req.file) {
-      return res.json({
-        status: "error",
-        message: "지원서를 첨부하세요",
-      });
-    }
+    /*  if (!req.file) {
+       return res.json({
+         status: "error",
+         message: "지원서를 첨부하세요",
+       });
+     } */
     const updated = await Applicant.findByIdAndUpdate(id, { $set: updatedData }); //findByIDAndUpdate (조건:id, 갱신: updatedData)
     if (req.file) {
       updated.applicant = req.file.path;
@@ -81,7 +81,6 @@ updateRoute.put("/update", uploadRouter.single('applicant'), async (req, res) =>
       message: "error occured",
     });
   }
-
 });
 
 module.exports = updateRoute;
