@@ -29,6 +29,7 @@ import GenerateDB from "./components/views/AdminPages/GenerateDB";
 import ApplicantList from "./components/views/AdminPages/ApplicantList";
 
 import NotPeriodCheck from "./components/views/ResultPages/checkUI";
+import NotRegisterPeriod from "./components/views/RegisterPages/NotRegisterPeriod";
 import DesignDetailActivity from "./components/views/TeamInfoPages/DetailActivities/DesignDetailActivity";
 import WebDevDetailActivity from "./components/views/TeamInfoPages/DetailActivities/WebDevDetailActivity";
 import MarketingDetailActivity from "./components/views/TeamInfoPages/DetailActivities/MarketingDetailActivity";
@@ -75,7 +76,7 @@ function App() {
           element={<NewApplicantEnroll />}
         />
         <Route exact path="/register/success" element={<ApplySuccess />} />
-        {/*}<Route exact path="/register/notperiod" element={<NotRegisterPeriod />} />  */}
+        <Route exact path="/register/notperiod" element={<NotRegisterPeriod />} />
         <Route exact path="/update/:id" element={<Update />} />
         <Route exact path="/update/success" element={<UpdateSuccess />} />
         <Route exact path="/result/checkinfo" element={<CheckResult />} />
