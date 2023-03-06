@@ -55,7 +55,6 @@ function CheckResult() {
             //결과 기간 아닌 페이지로 이동
             navigate("/result/notperiod/" + applicantId, { replace: true });
           } else {
-            //지원자에게 결과를 보여준다면
             navigate("/result/" + applicantId, { replace: true });
           }
         } else {
