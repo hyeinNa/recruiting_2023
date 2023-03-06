@@ -5,6 +5,7 @@ import Footer from "../../Footer/Footer";
 import Header from "../../Header/Header";
 import { Link } from "react-router-dom";
 import "./ShowResult.css";
+
 function ShowResult1stPass(props) {
   //변수 team과 pass에 저장된 값에 따라 다른 결과 페이지가 보이도록 하기.
   //팀 :  web,design,marketing

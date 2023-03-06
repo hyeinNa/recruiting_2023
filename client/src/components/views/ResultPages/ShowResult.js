@@ -3,8 +3,8 @@ import { useState, useEffect } from "react";
 import axios from "axios";
 import ShowResult1stPass from "./ShowResult1stPass";
 import ShowResultFail from "./ShowResultFail";
-import ShowResultFinal
-  from "./ShowResultFinal";
+import ShowResultFinal from "./ShowResultFinal";
+
 function ShowResult() {
   //url에서 지원자 고유 id 알아내기
   const pathName = window.location.pathname;
