@@ -10,7 +10,7 @@ const applyList = (req, res) => {
     // 마케팅 팀 지원자 정보 전송
     if (team === "1") {
         try {
-            Applicant.find({ team: "마케팅" }, function (error, data) {
+            Applicant.find({ team: "1" }, function (error, data) {
                 res.json({ result: data });
             })
         } catch (err) {
@@ -20,7 +20,7 @@ const applyList = (req, res) => {
     //디자인 팀 지원자 정보 전송
     else if (team === "2") {
         try {
-            Applicant.find({ team: "디자인" }, function (error, data) {
+            Applicant.find({ team: "2" }, function (error, data) {
                 res.json({ result: data });
             })
         } catch (err) {
@@ -30,7 +30,7 @@ const applyList = (req, res) => {
     //웹개발 팀 지원자 정보 전송. team===3
     else {
         try {
-            Applicant.find({ team: "웹개발" }, function (error, data) {
+            Applicant.find({ team: "3" }, function (error, data) {
                 res.json({ result: data });
             })
         } catch (err) {
