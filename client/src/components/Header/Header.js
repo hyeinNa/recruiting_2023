@@ -26,6 +26,12 @@ function Header() {
           isApplicationPeriod(false);
         }
       });
+    const pathName = window.location.pathname;
+    document.documentElement.style.setProperty("--mobile-menu-display", "none");
+    if (!(pathName === "/")) {
+      document.getElementById("nav_bar_content_btn_container").style.display =
+        "none";
+    }
   }, []);
   const toggleMenu = () => {
     const toggleImg = document.getElementById("nav_bar_toggleBtn_img_id");
@@ -45,9 +51,6 @@ function Header() {
       );
     }
   };
-  useEffect(() => {
-    document.documentElement.style.setProperty("--mobile-menu-display", "none");
-  }, []);
   return (
     <nav className="nav_bar">
       <div className="nav_bar_container">
@@ -78,7 +81,10 @@ function Header() {
                 <div className="nav_apply_btns_text">결과확인</div>
               </buttton>
             </div>
-            <div className="nav_bar_content_btn_container">
+            <div
+              className="nav_bar_content_btn_container"
+              id="nav_bar_content_btn_container"
+            >
               <li
                 onClick={() => {
                   const element = document.getElementById("ewhaianInfo");
