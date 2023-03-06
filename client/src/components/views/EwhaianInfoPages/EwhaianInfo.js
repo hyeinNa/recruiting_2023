@@ -247,7 +247,7 @@ function EwhaianInfo() {
                   <button type="button" id="applybutton" onClick={ApplyStatus}>지원하기</button>
                 </div>
                 <div className="info_recruitment_menu_list_2">
-                  <Link to="/register/checkinfo">결과확인</Link>
+                  <button type="button" id="checkbutton">결과확인</button>
                 </div>
 
 
