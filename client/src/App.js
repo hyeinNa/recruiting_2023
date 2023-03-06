@@ -34,7 +34,7 @@ import WebDevDetailActivity from "./components/views/TeamInfoPages/DetailActivit
 import MarketingDetailActivity from "./components/views/TeamInfoPages/DetailActivities/MarketingDetailActivity";
 import PopupBackground from "./components/views/TeamInfoPages/DetailActivities/popup/PopupBackground";
 import MarketingStudyProject from "./components/views/TeamInfoPages/DetailActivities/MarketingStudyProject";
-import ShowResult from "./components/views/ResultPages/ShowResult";
+
 function App() {
   return (
     <div className="App">
@@ -75,7 +75,7 @@ function App() {
           element={<NewApplicantEnroll />}
         />
         <Route exact path="/register/success" element={<ApplySuccess />} />
-        <Route exact path="/register/notperiod" element={<NotRegisterPeriod />} />
+        {/*}<Route exact path="/register/notperiod" element={<NotRegisterPeriod />} />  */}
         <Route exact path="/update/:id" element={<Update />} />
         <Route exact path="/update/success" element={<UpdateSuccess />} />
         <Route exact path="/result/checkinfo" element={<CheckResult />} />
