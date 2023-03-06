@@ -117,19 +117,6 @@ function WebDevDetailActivity() {
                   })}
                 </div>
               </div>
-              <div className="webProjectPopup">
-                {isPopOpen ? (
-                  <PopupBackgroundWeb
-                    title={title}
-                    description={description}
-                    imgSrc1={imgSrc1}
-                    imgSrc2={imgSrc2}
-                    imgSrc3={imgSrc3}
-                    gitHubLink={githubLink}
-                    closePopUp={closePopUp}
-                  />
-                ) : null}
-              </div>
             </div>
             <div
               className="part2_container"
@@ -287,6 +274,19 @@ function WebDevDetailActivity() {
           </div>
         </div>
         <BackBtn path="/" />
+        <div className="webProjectPopup">
+          {isPopOpen ? (
+            <PopupBackgroundWeb
+              title={title}
+              description={description}
+              imgSrc1={imgSrc1}
+              imgSrc2={imgSrc2}
+              imgSrc3={imgSrc3}
+              gitHubLink={githubLink}
+              closePopUp={closePopUp}
+            />
+          ) : null}
+        </div>
       </div>
       <Footer />
     </div>

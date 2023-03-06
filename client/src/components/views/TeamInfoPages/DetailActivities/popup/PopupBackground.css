@@ -108,4 +108,10 @@
   .popup_content_title {
     font-size: 27px;
   }
+  .popup_exitBtn_x img {
+    width: 100%;
+    visibility: visible;
+    position: absolute;
+    top: 0;
+  }
 }

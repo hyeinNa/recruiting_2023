@@ -5,6 +5,7 @@ import axios from "axios";
 import "../RegisterPages/ExistingApplicantCheckInfo.css";
 import Footer from "../../Footer/Footer";
 import Header from "../../Header/Header";
+import BackBtn from "../../utilis/BackBtn";
 function CheckResult() {
   const navigate = useNavigate();
   const [inputs, setInputs] = useState({
@@ -129,6 +130,7 @@ function CheckResult() {
             </div>
           </form>
         </div>
+        <BackBtn path="/" />
       </div>
       <Footer />
     </div>
