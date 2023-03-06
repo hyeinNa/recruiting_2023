@@ -87,6 +87,10 @@
     color: var(--ewhaian-pink);
 }
 
+.register_showResult_preAssignment_container {
+    display: flex;
+}
+
 .register_showResult_interview_container {
     width: 92%;
     height: 100%;
