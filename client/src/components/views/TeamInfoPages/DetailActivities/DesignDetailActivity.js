@@ -71,7 +71,7 @@ function DesignDetailActivity() {
     <div className="design_detail_activity_container">
       <BackBtn path="/" />
       <div className="design_detail_activity_inner_container">
-        <div className="design_detail_activity_content_container">
+        <div className="design_detail_activity_content_container fadeInUp">
           <div className="design_detail_activity_part1_container design_detail_activity_part_container">
             <div className=" design_detail_activity_part1_title design_detail_activity_title">
               디자인팀 활동 내용

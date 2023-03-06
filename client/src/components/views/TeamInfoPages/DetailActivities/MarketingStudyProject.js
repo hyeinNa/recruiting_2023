@@ -6,7 +6,7 @@ function MarketingStudyProject() {
     <div className="marketing_study_project_container">
       <BackBtn path="/teaminfo/detail/marketing" />
       <div className="marketing_study_project_inner_container">
-        <div className="marketing_study_project_content_container">
+        <div className="marketing_study_project_content_container fadeInUp">
           <div className="marketing_study_project_title">
             '마케팅 스터디 프로젝트'
           </div>

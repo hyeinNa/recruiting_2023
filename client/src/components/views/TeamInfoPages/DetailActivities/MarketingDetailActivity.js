@@ -8,7 +8,7 @@ function MarketingDetailActivity() {
     <div className="marketing_detail_activity_container">
       <BackBtn path="/" />
       <div className="marketing_detail_activity_inner_container">
-        <div className="marketing_detail_activity_content_container">
+        <div className="marketing_detail_activity_content_container fadeInUp">
           <div className="marketing_part1_container">
             <div className="marketing_title marketing_part1_title">
               마케팅팀 활동 내용

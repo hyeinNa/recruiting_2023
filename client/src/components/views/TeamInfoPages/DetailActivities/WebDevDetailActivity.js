@@ -46,7 +46,7 @@ function WebDevDetailActivity() {
     <div className="web_detail_activity_container">
       <BackBtn path="/" />
       <div className="web_detail_actvity_inner_container">
-        <div className="web_detail_activity_content_container">
+        <div className="web_detail_activity_content_container fadeInUp">
           <div className="part1_container">
             <div className="web_detail_activity_title part1_title">
               웹개발팀 활동 내용
