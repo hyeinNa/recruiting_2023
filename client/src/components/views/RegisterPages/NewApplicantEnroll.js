@@ -8,6 +8,22 @@ import Header from "../../Header/Header";
 import { Link } from "react-router-dom";
 import BackBtn from "../../utilis/BackBtn";
 
+//error 더 자세히
+const getError = (error) => {
+  let e = error;
+  if (error.response) {
+    e = error.response.data;                   // data, status, headers
+    if (error.response.data && error.response.data.error) {
+      e = error.response.data.error;           // my app specific keys override
+    }
+  } else if (error.message) {
+    e = error.message;
+  } else {
+    e = "Unknown error occured";
+  }
+  return e;
+}
+
 function NewApplicantEnroll() {
   const navigate = useNavigate();
   const [inputs, setInputs] = useState({
@@ -84,7 +100,7 @@ function NewApplicantEnroll() {
         alert(err); //register api에서 각 if문에 맞는 error문 출력
       }
     } catch (error) {
-      console.error(error);
+      console.error(getError(error));
     }
   };
 

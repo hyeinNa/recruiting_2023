@@ -3,6 +3,7 @@ const multer = require('multer')
 
 var storage = multer.diskStorage({
     destination: function (req, file, cb) {
+        console.log("현재 위치: ", process.cwd());
         cb(null, 'server/uploads/')//파일이 저장될 위치
     },
     filename: function (req, file, cb) {
