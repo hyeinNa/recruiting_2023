@@ -16,11 +16,10 @@ function NewApplicantEnroll() {
     studentId: "",
     ewhaianId: "",
     applicant: "",
-    pass: "",
   });
   const [file, setFile] = useState(false);
   const [filename, setFilename] = useState("파일을 선택하세요.");
-  const { team, name, studentId, ewhaianId, applicant, pass } = inputs;
+  const { team, name, studentId, ewhaianId, applicant } = inputs;
   const onChange = (e) => {
     const { value, name } = e.target;
     setInputs({
@@ -55,7 +54,6 @@ function NewApplicantEnroll() {
     formData.append("studentId", studentId);
     formData.append("ewhaianId", ewhaianId);
     formData.append("team", team);
-    formData.append("pass", pass);
 
     const config = { headers: { "Content-Type": "multipart/form-data" } };
     try {
@@ -69,20 +67,19 @@ function NewApplicantEnroll() {
           name: inputs.name,
           studentId: inputs.studentId,
           ewhaianId: inputs.ewhaianId,
-          pass: inputs.pass,
         }
       );
       let status = response.data.status;
       let err = response.data.error;
       let message = response.data.message;
-      if (status === "error") {
-        console.log(err);
-        alert(message); //register api에서 각 if문에 맞는 error문 출력
-      } else {
+      if (status === "ok") {
         //register api의 message출력
         console.log(message);
         // alert("지원해주셔서 감사합니다.");
         navigate("/register/success", { replace: true });
+      } else {
+        console.log(err);
+        alert(err); //register api에서 각 if문에 맞는 error문 출력
       }
     } catch (error) {
       console.log(error.response);
