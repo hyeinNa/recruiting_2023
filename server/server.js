@@ -25,6 +25,11 @@ const modifyBasicInfoRoute = require("./routes/modifyBasicInfo");
 const loadBasicInfoRoute = require("./routes/loadBasicInfo");
 const applicantListRouter = require("./routes/applicantList");
 
+app.get("/", (req, res) => {
+  console.log("Successfully send");
+  res.send("Successfully send");
+});
+
 app.use("/uploads", express.static("uploads"));
 
 //session middleware 추가
@@ -63,11 +68,6 @@ app.use("/api/update", updateRouter);
 app.use("/api/manager", modifyBasicInfoRoute);
 app.use("/api/var", loadBasicInfoRoute);
 app.use("/api/applicantlist", applicantListRouter);
-
-app.get("/", (req, res) => {
-  console.log("Successfully send");
-  res.send("Successfully send");
-});
 
 app.use(cors());
 
