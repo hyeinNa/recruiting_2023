@@ -69,12 +69,12 @@ function Header() {
           </div>
           <ul className="nav_bar_menu" id="nav_bar_menu">
             <div className="nav_bar_apply_btn_container">
-              <buttton
+              <Link
+                to={isApplicationPeriod ? "/register" : "/register/notperiod"}
                 className="nav_register_btn nav_apply_btns"
-                onClick={ApplyStatus}
               >
                 <div className="nav_apply_btns_text">지원하기</div>
-              </buttton>
+              </Link>
               <Link
                 to="/result/checkinfo"
                 className="nav_result_btn nav_apply_btns"
