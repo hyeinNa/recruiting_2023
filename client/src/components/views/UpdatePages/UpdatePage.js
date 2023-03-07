@@ -6,11 +6,10 @@ import Footer from "../../Footer/Footer";
 import Header from "../../Header/Header";
 import { cardinal_number } from "../../../Var";
 
-
 function UpdatePage() {
   //url에서 지원자 고유 id 알아내기
-  const pathName = window.location.pathname;
-  const applicantId = pathName.substring(8, pathName.length);
+  const hash = window.location.hash;
+  const applicantId = hash.substring(9, hash.length);
   //입력 폼에 대한 변수와 함수
   const [inputs, setInputs] = useState({
     team: "",
@@ -19,8 +18,8 @@ function UpdatePage() {
     ewhaianId: "",
     applicant: "",
   });
-  const [file, setFile] = useState('');
-  const [filename, setFilename] = useState('수정할 파일을 선택하세요');
+  const [file, setFile] = useState("");
+  const [filename, setFilename] = useState("수정할 파일을 선택하세요");
   const { team, name, studentId, ewhaianId, applicant } = inputs;
 
   const onChange = (e) => {
@@ -30,7 +29,7 @@ function UpdatePage() {
       [name]: value,
     });
     setFile(e.target.files[0]);
-    setFilename(e.target.files[0].name);//주석 설명
+    setFilename(e.target.files[0].name); //주석 설명
   };
   //첫 렌더링 때, url에서 알아낸 지원자 id로 지원자 정보 가져와서 입력 폼에 반영하기
   useEffect(() => {
@@ -55,21 +54,23 @@ function UpdatePage() {
   const updateInfo = async (e) => {
     e.preventDefault();
     const formData = new FormData();
-    formData.append('applicant', file)
-    formData.append('id', applicantId)
-    formData.append('name', name)
-    formData.append('team', team)
-    formData.append('studentId', studentId)
-    formData.append('ewhaianId', ewhaianId)
+    formData.append("applicant", file);
+    formData.append("id", applicantId);
+    formData.append("name", name);
+    formData.append("team", team);
+    formData.append("studentId", studentId);
+    formData.append("ewhaianId", ewhaianId);
 
-    const config = { headers: { 'Content-Type': 'multipart/form-data' } };
-    try { //고유 id 및 폼에 입력받은 정보를 수정하기 api로 전달
+    const config = { headers: { "Content-Type": "multipart/form-data" } };
+    try {
+      //고유 id 및 폼에 입력받은 정보를 수정하기 api로 전달
       const response = await axios.put("/api/update/update", formData, config, {
-        id: applicantId, team: inputs.team,
+        id: applicantId,
+        team: inputs.team,
         name: inputs.name,
         studentId: inputs.studentId,
         ewhaianId: inputs.ewhaianId,
-        filename: inputs.applicant
+        filename: inputs.applicant,
       });
       let status = response.data.status;
       let err = response.data.error;
@@ -77,18 +78,16 @@ function UpdatePage() {
 
       if (status === "error") {
         console.log(message);
-        alert(message)
-      }
-      else {
+        alert(message);
+      } else {
         window.location.replace("/update/success");
       }
       //const { fileName, filePath } = response.data;
       //setUploadedFile({ fileName, filePath });
-
     } catch (error) {
       console.log(error.response);
     }
-  }
+  };
 
   return (
     <div className="register_newEnroll">
@@ -100,9 +99,30 @@ function UpdatePage() {
           <form className="register_newEnroll_form_container">
             <div className="register_newEnroll_teamForm_wrapper">
               <div className="register_newEnroll_teamForm_radioBtn">
-                <input type="radio" name="team" value="1" onChange={onChange} required />마케팅팀
-                <input type="radio" name="team" value="2" onChange={onChange} required />디자인팀
-                <input type="radio" name="team" value="3" onChange={onChange} required />웹개발팀
+                <input
+                  type="radio"
+                  name="team"
+                  value="1"
+                  onChange={onChange}
+                  required
+                />
+                마케팅팀
+                <input
+                  type="radio"
+                  name="team"
+                  value="2"
+                  onChange={onChange}
+                  required
+                />
+                디자인팀
+                <input
+                  type="radio"
+                  name="team"
+                  value="3"
+                  onChange={onChange}
+                  required
+                />
+                웹개발팀
               </div>
             </div>
             <div className="register_newEnroll_fileDownload_wrapper">
@@ -171,7 +191,8 @@ function UpdatePage() {
                 </div>
                 <div className="label_text">
                   <br></br>
-                  *파일 이름: {cardinal_number}기 지원서_디자인(팀명)_이화연(성명)
+                  *파일 이름: {cardinal_number}기
+                  지원서_디자인(팀명)_이화연(성명)
                 </div>
               </div>
               <input
@@ -185,17 +206,20 @@ function UpdatePage() {
                 style={{ display: "none" }}
               />
               <div className="upload_file register_newEnroll_forms">
-                <div >
-                  <label for="input_file" className="upload_file_text_container">
-                    <div className="upload_file_text">
-                      {filename}
-                    </div>
+                <div>
+                  <label
+                    for="input_file"
+                    className="upload_file_text_container"
+                  >
+                    <div className="upload_file_text">{filename}</div>
                     <div className="upload_file_img_container">
-                      <img src="/img/newApplicantEnroll/fileUpload.png" className="upload_file_img" />
+                      <img
+                        src="/img/newApplicantEnroll/fileUpload.png"
+                        className="upload_file_img"
+                      />
                     </div>
                   </label>
                 </div>
-
               </div>
             </div>
             <div className="register_newEnroll_button_wrapper">
