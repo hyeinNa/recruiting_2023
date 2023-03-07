@@ -63,6 +63,10 @@ app.use("/api/manager", modifyBasicInfoRoute);
 app.use("/api/var", loadBasicInfoRoute);
 app.use("/api/applicantlist", applicantListRouter);
 
+app.get("/", (req, res) => {
+  res.send("Successfully send");
+});
+
 app.use(cors());
 
 //app 객체를 통해서 express 서버 열어주는 곳
