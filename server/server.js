@@ -15,6 +15,7 @@ const session = require("express-session");
 const MongoStore = require("connect-mongo");
 //호스팅 위해 필요한 코드 부분
 const path = require("path");
+const cors = require("cors");
 //Route 가져오기
 const checkInfoRoutes = require("./routes/checkInfo");
 const registerRouter = require("./routes/register");
@@ -27,7 +28,7 @@ const applicantListRouter = require("./routes/applicantList");
 app.use(bodyParser.urlencoded({ extended: true }));
 app.use(bodyParser.json());
 //호스팅 위해 필요한 코드 부분
-app.use(express.static(path.join(__dirname, "client/build")));
+app.use(express.static(path.join(__dirname, "../client/build")));
 app.use("/uploads", express.static("uploads"));
 
 //session middleware 추가
@@ -61,6 +62,8 @@ app.use("/api/update", updateRouter);
 app.use("/api/manager", modifyBasicInfoRoute);
 app.use("/api/var", loadBasicInfoRoute);
 app.use("/api/applicantlist", applicantListRouter);
+
+app.use(cors());
 
 //app 객체를 통해서 express 서버 열어주는 곳
 app.listen(PORT, () => {
