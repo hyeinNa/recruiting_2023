@@ -75,14 +75,12 @@ function Header() {
               >
                 <div className="nav_apply_btns_text">지원하기</div>
               </buttton>
-              <buttton
+              <Link
+                to="/result/checkinfo"
                 className="nav_result_btn nav_apply_btns"
-                onClick={() => {
-                  window.location.replace("/result/checkinfo");
-                }}
               >
                 <div className="nav_apply_btns_text">결과확인</div>
-              </buttton>
+              </Link>
             </div>
             <div
               className="nav_bar_content_btn_container"
