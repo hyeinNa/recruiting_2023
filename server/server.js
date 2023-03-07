@@ -54,9 +54,6 @@ mongoose
   })
   .catch((e) => console.error(e));
 
-app.get("/", (req, res) => {
-  res.send("Successfully send");
-});
 app.use("/api/checkInfo", checkInfoRoutes);
 app.use("/api/register", registerRouter);
 app.use("/api/admin", adminRouter);
