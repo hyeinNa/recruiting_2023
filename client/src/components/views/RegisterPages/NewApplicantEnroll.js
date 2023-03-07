@@ -75,14 +75,14 @@ function NewApplicantEnroll() {
       let status = response.data.status;
       let err = response.data.error;
       let message = response.data.message;
-      if (status === "ok") {
+      if (status === "error") {
+        console.log(err);
+        alert(message); //register api에서 각 if문에 맞는 error문 출력
+      } else {
         //register api의 message출력
         console.log(message);
         // alert("지원해주셔서 감사합니다.");
         navigate("/register/success", { replace: true });
-      } else {
-        console.log(err);
-        alert(err); //register api에서 각 if문에 맞는 error문 출력
       }
     } catch (error) {
       console.log(error.response);
