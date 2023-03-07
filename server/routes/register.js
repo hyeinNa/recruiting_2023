@@ -11,7 +11,7 @@ app.use('/', express.static(path.join(__dirname, 'static'))) */
 registerRoute.post(
   "/register",
   uploadRouter.single("applicant"),
-  async (req, res) => {
+  (req, res) => {
     //async - await
     const { team, name, studentId, ewhaianId, pass } = req.body;
     // const applicant = req.file.path;
@@ -63,7 +63,7 @@ registerRoute.post(
           message: "지원서를 첨부하세요",
         });
       }
-      const created = await Applicant.create({
+      const created = Applicant.create({
         addData,
       }); //findByIDAndUpdate (조건:id, 갱신: updatedData)
       if (req.file) {
