@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from "react";
 import axios from "axios";
 import "./EwhaianInfo.css";
+import { Link } from "react-router-dom";
 
 function EwhaianInfo() {
   const [visibleMarketing, doesRecruitMarketing] = useState(true);
@@ -177,20 +178,19 @@ function EwhaianInfo() {
             <div className="info_recruitment_register">
               <div className="info_recruitment_menu">
                 <div className="info_recruitment_menu_list_1">
-                  <button type="button" id="applybutton" onClick={ApplyStatus}>
+                  <Link
+                    to={
+                      isApplicationPeriod ? "/register" : "/register/notperiod"
+                    }
+                    id="applybutton"
+                  >
                     <div className="apply_btns_text">지원하기</div>
-                  </button>
+                  </Link>
                 </div>
                 <div className="info_recruitment_menu_list_2">
-                  <button
-                    type="button"
-                    id="checkbutton"
-                    onClick={() => {
-                      window.location.replace("/result/checkinfo");
-                    }}
-                  >
+                  <Link to="/result/checkinfo" id="checkbutton">
                     <div className="apply_btns_text">결과확인</div>
-                  </button>
+                  </Link>
                 </div>
               </div>
             </div>

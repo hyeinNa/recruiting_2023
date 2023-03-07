@@ -6,13 +6,6 @@ import "./Header.css";
 function Header() {
   const [isMenuOpen, setMenuOpen] = useState(true);
   const [isApplicationPeriod, setApplicationPeriod] = useState(true);
-  const ApplyStatus = () => {
-    if (isApplicationPeriod) {
-      window.location.replace("/register");
-    } else {
-      window.location.replace("/register/notperiod");
-    }
-  };
   useEffect(() => {
     axios
       .post("/api/var/load", {
@@ -55,18 +48,13 @@ function Header() {
     <nav className="nav_bar">
       <div className="nav_bar_container">
         <div className="nav_bar_inner_container">
-          <div
-            className="nav_bar_logo"
-            onClick={() => {
-              window.location.replace("/");
-            }}
-          >
+          <Link to="/" className="nav_bar_logo">
             <img
               className="nav_bar_logoImg"
               src="/img/header/white_logo.png"
               alt="ewhaianLogo"
             />
-          </div>
+          </Link>
           <ul className="nav_bar_menu" id="nav_bar_menu">
             <div className="nav_bar_apply_btn_container">
               <Link
