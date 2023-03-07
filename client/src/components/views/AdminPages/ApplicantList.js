@@ -62,7 +62,7 @@ function ApplicantList() {
   //서버에서 지원자 DB 받아오기
   const GetList = (team) => {
     axios
-      .get("/api/applicantlist", { params: { team: team } })
+      .get("/api/applicantlist/", { params: { team: team } })
       .then((response) => {
         //객체를 배열로
         const data = Object.entries(response.data);
