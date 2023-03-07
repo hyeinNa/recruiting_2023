@@ -24,11 +24,7 @@ const updateRouter = require("./routes/update");
 const modifyBasicInfoRoute = require("./routes/modifyBasicInfo");
 const loadBasicInfoRoute = require("./routes/loadBasicInfo");
 const applicantListRouter = require("./routes/applicantList");
-//body-parser 관련 코드
-app.use(bodyParser.urlencoded({ extended: true }));
-app.use(bodyParser.json());
-//호스팅 위해 필요한 코드 부분
-app.use(express.static(path.join(__dirname, "../client/build")));
+
 app.use("/uploads", express.static("uploads"));
 
 //session middleware 추가
@@ -54,6 +50,11 @@ mongoose
     console.log("MongoDB Connected...");
   })
   .catch((e) => console.error(e));
+//body-parser 관련 코드
+app.use(bodyParser.urlencoded({ extended: true }));
+app.use(bodyParser.json());
+//호스팅 위해 필요한 코드 부분
+app.use(express.static(path.join(__dirname, "../client/build")));
 
 app.use("/api/checkInfo", checkInfoRoutes);
 app.use("/api/register", registerRouter);
@@ -64,6 +65,7 @@ app.use("/api/var", loadBasicInfoRoute);
 app.use("/api/applicantlist", applicantListRouter);
 
 app.get("/", (req, res) => {
+  console.log("Successfully send");
   res.send("Successfully send");
 });
 
