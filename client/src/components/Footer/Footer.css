@@ -82,6 +82,9 @@
 .footer_social_list li {
   padding-right: 12px;
 }
+.footer_social_list li:hover {
+  cursor: pointer;
+}
 .footer_social_list li img {
   width: var(--footer-social-items-size);
 }
