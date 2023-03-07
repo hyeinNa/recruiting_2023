@@ -1,4 +1,5 @@
 import React, { useEffect, useState } from "react";
+import { Link } from "react-router-dom";
 import axios from "axios";
 import "./Footer.css";
 
@@ -21,6 +22,9 @@ function Footer() {
   return (
     <footer className="footer_container">
       <div className="footer_inner_container">
+        <Link to="/admin/login" className="adminKey">
+          <img src="/img/admin/key.png" alt="key" />
+        </Link>
         <div className="footer_inner_inner_container">
           <div className="footer_contact">CONTACT</div>
           <div className="footer_content_container">

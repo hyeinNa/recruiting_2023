@@ -25,6 +25,7 @@
   margin: 0 auto;
   display: flex;
   align-items: center;
+  position: relative;
 }
 .footer_inner_inner_container {
   width: 92%;
@@ -121,4 +122,22 @@
   .footer_social_list li {
     padding-right: 9px;
   }
+}
+/* 관리자 키 */
+.adminKey {
+  width: 20px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: absolute;
+  right: 0;
+  bottom: 30px;
+}
+.adminKey:hover {
+  background-color: rgba(208, 208, 208, 0.17);
+  border-radius: 5px;
+  padding: 4px;
+}
+.adminKey img {
+  width: 100%;
 }
