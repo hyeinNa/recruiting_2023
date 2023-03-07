@@ -97,10 +97,7 @@ function NewApplicantEnroll() {
         <div className="register_newEnroll_inner_container">
           <div className="register_newEnroll_title">지원하기</div>
 
-          <form
-            className="register_newEnroll_form_container"
-            onSubmit={register}
-          >
+          <form className="register_newEnroll_form_container">
             <div className="register_newEnroll_teamForm_wrapper">
               <div className="register_newEnroll_teamForm_radioBtn">
                 <input
@@ -219,6 +216,7 @@ function NewApplicantEnroll() {
                       <img
                         src="/img/newApplicantEnroll/fileUpload.png"
                         className="upload_file_img"
+                        alt="fileUpload"
                       />
                     </div>
                   </label>
@@ -226,7 +224,11 @@ function NewApplicantEnroll() {
               </div>
             </div>
             <div className="register_newEnroll_button_wrapper">
-              <button type="submit" className="register_newEnroll_button">
+              <button
+                type="submit"
+                className="register_newEnroll_button"
+                onClick={register}
+              >
                 확인
               </button>
             </div>
