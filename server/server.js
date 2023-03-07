@@ -71,6 +71,9 @@ app.use("/api/applicantlist", applicantListRouter);
 
 app.use(cors());
 
+app.get("/register", (req, res) => {
+  res.send("register page success");
+});
 //app 객체를 통해서 express 서버 열어주는 곳
 app.listen(PORT, () => {
   console.log(`recruiting-site server listening on port ${PORT}`);
