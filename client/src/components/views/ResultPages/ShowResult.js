@@ -7,8 +7,9 @@ import ShowResultFinal from "./ShowResultFinal";
 
 function ShowResult() {
   //url에서 지원자 고유 id 알아내기
-  const pathName = window.location.pathname;
-  const applicantId = pathName.substring(8, pathName.length);
+  const hash = window.location.hash;
+  const applicantId = hash.substring(9, hash.length);
+  console.log(applicantId);
   const [inputs, setInputs] = useState({
     name: "",
     team: "",
@@ -75,15 +76,14 @@ fail : 불합격
         <ShowResult1stPass name={inputs.name} team={inputs.team} />
       </div>
     );
-  }
-  else if (inputs.pass === "finalPass") {
+  } else if (inputs.pass === "finalPass") {
     console.log(inputs.pass);
     return (
       <div>
         <ShowResultFinal name={inputs.name} team={inputs.team} />
-      </div>)
-  }
-  else if (inputs.pass === "fail") {
+      </div>
+    );
+  } else if (inputs.pass === "fail") {
     console.log(inputs.pass);
     return (
       <div>

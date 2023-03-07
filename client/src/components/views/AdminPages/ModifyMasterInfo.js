@@ -9,9 +9,8 @@ function ModifyMasterInfo() {
   const navigate = useNavigate();
 
   //url에서 지원자 고유 id 알아내기
-  const pathName = window.location.pathname;
-  const objectId = pathName.substring(20, pathName.length);
-  console.log(pathName);
+  const hash = window.location.hash;
+  const objectId = hash.substring(19, hash.length);
   //입력 폼에 대한 변수와 함수
   const [inputs, setInputs] = useState({
     masterName: "",
@@ -38,7 +37,7 @@ function ModifyMasterInfo() {
       });
     axios
       .post("/api/manager/get", {
-        key: 1234,
+        id: objectId,
       })
       .then((response) => {
         setInputs({

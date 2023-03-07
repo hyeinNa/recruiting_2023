@@ -1,5 +1,6 @@
 import React from "react";
 import { useState, useEffect } from "react";
+import { useNavigate } from "react-router-dom";
 import axios from "axios";
 import "./NewApplicantEnroll.css";
 import Footer from "../../Footer/Footer";
@@ -8,13 +9,14 @@ import { Link } from "react-router-dom";
 import BackBtn from "../../utilis/BackBtn";
 
 function NewApplicantEnroll() {
+  const navigate = useNavigate();
   const [inputs, setInputs] = useState({
     team: "",
     name: "",
     studentId: "",
     ewhaianId: "",
     applicant: "",
-    pass: ""
+    pass: "",
   });
   const [file, setFile] = useState(false);
   const [filename, setFilename] = useState("파일을 선택하세요.");
@@ -67,7 +69,7 @@ function NewApplicantEnroll() {
           name: inputs.name,
           studentId: inputs.studentId,
           ewhaianId: inputs.ewhaianId,
-          pass: inputs.pass
+          pass: inputs.pass,
         }
       );
       let status = response.data.status;
@@ -77,7 +79,7 @@ function NewApplicantEnroll() {
         //register api의 message출력
         console.log(message);
         // alert("지원해주셔서 감사합니다.");
-        window.location.replace("/register/success");
+        navigate("/register/success", { replace: true });
       } else {
         console.log(err);
         alert(err); //register api에서 각 if문에 맞는 error문 출력

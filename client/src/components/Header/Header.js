@@ -6,6 +6,7 @@ import "./Header.css";
 function Header() {
   const [isMenuOpen, setMenuOpen] = useState(true);
   const [isApplicationPeriod, setApplicationPeriod] = useState(true);
+
   useEffect(() => {
     axios
       .post("/api/var/load", {
@@ -19,9 +20,9 @@ function Header() {
           setApplicationPeriod(response.data.isApplicationPeriod);
         }
       });
-    const pathName = window.location.pathname;
+    const hash = window.location.hash;
     document.documentElement.style.setProperty("--mobile-menu-display", "none");
-    if (!(pathName === "/")) {
+    if (!(hash === "#/")) {
       document.getElementById("nav_bar_content_btn_container").style.display =
         "none";
     }
