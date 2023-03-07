@@ -6,12 +6,12 @@ import "./ModifyRecruitInfo.css";
 import "./ModifyMasterInfo.css";
 
 function ModifyMasterInfo() {
-
   const navigate = useNavigate();
 
   //url에서 지원자 고유 id 알아내기
   const pathName = window.location.pathname;
-  const objectId = pathName.substring(18, pathName.length);
+  const objectId = pathName.substring(20, pathName.length);
+  console.log(pathName);
   //입력 폼에 대한 변수와 함수
   const [inputs, setInputs] = useState({
     masterName: "",
@@ -26,8 +26,8 @@ function ModifyMasterInfo() {
     });
   };
   useEffect(() => {
-
-    axios.get("/api/admin/")
+    axios
+      .get("/api/admin/")
       .then((response) => {
         //로그인 안 했으면 login 창으로
         if (response.data.loggedIn !== true)
@@ -36,10 +36,9 @@ function ModifyMasterInfo() {
       .catch((error) => {
         console.log("An error occurred: ", error.response);
       });
-
     axios
       .post("/api/manager/get", {
-        id: objectId,
+        key: 1234,
       })
       .then((response) => {
         setInputs({

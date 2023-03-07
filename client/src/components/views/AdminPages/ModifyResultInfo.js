@@ -87,7 +87,7 @@ function ModifyResultInfo() {
 
     axios
       .post("/api/manager/get", {
-        id: objectId,
+        key: 1234,
       })
       .then((response) => {
         setInputs({

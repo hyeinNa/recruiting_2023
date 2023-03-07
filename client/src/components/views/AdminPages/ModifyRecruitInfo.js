@@ -48,8 +48,8 @@ function ModifyRecruitInfo() {
   };
 
   useEffect(() => {
-
-    axios.get("/api/admin/applicantlist")
+    axios
+      .get("/api/admin/applicantlist")
       .then((response) => {
         //로그인 안 했으면 login 창으로
         if (response.data.loggedIn !== true)
@@ -61,7 +61,7 @@ function ModifyRecruitInfo() {
 
     axios
       .post("/api/manager/get", {
-        id: objectId,
+        key: 1234,
       })
       .then((response) => {
         setInputs({

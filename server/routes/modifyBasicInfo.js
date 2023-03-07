@@ -24,12 +24,16 @@ modifyBasicInfoRoute.post("/find", (req, res) => {
 });
 //DB에 저장되어 있는 값을 입력 폼에 반영하기
 modifyBasicInfoRoute.post("/get", (req, res) => {
-  let id = req.body.id;
-  const ObjectId = mongoose.Types.ObjectId(id);
-  BasicInfo.findOne({ _id: ObjectId }, (err, data) => {
+  BasicInfo.findOne({ key: req.body.key }, (err, data) => {
     if (err) console.log(err);
     else {
-      if (data) return res.json(data);
+      if (data) {
+        res.json(data);
+      } else {
+        res.json({
+          isInDB: "false",
+        });
+      }
     }
   });
 });
