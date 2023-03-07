@@ -84,7 +84,7 @@ function NewApplicantEnroll() {
         alert(err); //register api에서 각 if문에 맞는 error문 출력
       }
     } catch (error) {
-      console.log(error.response);
+      console.error(error);
     }
   };
 
