@@ -11,7 +11,35 @@ app.use('/', express.static(path.join(__dirname, 'static'))) */
 registerRoute.post(
   "/register",
   uploadRouter.single("applicant"),
-  (req, res) => {
+  async (req, res) => {
+    const { team, name, studentId, ewhaianId, pass } = req.body;
+    try {
+      let applicantData = await Applicant.findOne({ studentId });
+      if (applicantData) {
+        return res.status(400).json({
+          message:
+            "이미 존재하는 사용자입니다. 수정을 원하시면 기존 지원자를 선택해주세요.",
+        });
+      }
+      applicantData = new Applicant({
+        team,
+        name,
+        studentId,
+        ewhaianId,
+        pass,
+      });
+      if (req.file) {
+        applicantData.applicant = req.file.filename;
+      }
+      await applicant.save();
+      res.send("success");
+    } catch (error) {
+      console.log(error);
+      res.status(500).send("server error");
+    }
+  }
+);
+/*
     //async - await
     const { team, name, studentId, ewhaianId, pass } = req.body;
     // const applicant = req.file.path;
@@ -79,7 +107,6 @@ registerRoute.post(
         message: "error occured",
       });
     }
-  }
-);
+    */
 
 module.exports = registerRoute;
