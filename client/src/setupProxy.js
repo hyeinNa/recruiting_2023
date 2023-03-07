@@ -4,9 +4,9 @@ const { createProxyMiddleware } = require("http-proxy-middleware");
 
 module.exports = function (app) {
   app.use(
-    "/api",
+    ["/api", "/uploads"],
     createProxyMiddleware({
-      target: `http://ewhaianrecruiting.com`,
+      target: `http://ewhaianrecruiting.com:3005`,
       changeOrigin: true,
     })
   );
