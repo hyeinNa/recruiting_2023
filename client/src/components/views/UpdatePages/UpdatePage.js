@@ -1,5 +1,6 @@
 import React from "react";
 import { useState, useEffect } from "react";
+import { useNavigate } from "react-router-dom";
 import axios from "axios";
 import "./UpdatePage.css";
 import Footer from "../../Footer/Footer";
@@ -7,6 +8,7 @@ import Header from "../../Header/Header";
 import { cardinal_number } from "../../../Var";
 
 function UpdatePage() {
+  const navigate = useNavigate();
   //url에서 지원자 고유 id 알아내기
   const hash = window.location.hash;
   const applicantId = hash.substring(9, hash.length);
@@ -80,7 +82,7 @@ function UpdatePage() {
         console.log(message);
         alert(message);
       } else {
-        window.location.replace("/update/success");
+        navigate("/update/success", { replace: true });
       }
       //const { fileName, filePath } = response.data;
       //setUploadedFile({ fileName, filePath });
