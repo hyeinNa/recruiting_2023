@@ -25,9 +25,12 @@ const modifyBasicInfoRoute = require("./routes/modifyBasicInfo");
 const loadBasicInfoRoute = require("./routes/loadBasicInfo");
 const applicantListRouter = require("./routes/applicantList");
 
-app.get("/", (req, res) => {
-  console.log("Successfully send");
-  res.send("Successfully send");
+app.get("/*", function (req, res) {
+  res.sendFile(path.join(__dirname, "../client/build"), function (err) {
+    if (err) {
+      res.status(500).send(err);
+    }
+  });
 });
 
 app.use("/uploads", express.static("uploads"));
