@@ -19,7 +19,7 @@ function NewApplicantEnroll() {
   });
   const [file, setFile] = useState(false);
   const [filename, setFilename] = useState("파일을 선택하세요.");
-  const { team, name, studentId, ewhaianId, applicant } = inputs;
+  const { team, name, studentId, ewhaianId, applicant, pass } = inputs;
   const onChange = (e) => {
     const { value, name } = e.target;
     setInputs({
@@ -54,6 +54,7 @@ function NewApplicantEnroll() {
     formData.append("studentId", studentId);
     formData.append("ewhaianId", ewhaianId);
     formData.append("team", team);
+    formData.append("pass", pass);
 
     const config = { headers: { "Content-Type": "multipart/form-data" } };
     try {
@@ -67,6 +68,7 @@ function NewApplicantEnroll() {
           name: inputs.name,
           studentId: inputs.studentId,
           ewhaianId: inputs.ewhaianId,
+          pass: inputs.pass,
         }
       );
       let status = response.data.status;
