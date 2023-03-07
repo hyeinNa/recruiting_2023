@@ -22,7 +22,7 @@ function Header() {
       });
     const hash = window.location.hash;
     document.documentElement.style.setProperty("--mobile-menu-display", "none");
-    if (!(hash === "#/")) {
+    if (!(hash === "#/" || hash === "")) {
       document.getElementById("nav_bar_content_btn_container").style.display =
         "none";
     }
