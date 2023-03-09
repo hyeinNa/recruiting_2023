@@ -24,7 +24,7 @@ const modifyBasicInfoRoute = require("./routes/modifyBasicInfo");
 const loadBasicInfoRoute = require("./routes/loadBasicInfo");
 const applicantListRouter = require("./routes/applicantList");
 
-app.use("/uploads", express.static("uploads"));
+app.use(express.static(__dirname));
 
 //session middleware 추가
 app.use(
