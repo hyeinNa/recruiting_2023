@@ -12,9 +12,9 @@ import BackBtn from "../../utilis/BackBtn";
 const getError = (error) => {
   let e = error;
   if (error.response) {
-    e = error.response.data;                   // data, status, headers
+    e = error.response.data; // data, status, headers
     if (error.response.data && error.response.data.error) {
-      e = error.response.data.error;           // my app specific keys override
+      e = error.response.data.error; // my app specific keys override
     }
   } else if (error.message) {
     e = error.message;
@@ -22,7 +22,7 @@ const getError = (error) => {
     e = "Unknown error occured";
   }
   return e;
-}
+};
 
 function NewApplicantEnroll() {
   const navigate = useNavigate();
@@ -42,6 +42,8 @@ function NewApplicantEnroll() {
       ...inputs,
       [name]: value,
     });
+  };
+  const fileHandler = (e) => {
     setFile(e.target.files[0]);
     setFilename(e.target.files[0].name); //주석 설명
   };
@@ -216,7 +218,7 @@ function NewApplicantEnroll() {
                 className="newEnroll_file"
                 id="input_file"
                 value={applicant}
-                onChange={onChange}
+                onChange={fileHandler}
                 required
                 style={{ display: "none" }}
               />
