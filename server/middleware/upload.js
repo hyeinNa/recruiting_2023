@@ -4,7 +4,8 @@ const multer = require("multer");
 var storage = multer.diskStorage({
   destination: function (req, file, cb) {
     console.log("현재 위치: ", process.cwd());
-    cb(null, "./server/uploads"); //파일이 저장될 위치
+    console.log(path.join(__dirname, "../uploads/"));
+    cb(null, path.join(__dirname, "../uploads/")); //파일이 저장될 위치
   },
   filename: function (req, file, cb) {
     file.originalname = Buffer.from(file.originalname, "latin1").toString(

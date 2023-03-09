@@ -52,7 +52,6 @@ app.use(bodyParser.urlencoded({ extended: true }));
 app.use(bodyParser.json());
 //호스팅 위해 필요한 코드 부분
 app.use(express.static(path.join(__dirname, "../client/build")));
-
 app.use("/api/checkInfo", checkInfoRoutes);
 app.use("/api/register", registerRouter);
 app.use("/api/admin", adminRouter);
